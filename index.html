@@ -1,1845 +1,53 @@
 
-        <!DOCTYPE html>
-        <html lang="en">
-        <head>
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Magic EDH Stats Report</title>
-            <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
-            <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-            <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
-            <style>
-                body { font-family: Arial, sans-serif; margin: 20px; color: #333; }
-                h1, h2, h3 { color: #444; }
-                table { width: 100%; border-collapse: collapse; margin-bottom: 20px; }
-                th, td { padding: 12px; border: 1px solid #ddd; text-align: center; }
-                th { background-color: #4CAF50; color: white; }
-                tr:nth-child(even) { background-color: #f2f2f2; }
-                tr:hover { background-color: #ddd; }
-                .player-section { margin-bottom: 30px; border: 1px solid #ccc; padding: 15px; border-radius: 8px; }
-                .player-section h3 { margin-top: 0; background-color: #eee; padding: 10px; border-radius: 5px; }
-                .hidden { display: none; }
-                .btn { background-color: #4CAF50; color: white; padding: 8px 16px; border: none; cursor: pointer; 
-                       border-radius: 4px; margin: 10px 0; }
-                .btn:hover { background-color: #45a049; }
-            </style>
-        </head>
-        <body>
-            <h1>Magic EDH Stats Report</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Magic EDH Stats Report</title>
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+<style>
+body { font-family: Arial, sans-serif; margin: 20px; }
+h1, h2, h3 { color: #444; }
+table { width: 100%; border-collapse: collapse; margin-bottom: 20px; }
+th, td { padding: 12px; border: 1px solid #ddd; text-align: center; }
+th { background-color: #4CAF50; color: white; }
+tr:nth-child(even) { background-color: #f2f2f2; }
+tr:hover { background-color: #ddd; }
+.player-section { margin-bottom: 30px; border: 1px solid #ccc; padding: 15px; border-radius: 8px; }
+.player-section h3 { margin-top: 0; background-color: #eee; padding: 10px; border-radius: 5px; }
+.hidden { display: none; }
+</style>
+</head>
+<body>
+<h1>Magic EDH Stats Report</h1>
+<p><strong>CMC Medio Totale:</strong> 4.13</p>
+<p><strong>Numero Totale Giocatori:</strong> 29</p>
+<p><strong>Numero Totale Comandanti Giocati:</strong> 181</p>
+<h2>Dettaglio Comandanti per Giocatore</h2>
+<label for="commanderPlayerSelect">Seleziona Giocatore:</label>
+<select id="commanderPlayerSelect">
+<option value="">Seleziona un giocatore</option>
+<option value="Andrea">Andrea</option><option value="Betto">Betto</option><option value="Claudio">Claudio</option><option value="Daniele">Daniele</option><option value="Davide">Davide</option><option value="Don">Don</option><option value="Ema">Ema</option><option value="Emi">Emi</option><option value="Ettore">Ettore</option><option value="Gabriele">Gabriele</option><option value="Giulia">Giulia</option><option value="Gymbro">Gymbro</option><option value="Jappy">Jappy</option><option value="Lore">Lore</option><option value="Luca">Luca</option><option value="Luca Proie">Luca Proie</option><option value="Lucio">Lucio</option><option value="Marco">Marco</option><option value="Matte">Matte</option><option value="Monta">Monta</option><option value="Pain">Pain</option><option value="Paolo">Paolo</option><option value="Phyga">Phyga</option><option value="Ru">Ru</option><option value="Simo">Simo</option><option value="Sisco">Sisco</option><option value="nico gym">nico gym</option><option value="nicolo">nicolo</option><option value="simone">simone</option>
+</select>
 
-            <h2>Statistiche Globali</h2>
-            <p><strong>CMC Medio Totale:</strong> 3.97</p>
-            <p><strong>Numero Totale Giocatori:</strong> 29</p>
-            <p><strong>Numero Totale Comandanti Giocati:</strong> 181</p>
-
-            <h2>Dettaglio Comandanti per Giocatore</h2>
-            <div class="player-commanders-container">
-            <label for="commanderPlayerSelect">Seleziona Giocatore:</label>
-            <select id="commanderPlayerSelect">
-                <option value="">Seleziona un giocatore</option>
-                <option value="Matte">Matte</option><option value="Ru">Ru</option><option value="Don">Don</option><option value="Emi">Emi</option><option value="Gymbro">Gymbro</option><option value="Claudio">Claudio</option><option value="Ettore">Ettore</option><option value="Luca">Luca</option><option value="Jappy">Jappy</option><option value="Sisco">Sisco</option><option value="Betto">Betto</option><option value="Luca Proie">Luca Proie</option><option value="Giulia">Giulia</option><option value="Paolo">Paolo</option><option value="Pain">Pain</option><option value="Phyga">Phyga</option><option value="Andrea">Andrea</option><option value="Gabriele">Gabriele</option><option value="Lore">Lore</option><option value="Monta">Monta</option><option value="nicolo">nicolo</option><option value="Daniele">Daniele</option><option value="Davide">Davide</option><option value="Ema">Ema</option><option value="Lucio">Lucio</option><option value="Marco">Marco</option><option value="Simo">Simo</option><option value="nico gym">nico gym</option><option value="simone">simone</option>
-            </select>
-            
-            <div id="player-Matte" class="player-section hidden player-commander-section">
-                <h3>Comandanti di Matte</h3>
-                <table id='commanderStatsTable-Matte' class='display' border="1" class="dataframe">
+<div id="player-Andrea" class="player-section hidden player-commander-section">
+<h3>Comandanti di Andrea</h3>
+<table class="dataframe display" id="commanderStatsTable-Andrea">
   <thead>
     <tr style="text-align: right;">
       <th>Comandante</th>
       <th>Colori</th>
       <th>CMC</th>
-      <th>Utilizzi</th>
+      <th>Partite</th>
       <th>Vittorie</th>
-      <th>Win Rate (%)</th>
+      <th>Winrate (%)</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td><a href="https://scryfall.com/card/dmc/1/dihada-binder-of-wills?utm_source=api" target="_blank">dihada, binder of wills</a></td>
-      <td>RWB</td>
-      <td>4.0</td>
-      <td>15</td>
-      <td>11</td>
-      <td>73.33</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/snc/193/jetmir-nexus-of-revels?utm_source=api" target="_blank">jetmir, nexus of revels</a></td>
-      <td>GRW</td>
-      <td>4.0</td>
-      <td>9</td>
-      <td>7</td>
-      <td>77.78</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/dft/213/mendicant-core-guidelight?utm_source=api" target="_blank">mendicant core, guidelight</a></td>
-      <td>UW</td>
-      <td>2.0</td>
-      <td>8</td>
-      <td>3</td>
-      <td>37.50</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/moc/5/sidar-jabari-of-zhalfir?utm_source=api" target="_blank">sidar jabari of zhalfir</a></td>
-      <td>BUW</td>
-      <td>4.0</td>
-      <td>5</td>
-      <td>3</td>
-      <td>60.00</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/fdn/247/tatyova-benthic-druid?utm_source=api" target="_blank">tatyova, benthic druid</a></td>
-      <td>GU</td>
-      <td>5.0</td>
-      <td>5</td>
-      <td>3</td>
-      <td>60.00</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/mkm/186/anzrag-the-quake-mole?utm_source=api" target="_blank">anzrag, the quake-mole</a></td>
-      <td>GR</td>
-      <td>4.0</td>
-      <td>5</td>
-      <td>2</td>
-      <td>40.00</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/mat/26/calix-guided-by-fate?utm_source=api" target="_blank">calix, guided by fate</a></td>
-      <td>GW</td>
-      <td>3.0</td>
-      <td>4</td>
-      <td>1</td>
-      <td>25.00</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/mom/249/omnath-locus-of-all?utm_source=api" target="_blank">omnath, locus of all</a></td>
-      <td>BGRUW</td>
-      <td>5.0</td>
-      <td>4</td>
-      <td>1</td>
-      <td>25.00</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/cmr/197/rograkh-son-of-rohgahh?utm_source=api" target="_blank">rograkh, son of rohgahh</a></td>
-      <td>R</td>
-      <td>0.0</td>
-      <td>3</td>
-      <td>2</td>
-      <td>66.67</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/lcc/296/zacama-primal-calamity?utm_source=api" target="_blank">zacama, primal calamity</a></td>
-      <td>RGW</td>
-      <td>9.0</td>
-      <td>3</td>
-      <td>2</td>
-      <td>66.67</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/ncc/1/anhelo-the-painter?utm_source=api" target="_blank">anhelo, the painter</a></td>
-      <td>UBR</td>
-      <td>3.0</td>
-      <td>3</td>
-      <td>1</td>
-      <td>33.33</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/voc/1/millicent-restless-revenant?utm_source=api" target="_blank">millicent, restless revenant</a></td>
-      <td>WU</td>
-      <td>7.0</td>
-      <td>3</td>
-      <td>1</td>
-      <td>33.33</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/mkm/12/delney-streetwise-lookout?utm_source=api" target="_blank">delney, streetwise lookout</a></td>
-      <td>W</td>
-      <td>3.0</td>
-      <td>2</td>
-      <td>2</td>
-      <td>100.00</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/nec/3/kaima-the-fractured-calm?utm_source=api" target="_blank">kaima, the fractured calm</a></td>
-      <td>RG</td>
-      <td>4.0</td>
-      <td>2</td>
-      <td>1</td>
-      <td>50.00</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/lcc/5/carmen-cruel-skymarcher?utm_source=api" target="_blank">carmen, cruel skymarcher</a></td>
-      <td>BW</td>
-      <td>5.0</td>
-      <td>2</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/clb/77/imoen-mystic-trickster?utm_source=api" target="_blank">imoen, mystic trickster</a></td>
-      <td>U</td>
-      <td>3.0</td>
-      <td>1</td>
-      <td>1</td>
-      <td>100.00</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/c16/50/yidris-maelstrom-wielder?utm_source=api" target="_blank">yidris, maelstrom wielder</a></td>
-      <td>UBRG</td>
-      <td>4.0</td>
-      <td>1</td>
-      <td>1</td>
-      <td>100.00</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/mh3/289/breya-etherium-shaper?utm_source=api" target="_blank">breya, etherium shaper</a></td>
-      <td>BRUW</td>
-      <td>4.0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/snc/196/lagrella-the-magpie?utm_source=api" target="_blank">lagrella, the magpie</a></td>
-      <td>GWU</td>
-      <td>3.0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/clb/284/miirym-sentinel-wyrm?utm_source=api" target="_blank">miirym, sentinel wyrm</a></td>
-      <td>GUR</td>
-      <td>6.0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/otc/235/niv-mizzet-parun?utm_source=api" target="_blank">niv-mizzet, parun</a></td>
-      <td>UR</td>
-      <td>6.0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/znr/232/omnath-locus-of-creation?utm_source=api" target="_blank">omnath, locus of creation</a></td>
-      <td>RGWU</td>
-      <td>4.0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/cm2/13/reyhan-last-of-the-abzan?utm_source=api" target="_blank">reyhan, last of the abzan</a></td>
-      <td>BGW</td>
-      <td>5.0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/cmm/320/selvala-heart-of-the-wilds?utm_source=api" target="_blank">selvala, heart of the wilds</a></td>
-      <td>G</td>
-      <td>3.0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/inr/247/sigarda-host-of-herons?utm_source=api" target="_blank">sigarda, host of herons</a></td>
-      <td>GW</td>
-      <td>5.0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/40k/1/szarekh-the-silent-king?utm_source=api" target="_blank">szarekh, the silent king</a></td>
-      <td>B</td>
-      <td>4.0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/pip/4/the-wise-mothman?utm_source=api" target="_blank">the wise mothman</a></td>
-      <td>BGU</td>
-      <td>4.0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/iko/216/winota-joiner-of-forces?utm_source=api" target="_blank">winota, joiner of forces</a></td>
-      <td>RW</td>
-      <td>4.0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/ltc/511/witch-king-sky-scourge?utm_source=api" target="_blank">witch-king, sky scourge</a></td>
-      <td>BR</td>
-      <td>7.0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/ltc/1/%C3%A9owyn-shieldmaiden?utm_source=api" target="_blank">éowyn, shieldmaiden</a></td>
-      <td>URW</td>
-      <td>5.0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-  </tbody>
-</table>
-            </div>
-            
-            <div id="player-Ru" class="player-section hidden player-commander-section">
-                <h3>Comandanti di Ru</h3>
-                <table id='commanderStatsTable-Ru' class='display' border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th>Comandante</th>
-      <th>Colori</th>
-      <th>CMC</th>
-      <th>Utilizzi</th>
-      <th>Vittorie</th>
-      <th>Win Rate (%)</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><a href="https://scryfall.com/card/blc/1/bello-bard-of-the-brambles?utm_source=api" target="_blank">bello, bard of the brambles</a></td>
-      <td>GR</td>
-      <td>3.0</td>
-      <td>12</td>
-      <td>4</td>
-      <td>33.33</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/moc/4/kasla-the-broken-halo?utm_source=api" target="_blank">kasla, the broken halo</a></td>
-      <td>URW</td>
-      <td>6.0</td>
-      <td>7</td>
-      <td>2</td>
-      <td>28.57</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/dmu/213/ratadrabik-of-urborg?utm_source=api" target="_blank">ratadrabik of urborg</a></td>
-      <td>BW</td>
-      <td>4.0</td>
-      <td>6</td>
-      <td>2</td>
-      <td>33.33</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/sld/1742/storm-force-of-nature?utm_source=api" target="_blank">storm, force of nature</a></td>
-      <td>GUR</td>
-      <td>4.0</td>
-      <td>5</td>
-      <td>1</td>
-      <td>20.00</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/j22/13/kenessos-priest-of-thassa?utm_source=api" target="_blank">kenessos, priest of thassa</a></td>
-      <td>U</td>
-      <td>2.0</td>
-      <td>4</td>
-      <td>2</td>
-      <td>50.00</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/cmm/349/nekusar-the-mindrazer?utm_source=api" target="_blank">nekusar, the mindrazer</a></td>
-      <td>UBR</td>
-      <td>5.0</td>
-      <td>4</td>
-      <td>2</td>
-      <td>50.00</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/mh3/39/pearl-ear-imperial-advisor?utm_source=api" target="_blank">pearl-ear, imperial advisor</a></td>
-      <td>B</td>
-      <td>3.0</td>
-      <td>4</td>
-      <td>2</td>
-      <td>50.00</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/khm/112/tergrid-god-of-fright-tergrids-lantern?utm_source=api" target="_blank">tergrid, god of fright // tergrid's lantern</a></td>
-      <td>B</td>
-      <td>5.0</td>
-      <td>4</td>
-      <td>2</td>
-      <td>50.00</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/cmm/362/xantcha-sleeper-agent?utm_source=api" target="_blank">xantcha, sleeper agent</a></td>
-      <td>BR</td>
-      <td>3.0</td>
-      <td>4</td>
-      <td>2</td>
-      <td>50.00</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/khm/168/esika-god-of-the-tree-the-prismatic-bridge?utm_source=api" target="_blank">esika, god of the tree // the prismatic bridge</a></td>
-      <td>GWUBR</td>
-      <td>7.0</td>
-      <td>4</td>
-      <td>1</td>
-      <td>25.00</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/lcc/4/pantlaza-sun-favored?utm_source=api" target="_blank">pantlaza, sun-favored</a></td>
-      <td>RGW</td>
-      <td>5.0</td>
-      <td>3</td>
-      <td>2</td>
-      <td>66.67</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/dsk/240/winter-misanthropic-guide?utm_source=api" target="_blank">Winter, Misanthropic Guide</a></td>
-      <td>BRG</td>
-      <td>4.0</td>
-      <td>3</td>
-      <td>1</td>
-      <td>33.33</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/blc/2/hazel-of-the-rootbloom?utm_source=api" target="_blank">hazel of the rootbloom</a></td>
-      <td>GB</td>
-      <td>4.0</td>
-      <td>3</td>
-      <td>1</td>
-      <td>33.33</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/m3c/2/omo-queen-of-vesuva?utm_source=api" target="_blank">omo, queen of vesuva</a></td>
-      <td>GU</td>
-      <td>3.0</td>
-      <td>3</td>
-      <td>1</td>
-      <td>33.33</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/ncc/10/tivit-seller-of-secrets?utm_source=api" target="_blank">tivit, seller of secrets</a></td>
-      <td>BUW</td>
-      <td>6.0</td>
-      <td>3</td>
-      <td>1</td>
-      <td>33.33</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/mom/255/thalia-and-the-gitrog-monster?utm_source=api" target="_blank">thalia and the gitrog monster</a></td>
-      <td>WBG</td>
-      <td>5.0</td>
-      <td>3</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/clb/2/abdel-adrian-gorions-ward?utm_source=api" target="_blank">abdel adrian, gorion's ward</a></td>
-      <td>W</td>
-      <td>4.0</td>
-      <td>2</td>
-      <td>2</td>
-      <td>100.00</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/cmm/130/urza-lord-high-artificer?utm_source=api" target="_blank">urza, lord high artificer</a></td>
-      <td>U</td>
-      <td>4.0</td>
-      <td>2</td>
-      <td>1</td>
-      <td>50.00</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/dsk/240/winter-misanthropic-guide?utm_source=api" target="_blank">winter, misanthropic guide</a></td>
-      <td>BRG</td>
-      <td>4.0</td>
-      <td>2</td>
-      <td>1</td>
-      <td>50.00</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/khm/168/esika-god-of-the-tree-the-prismatic-bridge?utm_source=api" target="_blank">esika, god of the tree</a></td>
-      <td>GWUBR</td>
-      <td>7.0</td>
-      <td>2</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/otc/239/queen-marchesa?utm_source=api" target="_blank">queen marchesa</a></td>
-      <td>BRW</td>
-      <td>4.0</td>
-      <td>2</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/neo/234/satoru-umezawa?utm_source=api" target="_blank">satoru umezawa</a></td>
-      <td>BU</td>
-      <td>3.0</td>
-      <td>2</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/blb/219/the-infamous-cruelclaw?utm_source=api" target="_blank">the infamous cruelclaw</a></td>
-      <td>BR</td>
-      <td>3.0</td>
-      <td>2</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/mh2/218/yusri-fortunes-flame?utm_source=api" target="_blank">yusri, fortune's flame</a></td>
-      <td>UR</td>
-      <td>3.0</td>
-      <td>1</td>
-      <td>1</td>
-      <td>100.00</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/cmm/938/sythis-harvests-hand?utm_source=api" target="_blank">Sythis, Harvest's Hand</a></td>
-      <td>GW</td>
-      <td>2.0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/pip/1/caesar-legions-emperor?utm_source=api" target="_blank">caesar, legion's emperor</a></td>
-      <td>RWB</td>
-      <td>4.0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/pip/2/dogmeat-ever-loyal?utm_source=api" target="_blank">dogmeat, ever loyal</a></td>
-      <td>GRW</td>
-      <td>3.0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/mkc/3/morska-undersea-sleuth?utm_source=api" target="_blank">morska, undersea sleuth</a></td>
-      <td>GUW</td>
-      <td>3.0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/fdn/243/muldrotha-the-gravetide?utm_source=api" target="_blank">muldrotha, the gravetide</a></td>
-      <td>BGU</td>
-      <td>6.0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/lci/158/ojer-axonil-deepest-might-temple-of-power?utm_source=api" target="_blank">ojer axonil, deepest might // temple of power</a></td>
-      <td>R</td>
-      <td>4.0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-  </tbody>
-</table>
-            </div>
-            
-            <div id="player-Don" class="player-section hidden player-commander-section">
-                <h3>Comandanti di Don</h3>
-                <table id='commanderStatsTable-Don' class='display' border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th>Comandante</th>
-      <th>Colori</th>
-      <th>CMC</th>
-      <th>Utilizzi</th>
-      <th>Vittorie</th>
-      <th>Win Rate (%)</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><a href="https://scryfall.com/card/mkc/191/toski-bearer-of-secrets?utm_source=api" target="_blank">toski, bearer of secrets</a></td>
-      <td>G</td>
-      <td>4.0</td>
-      <td>10</td>
-      <td>2</td>
-      <td>20.00</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/drc/1/hashaton-scarabs-fist?utm_source=api" target="_blank">hashaton, scarab's fist</a></td>
-      <td>BUW</td>
-      <td>2.0</td>
-      <td>9</td>
-      <td>4</td>
-      <td>44.44</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/mat/36/nahiri-forged-in-fury?utm_source=api" target="_blank">nahiri, forged in fury</a></td>
-      <td>RW</td>
-      <td>4.0</td>
-      <td>9</td>
-      <td>3</td>
-      <td>33.33</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/blb/49/eluge-the-shoreless-sea?utm_source=api" target="_blank">eluge, the shoreless sea</a></td>
-      <td>U</td>
-      <td>4.0</td>
-      <td>8</td>
-      <td>3</td>
-      <td>37.50</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/pip/1/caesar-legions-emperor?utm_source=api" target="_blank">caesar, legion's emperor</a></td>
-      <td>RWB</td>
-      <td>4.0</td>
-      <td>7</td>
-      <td>2</td>
-      <td>28.57</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/inr/234/edgar-markov?utm_source=api" target="_blank">edgar markov</a></td>
-      <td>BRW</td>
-      <td>6.0</td>
-      <td>7</td>
-      <td>2</td>
-      <td>28.57</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/dmu/201/ivy-gleeful-spellthief?utm_source=api" target="_blank">ivy, gleeful spellthief</a></td>
-      <td>GU</td>
-      <td>2.0</td>
-      <td>7</td>
-      <td>1</td>
-      <td>14.29</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/lcc/3/hakbal-of-the-surging-soul?utm_source=api" target="_blank">hakbal of the surging soul</a></td>
-      <td>GU</td>
-      <td>4.0</td>
-      <td>6</td>
-      <td>1</td>
-      <td>16.67</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/mkm/432/voja-jaws-of-the-conclave?utm_source=api" target="_blank">voja, jaws of the conclave</a></td>
-      <td>RGW</td>
-      <td>5.0</td>
-      <td>5</td>
-      <td>3</td>
-      <td>60.00</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/blc/356/flubs-the-fool?utm_source=api" target="_blank">flubs, the fool</a></td>
-      <td>GUR</td>
-      <td>3.0</td>
-      <td>4</td>
-      <td>2</td>
-      <td>50.00</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/onc/25/chiss-goria-forge-tyrant?utm_source=api" target="_blank">chiss-goria, forge tyrant</a></td>
-      <td>R</td>
-      <td>9.0</td>
-      <td>4</td>
-      <td>1</td>
-      <td>25.00</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/dsc/5/rendmaw-creaking-nest?utm_source=api" target="_blank">rendmaw, creaking nest</a></td>
-      <td>BG</td>
-      <td>5.0</td>
-      <td>3</td>
-      <td>1</td>
-      <td>33.33</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/cmm/353/the-scarab-god?utm_source=api" target="_blank">the scarab god</a></td>
-      <td>BU</td>
-      <td>5.0</td>
-      <td>3</td>
-      <td>1</td>
-      <td>33.33</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/afc/2/prosper-tome-bound?utm_source=api" target="_blank">prosper, tome-bound</a></td>
-      <td>BR</td>
-      <td>4.0</td>
-      <td>2</td>
-      <td>1</td>
-      <td>50.00</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/mkm/12/delney-streetwise-lookout?utm_source=api" target="_blank">delney, streetwise lookout</a></td>
-      <td>W</td>
-      <td>3.0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/pip/2/dogmeat-ever-loyal?utm_source=api" target="_blank">dogmeat, ever loyal</a></td>
-      <td>GRW</td>
-      <td>3.0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/cmm/343/kykar-winds-fury?utm_source=api" target="_blank">kykar, wind's fury</a></td>
-      <td>RUW</td>
-      <td>4.0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/c16/36/kynaios-and-tiro-of-meletis?utm_source=api" target="_blank">kynaios and tiro of meletis</a></td>
-      <td>RGWU</td>
-      <td>4.0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-  </tbody>
-</table>
-            </div>
-            
-            <div id="player-Emi" class="player-section hidden player-commander-section">
-                <h3>Comandanti di Emi</h3>
-                <table id='commanderStatsTable-Emi' class='display' border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th>Comandante</th>
-      <th>Colori</th>
-      <th>CMC</th>
-      <th>Utilizzi</th>
-      <th>Vittorie</th>
-      <th>Win Rate (%)</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><a href="https://scryfall.com/card/otj/226/rakdos-the-muscle?utm_source=api" target="_blank">rakdos, the muscle</a></td>
-      <td>BR</td>
-      <td>5.0</td>
-      <td>13</td>
-      <td>7</td>
-      <td>53.85</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/blb/227/muerra-trash-tactician?utm_source=api" target="_blank">muerra, trash tactician</a></td>
-      <td>GR</td>
-      <td>3.0</td>
-      <td>9</td>
-      <td>3</td>
-      <td>33.33</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/otj/237/vraska-the-silencer?utm_source=api" target="_blank">vraska, the silencer</a></td>
-      <td>BG</td>
-      <td>3.0</td>
-      <td>9</td>
-      <td>3</td>
-      <td>33.33</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/otj/196/bonny-pall-clearcutter?utm_source=api" target="_blank">bonny pall, clearcutter</a></td>
-      <td>GU</td>
-      <td>6.0</td>
-      <td>8</td>
-      <td>5</td>
-      <td>62.50</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/woc/1/tegwyll-duke-of-splendor?utm_source=api" target="_blank">tegwyll, duke of splendor</a></td>
-      <td>UB</td>
-      <td>3.0</td>
-      <td>6</td>
-      <td>2</td>
-      <td>33.33</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/ltc/1/%C3%A9owyn-shieldmaiden?utm_source=api" target="_blank">éowyn, shieldmaiden</a></td>
-      <td>URW</td>
-      <td>5.0</td>
-      <td>6</td>
-      <td>2</td>
-      <td>33.33</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/otj/230/satoru-the-infiltrator?utm_source=api" target="_blank">satoru, the infiltrator</a></td>
-      <td>{U}{B}</td>
-      <td>2.0</td>
-      <td>6</td>
-      <td>1</td>
-      <td>16.67</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/lcc/4/pantlaza-sun-favored?utm_source=api" target="_blank">pantlaza, sun-favored</a></td>
-      <td>RGW</td>
-      <td>5.0</td>
-      <td>5</td>
-      <td>2</td>
-      <td>40.00</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/otj/89/gisa-the-hellraiser?utm_source=api" target="_blank">gisa, the hellraiser</a></td>
-      <td>B</td>
-      <td>5.0</td>
-      <td>4</td>
-      <td>1</td>
-      <td>25.00</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/blb/132/dragonhawk-fates-tempest?utm_source=api" target="_blank">dragonhawk, fate's tempest</a></td>
-      <td>R</td>
-      <td>5.0</td>
-      <td>2</td>
-      <td>1</td>
-      <td>50.00</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/ltc/61/merry-warden-of-isengard?utm_source=api" target="_blank">merry, warden of isengard</a></td>
-      <td>GW</td>
-      <td>3.0</td>
-      <td>2</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/dsc/1/aminatou-veil-piercer?utm_source=api" target="_blank">aminatou, veil piercer</a></td>
-      <td>WUB</td>
-      <td>4.0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/dmr/206/zur-the-enchanter?utm_source=api" target="_blank">zur the enchanter</a></td>
-      <td>BUW</td>
-      <td>4.0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-  </tbody>
-</table>
-            </div>
-            
-            <div id="player-Gymbro" class="player-section hidden player-commander-section">
-                <h3>Comandanti di Gymbro</h3>
-                <table id='commanderStatsTable-Gymbro' class='display' border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th>Comandante</th>
-      <th>Colori</th>
-      <th>CMC</th>
-      <th>Utilizzi</th>
-      <th>Vittorie</th>
-      <th>Win Rate (%)</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><a href="https://scryfall.com/card/dsc/6/valgavoth-harrower-of-souls?utm_source=api" target="_blank">valgavoth, harrower of souls</a></td>
-      <td>BR</td>
-      <td>4.0</td>
-      <td>11</td>
-      <td>3</td>
-      <td>27.27</td>
-    </tr>
-    <tr>
-      <td><a href="Errore nel trovare il link per Frodo, Adventurous Hobbit // Sam, Loyal Attendant." target="_blank">Frodo, Adventurous Hobbit // Sam, Loyal Attendant</a></td>
-      <td>WB</td>
-      <td>2.0</td>
-      <td>9</td>
-      <td>5</td>
-      <td>55.56</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/clb/282/mahadi-emporium-master?utm_source=api" target="_blank">mahadi, emporium master</a></td>
-      <td>BR</td>
-      <td>3.0</td>
-      <td>9</td>
-      <td>1</td>
-      <td>11.11</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/snc/218/rocco-cabaretti-caterer?utm_source=api" target="_blank">rocco, cabaretti caterer</a></td>
-      <td>RGW</td>
-      <td>3.0</td>
-      <td>8</td>
-      <td>5</td>
-      <td>62.50</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/2x2/291/varina-lich-queen?utm_source=api" target="_blank">varina, lich queen</a></td>
-      <td>BUW</td>
-      <td>4.0</td>
-      <td>6</td>
-      <td>4</td>
-      <td>66.67</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/2xm/214/riku-of-two-reflections?utm_source=api" target="_blank">riku of two reflections</a></td>
-      <td>GUR</td>
-      <td>5.0</td>
-      <td>6</td>
-      <td>1</td>
-      <td>16.67</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/blb/217/helga-skittish-seer?utm_source=api" target="_blank">helga, skittish seer</a></td>
-      <td>GUW</td>
-      <td>3.0</td>
-      <td>5</td>
-      <td>1</td>
-      <td>20.00</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/cmm/130/urza-lord-high-artificer?utm_source=api" target="_blank">urza, lord high artificer</a></td>
-      <td>U</td>
-      <td>4.0</td>
-      <td>3</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/cmm/704/zhulodok-void-gorger?utm_source=api" target="_blank">zhulodok, void gorger</a></td>
-      <td>C</td>
-      <td>6.0</td>
-      <td>3</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/ltc/8/saruman-the-white-hand?utm_source=api" target="_blank">saruman, the white hand</a></td>
-      <td>UBR</td>
-      <td>4.0</td>
-      <td>2</td>
-      <td>1</td>
-      <td>50.00</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/clb/2/abdel-adrian-gorions-ward?utm_source=api" target="_blank">abdel adrian, gorion's ward</a></td>
-      <td>W</td>
-      <td>4.0</td>
-      <td>1</td>
-      <td>1</td>
-      <td>100.00</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/akh/207/temmet-vizier-of-naktamun?utm_source=api" target="_blank">temmet, vizier of naktamun</a></td>
-      <td>UW</td>
-      <td>2.0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-  </tbody>
-</table>
-            </div>
-            
-            <div id="player-Claudio" class="player-section hidden player-commander-section">
-                <h3>Comandanti di Claudio</h3>
-                <table id='commanderStatsTable-Claudio' class='display' border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th>Comandante</th>
-      <th>Colori</th>
-      <th>CMC</th>
-      <th>Utilizzi</th>
-      <th>Vittorie</th>
-      <th>Win Rate (%)</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><a href="https://scryfall.com/card/inr/11/archangel-avacyn-avacyn-the-purifier?utm_source=api" target="_blank">archangel avacyn // avacyn, the purifier</a></td>
-      <td>RW</td>
-      <td>5.0</td>
-      <td>18</td>
-      <td>3</td>
-      <td>16.67</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/dsc/133/braids-arisen-nightmare?utm_source=api" target="_blank">braids, arisen nightmare</a></td>
-      <td>B</td>
-      <td>3.0</td>
-      <td>13</td>
-      <td>3</td>
-      <td>23.08</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/one/23/mondrak-glory-dominus?utm_source=api" target="_blank">mondrak, glory dominus</a></td>
-      <td>W</td>
-      <td>4.0</td>
-      <td>8</td>
-      <td>3</td>
-      <td>37.50</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/dmc/176/zaxara-the-exemplary?utm_source=api" target="_blank">zaxara, the exemplary</a></td>
-      <td>BGU</td>
-      <td>4.0</td>
-      <td>7</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/pip/108/maccready-lamplight-mayor?utm_source=api" target="_blank">maccready, lamplight mayor</a></td>
-      <td>BW</td>
-      <td>2.0</td>
-      <td>6</td>
-      <td>1</td>
-      <td>16.67</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/m3c/3/satya-aetherflux-genius?utm_source=api" target="_blank">satya, aetherflux genius</a></td>
-      <td>URW</td>
-      <td>4.O</td>
-      <td>5</td>
-      <td>3</td>
-      <td>60.00</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/cmm/186/shirei-shizos-caretaker?utm_source=api" target="_blank">shirei, shizo's caretaker</a></td>
-      <td>B</td>
-      <td>5.0</td>
-      <td>5</td>
-      <td>1</td>
-      <td>20.00</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/fdn/204/krenko-mob-boss?utm_source=api" target="_blank">krenko, mob boss</a></td>
-      <td>R</td>
-      <td>4.0</td>
-      <td>4</td>
-      <td>2</td>
-      <td>50.00</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/drc/1/hashaton-scarabs-fist?utm_source=api" target="_blank">hashaton, scarab's fist</a></td>
-      <td>BUW</td>
-      <td>2.0</td>
-      <td>4</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/2x2/171/animar-soul-of-elements?utm_source=api" target="_blank">animar, soul of elements</a></td>
-      <td>GUR</td>
-      <td>3.0</td>
-      <td>3</td>
-      <td>1</td>
-      <td>33.33</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/cmr/362/wyleth-soul-of-steel?utm_source=api" target="_blank">wyleth, soul of steel</a></td>
-      <td>WR</td>
-      <td>3.0</td>
-      <td>3</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/clb/265/astarion-the-decadent?utm_source=api" target="_blank">astarion, the decadent</a></td>
-      <td>BW</td>
-      <td>6.0</td>
-      <td>2</td>
-      <td>1</td>
-      <td>50.00</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/stx/247/witherbloom-apprentice?utm_source=api" target="_blank">witherbloom apprentice</a></td>
-      <td>GB</td>
-      <td>2.0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-  </tbody>
-</table>
-            </div>
-            
-            <div id="player-Ettore" class="player-section hidden player-commander-section">
-                <h3>Comandanti di Ettore</h3>
-                <table id='commanderStatsTable-Ettore' class='display' border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th>Comandante</th>
-      <th>Colori</th>
-      <th>CMC</th>
-      <th>Utilizzi</th>
-      <th>Vittorie</th>
-      <th>Win Rate (%)</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><a href="https://scryfall.com/card/m3c/7/coram-the-undertaker?utm_source=api" target="_blank">coram, the undertaker</a></td>
-      <td>BGR</td>
-      <td>4.0</td>
-      <td>9</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/otj/220/marchesa-dealer-of-death?utm_source=api" target="_blank">marchesa, dealer of death</a></td>
-      <td>UBR</td>
-      <td>3.0</td>
-      <td>7</td>
-      <td>5</td>
-      <td>71.43</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/mh3/194/the-necrobloom?utm_source=api" target="_blank">the necrobloom</a></td>
-      <td>BGW</td>
-      <td>4.0</td>
-      <td>7</td>
-      <td>1</td>
-      <td>14.29</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/clb/292/raphael-fiendish-savior?utm_source=api" target="_blank">raphael, fiendish savior</a></td>
-      <td>BR</td>
-      <td>5.0</td>
-      <td>6</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/ltc/507/gandalf-of-the-secret-fire?utm_source=api" target="_blank">gandalf of the secret fire</a></td>
-      <td>URW</td>
-      <td>4.0</td>
-      <td>5</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/snc/210/ognis-the-dragons-lash?utm_source=api" target="_blank">ognis, the dragon's lash</a></td>
-      <td>BRG</td>
-      <td>4.0</td>
-      <td>5</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/dmu/228/zur-eternal-schemer?utm_source=api" target="_blank">zur, eternal schemer</a></td>
-      <td>WUB</td>
-      <td>3.0</td>
-      <td>5</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/2x2/216/ghave-guru-of-spores?utm_source=api" target="_blank">ghave, guru of spores</a></td>
-      <td>BGW</td>
-      <td>5.0</td>
-      <td>4</td>
-      <td>3</td>
-      <td>75.00</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/stx/253/codie-vociferous-codex?utm_source=api" target="_blank">codie, vociferous codex</a></td>
-      <td>C</td>
-      <td>3.0</td>
-      <td>4</td>
-      <td>1</td>
-      <td>25.00</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/jou/74/king-macar-the-gold-cursed?utm_source=api" target="_blank">king macar, the gold-cursed</a></td>
-      <td>B</td>
-      <td>4.0</td>
-      <td>4</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/mat/45/samut-vizier-of-naktamun?utm_source=api" target="_blank">samut, vizier of naktamun</a></td>
-      <td>GR</td>
-      <td>3.0</td>
-      <td>4</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/c20/7/gavi-nest-warden?utm_source=api" target="_blank">gavi, nest warden</a></td>
-      <td>URW</td>
-      <td>5.0</td>
-      <td>3</td>
-      <td>3</td>
-      <td>100.00</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/moc/10/shalai-and-hallar?utm_source=api" target="_blank">shalai and hallar</a></td>
-      <td>RGW</td>
-      <td>4.0</td>
-      <td>3</td>
-      <td>1</td>
-      <td>33.33</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/khm/200/aegar-the-freezing-flame?utm_source=api" target="_blank">aegar, the freezing flame</a></td>
-      <td>UR</td>
-      <td>3.0</td>
-      <td>3</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/ltc/492/aragorn-hornburg-hero?utm_source=api" target="_blank">aragorn, hornburg hero</a></td>
-      <td>RGW</td>
-      <td>4.0</td>
-      <td>2</td>
-      <td>1</td>
-      <td>50.00</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/clb/29/laezel-vlaakiths-champion?utm_source=api" target="_blank">lae'zel, vlaakith's champion</a></td>
-      <td>W</td>
-      <td>3.0</td>
-      <td>2</td>
-      <td>1</td>
-      <td>50.00</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/dmc/118/alesha-who-smiles-at-death?utm_source=api" target="_blank">alesha, who smiles at death</a></td>
-      <td>R</td>
-      <td>3.0</td>
-      <td>2</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/lci/240/sovereign-okinec-ahau?utm_source=api" target="_blank">sovereign okinec ahau</a></td>
-      <td>GW</td>
-      <td>4.0</td>
-      <td>2</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/mkm/241/vannifar-evolved-enigma?utm_source=api" target="_blank">vannifar, evolved enigma</a></td>
-      <td>GU</td>
-      <td>4.0</td>
-      <td>2</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/m20/220/yarok-the-desecrated?utm_source=api" target="_blank">yarok, the desecrated</a></td>
-      <td>BGU</td>
-      <td>5.0</td>
-      <td>2</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/snc/231/ziatora-the-incinerator?utm_source=api" target="_blank">ziatora, the incinerator</a></td>
-      <td>BGR</td>
-      <td>6.0</td>
-      <td>2</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/2xm/193/brudiclad-telchor-engineer?utm_source=api" target="_blank">brudiclad, telchor engineer</a></td>
-      <td>UR</td>
-      <td>6.0</td>
-      <td>1</td>
-      <td>1</td>
-      <td>100.00</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/clb/267/bane-lord-of-darkness?utm_source=api" target="_blank">bane, lord of darkness</a></td>
-      <td>BUW</td>
-      <td>4.0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/clb/29/laezel-vlaakiths-champion?utm_source=api" target="_blank">lae’zel, vlaakith's champion</a></td>
-      <td>W</td>
-      <td>3.0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/afr/28/oswald-fiddlebender?utm_source=api" target="_blank">oswald fiddlebender</a></td>
-      <td>W</td>
-      <td>2.0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/dmu/218/shanna-purifying-blade?utm_source=api" target="_blank">shanna, purifying blade</a></td>
-      <td>GUW</td>
-      <td>3.0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-  </tbody>
-</table>
-            </div>
-            
-            <div id="player-Luca" class="player-section hidden player-commander-section">
-                <h3>Comandanti di Luca</h3>
-                <table id='commanderStatsTable-Luca' class='display' border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th>Comandante</th>
-      <th>Colori</th>
-      <th>CMC</th>
-      <th>Utilizzi</th>
-      <th>Vittorie</th>
-      <th>Win Rate (%)</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><a href="https://scryfall.com/card/ltr/192/aragorn-the-uniter?utm_source=api" target="_blank">aragorn, the uniter</a></td>
-      <td>RGWU</td>
-      <td>4.0</td>
-      <td>11</td>
-      <td>3</td>
-      <td>27.27</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/cmm/339/hamza-guardian-of-arashin?utm_source=api" target="_blank">hamza, guardian of arashin</a></td>
-      <td>GW</td>
-      <td>6.0</td>
-      <td>10</td>
-      <td>3</td>
-      <td>30.00</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/ncc/325/alela-artful-provocateur?utm_source=api" target="_blank">alela, artful provocateur</a></td>
-      <td>WUB</td>
-      <td>4.0</td>
-      <td>8</td>
-      <td>4</td>
-      <td>50.00</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/mh3/186/genku-future-shaper?utm_source=api" target="_blank">genku, future shaper</a></td>
-      <td>WU</td>
-      <td>4.0</td>
-      <td>7</td>
-      <td>3</td>
-      <td>42.86</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/woe/202/eriette-of-the-charmed-apple?utm_source=api" target="_blank">eriette of the charmed apple</a></td>
-      <td>WB</td>
-      <td>3.0</td>
-      <td>5</td>
-      <td>2</td>
-      <td>40.00</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/dft/194/captain-howler-sea-scourge?utm_source=api" target="_blank">captain howler, sea scourge</a></td>
-      <td>RU</td>
-      <td>4.0</td>
-      <td>4</td>
-      <td>2</td>
-      <td>50.00</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/m3c/1/disa-the-restless?utm_source=api" target="_blank">disa the restless</a></td>
-      <td>BRG</td>
-      <td>5.0</td>
-      <td>2</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/stx/197/killian-ink-duelist?utm_source=api" target="_blank">killian, ink duelist</a></td>
-      <td>WB</td>
-      <td>2.0</td>
-      <td>2</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-  </tbody>
-</table>
-            </div>
-            
-            <div id="player-Jappy" class="player-section hidden player-commander-section">
-                <h3>Comandanti di Jappy</h3>
-                <table id='commanderStatsTable-Jappy' class='display' border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th>Comandante</th>
-      <th>Colori</th>
-      <th>CMC</th>
-      <th>Utilizzi</th>
-      <th>Vittorie</th>
-      <th>Win Rate (%)</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><a href="https://scryfall.com/card/snc/213/raffine-scheming-seer?utm_source=api" target="_blank">raffine, scheming seer</a></td>
-      <td>WUR</td>
-      <td>3.0</td>
-      <td>9</td>
-      <td>5</td>
-      <td>55.56</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/blb/205/baylen-the-haymaker?utm_source=api" target="_blank">baylen, the haymaker</a></td>
-      <td>RGW</td>
-      <td>3.0</td>
-      <td>9</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/moc/445/goro-goro-and-satoru?utm_source=api" target="_blank">goro-goro and satoru</a></td>
-      <td>UBR</td>
-      <td>3.0</td>
-      <td>7</td>
-      <td>1</td>
-      <td>14.29</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/2x2/201/doran-the-siege-tower?utm_source=api" target="_blank">doran, the siege tower</a></td>
-      <td>BGW</td>
-      <td>3.0</td>
-      <td>6</td>
-      <td>1</td>
-      <td>16.67</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/clb/289/nine-fingers-keene?utm_source=api" target="_blank">nine-fingers keene</a></td>
-      <td>BGU</td>
-      <td>4.0</td>
-      <td>5</td>
-      <td>3</td>
-      <td>60.00</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/dsk/120/valgavoth-terror-eater?utm_source=api" target="_blank">valgavoth, terror eater</a></td>
-      <td>B</td>
-      <td>9.0</td>
-      <td>5</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/inr/247/sigarda-host-of-herons?utm_source=api" target="_blank">sigarda, host of herons</a></td>
-      <td>GW</td>
-      <td>5.0</td>
-      <td>3</td>
-      <td>1</td>
-      <td>33.33</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/clb/646/captain-nghathrod?utm_source=api" target="_blank">captain n'ghathrod</a></td>
-      <td>UB</td>
-      <td>5.0</td>
-      <td>2</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/woe/202/eriette-of-the-charmed-apple?utm_source=api" target="_blank">eriette of the charmed apple</a></td>
-      <td>WB</td>
-      <td>3.0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/stx/149/extus-oriq-overlord-awaken-the-blood-avatar?utm_source=api" target="_blank">extus, oriq overlord // awaken the blood avatar</a></td>
-      <td>BRW</td>
-      <td>4.0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-  </tbody>
-</table>
-            </div>
-            
-            <div id="player-Sisco" class="player-section hidden player-commander-section">
-                <h3>Comandanti di Sisco</h3>
-                <table id='commanderStatsTable-Sisco' class='display' border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th>Comandante</th>
-      <th>Colori</th>
-      <th>CMC</th>
-      <th>Utilizzi</th>
-      <th>Vittorie</th>
-      <th>Win Rate (%)</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><a href="https://scryfall.com/card/cmr/197/rograkh-son-of-rohgahh?utm_source=api" target="_blank">rograkh, son of rohgahh</a></td>
-      <td>R</td>
-      <td>0.0</td>
-      <td>19</td>
-      <td>2</td>
-      <td>10.53</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/woe/137/imodane-the-pyrohammer?utm_source=api" target="_blank">imodane, the pyrohammer</a></td>
-      <td>R</td>
-      <td>4.0</td>
-      <td>18</td>
-      <td>4</td>
-      <td>22.22</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/moc/10/shalai-and-hallar?utm_source=api" target="_blank">shalai and hallar</a></td>
-      <td>RGW</td>
-      <td>4.0</td>
-      <td>15</td>
-      <td>3</td>
-      <td>20.00</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/40k/124/ghyrson-starn-kelermorph?utm_source=api" target="_blank">ghyrson starn, kelermorph</a></td>
-      <td>UR</td>
-      <td>3.0</td>
-      <td>14</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/cmm/937/sliver-hivelord?utm_source=api" target="_blank">sliver hivelord</a></td>
-      <td>BGRUW</td>
-      <td>5.0</td>
-      <td>13</td>
-      <td>2</td>
-      <td>15.38</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/pip/4/the-wise-mothman?utm_source=api" target="_blank">the wise mothman</a></td>
-      <td>BGU</td>
-      <td>4.0</td>
-      <td>7</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/nec/1/chishiro-the-shattered-blade?utm_source=api" target="_blank">chishiro, the shattered blade</a></td>
-      <td>GR</td>
-      <td>4.0</td>
-      <td>6</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/chk/124/marrow-gnawer?utm_source=api" target="_blank">marrow-gnawer</a></td>
-      <td>B</td>
-      <td>5.0</td>
-      <td>5</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/2xm/190/atraxa-praetors-voice?utm_source=api" target="_blank">atraxa, praetors' voice</a></td>
-      <td>GWUB</td>
-      <td>4.0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/40k/7/magus-lucea-kane?utm_source=api" target="_blank">magus lucea kane</a></td>
-      <td>GRU</td>
-      <td>4.0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-  </tbody>
-</table>
-            </div>
-            
-            <div id="player-Betto" class="player-section hidden player-commander-section">
-                <h3>Comandanti di Betto</h3>
-                <table id='commanderStatsTable-Betto' class='display' border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th>Comandante</th>
-      <th>Colori</th>
-      <th>CMC</th>
-      <th>Utilizzi</th>
-      <th>Vittorie</th>
-      <th>Win Rate (%)</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><a href="https://scryfall.com/card/rvr/193/karlov-of-the-ghost-council?utm_source=api" target="_blank">karlov of the ghost council</a></td>
-      <td>WB</td>
-      <td>2.0</td>
-      <td>4</td>
-      <td>1</td>
-      <td>25.0</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/mkc/213/koma-cosmos-serpent?utm_source=api" target="_blank">koma, cosmos serpent</a></td>
-      <td>GU</td>
-      <td>7.0</td>
-      <td>3</td>
-      <td>3</td>
-      <td>100.0</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/blb/49/eluge-the-shoreless-sea?utm_source=api" target="_blank">eluge, the shoreless sea</a></td>
-      <td>U</td>
-      <td>4.0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0.0</td>
-    </tr>
-  </tbody>
-</table>
-            </div>
-            
-            <div id="player-Luca-Proie" class="player-section hidden player-commander-section">
-                <h3>Comandanti di Luca Proie</h3>
-                <table id='commanderStatsTable-Luca-Proie' class='display' border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th>Comandante</th>
-      <th>Colori</th>
-      <th>CMC</th>
-      <th>Utilizzi</th>
-      <th>Vittorie</th>
-      <th>Win Rate (%)</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><a href="https://scryfall.com/card/m3c/1/disa-the-restless?utm_source=api" target="_blank">disa the restless</a></td>
-      <td>BRG</td>
-      <td>5.0</td>
-      <td>17</td>
-      <td>4</td>
-      <td>23.53</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/m3c/4/ulalek-fused-atrocity?utm_source=api" target="_blank">ulalek, fused atrocity</a></td>
-      <td>BGRUW</td>
-      <td>5.0</td>
-      <td>4</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-  </tbody>
-</table>
-            </div>
-            
-            <div id="player-Giulia" class="player-section hidden player-commander-section">
-                <h3>Comandanti di Giulia</h3>
-                <table id='commanderStatsTable-Giulia' class='display' border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th>Comandante</th>
-      <th>Colori</th>
-      <th>CMC</th>
-      <th>Utilizzi</th>
-      <th>Vittorie</th>
-      <th>Win Rate (%)</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><a href="https://scryfall.com/card/blc/3/ms-bumbleflower?utm_source=api" target="_blank">ms. bumbleflower</a></td>
-      <td>GWU</td>
-      <td>4.0</td>
-      <td>9</td>
-      <td>1</td>
-      <td>11.11</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/who/1/davros-dalek-creator?utm_source=api" target="_blank">davros, dalek creator</a></td>
-      <td>BRU</td>
-      <td>4.0</td>
-      <td>7</td>
-      <td>1</td>
-      <td>14.29</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/2xm/190/atraxa-praetors-voice?utm_source=api" target="_blank">atraxa, praetors' voice</a></td>
-      <td>GWUB</td>
-      <td>4.0</td>
-      <td>6</td>
-      <td>1</td>
-      <td>16.67</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/2xm/190/atraxa-praetors-voice?utm_source=api" target="_blank">atraxa, praetors’ voice</a></td>
-      <td>GWUB</td>
-      <td>4.0</td>
-      <td>3</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/one/196/atraxa-grand-unifier?utm_source=api" target="_blank">atraxa, grand unifier</a></td>
-      <td>GWUB</td>
-      <td>7.0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-  </tbody>
-</table>
-            </div>
-            
-            <div id="player-Paolo" class="player-section hidden player-commander-section">
-                <h3>Comandanti di Paolo</h3>
-                <table id='commanderStatsTable-Paolo' class='display' border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th>Comandante</th>
-      <th>Colori</th>
-      <th>CMC</th>
-      <th>Utilizzi</th>
-      <th>Vittorie</th>
-      <th>Win Rate (%)</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><a href="https://scryfall.com/card/blb/205/baylen-the-haymaker?utm_source=api" target="_blank">baylen, the haymaker</a></td>
-      <td>RGW</td>
-      <td>3.0</td>
-      <td>2</td>
-      <td>1</td>
-      <td>50.0</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/2x2/171/animar-soul-of-elements?utm_source=api" target="_blank">animar, soul of elements</a></td>
-      <td>GUR</td>
-      <td>3.0</td>
-      <td>1</td>
-      <td>1</td>
-      <td>100.0</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/ltc/498/galadriel-light-of-valinor?utm_source=api" target="_blank">galadriel, light of valinor</a></td>
-      <td>GUW</td>
-      <td>5.0</td>
-      <td>1</td>
-      <td>1</td>
-      <td>100.0</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/cmm/938/sythis-harvests-hand?utm_source=api" target="_blank">sythis, harvest's hand</a></td>
-      <td>GW</td>
-      <td>2.0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0.0</td>
-    </tr>
-  </tbody>
-</table>
-            </div>
-            
-            <div id="player-Pain" class="player-section hidden player-commander-section">
-                <h3>Comandanti di Pain</h3>
-                <table id='commanderStatsTable-Pain' class='display' border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th>Comandante</th>
-      <th>Colori</th>
-      <th>CMC</th>
-      <th>Utilizzi</th>
-      <th>Vittorie</th>
-      <th>Win Rate (%)</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><a href="https://scryfall.com/card/cmr/288/nymris-oonas-trickster?utm_source=api" target="_blank">nymris, oona's trickster</a></td>
-      <td>BU</td>
-      <td>5.0</td>
-      <td>8</td>
-      <td>2</td>
-      <td>25.0</td>
-    </tr>
-  </tbody>
-</table>
-            </div>
-            
-            <div id="player-Phyga" class="player-section hidden player-commander-section">
-                <h3>Comandanti di Phyga</h3>
-                <table id='commanderStatsTable-Phyga' class='display' border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th>Comandante</th>
-      <th>Colori</th>
-      <th>CMC</th>
-      <th>Utilizzi</th>
-      <th>Vittorie</th>
-      <th>Win Rate (%)</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><a href="https://scryfall.com/card/dmc/26/baru-wurmspeaker?utm_source=api" target="_blank">baru, wurmspeaker</a></td>
-      <td>G</td>
-      <td>4.0</td>
-      <td>9</td>
-      <td>2</td>
-      <td>22.22</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/stx/178/dina-soul-steeper?utm_source=api" target="_blank">dina, soul steeper</a></td>
-      <td>BG</td>
-      <td>2.0</td>
-      <td>2</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-  </tbody>
-</table>
-            </div>
-            
-            <div id="player-Andrea" class="player-section hidden player-commander-section">
-                <h3>Comandanti di Andrea</h3>
-                <table id='commanderStatsTable-Andrea' class='display' border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th>Comandante</th>
-      <th>Colori</th>
-      <th>CMC</th>
-      <th>Utilizzi</th>
-      <th>Vittorie</th>
-      <th>Win Rate (%)</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><a href="https://scryfall.com/card/cmm/342/karador-ghost-chieftain?utm_source=api" target="_blank">karador, ghost chieftain</a></td>
+      <td>karador, ghost chieftain</td>
       <td>BGW</td>
       <td>8.0</td>
       <td>5</td>
@@ -1848,144 +56,188 @@
     </tr>
   </tbody>
 </table>
-            </div>
-            
-            <div id="player-Gabriele" class="player-section hidden player-commander-section">
-                <h3>Comandanti di Gabriele</h3>
-                <table id='commanderStatsTable-Gabriele' class='display' border="1" class="dataframe">
+</div>
+
+<div id="player-Betto" class="player-section hidden player-commander-section">
+<h3>Comandanti di Betto</h3>
+<table class="dataframe display" id="commanderStatsTable-Betto">
   <thead>
     <tr style="text-align: right;">
       <th>Comandante</th>
       <th>Colori</th>
       <th>CMC</th>
-      <th>Utilizzi</th>
+      <th>Partite</th>
       <th>Vittorie</th>
-      <th>Win Rate (%)</th>
+      <th>Winrate (%)</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td><a href="https://scryfall.com/card/dds/41/zo-zu-the-punisher?utm_source=api" target="_blank">zo-zu the punisher</a></td>
-      <td>R</td>
-      <td>3.0</td>
-      <td>2</td>
+      <td>karlov of the ghost council</td>
+      <td>WB</td>
+      <td>2.0</td>
+      <td>4</td>
+      <td>1</td>
+      <td>25.0</td>
+    </tr>
+    <tr>
+      <td>koma, cosmos serpent</td>
+      <td>GU</td>
+      <td>7.0</td>
+      <td>3</td>
+      <td>3</td>
+      <td>100.0</td>
+    </tr>
+    <tr>
+      <td>eluge, the shoreless sea</td>
+      <td>U</td>
+      <td>4.0</td>
+      <td>1</td>
       <td>0</td>
       <td>0.0</td>
     </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/dmc/175/xyris-the-writhing-storm?utm_source=api" target="_blank">xyris, the writhing storm</a></td>
-      <td>GUR</td>
-      <td>5.0</td>
-      <td>1</td>
-      <td>1</td>
-      <td>100.0</td>
-    </tr>
   </tbody>
 </table>
-            </div>
-            
-            <div id="player-Lore" class="player-section hidden player-commander-section">
-                <h3>Comandanti di Lore</h3>
-                <table id='commanderStatsTable-Lore' class='display' border="1" class="dataframe">
+</div>
+
+<div id="player-Claudio" class="player-section hidden player-commander-section">
+<h3>Comandanti di Claudio</h3>
+<table class="dataframe display" id="commanderStatsTable-Claudio">
   <thead>
     <tr style="text-align: right;">
       <th>Comandante</th>
       <th>Colori</th>
       <th>CMC</th>
-      <th>Utilizzi</th>
+      <th>Partite</th>
       <th>Vittorie</th>
-      <th>Win Rate (%)</th>
+      <th>Winrate (%)</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td><a href="https://scryfall.com/card/dsc/170/ashaya-soul-of-the-wild?utm_source=api" target="_blank">ashaya, soul of the wild</a></td>
-      <td>G</td>
+      <td>archangel avacyn // avacyn, the purifier</td>
+      <td>RW</td>
       <td>5.0</td>
-      <td>1</td>
-      <td>1</td>
-      <td>100.0</td>
-    </tr>
-  </tbody>
-</table>
-            </div>
-            
-            <div id="player-Monta" class="player-section hidden player-commander-section">
-                <h3>Comandanti di Monta</h3>
-                <table id='commanderStatsTable-Monta' class='display' border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th>Comandante</th>
-      <th>Colori</th>
-      <th>CMC</th>
-      <th>Utilizzi</th>
-      <th>Vittorie</th>
-      <th>Win Rate (%)</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><a href="https://scryfall.com/card/fdn/247/tatyova-benthic-druid?utm_source=api" target="_blank">tatyova, benthic druid</a></td>
-      <td>GU</td>
-      <td>5.0</td>
-      <td>1</td>
-      <td>1</td>
-      <td>100.0</td>
+      <td>18</td>
+      <td>3</td>
+      <td>16.67</td>
     </tr>
     <tr>
-      <td><a href="https://scryfall.com/card/mh3/109/shilgengar-sire-of-famine?utm_source=api" target="_blank">shilgengar, sire of famine</a></td>
+      <td>braids, arisen nightmare</td>
+      <td>B</td>
+      <td>3.0</td>
+      <td>13</td>
+      <td>3</td>
+      <td>23.08</td>
+    </tr>
+    <tr>
+      <td>mondrak, glory dominus</td>
+      <td>W</td>
+      <td>4.0</td>
+      <td>8</td>
+      <td>3</td>
+      <td>37.50</td>
+    </tr>
+    <tr>
+      <td>zaxara, the exemplary</td>
+      <td>BGU</td>
+      <td>4.0</td>
+      <td>7</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>maccready, lamplight mayor</td>
+      <td>BW</td>
+      <td>2.0</td>
+      <td>6</td>
+      <td>1</td>
+      <td>16.67</td>
+    </tr>
+    <tr>
+      <td>shirei, shizo's caretaker</td>
       <td>B</td>
       <td>5.0</td>
+      <td>5</td>
+      <td>1</td>
+      <td>20.00</td>
+    </tr>
+    <tr>
+      <td>satya, aetherflux genius</td>
+      <td>URW</td>
+      <td>4.O</td>
+      <td>5</td>
+      <td>3</td>
+      <td>60.00</td>
+    </tr>
+    <tr>
+      <td>krenko, mob boss</td>
+      <td>R</td>
+      <td>4.0</td>
+      <td>4</td>
+      <td>2</td>
+      <td>50.00</td>
+    </tr>
+    <tr>
+      <td>hashaton, scarab's fist</td>
+      <td>BUW</td>
+      <td>2.0</td>
+      <td>4</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>wyleth, soul of steel</td>
+      <td>WR</td>
+      <td>3.0</td>
+      <td>3</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>animar, soul of elements</td>
+      <td>GUR</td>
+      <td>3.0</td>
+      <td>3</td>
+      <td>1</td>
+      <td>33.33</td>
+    </tr>
+    <tr>
+      <td>astarion, the decadent</td>
+      <td>BW</td>
+      <td>6.0</td>
+      <td>2</td>
+      <td>1</td>
+      <td>50.00</td>
+    </tr>
+    <tr>
+      <td>witherbloom apprentice</td>
+      <td>GB</td>
+      <td>2.0</td>
       <td>1</td>
       <td>0</td>
-      <td>0.0</td>
+      <td>0.00</td>
     </tr>
   </tbody>
 </table>
-            </div>
-            
-            <div id="player-nicolo" class="player-section hidden player-commander-section">
-                <h3>Comandanti di nicolo</h3>
-                <table id='commanderStatsTable-nicolo' class='display' border="1" class="dataframe">
+</div>
+
+<div id="player-Daniele" class="player-section hidden player-commander-section">
+<h3>Comandanti di Daniele</h3>
+<table class="dataframe display" id="commanderStatsTable-Daniele">
   <thead>
     <tr style="text-align: right;">
       <th>Comandante</th>
       <th>Colori</th>
       <th>CMC</th>
-      <th>Utilizzi</th>
+      <th>Partite</th>
       <th>Vittorie</th>
-      <th>Win Rate (%)</th>
+      <th>Winrate (%)</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td><a href="https://scryfall.com/card/lcc/4/pantlaza-sun-favored?utm_source=api" target="_blank">pantlaza, sun-favored</a></td>
-      <td>RGW</td>
-      <td>5.0</td>
-      <td>1</td>
-      <td>1</td>
-      <td>100.0</td>
-    </tr>
-  </tbody>
-</table>
-            </div>
-            
-            <div id="player-Daniele" class="player-section hidden player-commander-section">
-                <h3>Comandanti di Daniele</h3>
-                <table id='commanderStatsTable-Daniele' class='display' border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th>Comandante</th>
-      <th>Colori</th>
-      <th>CMC</th>
-      <th>Utilizzi</th>
-      <th>Vittorie</th>
-      <th>Win Rate (%)</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><a href="https://scryfall.com/card/m3c/3/satya-aetherflux-genius?utm_source=api" target="_blank">satya, aetherflux genius</a></td>
+      <td>satya, aetherflux genius</td>
       <td>URW</td>
       <td>4.O</td>
       <td>2</td>
@@ -1994,58 +246,220 @@
     </tr>
   </tbody>
 </table>
-            </div>
-            
-            <div id="player-Davide" class="player-section hidden player-commander-section">
-                <h3>Comandanti di Davide</h3>
-                <table id='commanderStatsTable-Davide' class='display' border="1" class="dataframe">
+</div>
+
+<div id="player-Davide" class="player-section hidden player-commander-section">
+<h3>Comandanti di Davide</h3>
+<table class="dataframe display" id="commanderStatsTable-Davide">
   <thead>
     <tr style="text-align: right;">
       <th>Comandante</th>
       <th>Colori</th>
       <th>CMC</th>
-      <th>Utilizzi</th>
+      <th>Partite</th>
       <th>Vittorie</th>
-      <th>Win Rate (%)</th>
+      <th>Winrate (%)</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td><a href="https://scryfall.com/card/lcc/2/clavile%C3%B1o-first-of-the-blessed?utm_source=api" target="_blank">clavileño, first of the blessed</a></td>
+      <td>satya, aetherflux genius</td>
+      <td>URW</td>
+      <td>4.O</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <td>clavileño, first of the blessed</td>
       <td>WB</td>
       <td>3.0</td>
       <td>1</td>
       <td>0</td>
       <td>0.0</td>
     </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/m3c/3/satya-aetherflux-genius?utm_source=api" target="_blank">satya, aetherflux genius</a></td>
-      <td>URW</td>
-      <td>4.O</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0.0</td>
-    </tr>
   </tbody>
 </table>
-            </div>
-            
-            <div id="player-Ema" class="player-section hidden player-commander-section">
-                <h3>Comandanti di Ema</h3>
-                <table id='commanderStatsTable-Ema' class='display' border="1" class="dataframe">
+</div>
+
+<div id="player-Don" class="player-section hidden player-commander-section">
+<h3>Comandanti di Don</h3>
+<table class="dataframe display" id="commanderStatsTable-Don">
   <thead>
     <tr style="text-align: right;">
       <th>Comandante</th>
       <th>Colori</th>
       <th>CMC</th>
-      <th>Utilizzi</th>
+      <th>Partite</th>
       <th>Vittorie</th>
-      <th>Win Rate (%)</th>
+      <th>Winrate (%)</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td><a href="https://scryfall.com/card/blb/204/alania-divergent-storm?utm_source=api" target="_blank">alania, divergent storm</a></td>
+      <td>toski, bearer of secrets</td>
+      <td>G</td>
+      <td>4.0</td>
+      <td>10</td>
+      <td>2</td>
+      <td>20.00</td>
+    </tr>
+    <tr>
+      <td>nahiri, forged in fury</td>
+      <td>RW</td>
+      <td>4.0</td>
+      <td>9</td>
+      <td>3</td>
+      <td>33.33</td>
+    </tr>
+    <tr>
+      <td>hashaton, scarab's fist</td>
+      <td>BUW</td>
+      <td>2.0</td>
+      <td>9</td>
+      <td>4</td>
+      <td>44.44</td>
+    </tr>
+    <tr>
+      <td>eluge, the shoreless sea</td>
+      <td>U</td>
+      <td>4.0</td>
+      <td>8</td>
+      <td>3</td>
+      <td>37.50</td>
+    </tr>
+    <tr>
+      <td>ivy, gleeful spellthief</td>
+      <td>GU</td>
+      <td>2.0</td>
+      <td>7</td>
+      <td>1</td>
+      <td>14.29</td>
+    </tr>
+    <tr>
+      <td>edgar markov</td>
+      <td>BRW</td>
+      <td>6.0</td>
+      <td>7</td>
+      <td>2</td>
+      <td>28.57</td>
+    </tr>
+    <tr>
+      <td>caesar, legion's emperor</td>
+      <td>RWB</td>
+      <td>4.0</td>
+      <td>7</td>
+      <td>2</td>
+      <td>28.57</td>
+    </tr>
+    <tr>
+      <td>hakbal of the surging soul</td>
+      <td>GU</td>
+      <td>4.0</td>
+      <td>6</td>
+      <td>1</td>
+      <td>16.67</td>
+    </tr>
+    <tr>
+      <td>voja, jaws of the conclave</td>
+      <td>RGW</td>
+      <td>5.0</td>
+      <td>5</td>
+      <td>3</td>
+      <td>60.00</td>
+    </tr>
+    <tr>
+      <td>flubs, the fool</td>
+      <td>GUR</td>
+      <td>3.0</td>
+      <td>4</td>
+      <td>2</td>
+      <td>50.00</td>
+    </tr>
+    <tr>
+      <td>chiss-goria, forge tyrant</td>
+      <td>R</td>
+      <td>9.0</td>
+      <td>4</td>
+      <td>1</td>
+      <td>25.00</td>
+    </tr>
+    <tr>
+      <td>the scarab god</td>
+      <td>BU</td>
+      <td>5.0</td>
+      <td>3</td>
+      <td>1</td>
+      <td>33.33</td>
+    </tr>
+    <tr>
+      <td>rendmaw, creaking nest</td>
+      <td>BG</td>
+      <td>5.0</td>
+      <td>3</td>
+      <td>1</td>
+      <td>33.33</td>
+    </tr>
+    <tr>
+      <td>prosper, tome-bound</td>
+      <td>BR</td>
+      <td>4.0</td>
+      <td>2</td>
+      <td>1</td>
+      <td>50.00</td>
+    </tr>
+    <tr>
+      <td>kynaios and tiro of meletis</td>
+      <td>RGWU</td>
+      <td>4.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>kykar, wind's fury</td>
+      <td>RUW</td>
+      <td>4.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>dogmeat, ever loyal</td>
+      <td>GRW</td>
+      <td>3.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>delney, streetwise lookout</td>
+      <td>W</td>
+      <td>3.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div id="player-Ema" class="player-section hidden player-commander-section">
+<h3>Comandanti di Ema</h3>
+<table class="dataframe display" id="commanderStatsTable-Ema">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Comandante</th>
+      <th>Colori</th>
+      <th>CMC</th>
+      <th>Partite</th>
+      <th>Vittorie</th>
+      <th>Winrate (%)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>alania, divergent storm</td>
       <td>UR</td>
       <td>5.0</td>
       <td>1</td>
@@ -2054,24 +468,818 @@
     </tr>
   </tbody>
 </table>
-            </div>
-            
-            <div id="player-Lucio" class="player-section hidden player-commander-section">
-                <h3>Comandanti di Lucio</h3>
-                <table id='commanderStatsTable-Lucio' class='display' border="1" class="dataframe">
+</div>
+
+<div id="player-Emi" class="player-section hidden player-commander-section">
+<h3>Comandanti di Emi</h3>
+<table class="dataframe display" id="commanderStatsTable-Emi">
   <thead>
     <tr style="text-align: right;">
       <th>Comandante</th>
       <th>Colori</th>
       <th>CMC</th>
-      <th>Utilizzi</th>
+      <th>Partite</th>
       <th>Vittorie</th>
-      <th>Win Rate (%)</th>
+      <th>Winrate (%)</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td><a href="https://scryfall.com/card/blc/3/ms-bumbleflower?utm_source=api" target="_blank">ms. bumbleflower</a></td>
+      <td>rakdos, the muscle</td>
+      <td>BR</td>
+      <td>5.0</td>
+      <td>13</td>
+      <td>7</td>
+      <td>53.85</td>
+    </tr>
+    <tr>
+      <td>vraska, the silencer</td>
+      <td>BG</td>
+      <td>3.0</td>
+      <td>9</td>
+      <td>3</td>
+      <td>33.33</td>
+    </tr>
+    <tr>
+      <td>muerra, trash tactician</td>
+      <td>GR</td>
+      <td>3.0</td>
+      <td>9</td>
+      <td>3</td>
+      <td>33.33</td>
+    </tr>
+    <tr>
+      <td>bonny pall, clearcutter</td>
+      <td>GU</td>
+      <td>6.0</td>
+      <td>8</td>
+      <td>5</td>
+      <td>62.50</td>
+    </tr>
+    <tr>
+      <td>éowyn, shieldmaiden</td>
+      <td>URW</td>
+      <td>5.0</td>
+      <td>6</td>
+      <td>2</td>
+      <td>33.33</td>
+    </tr>
+    <tr>
+      <td>tegwyll, duke of splendor</td>
+      <td>UB</td>
+      <td>3.0</td>
+      <td>6</td>
+      <td>2</td>
+      <td>33.33</td>
+    </tr>
+    <tr>
+      <td>satoru, the infiltrator</td>
+      <td>{U}{B}</td>
+      <td>2.0</td>
+      <td>6</td>
+      <td>1</td>
+      <td>16.67</td>
+    </tr>
+    <tr>
+      <td>pantlaza, sun-favored</td>
+      <td>RGW</td>
+      <td>5.0</td>
+      <td>5</td>
+      <td>2</td>
+      <td>40.00</td>
+    </tr>
+    <tr>
+      <td>gisa, the hellraiser</td>
+      <td>B</td>
+      <td>5.0</td>
+      <td>4</td>
+      <td>1</td>
+      <td>25.00</td>
+    </tr>
+    <tr>
+      <td>merry, warden of isengard</td>
+      <td>GW</td>
+      <td>3.0</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>dragonhawk, fate's tempest</td>
+      <td>R</td>
+      <td>5.0</td>
+      <td>2</td>
+      <td>1</td>
+      <td>50.00</td>
+    </tr>
+    <tr>
+      <td>zur the enchanter</td>
+      <td>BUW</td>
+      <td>4.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>aminatou, veil piercer</td>
+      <td>WUB</td>
+      <td>4.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div id="player-Ettore" class="player-section hidden player-commander-section">
+<h3>Comandanti di Ettore</h3>
+<table class="dataframe display" id="commanderStatsTable-Ettore">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Comandante</th>
+      <th>Colori</th>
+      <th>CMC</th>
+      <th>Partite</th>
+      <th>Vittorie</th>
+      <th>Winrate (%)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>coram, the undertaker</td>
+      <td>BGR</td>
+      <td>4.0</td>
+      <td>9</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>the necrobloom</td>
+      <td>BGW</td>
+      <td>4.0</td>
+      <td>7</td>
+      <td>1</td>
+      <td>14.29</td>
+    </tr>
+    <tr>
+      <td>marchesa, dealer of death</td>
+      <td>UBR</td>
+      <td>3.0</td>
+      <td>7</td>
+      <td>5</td>
+      <td>71.43</td>
+    </tr>
+    <tr>
+      <td>raphael, fiendish savior</td>
+      <td>BR</td>
+      <td>5.0</td>
+      <td>6</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>zur, eternal schemer</td>
+      <td>WUB</td>
+      <td>3.0</td>
+      <td>5</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>ognis, the dragon's lash</td>
+      <td>BRG</td>
+      <td>4.0</td>
+      <td>5</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>gandalf of the secret fire</td>
+      <td>URW</td>
+      <td>4.0</td>
+      <td>5</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>samut, vizier of naktamun</td>
+      <td>GR</td>
+      <td>3.0</td>
+      <td>4</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>king macar, the gold-cursed</td>
+      <td>B</td>
+      <td>4.0</td>
+      <td>4</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>ghave, guru of spores</td>
+      <td>BGW</td>
+      <td>5.0</td>
+      <td>4</td>
+      <td>3</td>
+      <td>75.00</td>
+    </tr>
+    <tr>
+      <td>codie, vociferous codex</td>
+      <td>C</td>
+      <td>3.0</td>
+      <td>4</td>
+      <td>1</td>
+      <td>25.00</td>
+    </tr>
+    <tr>
+      <td>shalai and hallar</td>
+      <td>RGW</td>
+      <td>4.0</td>
+      <td>3</td>
+      <td>1</td>
+      <td>33.33</td>
+    </tr>
+    <tr>
+      <td>gavi, nest warden</td>
+      <td>URW</td>
+      <td>5.0</td>
+      <td>3</td>
+      <td>3</td>
+      <td>100.00</td>
+    </tr>
+    <tr>
+      <td>aegar, the freezing flame</td>
+      <td>UR</td>
+      <td>3.0</td>
+      <td>3</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>ziatora, the incinerator</td>
+      <td>BGR</td>
+      <td>6.0</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>yarok, the desecrated</td>
+      <td>BGU</td>
+      <td>5.0</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>vannifar, evolved enigma</td>
+      <td>GU</td>
+      <td>4.0</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>sovereign okinec ahau</td>
+      <td>GW</td>
+      <td>4.0</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>lae'zel, vlaakith's champion</td>
+      <td>W</td>
+      <td>3.0</td>
+      <td>2</td>
+      <td>1</td>
+      <td>50.00</td>
+    </tr>
+    <tr>
+      <td>aragorn, hornburg hero</td>
+      <td>RGW</td>
+      <td>4.0</td>
+      <td>2</td>
+      <td>1</td>
+      <td>50.00</td>
+    </tr>
+    <tr>
+      <td>alesha, who smiles at death</td>
+      <td>R</td>
+      <td>3.0</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>shanna, purifying blade</td>
+      <td>GUW</td>
+      <td>3.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>oswald fiddlebender</td>
+      <td>W</td>
+      <td>2.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>lae’zel, vlaakith's champion</td>
+      <td>W</td>
+      <td>3.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>brudiclad, telchor engineer</td>
+      <td>UR</td>
+      <td>6.0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>100.00</td>
+    </tr>
+    <tr>
+      <td>bane, lord of darkness</td>
+      <td>BUW</td>
+      <td>4.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div id="player-Gabriele" class="player-section hidden player-commander-section">
+<h3>Comandanti di Gabriele</h3>
+<table class="dataframe display" id="commanderStatsTable-Gabriele">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Comandante</th>
+      <th>Colori</th>
+      <th>CMC</th>
+      <th>Partite</th>
+      <th>Vittorie</th>
+      <th>Winrate (%)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>zo-zu the punisher</td>
+      <td>R</td>
+      <td>3.0</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <td>xyris, the writhing storm</td>
+      <td>GUR</td>
+      <td>5.0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>100.0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div id="player-Giulia" class="player-section hidden player-commander-section">
+<h3>Comandanti di Giulia</h3>
+<table class="dataframe display" id="commanderStatsTable-Giulia">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Comandante</th>
+      <th>Colori</th>
+      <th>CMC</th>
+      <th>Partite</th>
+      <th>Vittorie</th>
+      <th>Winrate (%)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>ms. bumbleflower</td>
+      <td>GWU</td>
+      <td>4.0</td>
+      <td>9</td>
+      <td>1</td>
+      <td>11.11</td>
+    </tr>
+    <tr>
+      <td>davros, dalek creator</td>
+      <td>BRU</td>
+      <td>4.0</td>
+      <td>7</td>
+      <td>1</td>
+      <td>14.29</td>
+    </tr>
+    <tr>
+      <td>atraxa, praetors' voice</td>
+      <td>GWUB</td>
+      <td>4.0</td>
+      <td>6</td>
+      <td>1</td>
+      <td>16.67</td>
+    </tr>
+    <tr>
+      <td>atraxa, praetors’ voice</td>
+      <td>GWUB</td>
+      <td>4.0</td>
+      <td>3</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>atraxa, grand unifier</td>
+      <td>GWUB</td>
+      <td>7.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div id="player-Gymbro" class="player-section hidden player-commander-section">
+<h3>Comandanti di Gymbro</h3>
+<table class="dataframe display" id="commanderStatsTable-Gymbro">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Comandante</th>
+      <th>Colori</th>
+      <th>CMC</th>
+      <th>Partite</th>
+      <th>Vittorie</th>
+      <th>Winrate (%)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>valgavoth, harrower of souls</td>
+      <td>BR</td>
+      <td>4.0</td>
+      <td>11</td>
+      <td>3</td>
+      <td>27.27</td>
+    </tr>
+    <tr>
+      <td>mahadi, emporium master</td>
+      <td>BR</td>
+      <td>3.0</td>
+      <td>9</td>
+      <td>1</td>
+      <td>11.11</td>
+    </tr>
+    <tr>
+      <td>Frodo, Adventurous Hobbit // Sam, Loyal Attendant</td>
+      <td>WB</td>
+      <td>2.0</td>
+      <td>9</td>
+      <td>5</td>
+      <td>55.56</td>
+    </tr>
+    <tr>
+      <td>rocco, cabaretti caterer</td>
+      <td>RGW</td>
+      <td>3.0</td>
+      <td>8</td>
+      <td>5</td>
+      <td>62.50</td>
+    </tr>
+    <tr>
+      <td>varina, lich queen</td>
+      <td>BUW</td>
+      <td>4.0</td>
+      <td>6</td>
+      <td>4</td>
+      <td>66.67</td>
+    </tr>
+    <tr>
+      <td>riku of two reflections</td>
+      <td>GUR</td>
+      <td>5.0</td>
+      <td>6</td>
+      <td>1</td>
+      <td>16.67</td>
+    </tr>
+    <tr>
+      <td>helga, skittish seer</td>
+      <td>GUW</td>
+      <td>3.0</td>
+      <td>5</td>
+      <td>1</td>
+      <td>20.00</td>
+    </tr>
+    <tr>
+      <td>zhulodok, void gorger</td>
+      <td>C</td>
+      <td>6.0</td>
+      <td>3</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>urza, lord high artificer</td>
+      <td>U</td>
+      <td>4.0</td>
+      <td>3</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>saruman, the white hand</td>
+      <td>UBR</td>
+      <td>4.0</td>
+      <td>2</td>
+      <td>1</td>
+      <td>50.00</td>
+    </tr>
+    <tr>
+      <td>temmet, vizier of naktamun</td>
+      <td>UW</td>
+      <td>2.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>abdel adrian, gorion's ward</td>
+      <td>W</td>
+      <td>4.0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>100.00</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div id="player-Jappy" class="player-section hidden player-commander-section">
+<h3>Comandanti di Jappy</h3>
+<table class="dataframe display" id="commanderStatsTable-Jappy">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Comandante</th>
+      <th>Colori</th>
+      <th>CMC</th>
+      <th>Partite</th>
+      <th>Vittorie</th>
+      <th>Winrate (%)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>raffine, scheming seer</td>
+      <td>WUR</td>
+      <td>3.0</td>
+      <td>9</td>
+      <td>5</td>
+      <td>55.56</td>
+    </tr>
+    <tr>
+      <td>baylen, the haymaker</td>
+      <td>RGW</td>
+      <td>3.0</td>
+      <td>9</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>goro-goro and satoru</td>
+      <td>UBR</td>
+      <td>3.0</td>
+      <td>7</td>
+      <td>1</td>
+      <td>14.29</td>
+    </tr>
+    <tr>
+      <td>doran, the siege tower</td>
+      <td>BGW</td>
+      <td>3.0</td>
+      <td>6</td>
+      <td>1</td>
+      <td>16.67</td>
+    </tr>
+    <tr>
+      <td>valgavoth, terror eater</td>
+      <td>B</td>
+      <td>9.0</td>
+      <td>5</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>nine-fingers keene</td>
+      <td>BGU</td>
+      <td>4.0</td>
+      <td>5</td>
+      <td>3</td>
+      <td>60.00</td>
+    </tr>
+    <tr>
+      <td>sigarda, host of herons</td>
+      <td>GW</td>
+      <td>5.0</td>
+      <td>3</td>
+      <td>1</td>
+      <td>33.33</td>
+    </tr>
+    <tr>
+      <td>captain n'ghathrod</td>
+      <td>UB</td>
+      <td>5.0</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>extus, oriq overlord // awaken the blood avatar</td>
+      <td>BRW</td>
+      <td>4.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>eriette of the charmed apple</td>
+      <td>WB</td>
+      <td>3.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div id="player-Lore" class="player-section hidden player-commander-section">
+<h3>Comandanti di Lore</h3>
+<table class="dataframe display" id="commanderStatsTable-Lore">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Comandante</th>
+      <th>Colori</th>
+      <th>CMC</th>
+      <th>Partite</th>
+      <th>Vittorie</th>
+      <th>Winrate (%)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>ashaya, soul of the wild</td>
+      <td>G</td>
+      <td>5.0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>100.0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div id="player-Luca" class="player-section hidden player-commander-section">
+<h3>Comandanti di Luca</h3>
+<table class="dataframe display" id="commanderStatsTable-Luca">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Comandante</th>
+      <th>Colori</th>
+      <th>CMC</th>
+      <th>Partite</th>
+      <th>Vittorie</th>
+      <th>Winrate (%)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>aragorn, the uniter</td>
+      <td>RGWU</td>
+      <td>4.0</td>
+      <td>11</td>
+      <td>3</td>
+      <td>27.27</td>
+    </tr>
+    <tr>
+      <td>hamza, guardian of arashin</td>
+      <td>GW</td>
+      <td>6.0</td>
+      <td>10</td>
+      <td>3</td>
+      <td>30.00</td>
+    </tr>
+    <tr>
+      <td>alela, artful provocateur</td>
+      <td>WUB</td>
+      <td>4.0</td>
+      <td>8</td>
+      <td>4</td>
+      <td>50.00</td>
+    </tr>
+    <tr>
+      <td>genku, future shaper</td>
+      <td>WU</td>
+      <td>4.0</td>
+      <td>7</td>
+      <td>3</td>
+      <td>42.86</td>
+    </tr>
+    <tr>
+      <td>eriette of the charmed apple</td>
+      <td>WB</td>
+      <td>3.0</td>
+      <td>5</td>
+      <td>2</td>
+      <td>40.00</td>
+    </tr>
+    <tr>
+      <td>captain howler, sea scourge</td>
+      <td>RU</td>
+      <td>4.0</td>
+      <td>4</td>
+      <td>2</td>
+      <td>50.00</td>
+    </tr>
+    <tr>
+      <td>killian, ink duelist</td>
+      <td>WB</td>
+      <td>2.0</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>disa the restless</td>
+      <td>BRG</td>
+      <td>5.0</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div id="player-Luca-Proie" class="player-section hidden player-commander-section">
+<h3>Comandanti di Luca Proie</h3>
+<table class="dataframe display" id="commanderStatsTable-Luca-Proie">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Comandante</th>
+      <th>Colori</th>
+      <th>CMC</th>
+      <th>Partite</th>
+      <th>Vittorie</th>
+      <th>Winrate (%)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>disa the restless</td>
+      <td>BRG</td>
+      <td>5.0</td>
+      <td>17</td>
+      <td>4</td>
+      <td>23.53</td>
+    </tr>
+    <tr>
+      <td>ulalek, fused atrocity</td>
+      <td>BGRUW</td>
+      <td>5.0</td>
+      <td>4</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div id="player-Lucio" class="player-section hidden player-commander-section">
+<h3>Comandanti di Lucio</h3>
+<table class="dataframe display" id="commanderStatsTable-Lucio">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Comandante</th>
+      <th>Colori</th>
+      <th>CMC</th>
+      <th>Partite</th>
+      <th>Vittorie</th>
+      <th>Winrate (%)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>ms. bumbleflower</td>
       <td>GWU</td>
       <td>4.0</td>
       <td>6</td>
@@ -2079,7 +1287,7 @@
       <td>0.0</td>
     </tr>
     <tr>
-      <td><a href="https://scryfall.com/card/moc/10/shalai-and-hallar?utm_source=api" target="_blank">shalai and hallar</a></td>
+      <td>shalai and hallar</td>
       <td>RGW</td>
       <td>4.0</td>
       <td>2</td>
@@ -2087,7 +1295,7 @@
       <td>0.0</td>
     </tr>
     <tr>
-      <td><a href="https://scryfall.com/card/snc/193/jetmir-nexus-of-revels?utm_source=api" target="_blank">jetmir, nexus of revels</a></td>
+      <td>jetmir, nexus of revels</td>
       <td>GRW</td>
       <td>4.0</td>
       <td>1</td>
@@ -2096,32 +1304,24 @@
     </tr>
   </tbody>
 </table>
-            </div>
-            
-            <div id="player-Marco" class="player-section hidden player-commander-section">
-                <h3>Comandanti di Marco</h3>
-                <table id='commanderStatsTable-Marco' class='display' border="1" class="dataframe">
+</div>
+
+<div id="player-Marco" class="player-section hidden player-commander-section">
+<h3>Comandanti di Marco</h3>
+<table class="dataframe display" id="commanderStatsTable-Marco">
   <thead>
     <tr style="text-align: right;">
       <th>Comandante</th>
       <th>Colori</th>
       <th>CMC</th>
-      <th>Utilizzi</th>
+      <th>Partite</th>
       <th>Vittorie</th>
-      <th>Win Rate (%)</th>
+      <th>Winrate (%)</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td><a href="https://scryfall.com/card/fdn/2/arahbo-the-first-fang?utm_source=api" target="_blank">arahbo, the first fang</a></td>
-      <td>W</td>
-      <td>3.0</td>
-      <td>2</td>
-      <td>0</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/blc/1/bello-bard-of-the-brambles?utm_source=api" target="_blank">bello, bard of the brambles</a></td>
+      <td>bello, bard of the brambles</td>
       <td>GR</td>
       <td>3.0</td>
       <td>2</td>
@@ -2129,7 +1329,15 @@
       <td>0.0</td>
     </tr>
     <tr>
-      <td><a href="https://scryfall.com/card/cmm/361/the-ur-dragon?utm_source=api" target="_blank">the ur-dragon</a></td>
+      <td>arahbo, the first fang</td>
+      <td>W</td>
+      <td>3.0</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <td>the ur-dragon</td>
       <td>WUBRG</td>
       <td>9.0</td>
       <td>1</td>
@@ -2138,24 +1346,684 @@
     </tr>
   </tbody>
 </table>
-            </div>
-            
-            <div id="player-Simo" class="player-section hidden player-commander-section">
-                <h3>Comandanti di Simo</h3>
-                <table id='commanderStatsTable-Simo' class='display' border="1" class="dataframe">
+</div>
+
+<div id="player-Matte" class="player-section hidden player-commander-section">
+<h3>Comandanti di Matte</h3>
+<table class="dataframe display" id="commanderStatsTable-Matte">
   <thead>
     <tr style="text-align: right;">
       <th>Comandante</th>
       <th>Colori</th>
       <th>CMC</th>
-      <th>Utilizzi</th>
+      <th>Partite</th>
       <th>Vittorie</th>
-      <th>Win Rate (%)</th>
+      <th>Winrate (%)</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td><a href="https://scryfall.com/card/dmc/1/dihada-binder-of-wills?utm_source=api" target="_blank">dihada, binder of wills</a></td>
+      <td>dihada, binder of wills</td>
+      <td>RWB</td>
+      <td>4.0</td>
+      <td>15</td>
+      <td>11</td>
+      <td>73.33</td>
+    </tr>
+    <tr>
+      <td>jetmir, nexus of revels</td>
+      <td>GRW</td>
+      <td>4.0</td>
+      <td>9</td>
+      <td>7</td>
+      <td>77.78</td>
+    </tr>
+    <tr>
+      <td>mendicant core, guidelight</td>
+      <td>UW</td>
+      <td>2.0</td>
+      <td>8</td>
+      <td>3</td>
+      <td>37.50</td>
+    </tr>
+    <tr>
+      <td>tatyova, benthic druid</td>
+      <td>GU</td>
+      <td>5.0</td>
+      <td>5</td>
+      <td>3</td>
+      <td>60.00</td>
+    </tr>
+    <tr>
+      <td>sidar jabari of zhalfir</td>
+      <td>BUW</td>
+      <td>4.0</td>
+      <td>5</td>
+      <td>3</td>
+      <td>60.00</td>
+    </tr>
+    <tr>
+      <td>anzrag, the quake-mole</td>
+      <td>GR</td>
+      <td>4.0</td>
+      <td>5</td>
+      <td>2</td>
+      <td>40.00</td>
+    </tr>
+    <tr>
+      <td>omnath, locus of all</td>
+      <td>BGRUW</td>
+      <td>5.0</td>
+      <td>4</td>
+      <td>1</td>
+      <td>25.00</td>
+    </tr>
+    <tr>
+      <td>calix, guided by fate</td>
+      <td>GW</td>
+      <td>3.0</td>
+      <td>4</td>
+      <td>1</td>
+      <td>25.00</td>
+    </tr>
+    <tr>
+      <td>zacama, primal calamity</td>
+      <td>RGW</td>
+      <td>9.0</td>
+      <td>3</td>
+      <td>2</td>
+      <td>66.67</td>
+    </tr>
+    <tr>
+      <td>rograkh, son of rohgahh</td>
+      <td>R</td>
+      <td>0.0</td>
+      <td>3</td>
+      <td>2</td>
+      <td>66.67</td>
+    </tr>
+    <tr>
+      <td>millicent, restless revenant</td>
+      <td>WU</td>
+      <td>7.0</td>
+      <td>3</td>
+      <td>1</td>
+      <td>33.33</td>
+    </tr>
+    <tr>
+      <td>anhelo, the painter</td>
+      <td>UBR</td>
+      <td>3.0</td>
+      <td>3</td>
+      <td>1</td>
+      <td>33.33</td>
+    </tr>
+    <tr>
+      <td>kaima, the fractured calm</td>
+      <td>RG</td>
+      <td>4.0</td>
+      <td>2</td>
+      <td>1</td>
+      <td>50.00</td>
+    </tr>
+    <tr>
+      <td>delney, streetwise lookout</td>
+      <td>W</td>
+      <td>3.0</td>
+      <td>2</td>
+      <td>2</td>
+      <td>100.00</td>
+    </tr>
+    <tr>
+      <td>carmen, cruel skymarcher</td>
+      <td>BW</td>
+      <td>5.0</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>éowyn, shieldmaiden</td>
+      <td>URW</td>
+      <td>5.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>yidris, maelstrom wielder</td>
+      <td>UBRG</td>
+      <td>4.0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>100.00</td>
+    </tr>
+    <tr>
+      <td>witch-king, sky scourge</td>
+      <td>BR</td>
+      <td>7.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>winota, joiner of forces</td>
+      <td>RW</td>
+      <td>4.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>the wise mothman</td>
+      <td>BGU</td>
+      <td>4.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>szarekh, the silent king</td>
+      <td>B</td>
+      <td>4.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>sigarda, host of herons</td>
+      <td>GW</td>
+      <td>5.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>selvala, heart of the wilds</td>
+      <td>G</td>
+      <td>3.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>reyhan, last of the abzan</td>
+      <td>BGW</td>
+      <td>5.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>omnath, locus of creation</td>
+      <td>RGWU</td>
+      <td>4.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>niv-mizzet, parun</td>
+      <td>UR</td>
+      <td>6.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>miirym, sentinel wyrm</td>
+      <td>GUR</td>
+      <td>6.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>lagrella, the magpie</td>
+      <td>GWU</td>
+      <td>3.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>imoen, mystic trickster</td>
+      <td>U</td>
+      <td>3.0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>100.00</td>
+    </tr>
+    <tr>
+      <td>breya, etherium shaper</td>
+      <td>BRUW</td>
+      <td>4.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div id="player-Monta" class="player-section hidden player-commander-section">
+<h3>Comandanti di Monta</h3>
+<table class="dataframe display" id="commanderStatsTable-Monta">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Comandante</th>
+      <th>Colori</th>
+      <th>CMC</th>
+      <th>Partite</th>
+      <th>Vittorie</th>
+      <th>Winrate (%)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>tatyova, benthic druid</td>
+      <td>GU</td>
+      <td>5.0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>100.0</td>
+    </tr>
+    <tr>
+      <td>shilgengar, sire of famine</td>
+      <td>B</td>
+      <td>5.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0.0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div id="player-Pain" class="player-section hidden player-commander-section">
+<h3>Comandanti di Pain</h3>
+<table class="dataframe display" id="commanderStatsTable-Pain">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Comandante</th>
+      <th>Colori</th>
+      <th>CMC</th>
+      <th>Partite</th>
+      <th>Vittorie</th>
+      <th>Winrate (%)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>nymris, oona's trickster</td>
+      <td>BU</td>
+      <td>5.0</td>
+      <td>8</td>
+      <td>2</td>
+      <td>25.0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div id="player-Paolo" class="player-section hidden player-commander-section">
+<h3>Comandanti di Paolo</h3>
+<table class="dataframe display" id="commanderStatsTable-Paolo">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Comandante</th>
+      <th>Colori</th>
+      <th>CMC</th>
+      <th>Partite</th>
+      <th>Vittorie</th>
+      <th>Winrate (%)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>baylen, the haymaker</td>
+      <td>RGW</td>
+      <td>3.0</td>
+      <td>2</td>
+      <td>1</td>
+      <td>50.0</td>
+    </tr>
+    <tr>
+      <td>sythis, harvest's hand</td>
+      <td>GW</td>
+      <td>2.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <td>galadriel, light of valinor</td>
+      <td>GUW</td>
+      <td>5.0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>100.0</td>
+    </tr>
+    <tr>
+      <td>animar, soul of elements</td>
+      <td>GUR</td>
+      <td>3.0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>100.0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div id="player-Phyga" class="player-section hidden player-commander-section">
+<h3>Comandanti di Phyga</h3>
+<table class="dataframe display" id="commanderStatsTable-Phyga">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Comandante</th>
+      <th>Colori</th>
+      <th>CMC</th>
+      <th>Partite</th>
+      <th>Vittorie</th>
+      <th>Winrate (%)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>baru, wurmspeaker</td>
+      <td>G</td>
+      <td>4.0</td>
+      <td>9</td>
+      <td>2</td>
+      <td>22.22</td>
+    </tr>
+    <tr>
+      <td>dina, soul steeper</td>
+      <td>BG</td>
+      <td>2.0</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div id="player-Ru" class="player-section hidden player-commander-section">
+<h3>Comandanti di Ru</h3>
+<table class="dataframe display" id="commanderStatsTable-Ru">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Comandante</th>
+      <th>Colori</th>
+      <th>CMC</th>
+      <th>Partite</th>
+      <th>Vittorie</th>
+      <th>Winrate (%)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>bello, bard of the brambles</td>
+      <td>GR</td>
+      <td>3.0</td>
+      <td>12</td>
+      <td>4</td>
+      <td>33.33</td>
+    </tr>
+    <tr>
+      <td>kasla, the broken halo</td>
+      <td>URW</td>
+      <td>6.0</td>
+      <td>7</td>
+      <td>2</td>
+      <td>28.57</td>
+    </tr>
+    <tr>
+      <td>ratadrabik of urborg</td>
+      <td>BW</td>
+      <td>4.0</td>
+      <td>6</td>
+      <td>2</td>
+      <td>33.33</td>
+    </tr>
+    <tr>
+      <td>storm, force of nature</td>
+      <td>GUR</td>
+      <td>4.0</td>
+      <td>5</td>
+      <td>1</td>
+      <td>20.00</td>
+    </tr>
+    <tr>
+      <td>xantcha, sleeper agent</td>
+      <td>BR</td>
+      <td>3.0</td>
+      <td>4</td>
+      <td>2</td>
+      <td>50.00</td>
+    </tr>
+    <tr>
+      <td>tergrid, god of fright // tergrid's lantern</td>
+      <td>B</td>
+      <td>5.0</td>
+      <td>4</td>
+      <td>2</td>
+      <td>50.00</td>
+    </tr>
+    <tr>
+      <td>pearl-ear, imperial advisor</td>
+      <td>B</td>
+      <td>3.0</td>
+      <td>4</td>
+      <td>2</td>
+      <td>50.00</td>
+    </tr>
+    <tr>
+      <td>nekusar, the mindrazer</td>
+      <td>UBR</td>
+      <td>5.0</td>
+      <td>4</td>
+      <td>2</td>
+      <td>50.00</td>
+    </tr>
+    <tr>
+      <td>kenessos, priest of thassa</td>
+      <td>U</td>
+      <td>2.0</td>
+      <td>4</td>
+      <td>2</td>
+      <td>50.00</td>
+    </tr>
+    <tr>
+      <td>esika, god of the tree // the prismatic bridge</td>
+      <td>GWUBR</td>
+      <td>7.0</td>
+      <td>4</td>
+      <td>1</td>
+      <td>25.00</td>
+    </tr>
+    <tr>
+      <td>tivit, seller of secrets</td>
+      <td>BUW</td>
+      <td>6.0</td>
+      <td>3</td>
+      <td>1</td>
+      <td>33.33</td>
+    </tr>
+    <tr>
+      <td>thalia and the gitrog monster</td>
+      <td>WBG</td>
+      <td>5.0</td>
+      <td>3</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>pantlaza, sun-favored</td>
+      <td>RGW</td>
+      <td>5.0</td>
+      <td>3</td>
+      <td>2</td>
+      <td>66.67</td>
+    </tr>
+    <tr>
+      <td>omo, queen of vesuva</td>
+      <td>GU</td>
+      <td>3.0</td>
+      <td>3</td>
+      <td>1</td>
+      <td>33.33</td>
+    </tr>
+    <tr>
+      <td>hazel of the rootbloom</td>
+      <td>GB</td>
+      <td>4.0</td>
+      <td>3</td>
+      <td>1</td>
+      <td>33.33</td>
+    </tr>
+    <tr>
+      <td>Winter, Misanthropic Guide</td>
+      <td>BRG</td>
+      <td>4.0</td>
+      <td>3</td>
+      <td>1</td>
+      <td>33.33</td>
+    </tr>
+    <tr>
+      <td>winter, misanthropic guide</td>
+      <td>BRG</td>
+      <td>4.0</td>
+      <td>2</td>
+      <td>1</td>
+      <td>50.00</td>
+    </tr>
+    <tr>
+      <td>urza, lord high artificer</td>
+      <td>U</td>
+      <td>4.0</td>
+      <td>2</td>
+      <td>1</td>
+      <td>50.00</td>
+    </tr>
+    <tr>
+      <td>the infamous cruelclaw</td>
+      <td>BR</td>
+      <td>3.0</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>satoru umezawa</td>
+      <td>BU</td>
+      <td>3.0</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>queen marchesa</td>
+      <td>BRW</td>
+      <td>4.0</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>esika, god of the tree</td>
+      <td>GWUBR</td>
+      <td>7.0</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>abdel adrian, gorion's ward</td>
+      <td>W</td>
+      <td>4.0</td>
+      <td>2</td>
+      <td>2</td>
+      <td>100.00</td>
+    </tr>
+    <tr>
+      <td>yusri, fortune's flame</td>
+      <td>UR</td>
+      <td>3.0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>100.00</td>
+    </tr>
+    <tr>
+      <td>ojer axonil, deepest might // temple of power</td>
+      <td>R</td>
+      <td>4.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>muldrotha, the gravetide</td>
+      <td>BGU</td>
+      <td>6.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>morska, undersea sleuth</td>
+      <td>GUW</td>
+      <td>3.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>dogmeat, ever loyal</td>
+      <td>GRW</td>
+      <td>3.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>caesar, legion's emperor</td>
+      <td>RWB</td>
+      <td>4.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>Sythis, Harvest's Hand</td>
+      <td>GW</td>
+      <td>2.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div id="player-Simo" class="player-section hidden player-commander-section">
+<h3>Comandanti di Simo</h3>
+<table class="dataframe display" id="commanderStatsTable-Simo">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Comandante</th>
+      <th>Colori</th>
+      <th>CMC</th>
+      <th>Partite</th>
+      <th>Vittorie</th>
+      <th>Winrate (%)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>dihada, binder of wills</td>
       <td>RWB</td>
       <td>4.0</td>
       <td>2</td>
@@ -2163,41 +2031,139 @@
       <td>0.0</td>
     </tr>
     <tr>
-      <td><a href="https://scryfall.com/card/one/196/atraxa-grand-unifier?utm_source=api" target="_blank">atraxa, grand unifier</a></td>
-      <td>GWUB</td>
-      <td>7.0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <td><a href="https://scryfall.com/card/mh2/151/chatterfang-squirrel-general?utm_source=api" target="_blank">chatterfang, squirrel general</a></td>
+      <td>chatterfang, squirrel general</td>
       <td>G</td>
       <td>3.0</td>
       <td>1</td>
       <td>0</td>
       <td>0.0</td>
     </tr>
+    <tr>
+      <td>atraxa, grand unifier</td>
+      <td>GWUB</td>
+      <td>7.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0.0</td>
+    </tr>
   </tbody>
 </table>
-            </div>
-            
-            <div id="player-nico-gym" class="player-section hidden player-commander-section">
-                <h3>Comandanti di nico gym</h3>
-                <table id='commanderStatsTable-nico-gym' class='display' border="1" class="dataframe">
+</div>
+
+<div id="player-Sisco" class="player-section hidden player-commander-section">
+<h3>Comandanti di Sisco</h3>
+<table class="dataframe display" id="commanderStatsTable-Sisco">
   <thead>
     <tr style="text-align: right;">
       <th>Comandante</th>
       <th>Colori</th>
       <th>CMC</th>
-      <th>Utilizzi</th>
+      <th>Partite</th>
       <th>Vittorie</th>
-      <th>Win Rate (%)</th>
+      <th>Winrate (%)</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td><a href="https://scryfall.com/card/brc/2/urza-chief-artificer?utm_source=api" target="_blank">urza, chief artificer</a></td>
+      <td>rograkh, son of rohgahh</td>
+      <td>R</td>
+      <td>0.0</td>
+      <td>19</td>
+      <td>2</td>
+      <td>10.53</td>
+    </tr>
+    <tr>
+      <td>imodane, the pyrohammer</td>
+      <td>R</td>
+      <td>4.0</td>
+      <td>18</td>
+      <td>4</td>
+      <td>22.22</td>
+    </tr>
+    <tr>
+      <td>shalai and hallar</td>
+      <td>RGW</td>
+      <td>4.0</td>
+      <td>15</td>
+      <td>3</td>
+      <td>20.00</td>
+    </tr>
+    <tr>
+      <td>ghyrson starn, kelermorph</td>
+      <td>UR</td>
+      <td>3.0</td>
+      <td>14</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>sliver hivelord</td>
+      <td>BGRUW</td>
+      <td>5.0</td>
+      <td>13</td>
+      <td>2</td>
+      <td>15.38</td>
+    </tr>
+    <tr>
+      <td>the wise mothman</td>
+      <td>BGU</td>
+      <td>4.0</td>
+      <td>7</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>chishiro, the shattered blade</td>
+      <td>GR</td>
+      <td>4.0</td>
+      <td>6</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>marrow-gnawer</td>
+      <td>B</td>
+      <td>5.0</td>
+      <td>5</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>magus lucea kane</td>
+      <td>GRU</td>
+      <td>4.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>atraxa, praetors' voice</td>
+      <td>GWUB</td>
+      <td>4.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div id="player-nico-gym" class="player-section hidden player-commander-section">
+<h3>Comandanti di nico gym</h3>
+<table class="dataframe display" id="commanderStatsTable-nico-gym">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Comandante</th>
+      <th>Colori</th>
+      <th>CMC</th>
+      <th>Partite</th>
+      <th>Vittorie</th>
+      <th>Winrate (%)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>urza, chief artificer</td>
       <td>BUW</td>
       <td>6.0</td>
       <td>1</td>
@@ -2206,24 +2172,50 @@
     </tr>
   </tbody>
 </table>
-            </div>
-            
-            <div id="player-simone" class="player-section hidden player-commander-section">
-                <h3>Comandanti di simone</h3>
-                <table id='commanderStatsTable-simone' class='display' border="1" class="dataframe">
+</div>
+
+<div id="player-nicolo" class="player-section hidden player-commander-section">
+<h3>Comandanti di nicolo</h3>
+<table class="dataframe display" id="commanderStatsTable-nicolo">
   <thead>
     <tr style="text-align: right;">
       <th>Comandante</th>
       <th>Colori</th>
       <th>CMC</th>
-      <th>Utilizzi</th>
+      <th>Partite</th>
       <th>Vittorie</th>
-      <th>Win Rate (%)</th>
+      <th>Winrate (%)</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td><a href="https://scryfall.com/card/drc/3/saheeli-radiant-creator?utm_source=api" target="_blank">saheeli, radiant creator</a></td>
+      <td>pantlaza, sun-favored</td>
+      <td>RGW</td>
+      <td>5.0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>100.0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div id="player-simone" class="player-section hidden player-commander-section">
+<h3>Comandanti di simone</h3>
+<table class="dataframe display" id="commanderStatsTable-simone">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Comandante</th>
+      <th>Colori</th>
+      <th>CMC</th>
+      <th>Partite</th>
+      <th>Vittorie</th>
+      <th>Winrate (%)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>saheeli, radiant creator</td>
       <td>GRU</td>
       <td>4.0</td>
       <td>1</td>
@@ -2232,405 +2224,423 @@
     </tr>
   </tbody>
 </table>
-            </div>
-            
-            </div>
+</div>
 
-            <h2>Colori Più Utilizzati</h2>
-            <table id='colorStatsTable' class='display' border="1" class="dataframe">
+<h2>Colori Più Utilizzati</h2>
+<table class="dataframe display" id="colorStatsTable">
   <thead>
     <tr style="text-align: right;">
       <th>Colore</th>
-      <th>Conteggio</th>
+      <th>Utilizzi</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>R</td>
-      <td>480</td>
+      <td>RGW</td>
+      <td>58</td>
     </tr>
     <tr>
-      <td>W</td>
-      <td>425</td>
+      <td>R</td>
+      <td>55</td>
+    </tr>
+    <tr>
+      <td>BR</td>
+      <td>48</td>
     </tr>
     <tr>
       <td>B</td>
-      <td>417</td>
+      <td>46</td>
+    </tr>
+    <tr>
+      <td>GR</td>
+      <td>38</td>
+    </tr>
+    <tr>
+      <td>GU</td>
+      <td>35</td>
+    </tr>
+    <tr>
+      <td>URW</td>
+      <td>30</td>
+    </tr>
+    <tr>
+      <td>BUW</td>
+      <td>30</td>
+    </tr>
+    <tr>
+      <td>BRG</td>
+      <td>29</td>
+    </tr>
+    <tr>
+      <td>RW</td>
+      <td>28</td>
+    </tr>
+    <tr>
+      <td>RWB</td>
+      <td>25</td>
+    </tr>
+    <tr>
+      <td>GW</td>
+      <td>24</td>
+    </tr>
+    <tr>
+      <td>UBR</td>
+      <td>23</td>
+    </tr>
+    <tr>
+      <td>BGW</td>
+      <td>23</td>
+    </tr>
+    <tr>
+      <td>BGU</td>
+      <td>23</td>
+    </tr>
+    <tr>
+      <td>WB</td>
+      <td>22</td>
     </tr>
     <tr>
       <td>G</td>
-      <td>399</td>
+      <td>22</td>
+    </tr>
+    <tr>
+      <td>UR</td>
+      <td>21</td>
+    </tr>
+    <tr>
+      <td>GUR</td>
+      <td>21</td>
+    </tr>
+    <tr>
+      <td>BGRUW</td>
+      <td>21</td>
+    </tr>
+    <tr>
+      <td>W</td>
+      <td>20</td>
     </tr>
     <tr>
       <td>U</td>
-      <td>364</td>
+      <td>19</td>
+    </tr>
+    <tr>
+      <td>GWU</td>
+      <td>16</td>
+    </tr>
+    <tr>
+      <td>BW</td>
+      <td>16</td>
+    </tr>
+    <tr>
+      <td>WUB</td>
+      <td>14</td>
+    </tr>
+    <tr>
+      <td>BG</td>
+      <td>14</td>
+    </tr>
+    <tr>
+      <td>RGWU</td>
+      <td>13</td>
+    </tr>
+    <tr>
+      <td>BU</td>
+      <td>13</td>
+    </tr>
+    <tr>
+      <td>GWUB</td>
+      <td>12</td>
+    </tr>
+    <tr>
+      <td>GRW</td>
+      <td>12</td>
+    </tr>
+    <tr>
+      <td>BGR</td>
+      <td>11</td>
+    </tr>
+    <tr>
+      <td>WU</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>BRW</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>WUR</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <td>UW</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <td>UB</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <td>GUW</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <td>C</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <td>BRU</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <td>{U}{B}</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <td>GWUBR</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <td>RU</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <td>GB</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <td>WR</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>WBG</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>RG</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>GRU</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>WUBRG</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>UBRG</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>RUW</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>BRUW</td>
+      <td>1</td>
     </tr>
   </tbody>
 </table>
-
-            <h2>Statistiche dei Giocatori</h2>
-            <table id='playerStatsTable' class='display' border="1" class="dataframe">
+<h2>Statistiche dei Giocatori</h2>
+<table class="dataframe display" id="playerStatsTable">
   <thead>
     <tr style="text-align: right;">
       <th>Giocatore</th>
       <th>Partite</th>
       <th>Vittorie</th>
-      <th>Win Rate (%)</th>
-      <th>CMC Medio</th>
-      <th>Comandanti Giocati</th>
-      <th>Comandante Più Usato</th>
-      <th>Partite con Comandante Più Usato</th>
+      <th>Winrate (%)</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>Matte</td>
-      <td>88</td>
-      <td>42</td>
-      <td>47.73</td>
-      <td>4.06</td>
-      <td>30</td>
-      <td><a href="https://scryfall.com/card/dmc/1/dihada-binder-of-wills?utm_source=api" target="_blank">dihada, binder of wills</a></td>
-      <td>15</td>
-    </tr>
-    <tr>
-      <td>Ru</td>
-      <td>93</td>
-      <td>31</td>
-      <td>33.33</td>
-      <td>4.15</td>
-      <td>30</td>
-      <td><a href="https://scryfall.com/card/blc/1/bello-bard-of-the-brambles?utm_source=api" target="_blank">bello, bard of the brambles</a></td>
-      <td>12</td>
-    </tr>
-    <tr>
-      <td>Don</td>
-      <td>88</td>
-      <td>27</td>
-      <td>30.68</td>
-      <td>4.08</td>
-      <td>18</td>
-      <td><a href="https://scryfall.com/card/mkc/191/toski-bearer-of-secrets?utm_source=api" target="_blank">toski, bearer of secrets</a></td>
-      <td>10</td>
-    </tr>
-    <tr>
-      <td>Emi</td>
-      <td>72</td>
-      <td>27</td>
-      <td>37.50</td>
-      <td>4.11</td>
-      <td>13</td>
-      <td><a href="https://scryfall.com/card/otj/226/rakdos-the-muscle?utm_source=api" target="_blank">rakdos, the muscle</a></td>
-      <td>13</td>
-    </tr>
-    <tr>
-      <td>Gymbro</td>
-      <td>64</td>
-      <td>22</td>
-      <td>34.38</td>
-      <td>3.53</td>
-      <td>12</td>
-      <td><a href="https://scryfall.com/card/dsc/6/valgavoth-harrower-of-souls?utm_source=api" target="_blank">valgavoth, harrower of souls</a></td>
-      <td>11</td>
-    </tr>
-    <tr>
-      <td>Claudio</td>
-      <td>79</td>
-      <td>18</td>
-      <td>22.78</td>
-      <td>3.82</td>
-      <td>13</td>
-      <td><a href="https://scryfall.com/card/inr/11/archangel-avacyn-avacyn-the-purifier?utm_source=api" target="_blank">archangel avacyn // avacyn, the purifier</a></td>
-      <td>18</td>
-    </tr>
-    <tr>
-      <td>Ettore</td>
-      <td>88</td>
-      <td>17</td>
-      <td>19.32</td>
-      <td>3.89</td>
-      <td>26</td>
-      <td><a href="https://scryfall.com/card/m3c/7/coram-the-undertaker?utm_source=api" target="_blank">coram, the undertaker</a></td>
-      <td>9</td>
-    </tr>
-    <tr>
-      <td>Luca</td>
-      <td>49</td>
-      <td>17</td>
-      <td>34.69</td>
-      <td>4.27</td>
-      <td>8</td>
-      <td><a href="https://scryfall.com/card/ltr/192/aragorn-the-uniter?utm_source=api" target="_blank">aragorn, the uniter</a></td>
-      <td>11</td>
-    </tr>
-    <tr>
-      <td>Jappy</td>
-      <td>48</td>
-      <td>11</td>
-      <td>22.92</td>
-      <td>3.96</td>
-      <td>10</td>
-      <td><a href="https://scryfall.com/card/snc/213/raffine-scheming-seer?utm_source=api" target="_blank">raffine, scheming seer</a></td>
-      <td>9</td>
-    </tr>
-    <tr>
-      <td>Sisco</td>
-      <td>99</td>
-      <td>11</td>
-      <td>11.11</td>
-      <td>3.27</td>
-      <td>10</td>
-      <td><a href="https://scryfall.com/card/cmr/197/rograkh-son-of-rohgahh?utm_source=api" target="_blank">rograkh, son of rohgahh</a></td>
-      <td>19</td>
+      <td>Andrea</td>
+      <td>5</td>
+      <td>1</td>
+      <td>20.00</td>
     </tr>
     <tr>
       <td>Betto</td>
       <td>8</td>
       <td>4</td>
       <td>50.00</td>
-      <td>4.13</td>
-      <td>3</td>
-      <td><a href="https://scryfall.com/card/rvr/193/karlov-of-the-ghost-council?utm_source=api" target="_blank">karlov of the ghost council</a></td>
-      <td>4</td>
     </tr>
     <tr>
-      <td>Luca Proie</td>
-      <td>21</td>
-      <td>4</td>
-      <td>19.05</td>
-      <td>5.00</td>
-      <td>2</td>
-      <td><a href="https://scryfall.com/card/m3c/1/disa-the-restless?utm_source=api" target="_blank">disa the restless</a></td>
-      <td>17</td>
-    </tr>
-    <tr>
-      <td>Giulia</td>
-      <td>26</td>
-      <td>3</td>
-      <td>11.54</td>
-      <td>4.12</td>
-      <td>5</td>
-      <td><a href="https://scryfall.com/card/blc/3/ms-bumbleflower?utm_source=api" target="_blank">ms. bumbleflower</a></td>
-      <td>9</td>
-    </tr>
-    <tr>
-      <td>Paolo</td>
-      <td>5</td>
-      <td>3</td>
-      <td>60.00</td>
-      <td>3.20</td>
-      <td>4</td>
-      <td><a href="https://scryfall.com/card/blb/205/baylen-the-haymaker?utm_source=api" target="_blank">baylen, the haymaker</a></td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <td>Pain</td>
-      <td>8</td>
-      <td>2</td>
-      <td>25.00</td>
-      <td>5.00</td>
-      <td>1</td>
-      <td><a href="https://scryfall.com/card/cmr/288/nymris-oonas-trickster?utm_source=api" target="_blank">nymris, oona's trickster</a></td>
-      <td>8</td>
-    </tr>
-    <tr>
-      <td>Phyga</td>
-      <td>11</td>
-      <td>2</td>
-      <td>18.18</td>
-      <td>3.64</td>
-      <td>2</td>
-      <td><a href="https://scryfall.com/card/dmc/26/baru-wurmspeaker?utm_source=api" target="_blank">baru, wurmspeaker</a></td>
-      <td>9</td>
-    </tr>
-    <tr>
-      <td>Andrea</td>
-      <td>5</td>
-      <td>1</td>
-      <td>20.00</td>
-      <td>8.00</td>
-      <td>1</td>
-      <td><a href="https://scryfall.com/card/cmm/342/karador-ghost-chieftain?utm_source=api" target="_blank">karador, ghost chieftain</a></td>
-      <td>5</td>
-    </tr>
-    <tr>
-      <td>Gabriele</td>
-      <td>3</td>
-      <td>1</td>
-      <td>33.33</td>
-      <td>3.67</td>
-      <td>2</td>
-      <td><a href="https://scryfall.com/card/dds/41/zo-zu-the-punisher?utm_source=api" target="_blank">zo-zu the punisher</a></td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <td>Lore</td>
-      <td>1</td>
-      <td>1</td>
-      <td>100.00</td>
-      <td>5.00</td>
-      <td>1</td>
-      <td><a href="https://scryfall.com/card/dsc/170/ashaya-soul-of-the-wild?utm_source=api" target="_blank">ashaya, soul of the wild</a></td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>Monta</td>
-      <td>2</td>
-      <td>1</td>
-      <td>50.00</td>
-      <td>5.00</td>
-      <td>2</td>
-      <td><a href="https://scryfall.com/card/fdn/247/tatyova-benthic-druid?utm_source=api" target="_blank">tatyova, benthic druid</a></td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>nicolo</td>
-      <td>1</td>
-      <td>1</td>
-      <td>100.00</td>
-      <td>5.00</td>
-      <td>1</td>
-      <td><a href="https://scryfall.com/card/lcc/4/pantlaza-sun-favored?utm_source=api" target="_blank">pantlaza, sun-favored</a></td>
-      <td>1</td>
+      <td>Claudio</td>
+      <td>79</td>
+      <td>18</td>
+      <td>22.78</td>
     </tr>
     <tr>
       <td>Daniele</td>
       <td>2</td>
       <td>0</td>
       <td>0.00</td>
-      <td>4.00</td>
-      <td>1</td>
-      <td><a href="https://scryfall.com/card/m3c/3/satya-aetherflux-genius?utm_source=api" target="_blank">satya, aetherflux genius</a></td>
-      <td>2</td>
     </tr>
     <tr>
       <td>Davide</td>
       <td>2</td>
       <td>0</td>
       <td>0.00</td>
-      <td>3.50</td>
-      <td>2</td>
-      <td><a href="https://scryfall.com/card/m3c/3/satya-aetherflux-genius?utm_source=api" target="_blank">satya, aetherflux genius</a></td>
-      <td>1</td>
+    </tr>
+    <tr>
+      <td>Don</td>
+      <td>88</td>
+      <td>27</td>
+      <td>30.68</td>
     </tr>
     <tr>
       <td>Ema</td>
       <td>1</td>
       <td>0</td>
       <td>0.00</td>
-      <td>5.00</td>
+    </tr>
+    <tr>
+      <td>Emi</td>
+      <td>72</td>
+      <td>27</td>
+      <td>37.50</td>
+    </tr>
+    <tr>
+      <td>Ettore</td>
+      <td>88</td>
+      <td>17</td>
+      <td>19.32</td>
+    </tr>
+    <tr>
+      <td>Gabriele</td>
+      <td>3</td>
       <td>1</td>
-      <td><a href="https://scryfall.com/card/blb/204/alania-divergent-storm?utm_source=api" target="_blank">alania, divergent storm</a></td>
+      <td>33.33</td>
+    </tr>
+    <tr>
+      <td>Giulia</td>
+      <td>26</td>
+      <td>3</td>
+      <td>11.54</td>
+    </tr>
+    <tr>
+      <td>Gymbro</td>
+      <td>64</td>
+      <td>22</td>
+      <td>34.38</td>
+    </tr>
+    <tr>
+      <td>Jappy</td>
+      <td>48</td>
+      <td>11</td>
+      <td>22.92</td>
+    </tr>
+    <tr>
+      <td>Lore</td>
       <td>1</td>
+      <td>1</td>
+      <td>100.00</td>
+    </tr>
+    <tr>
+      <td>Luca</td>
+      <td>49</td>
+      <td>17</td>
+      <td>34.69</td>
+    </tr>
+    <tr>
+      <td>Luca Proie</td>
+      <td>21</td>
+      <td>4</td>
+      <td>19.05</td>
     </tr>
     <tr>
       <td>Lucio</td>
       <td>9</td>
       <td>0</td>
       <td>0.00</td>
-      <td>4.00</td>
-      <td>3</td>
-      <td><a href="https://scryfall.com/card/blc/3/ms-bumbleflower?utm_source=api" target="_blank">ms. bumbleflower</a></td>
-      <td>6</td>
     </tr>
     <tr>
       <td>Marco</td>
       <td>5</td>
       <td>0</td>
       <td>0.00</td>
-      <td>4.20</td>
-      <td>3</td>
-      <td><a href="https://scryfall.com/card/blc/1/bello-bard-of-the-brambles?utm_source=api" target="_blank">bello, bard of the brambles</a></td>
+    </tr>
+    <tr>
+      <td>Matte</td>
+      <td>88</td>
+      <td>42</td>
+      <td>47.73</td>
+    </tr>
+    <tr>
+      <td>Monta</td>
       <td>2</td>
+      <td>1</td>
+      <td>50.00</td>
+    </tr>
+    <tr>
+      <td>Pain</td>
+      <td>8</td>
+      <td>2</td>
+      <td>25.00</td>
+    </tr>
+    <tr>
+      <td>Paolo</td>
+      <td>5</td>
+      <td>3</td>
+      <td>60.00</td>
+    </tr>
+    <tr>
+      <td>Phyga</td>
+      <td>11</td>
+      <td>2</td>
+      <td>18.18</td>
+    </tr>
+    <tr>
+      <td>Ru</td>
+      <td>93</td>
+      <td>31</td>
+      <td>33.33</td>
     </tr>
     <tr>
       <td>Simo</td>
       <td>4</td>
       <td>0</td>
       <td>0.00</td>
-      <td>4.50</td>
-      <td>3</td>
-      <td><a href="https://scryfall.com/card/dmc/1/dihada-binder-of-wills?utm_source=api" target="_blank">dihada, binder of wills</a></td>
-      <td>2</td>
+    </tr>
+    <tr>
+      <td>Sisco</td>
+      <td>99</td>
+      <td>11</td>
+      <td>11.11</td>
     </tr>
     <tr>
       <td>nico gym</td>
       <td>1</td>
       <td>0</td>
       <td>0.00</td>
-      <td>6.00</td>
+    </tr>
+    <tr>
+      <td>nicolo</td>
       <td>1</td>
-      <td><a href="https://scryfall.com/card/brc/2/urza-chief-artificer?utm_source=api" target="_blank">urza, chief artificer</a></td>
       <td>1</td>
+      <td>100.00</td>
     </tr>
     <tr>
       <td>simone</td>
       <td>1</td>
       <td>0</td>
       <td>0.00</td>
-      <td>4.00</td>
-      <td>1</td>
-      <td><a href="https://scryfall.com/card/drc/3/saheeli-radiant-creator?utm_source=api" target="_blank">saheeli, radiant creator</a></td>
-      <td>1</td>
     </tr>
   </tbody>
 </table>
-
-            <h2>Statistiche dei Comandanti</h2>
-            <table id='commanderStatsTable' class='display' border="1" class="dataframe">
+<h2>Statistiche dei Comandanti</h2>
+<table class="dataframe display" id="commanderStatsTable">
   <thead>
     <tr style="text-align: right;">
       <th>Comandante</th>
-      <th>Utilizzi</th>
+      <th>Partite</th>
       <th>Vittorie</th>
-      <th>Win Rate (%)</th>
+      <th>Winrate (%)</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>abdel adrian, gorion's ward</td>
-      <td>3</td>
-      <td>3</td>
-      <td>100.00</td>
-    </tr>
-    <tr>
-      <td>ashaya, soul of the wild</td>
-      <td>1</td>
-      <td>1</td>
-      <td>100.00</td>
-    </tr>
-    <tr>
-      <td>brudiclad, telchor engineer</td>
-      <td>1</td>
-      <td>1</td>
-      <td>100.00</td>
-    </tr>
-    <tr>
-      <td>galadriel, light of valinor</td>
-      <td>1</td>
-      <td>1</td>
-      <td>100.00</td>
-    </tr>
-    <tr>
-      <td>gavi, nest warden</td>
-      <td>3</td>
-      <td>3</td>
-      <td>100.00</td>
-    </tr>
-    <tr>
-      <td>imoen, mystic trickster</td>
-      <td>1</td>
-      <td>1</td>
-      <td>100.00</td>
-    </tr>
-    <tr>
-      <td>koma, cosmos serpent</td>
-      <td>3</td>
-      <td>3</td>
-      <td>100.00</td>
-    </tr>
-    <tr>
-      <td>xyris, the writhing storm</td>
+      <td>yusri, fortune's flame</td>
       <td>1</td>
       <td>1</td>
       <td>100.00</td>
@@ -2642,9 +2652,51 @@
       <td>100.00</td>
     </tr>
     <tr>
-      <td>yusri, fortune's flame</td>
+      <td>xyris, the writhing storm</td>
       <td>1</td>
       <td>1</td>
+      <td>100.00</td>
+    </tr>
+    <tr>
+      <td>koma, cosmos serpent</td>
+      <td>3</td>
+      <td>3</td>
+      <td>100.00</td>
+    </tr>
+    <tr>
+      <td>imoen, mystic trickster</td>
+      <td>1</td>
+      <td>1</td>
+      <td>100.00</td>
+    </tr>
+    <tr>
+      <td>gavi, nest warden</td>
+      <td>3</td>
+      <td>3</td>
+      <td>100.00</td>
+    </tr>
+    <tr>
+      <td>galadriel, light of valinor</td>
+      <td>1</td>
+      <td>1</td>
+      <td>100.00</td>
+    </tr>
+    <tr>
+      <td>brudiclad, telchor engineer</td>
+      <td>1</td>
+      <td>1</td>
+      <td>100.00</td>
+    </tr>
+    <tr>
+      <td>ashaya, soul of the wild</td>
+      <td>1</td>
+      <td>1</td>
+      <td>100.00</td>
+    </tr>
+    <tr>
+      <td>abdel adrian, gorion's ward</td>
+      <td>3</td>
+      <td>3</td>
       <td>100.00</td>
     </tr>
     <tr>
@@ -2666,15 +2718,9 @@
       <td>70.00</td>
     </tr>
     <tr>
-      <td>delney, streetwise lookout</td>
+      <td>zacama, primal calamity</td>
       <td>3</td>
       <td>2</td>
-      <td>66.67</td>
-    </tr>
-    <tr>
-      <td>tatyova, benthic druid</td>
-      <td>6</td>
-      <td>4</td>
       <td>66.67</td>
     </tr>
     <tr>
@@ -2684,7 +2730,13 @@
       <td>66.67</td>
     </tr>
     <tr>
-      <td>zacama, primal calamity</td>
+      <td>tatyova, benthic druid</td>
+      <td>6</td>
+      <td>4</td>
+      <td>66.67</td>
+    </tr>
+    <tr>
+      <td>delney, streetwise lookout</td>
       <td>3</td>
       <td>2</td>
       <td>66.67</td>
@@ -2696,19 +2748,19 @@
       <td>64.71</td>
     </tr>
     <tr>
-      <td>bonny pall, clearcutter</td>
-      <td>8</td>
-      <td>5</td>
-      <td>62.50</td>
-    </tr>
-    <tr>
       <td>rocco, cabaretti caterer</td>
       <td>8</td>
       <td>5</td>
       <td>62.50</td>
     </tr>
     <tr>
-      <td>nine-fingers keene</td>
+      <td>bonny pall, clearcutter</td>
+      <td>8</td>
+      <td>5</td>
+      <td>62.50</td>
+    </tr>
+    <tr>
+      <td>voja, jaws of the conclave</td>
       <td>5</td>
       <td>3</td>
       <td>60.00</td>
@@ -2720,13 +2772,13 @@
       <td>60.00</td>
     </tr>
     <tr>
-      <td>voja, jaws of the conclave</td>
+      <td>nine-fingers keene</td>
       <td>5</td>
       <td>3</td>
       <td>60.00</td>
     </tr>
     <tr>
-      <td>Frodo, Adventurous Hobbit // Sam, Loyal Attendant</td>
+      <td>raffine, scheming seer</td>
       <td>9</td>
       <td>5</td>
       <td>55.56</td>
@@ -2738,7 +2790,7 @@
       <td>55.56</td>
     </tr>
     <tr>
-      <td>raffine, scheming seer</td>
+      <td>Frodo, Adventurous Hobbit // Sam, Loyal Attendant</td>
       <td>9</td>
       <td>5</td>
       <td>55.56</td>
@@ -2750,97 +2802,7 @@
       <td>53.85</td>
     </tr>
     <tr>
-      <td>alela, artful provocateur</td>
-      <td>8</td>
-      <td>4</td>
-      <td>50.00</td>
-    </tr>
-    <tr>
-      <td>animar, soul of elements</td>
-      <td>4</td>
-      <td>2</td>
-      <td>50.00</td>
-    </tr>
-    <tr>
-      <td>aragorn, hornburg hero</td>
-      <td>2</td>
-      <td>1</td>
-      <td>50.00</td>
-    </tr>
-    <tr>
-      <td>astarion, the decadent</td>
-      <td>2</td>
-      <td>1</td>
-      <td>50.00</td>
-    </tr>
-    <tr>
-      <td>captain howler, sea scourge</td>
-      <td>4</td>
-      <td>2</td>
-      <td>50.00</td>
-    </tr>
-    <tr>
-      <td>dragonhawk, fate's tempest</td>
-      <td>2</td>
-      <td>1</td>
-      <td>50.00</td>
-    </tr>
-    <tr>
-      <td>flubs, the fool</td>
-      <td>4</td>
-      <td>2</td>
-      <td>50.00</td>
-    </tr>
-    <tr>
-      <td>kaima, the fractured calm</td>
-      <td>2</td>
-      <td>1</td>
-      <td>50.00</td>
-    </tr>
-    <tr>
-      <td>kenessos, priest of thassa</td>
-      <td>4</td>
-      <td>2</td>
-      <td>50.00</td>
-    </tr>
-    <tr>
-      <td>krenko, mob boss</td>
-      <td>4</td>
-      <td>2</td>
-      <td>50.00</td>
-    </tr>
-    <tr>
-      <td>lae'zel, vlaakith's champion</td>
-      <td>2</td>
-      <td>1</td>
-      <td>50.00</td>
-    </tr>
-    <tr>
-      <td>nekusar, the mindrazer</td>
-      <td>4</td>
-      <td>2</td>
-      <td>50.00</td>
-    </tr>
-    <tr>
-      <td>pearl-ear, imperial advisor</td>
-      <td>4</td>
-      <td>2</td>
-      <td>50.00</td>
-    </tr>
-    <tr>
-      <td>prosper, tome-bound</td>
-      <td>2</td>
-      <td>1</td>
-      <td>50.00</td>
-    </tr>
-    <tr>
-      <td>saruman, the white hand</td>
-      <td>2</td>
-      <td>1</td>
-      <td>50.00</td>
-    </tr>
-    <tr>
-      <td>tergrid, god of fright // tergrid's lantern</td>
+      <td>xantcha, sleeper agent</td>
       <td>4</td>
       <td>2</td>
       <td>50.00</td>
@@ -2852,9 +2814,99 @@
       <td>50.00</td>
     </tr>
     <tr>
-      <td>xantcha, sleeper agent</td>
+      <td>tergrid, god of fright // tergrid's lantern</td>
       <td>4</td>
       <td>2</td>
+      <td>50.00</td>
+    </tr>
+    <tr>
+      <td>saruman, the white hand</td>
+      <td>2</td>
+      <td>1</td>
+      <td>50.00</td>
+    </tr>
+    <tr>
+      <td>prosper, tome-bound</td>
+      <td>2</td>
+      <td>1</td>
+      <td>50.00</td>
+    </tr>
+    <tr>
+      <td>pearl-ear, imperial advisor</td>
+      <td>4</td>
+      <td>2</td>
+      <td>50.00</td>
+    </tr>
+    <tr>
+      <td>nekusar, the mindrazer</td>
+      <td>4</td>
+      <td>2</td>
+      <td>50.00</td>
+    </tr>
+    <tr>
+      <td>lae'zel, vlaakith's champion</td>
+      <td>2</td>
+      <td>1</td>
+      <td>50.00</td>
+    </tr>
+    <tr>
+      <td>krenko, mob boss</td>
+      <td>4</td>
+      <td>2</td>
+      <td>50.00</td>
+    </tr>
+    <tr>
+      <td>kenessos, priest of thassa</td>
+      <td>4</td>
+      <td>2</td>
+      <td>50.00</td>
+    </tr>
+    <tr>
+      <td>kaima, the fractured calm</td>
+      <td>2</td>
+      <td>1</td>
+      <td>50.00</td>
+    </tr>
+    <tr>
+      <td>flubs, the fool</td>
+      <td>4</td>
+      <td>2</td>
+      <td>50.00</td>
+    </tr>
+    <tr>
+      <td>dragonhawk, fate's tempest</td>
+      <td>2</td>
+      <td>1</td>
+      <td>50.00</td>
+    </tr>
+    <tr>
+      <td>captain howler, sea scourge</td>
+      <td>4</td>
+      <td>2</td>
+      <td>50.00</td>
+    </tr>
+    <tr>
+      <td>astarion, the decadent</td>
+      <td>2</td>
+      <td>1</td>
+      <td>50.00</td>
+    </tr>
+    <tr>
+      <td>aragorn, hornburg hero</td>
+      <td>2</td>
+      <td>1</td>
+      <td>50.00</td>
+    </tr>
+    <tr>
+      <td>animar, soul of elements</td>
+      <td>4</td>
+      <td>2</td>
+      <td>50.00</td>
+    </tr>
+    <tr>
+      <td>alela, artful provocateur</td>
+      <td>8</td>
+      <td>4</td>
       <td>50.00</td>
     </tr>
     <tr>
@@ -2870,7 +2922,7 @@
       <td>40.00</td>
     </tr>
     <tr>
-      <td>mendicant core, guidelight</td>
+      <td>satya, aetherflux genius</td>
       <td>8</td>
       <td>3</td>
       <td>37.50</td>
@@ -2882,73 +2934,25 @@
       <td>37.50</td>
     </tr>
     <tr>
-      <td>satya, aetherflux genius</td>
+      <td>mendicant core, guidelight</td>
       <td>8</td>
       <td>3</td>
       <td>37.50</td>
     </tr>
     <tr>
-      <td>Winter, Misanthropic Guide</td>
-      <td>3</td>
-      <td>1</td>
-      <td>33.33</td>
-    </tr>
-    <tr>
-      <td>anhelo, the painter</td>
-      <td>3</td>
-      <td>1</td>
-      <td>33.33</td>
-    </tr>
-    <tr>
-      <td>eluge, the shoreless sea</td>
+      <td>vraska, the silencer</td>
       <td>9</td>
       <td>3</td>
       <td>33.33</td>
     </tr>
     <tr>
-      <td>eriette of the charmed apple</td>
-      <td>6</td>
-      <td>2</td>
-      <td>33.33</td>
-    </tr>
-    <tr>
-      <td>hazel of the rootbloom</td>
+      <td>tivit, seller of secrets</td>
       <td>3</td>
       <td>1</td>
       <td>33.33</td>
     </tr>
     <tr>
-      <td>millicent, restless revenant</td>
-      <td>3</td>
-      <td>1</td>
-      <td>33.33</td>
-    </tr>
-    <tr>
-      <td>muerra, trash tactician</td>
-      <td>9</td>
-      <td>3</td>
-      <td>33.33</td>
-    </tr>
-    <tr>
-      <td>nahiri, forged in fury</td>
-      <td>9</td>
-      <td>3</td>
-      <td>33.33</td>
-    </tr>
-    <tr>
-      <td>omo, queen of vesuva</td>
-      <td>3</td>
-      <td>1</td>
-      <td>33.33</td>
-    </tr>
-    <tr>
-      <td>ratadrabik of urborg</td>
-      <td>6</td>
-      <td>2</td>
-      <td>33.33</td>
-    </tr>
-    <tr>
-      <td>rendmaw, creaking nest</td>
+      <td>the scarab god</td>
       <td>3</td>
       <td>1</td>
       <td>33.33</td>
@@ -2960,21 +2964,69 @@
       <td>33.33</td>
     </tr>
     <tr>
-      <td>the scarab god</td>
+      <td>rendmaw, creaking nest</td>
       <td>3</td>
       <td>1</td>
       <td>33.33</td>
     </tr>
     <tr>
-      <td>tivit, seller of secrets</td>
+      <td>ratadrabik of urborg</td>
+      <td>6</td>
+      <td>2</td>
+      <td>33.33</td>
+    </tr>
+    <tr>
+      <td>omo, queen of vesuva</td>
       <td>3</td>
       <td>1</td>
       <td>33.33</td>
     </tr>
     <tr>
-      <td>vraska, the silencer</td>
+      <td>nahiri, forged in fury</td>
       <td>9</td>
       <td>3</td>
+      <td>33.33</td>
+    </tr>
+    <tr>
+      <td>muerra, trash tactician</td>
+      <td>9</td>
+      <td>3</td>
+      <td>33.33</td>
+    </tr>
+    <tr>
+      <td>millicent, restless revenant</td>
+      <td>3</td>
+      <td>1</td>
+      <td>33.33</td>
+    </tr>
+    <tr>
+      <td>hazel of the rootbloom</td>
+      <td>3</td>
+      <td>1</td>
+      <td>33.33</td>
+    </tr>
+    <tr>
+      <td>eriette of the charmed apple</td>
+      <td>6</td>
+      <td>2</td>
+      <td>33.33</td>
+    </tr>
+    <tr>
+      <td>eluge, the shoreless sea</td>
+      <td>9</td>
+      <td>3</td>
+      <td>33.33</td>
+    </tr>
+    <tr>
+      <td>anhelo, the painter</td>
+      <td>3</td>
+      <td>1</td>
+      <td>33.33</td>
+    </tr>
+    <tr>
+      <td>Winter, Misanthropic Guide</td>
+      <td>3</td>
+      <td>1</td>
       <td>33.33</td>
     </tr>
     <tr>
@@ -2990,13 +3042,7 @@
       <td>30.00</td>
     </tr>
     <tr>
-      <td>bello, bard of the brambles</td>
-      <td>14</td>
-      <td>4</td>
-      <td>28.57</td>
-    </tr>
-    <tr>
-      <td>edgar markov</td>
+      <td>éowyn, shieldmaiden</td>
       <td>7</td>
       <td>2</td>
       <td>28.57</td>
@@ -3008,16 +3054,16 @@
       <td>28.57</td>
     </tr>
     <tr>
-      <td>éowyn, shieldmaiden</td>
+      <td>edgar markov</td>
       <td>7</td>
       <td>2</td>
       <td>28.57</td>
     </tr>
     <tr>
-      <td>aragorn, the uniter</td>
-      <td>11</td>
-      <td>3</td>
-      <td>27.27</td>
+      <td>bello, bard of the brambles</td>
+      <td>14</td>
+      <td>4</td>
+      <td>28.57</td>
     </tr>
     <tr>
       <td>valgavoth, harrower of souls</td>
@@ -3026,43 +3072,19 @@
       <td>27.27</td>
     </tr>
     <tr>
-      <td>caesar, legion's emperor</td>
-      <td>8</td>
-      <td>2</td>
-      <td>25.00</td>
+      <td>aragorn, the uniter</td>
+      <td>11</td>
+      <td>3</td>
+      <td>27.27</td>
     </tr>
     <tr>
-      <td>calix, guided by fate</td>
+      <td>sigarda, host of herons</td>
       <td>4</td>
       <td>1</td>
       <td>25.00</td>
     </tr>
     <tr>
-      <td>chiss-goria, forge tyrant</td>
-      <td>4</td>
-      <td>1</td>
-      <td>25.00</td>
-    </tr>
-    <tr>
-      <td>codie, vociferous codex</td>
-      <td>4</td>
-      <td>1</td>
-      <td>25.00</td>
-    </tr>
-    <tr>
-      <td>esika, god of the tree // the prismatic bridge</td>
-      <td>4</td>
-      <td>1</td>
-      <td>25.00</td>
-    </tr>
-    <tr>
-      <td>gisa, the hellraiser</td>
-      <td>4</td>
-      <td>1</td>
-      <td>25.00</td>
-    </tr>
-    <tr>
-      <td>karlov of the ghost council</td>
+      <td>omnath, locus of all</td>
       <td>4</td>
       <td>1</td>
       <td>25.00</td>
@@ -3074,15 +3096,45 @@
       <td>25.00</td>
     </tr>
     <tr>
-      <td>omnath, locus of all</td>
+      <td>karlov of the ghost council</td>
       <td>4</td>
       <td>1</td>
       <td>25.00</td>
     </tr>
     <tr>
-      <td>sigarda, host of herons</td>
+      <td>gisa, the hellraiser</td>
       <td>4</td>
       <td>1</td>
+      <td>25.00</td>
+    </tr>
+    <tr>
+      <td>esika, god of the tree // the prismatic bridge</td>
+      <td>4</td>
+      <td>1</td>
+      <td>25.00</td>
+    </tr>
+    <tr>
+      <td>codie, vociferous codex</td>
+      <td>4</td>
+      <td>1</td>
+      <td>25.00</td>
+    </tr>
+    <tr>
+      <td>chiss-goria, forge tyrant</td>
+      <td>4</td>
+      <td>1</td>
+      <td>25.00</td>
+    </tr>
+    <tr>
+      <td>calix, guided by fate</td>
+      <td>4</td>
+      <td>1</td>
+      <td>25.00</td>
+    </tr>
+    <tr>
+      <td>caesar, legion's emperor</td>
+      <td>8</td>
+      <td>2</td>
       <td>25.00</td>
     </tr>
     <tr>
@@ -3092,15 +3144,15 @@
       <td>23.08</td>
     </tr>
     <tr>
-      <td>baru, wurmspeaker</td>
-      <td>9</td>
-      <td>2</td>
-      <td>22.22</td>
-    </tr>
-    <tr>
       <td>imodane, the pyrohammer</td>
       <td>18</td>
       <td>4</td>
+      <td>22.22</td>
+    </tr>
+    <tr>
+      <td>baru, wurmspeaker</td>
+      <td>9</td>
+      <td>2</td>
       <td>22.22</td>
     </tr>
     <tr>
@@ -3110,31 +3162,7 @@
       <td>21.05</td>
     </tr>
     <tr>
-      <td>helga, skittish seer</td>
-      <td>5</td>
-      <td>1</td>
-      <td>20.00</td>
-    </tr>
-    <tr>
-      <td>karador, ghost chieftain</td>
-      <td>5</td>
-      <td>1</td>
-      <td>20.00</td>
-    </tr>
-    <tr>
-      <td>shalai and hallar</td>
-      <td>20</td>
-      <td>4</td>
-      <td>20.00</td>
-    </tr>
-    <tr>
-      <td>shirei, shizo's caretaker</td>
-      <td>5</td>
-      <td>1</td>
-      <td>20.00</td>
-    </tr>
-    <tr>
-      <td>storm, force of nature</td>
+      <td>urza, lord high artificer</td>
       <td>5</td>
       <td>1</td>
       <td>20.00</td>
@@ -3146,7 +3174,31 @@
       <td>20.00</td>
     </tr>
     <tr>
-      <td>urza, lord high artificer</td>
+      <td>storm, force of nature</td>
+      <td>5</td>
+      <td>1</td>
+      <td>20.00</td>
+    </tr>
+    <tr>
+      <td>shirei, shizo's caretaker</td>
+      <td>5</td>
+      <td>1</td>
+      <td>20.00</td>
+    </tr>
+    <tr>
+      <td>shalai and hallar</td>
+      <td>20</td>
+      <td>4</td>
+      <td>20.00</td>
+    </tr>
+    <tr>
+      <td>karador, ghost chieftain</td>
+      <td>5</td>
+      <td>1</td>
+      <td>20.00</td>
+    </tr>
+    <tr>
+      <td>helga, skittish seer</td>
       <td>5</td>
       <td>1</td>
       <td>20.00</td>
@@ -3158,25 +3210,7 @@
       <td>18.18</td>
     </tr>
     <tr>
-      <td>archangel avacyn // avacyn, the purifier</td>
-      <td>18</td>
-      <td>3</td>
-      <td>16.67</td>
-    </tr>
-    <tr>
-      <td>doran, the siege tower</td>
-      <td>6</td>
-      <td>1</td>
-      <td>16.67</td>
-    </tr>
-    <tr>
-      <td>hakbal of the surging soul</td>
-      <td>6</td>
-      <td>1</td>
-      <td>16.67</td>
-    </tr>
-    <tr>
-      <td>maccready, lamplight mayor</td>
+      <td>satoru, the infiltrator</td>
       <td>6</td>
       <td>1</td>
       <td>16.67</td>
@@ -3188,9 +3222,27 @@
       <td>16.67</td>
     </tr>
     <tr>
-      <td>satoru, the infiltrator</td>
+      <td>maccready, lamplight mayor</td>
       <td>6</td>
       <td>1</td>
+      <td>16.67</td>
+    </tr>
+    <tr>
+      <td>hakbal of the surging soul</td>
+      <td>6</td>
+      <td>1</td>
+      <td>16.67</td>
+    </tr>
+    <tr>
+      <td>doran, the siege tower</td>
+      <td>6</td>
+      <td>1</td>
+      <td>16.67</td>
+    </tr>
+    <tr>
+      <td>archangel avacyn // avacyn, the purifier</td>
+      <td>18</td>
+      <td>3</td>
       <td>16.67</td>
     </tr>
     <tr>
@@ -3200,19 +3252,7 @@
       <td>15.38</td>
     </tr>
     <tr>
-      <td>atraxa, praetors' voice</td>
-      <td>7</td>
-      <td>1</td>
-      <td>14.29</td>
-    </tr>
-    <tr>
-      <td>davros, dalek creator</td>
-      <td>7</td>
-      <td>1</td>
-      <td>14.29</td>
-    </tr>
-    <tr>
-      <td>goro-goro and satoru</td>
+      <td>the necrobloom</td>
       <td>7</td>
       <td>1</td>
       <td>14.29</td>
@@ -3224,7 +3264,19 @@
       <td>14.29</td>
     </tr>
     <tr>
-      <td>the necrobloom</td>
+      <td>goro-goro and satoru</td>
+      <td>7</td>
+      <td>1</td>
+      <td>14.29</td>
+    </tr>
+    <tr>
+      <td>davros, dalek creator</td>
+      <td>7</td>
+      <td>1</td>
+      <td>14.29</td>
+    </tr>
+    <tr>
+      <td>atraxa, praetors' voice</td>
       <td>7</td>
       <td>1</td>
       <td>14.29</td>
@@ -3248,367 +3300,55 @@
       <td>6.67</td>
     </tr>
     <tr>
-      <td>Sythis, Harvest's Hand</td>
+      <td>zur, eternal schemer</td>
+      <td>5</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>zur the enchanter</td>
       <td>1</td>
       <td>0</td>
       <td>0.00</td>
     </tr>
     <tr>
-      <td>aegar, the freezing flame</td>
+      <td>zo-zu the punisher</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>ziatora, the incinerator</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>zhulodok, void gorger</td>
       <td>3</td>
       <td>0</td>
       <td>0.00</td>
     </tr>
     <tr>
-      <td>alania, divergent storm</td>
-      <td>1</td>
+      <td>zaxara, the exemplary</td>
+      <td>7</td>
       <td>0</td>
       <td>0.00</td>
     </tr>
     <tr>
-      <td>alesha, who smiles at death</td>
+      <td>yarok, the desecrated</td>
       <td>2</td>
       <td>0</td>
       <td>0.00</td>
     </tr>
     <tr>
-      <td>aminatou, veil piercer</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td>arahbo, the first fang</td>
-      <td>2</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td>atraxa, grand unifier</td>
-      <td>2</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td>atraxa, praetors’ voice</td>
+      <td>wyleth, soul of steel</td>
       <td>3</td>
       <td>0</td>
       <td>0.00</td>
     </tr>
     <tr>
-      <td>bane, lord of darkness</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td>breya, etherium shaper</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td>captain n'ghathrod</td>
-      <td>2</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td>carmen, cruel skymarcher</td>
-      <td>2</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td>chatterfang, squirrel general</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td>chishiro, the shattered blade</td>
-      <td>6</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td>clavileño, first of the blessed</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td>coram, the undertaker</td>
-      <td>9</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td>dina, soul steeper</td>
-      <td>2</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td>dogmeat, ever loyal</td>
-      <td>2</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td>esika, god of the tree</td>
-      <td>2</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td>extus, oriq overlord // awaken the blood avatar</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td>gandalf of the secret fire</td>
-      <td>5</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td>ghyrson starn, kelermorph</td>
-      <td>14</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td>killian, ink duelist</td>
-      <td>2</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td>king macar, the gold-cursed</td>
-      <td>4</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td>kykar, wind's fury</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td>kynaios and tiro of meletis</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td>lae’zel, vlaakith's champion</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td>lagrella, the magpie</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td>magus lucea kane</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td>marrow-gnawer</td>
-      <td>5</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td>merry, warden of isengard</td>
-      <td>2</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td>miirym, sentinel wyrm</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td>morska, undersea sleuth</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td>muldrotha, the gravetide</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td>niv-mizzet, parun</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td>ognis, the dragon's lash</td>
-      <td>5</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td>ojer axonil, deepest might // temple of power</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td>omnath, locus of creation</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td>oswald fiddlebender</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td>queen marchesa</td>
-      <td>2</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td>raphael, fiendish savior</td>
-      <td>6</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td>reyhan, last of the abzan</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td>saheeli, radiant creator</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td>samut, vizier of naktamun</td>
-      <td>4</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td>satoru umezawa</td>
-      <td>2</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td>selvala, heart of the wilds</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td>shanna, purifying blade</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td>shilgengar, sire of famine</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td>sovereign okinec ahau</td>
-      <td>2</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td>sythis, harvest's hand</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td>szarekh, the silent king</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td>temmet, vizier of naktamun</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td>thalia and the gitrog monster</td>
-      <td>3</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td>the infamous cruelclaw</td>
-      <td>2</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td>the ur-dragon</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td>the wise mothman</td>
-      <td>8</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td>ulalek, fused atrocity</td>
-      <td>4</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td>urza, chief artificer</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td>valgavoth, terror eater</td>
-      <td>5</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td>vannifar, evolved enigma</td>
-      <td>2</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td>winota, joiner of forces</td>
+      <td>witherbloom apprentice</td>
       <td>1</td>
       <td>0</td>
       <td>0.00</td>
@@ -3620,76 +3360,387 @@
       <td>0.00</td>
     </tr>
     <tr>
-      <td>witherbloom apprentice</td>
+      <td>winota, joiner of forces</td>
       <td>1</td>
       <td>0</td>
       <td>0.00</td>
     </tr>
     <tr>
-      <td>wyleth, soul of steel</td>
-      <td>3</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td>yarok, the desecrated</td>
+      <td>vannifar, evolved enigma</td>
       <td>2</td>
       <td>0</td>
       <td>0.00</td>
     </tr>
     <tr>
-      <td>zaxara, the exemplary</td>
-      <td>7</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td>zhulodok, void gorger</td>
-      <td>3</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td>ziatora, the incinerator</td>
-      <td>2</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td>zo-zu the punisher</td>
-      <td>2</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td>zur the enchanter</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td>zur, eternal schemer</td>
+      <td>valgavoth, terror eater</td>
       <td>5</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>urza, chief artificer</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>ulalek, fused atrocity</td>
+      <td>4</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>the wise mothman</td>
+      <td>8</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>the ur-dragon</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>the infamous cruelclaw</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>thalia and the gitrog monster</td>
+      <td>3</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>temmet, vizier of naktamun</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>szarekh, the silent king</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>sythis, harvest's hand</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>sovereign okinec ahau</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>shilgengar, sire of famine</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>shanna, purifying blade</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>selvala, heart of the wilds</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>satoru umezawa</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>samut, vizier of naktamun</td>
+      <td>4</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>saheeli, radiant creator</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>reyhan, last of the abzan</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>raphael, fiendish savior</td>
+      <td>6</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>queen marchesa</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>oswald fiddlebender</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>omnath, locus of creation</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>ojer axonil, deepest might // temple of power</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>ognis, the dragon's lash</td>
+      <td>5</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>niv-mizzet, parun</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>muldrotha, the gravetide</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>morska, undersea sleuth</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>miirym, sentinel wyrm</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>merry, warden of isengard</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>marrow-gnawer</td>
+      <td>5</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>magus lucea kane</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>lagrella, the magpie</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>lae’zel, vlaakith's champion</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>kynaios and tiro of meletis</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>kykar, wind's fury</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>king macar, the gold-cursed</td>
+      <td>4</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>killian, ink duelist</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>ghyrson starn, kelermorph</td>
+      <td>14</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>gandalf of the secret fire</td>
+      <td>5</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>extus, oriq overlord // awaken the blood avatar</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>esika, god of the tree</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>dogmeat, ever loyal</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>dina, soul steeper</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>coram, the undertaker</td>
+      <td>9</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>clavileño, first of the blessed</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>chishiro, the shattered blade</td>
+      <td>6</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>chatterfang, squirrel general</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>carmen, cruel skymarcher</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>captain n'ghathrod</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>breya, etherium shaper</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>bane, lord of darkness</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>atraxa, praetors’ voice</td>
+      <td>3</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>atraxa, grand unifier</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>arahbo, the first fang</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>aminatou, veil piercer</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>alesha, who smiles at death</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>alania, divergent storm</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>aegar, the freezing flame</td>
+      <td>3</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>Sythis, Harvest's Hand</td>
+      <td>1</td>
       <td>0</td>
       <td>0.00</td>
     </tr>
   </tbody>
 </table>
-
-            <h2>Statistiche Giocatore vs Avversario</h2>
-            <label for="playerSelect">Seleziona Giocatore:</label>
-            <select id="playerSelect">
-                <option value="Tutti">Tutti</option>
-                <option value="Matte">Matte</option><option value="Ru">Ru</option><option value="Don">Don</option><option value="Emi">Emi</option><option value="Gymbro">Gymbro</option><option value="Claudio">Claudio</option><option value="Ettore">Ettore</option><option value="Luca">Luca</option><option value="Jappy">Jappy</option><option value="Sisco">Sisco</option><option value="Betto">Betto</option><option value="Luca Proie">Luca Proie</option><option value="Giulia">Giulia</option><option value="Paolo">Paolo</option><option value="Pain">Pain</option><option value="Phyga">Phyga</option><option value="Andrea">Andrea</option><option value="Gabriele">Gabriele</option><option value="Lore">Lore</option><option value="Monta">Monta</option><option value="nicolo">nicolo</option><option value="Daniele">Daniele</option><option value="Davide">Davide</option><option value="Ema">Ema</option><option value="Lucio">Lucio</option><option value="Marco">Marco</option><option value="Simo">Simo</option><option value="nico gym">nico gym</option><option value="simone">simone</option>
-            </select>
-            <table id='playerVsOthersTable' class='display' border="1" class="dataframe">
+<h2>Statistiche Giocatore vs Avversario</h2>
+<label for="playerSelect">Seleziona Giocatore:</label>
+<select id="playerSelect">
+<option value="Tutti">Tutti</option>
+<option value="Andrea">Andrea</option><option value="Betto">Betto</option><option value="Claudio">Claudio</option><option value="Daniele">Daniele</option><option value="Davide">Davide</option><option value="Don">Don</option><option value="Ema">Ema</option><option value="Emi">Emi</option><option value="Ettore">Ettore</option><option value="Gabriele">Gabriele</option><option value="Giulia">Giulia</option><option value="Gymbro">Gymbro</option><option value="Jappy">Jappy</option><option value="Lore">Lore</option><option value="Luca">Luca</option><option value="Luca Proie">Luca Proie</option><option value="Lucio">Lucio</option><option value="Marco">Marco</option><option value="Matte">Matte</option><option value="Monta">Monta</option><option value="Pain">Pain</option><option value="Paolo">Paolo</option><option value="Phyga">Phyga</option><option value="Ru">Ru</option><option value="Simo">Simo</option><option value="Sisco">Sisco</option><option value="nico gym">nico gym</option><option value="nicolo">nicolo</option><option value="simone">simone</option>
+</select>
+<table class="dataframe display" id="playerVsOthersTable">
   <thead>
     <tr style="text-align: right;">
       <th>Giocatore</th>
       <th>Avversario</th>
       <th>Partite</th>
       <th>Vittorie</th>
-      <th>Win Rate (%)</th>
+      <th>Winrate (%)</th>
     </tr>
   </thead>
   <tbody>
@@ -5781,43 +5832,46 @@
     </tr>
   </tbody>
 </table>
-
-            <script>
-                $(document).ready(function() {
-                    // Inizializza le DataTables
-                    $('#colorStatsTable, #playerStatsTable, #commanderStatsTable, #playerVsOthersTable').DataTable();
-                    
-                    // Inizializza le DataTables per ogni giocatore
-                    $('.player-commander-section table.display').each(function() {
-                        $(this).DataTable({
-                            "paging": false,
-                            "info": false
-                        });
-                    });
-                    
-                    // Filtro per statistiche giocatore vs avversario
-                    $('#playerSelect').on('change', function() {
-                        var selectedPlayer = $(this).val();
-                        var playerVsTable = $('#playerVsOthersTable').DataTable();
-                        if (selectedPlayer === "Tutti") {
-                            playerVsTable.column(0).search("").draw();
-                        } else {
-                            playerVsTable.column(0).search("^" + selectedPlayer + "$", true, false).draw();
-                        }
-                    });
-                    
-                    // Gestione della visualizzazione delle sezioni dei comandanti per giocatore
-                    $('#commanderPlayerSelect').on('change', function() {
-                        var selectedPlayer = $(this).val();
-                        $('.player-commander-section').addClass('hidden');
-                        if (selectedPlayer) {
-                            $('#player-' + selectedPlayer.replace(' ', '-')).removeClass('hidden');
-                            // Ricarica la DataTable per forzare il ridisegno
-                            $('#commanderStatsTable-' + selectedPlayer.replace(' ', '-')).DataTable().columns.adjust();
-                        }
-                    });
-                });
-            </script>
-        </body>
-        </html>
-        
+<h2>Andamento Win Rate nel Tempo</h2>
+<label for="winratePlayerSelect">Seleziona Giocatore:</label>
+<select id="winratePlayerSelect">
+<option value="">Seleziona un giocatore</option>
+<option value="Andrea">Andrea</option><option value="Betto">Betto</option><option value="Claudio">Claudio</option><option value="Daniele">Daniele</option><option value="Davide">Davide</option><option value="Don">Don</option><option value="Ema">Ema</option><option value="Emi">Emi</option><option value="Ettore">Ettore</option><option value="Gabriele">Gabriele</option><option value="Giulia">Giulia</option><option value="Gymbro">Gymbro</option><option value="Jappy">Jappy</option><option value="Lore">Lore</option><option value="Luca">Luca</option><option value="Luca Proie">Luca Proie</option><option value="Lucio">Lucio</option><option value="Marco">Marco</option><option value="Matte">Matte</option><option value="Monta">Monta</option><option value="Pain">Pain</option><option value="Paolo">Paolo</option><option value="Phyga">Phyga</option><option value="Ru">Ru</option><option value="Simo">Simo</option><option value="Sisco">Sisco</option><option value="nico gym">nico gym</option><option value="nicolo">nicolo</option><option value="simone">simone</option>
+</select>
+<canvas id="winrateChart" width="800" height="400"></canvas>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+const chartData = {"Andrea": [{"data": "2025-03", "winrate": 20.0}], "Betto": [{"data": "2025-01", "winrate": 50.0}], "Claudio": [{"data": "2024-10", "winrate": 100.0}, {"data": "2024-11", "winrate": 22.22}, {"data": "2024-12", "winrate": 16.67}, {"data": "2025-01", "winrate": 21.43}, {"data": "2025-02", "winrate": 0.0}, {"data": "2025-03", "winrate": 29.17}, {"data": "2025-04", "winrate": 40.0}], "Daniele": [{"data": "2025-01", "winrate": 0.0}], "Davide": [{"data": "2024-12", "winrate": 0.0}], "Don": [{"data": "2024-11", "winrate": 38.1}, {"data": "2024-12", "winrate": 23.81}, {"data": "2025-01", "winrate": 30.0}, {"data": "2025-02", "winrate": 40.0}, {"data": "2025-03", "winrate": 26.09}, {"data": "2025-04", "winrate": 33.33}], "Ema": [{"data": "2024-12", "winrate": 0.0}], "Emi": [{"data": "2024-11", "winrate": 40.0}, {"data": "2024-12", "winrate": 31.82}, {"data": "2025-01", "winrate": 28.57}, {"data": "2025-02", "winrate": 57.14}, {"data": "2025-03", "winrate": 33.33}, {"data": "2025-04", "winrate": 66.67}], "Ettore": [{"data": "2024-11", "winrate": 14.29}, {"data": "2024-12", "winrate": 17.39}, {"data": "2025-01", "winrate": 13.33}, {"data": "2025-02", "winrate": 12.5}, {"data": "2025-03", "winrate": 28.0}, {"data": "2025-04", "winrate": 33.33}], "Gabriele": [{"data": "2024-12", "winrate": 33.33}], "Giulia": [{"data": "2024-11", "winrate": 20.0}, {"data": "2024-12", "winrate": 20.0}, {"data": "2025-01", "winrate": 16.67}, {"data": "2025-02", "winrate": 0.0}, {"data": "2025-03", "winrate": 0.0}], "Gymbro": [{"data": "2024-11", "winrate": 50.0}, {"data": "2024-12", "winrate": 22.73}, {"data": "2025-01", "winrate": 22.22}, {"data": "2025-02", "winrate": 50.0}, {"data": "2025-03", "winrate": 38.46}], "Jappy": [{"data": "2024-11", "winrate": 25.0}, {"data": "2024-12", "winrate": 28.57}, {"data": "2025-01", "winrate": 25.0}, {"data": "2025-02", "winrate": 0.0}, {"data": "2025-03", "winrate": 14.29}], "Lore": [{"data": "2024-12", "winrate": 100.0}], "Luca": [{"data": "2024-11", "winrate": 0.0}, {"data": "2024-12", "winrate": 46.15}, {"data": "2025-01", "winrate": 50.0}, {"data": "2025-02", "winrate": 0.0}, {"data": "2025-03", "winrate": 54.55}], "Luca Proie": [{"data": "2024-12", "winrate": 40.0}, {"data": "2025-01", "winrate": 25.0}, {"data": "2025-02", "winrate": 0.0}, {"data": "2025-03", "winrate": 12.5}], "Lucio": [{"data": "2024-11", "winrate": 0.0}, {"data": "2024-12", "winrate": 0.0}, {"data": "2025-02", "winrate": 0.0}, {"data": "2025-03", "winrate": 0.0}], "Marco": [{"data": "2024-12", "winrate": 0.0}], "Matte": [{"data": "2024-10", "winrate": 60.0}, {"data": "2024-11", "winrate": 50.0}, {"data": "2024-12", "winrate": 50.0}, {"data": "2025-01", "winrate": 35.29}, {"data": "2025-02", "winrate": 50.0}, {"data": "2025-03", "winrate": 52.0}, {"data": "2025-04", "winrate": 33.33}], "Monta": [{"data": "2025-01", "winrate": 50.0}], "Pain": [{"data": "2025-01", "winrate": 100.0}, {"data": "2025-02", "winrate": 100.0}, {"data": "2025-03", "winrate": 0.0}], "Paolo": [{"data": "2025-03", "winrate": 60.0}], "Phyga": [{"data": "2024-11", "winrate": 33.33}, {"data": "2024-12", "winrate": 0.0}, {"data": "2025-01", "winrate": 0.0}, {"data": "2025-02", "winrate": 50.0}], "Ru": [{"data": "2024-10", "winrate": 20.0}, {"data": "2024-11", "winrate": 33.33}, {"data": "2024-12", "winrate": 34.62}, {"data": "2025-01", "winrate": 27.78}, {"data": "2025-02", "winrate": 36.36}, {"data": "2025-03", "winrate": 37.5}, {"data": "2025-04", "winrate": 50.0}], "Simo": [{"data": "2024-12", "winrate": 0.0}], "Sisco": [{"data": "2024-10", "winrate": 0.0}, {"data": "2024-11", "winrate": 7.69}, {"data": "2024-12", "winrate": 22.22}, {"data": "2025-01", "winrate": 5.26}, {"data": "2025-02", "winrate": 10.0}, {"data": "2025-03", "winrate": 10.0}, {"data": "2025-04", "winrate": 0.0}], "nico gym": [{"data": "2025-03", "winrate": 0.0}], "nicolo": [{"data": "2025-02", "winrate": 100.0}], "simone": [{"data": "2025-02", "winrate": 0.0}]};
+$(document).ready(function() {
+    $('#colorStatsTable, #playerStatsTable, #commanderStatsTable, #playerVsOthersTable').DataTable();
+    $('.player-commander-section table.display').each(function() {
+        $(this).DataTable({ paging: false, info: false });
+    });
+    $('#playerSelect').on('change', function() {
+        var val = $(this).val();
+        var table = $('#playerVsOthersTable').DataTable();
+        table.column(0).search(val === "Tutti" ? "" : "^" + val + "$", true, false).draw();
+    });
+    $('#commanderPlayerSelect').on('change', function() {
+        var val = $(this).val();
+        $('.player-commander-section').addClass('hidden');
+        if (val) $('#player-' + val.replace(' ', '-')).removeClass('hidden');
+    });
+    const ctx = document.getElementById('winrateChart').getContext('2d');
+    const winrateChart = new Chart(ctx, {
+        type: 'line',
+        data: { labels: [], datasets: [{ label: 'Win Rate (%)', data: [], borderColor: 'rgb(75,192,192)', tension: 0.1 }] },
+        options: { scales: { y: { beginAtZero: true, max: 100 } } }
+    });
+    document.getElementById("winratePlayerSelect").addEventListener("change", function() {
+        const player = this.value;
+        if (!player || !chartData[player]) return;
+        const data = chartData[player];
+        winrateChart.data.labels = data.map(p => p.data);
+        winrateChart.data.datasets[0].data = data.map(p => p.winrate);
+        winrateChart.update();
+    });
+});
+</script>
+</body>
+</html>
