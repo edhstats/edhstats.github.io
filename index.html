@@ -2628,6 +2628,82 @@ tr:hover { background-color: #ddd; }
     </tr>
   </tbody>
 </table>
+<h2>Top 5 Comandanti più Giocati</h2>
+<table class="dataframe display" id="topCommandersPlayedTable">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Comandante</th>
+      <th>Partite</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>rograkh, son of rohgahh</td>
+      <td>22</td>
+    </tr>
+    <tr>
+      <td>shalai and hallar</td>
+      <td>20</td>
+    </tr>
+    <tr>
+      <td>disa the restless</td>
+      <td>19</td>
+    </tr>
+    <tr>
+      <td>imodane, the pyrohammer</td>
+      <td>18</td>
+    </tr>
+    <tr>
+      <td>archangel avacyn // avacyn, the purifier</td>
+      <td>18</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>Top 5 Comandanti con Maggior Winrate (min. 5 partite)</h2>
+<table class="dataframe display" id="topCommandersWinrateTable">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Comandante</th>
+      <th>Partite</th>
+      <th>Vittorie</th>
+      <th>Winrate (%)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>marchesa, dealer of death</td>
+      <td>7</td>
+      <td>5</td>
+      <td>71.43</td>
+    </tr>
+    <tr>
+      <td>jetmir, nexus of revels</td>
+      <td>10</td>
+      <td>7</td>
+      <td>70.00</td>
+    </tr>
+    <tr>
+      <td>varina, lich queen</td>
+      <td>6</td>
+      <td>4</td>
+      <td>66.67</td>
+    </tr>
+    <tr>
+      <td>tatyova, benthic druid</td>
+      <td>6</td>
+      <td>4</td>
+      <td>66.67</td>
+    </tr>
+    <tr>
+      <td>dihada, binder of wills</td>
+      <td>17</td>
+      <td>11</td>
+      <td>64.71</td>
+    </tr>
+  </tbody>
+</table>
+
 <h2>Statistiche dei Comandanti</h2>
 <table class="dataframe display" id="commanderStatsTable">
   <thead>
@@ -5843,7 +5919,7 @@ tr:hover { background-color: #ddd; }
 <script>
 const chartData = {"Andrea": [{"data": "2025-03", "winrate": 20.0}], "Betto": [{"data": "2025-01", "winrate": 50.0}], "Claudio": [{"data": "2024-10", "winrate": 100.0}, {"data": "2024-11", "winrate": 22.22}, {"data": "2024-12", "winrate": 16.67}, {"data": "2025-01", "winrate": 21.43}, {"data": "2025-02", "winrate": 0.0}, {"data": "2025-03", "winrate": 29.17}, {"data": "2025-04", "winrate": 40.0}], "Daniele": [{"data": "2025-01", "winrate": 0.0}], "Davide": [{"data": "2024-12", "winrate": 0.0}], "Don": [{"data": "2024-11", "winrate": 38.1}, {"data": "2024-12", "winrate": 23.81}, {"data": "2025-01", "winrate": 30.0}, {"data": "2025-02", "winrate": 40.0}, {"data": "2025-03", "winrate": 26.09}, {"data": "2025-04", "winrate": 33.33}], "Ema": [{"data": "2024-12", "winrate": 0.0}], "Emi": [{"data": "2024-11", "winrate": 40.0}, {"data": "2024-12", "winrate": 31.82}, {"data": "2025-01", "winrate": 28.57}, {"data": "2025-02", "winrate": 57.14}, {"data": "2025-03", "winrate": 33.33}, {"data": "2025-04", "winrate": 66.67}], "Ettore": [{"data": "2024-11", "winrate": 14.29}, {"data": "2024-12", "winrate": 17.39}, {"data": "2025-01", "winrate": 13.33}, {"data": "2025-02", "winrate": 12.5}, {"data": "2025-03", "winrate": 28.0}, {"data": "2025-04", "winrate": 33.33}], "Gabriele": [{"data": "2024-12", "winrate": 33.33}], "Giulia": [{"data": "2024-11", "winrate": 20.0}, {"data": "2024-12", "winrate": 20.0}, {"data": "2025-01", "winrate": 16.67}, {"data": "2025-02", "winrate": 0.0}, {"data": "2025-03", "winrate": 0.0}], "Gymbro": [{"data": "2024-11", "winrate": 50.0}, {"data": "2024-12", "winrate": 22.73}, {"data": "2025-01", "winrate": 22.22}, {"data": "2025-02", "winrate": 50.0}, {"data": "2025-03", "winrate": 38.46}], "Jappy": [{"data": "2024-11", "winrate": 25.0}, {"data": "2024-12", "winrate": 28.57}, {"data": "2025-01", "winrate": 25.0}, {"data": "2025-02", "winrate": 0.0}, {"data": "2025-03", "winrate": 14.29}], "Lore": [{"data": "2024-12", "winrate": 100.0}], "Luca": [{"data": "2024-11", "winrate": 0.0}, {"data": "2024-12", "winrate": 46.15}, {"data": "2025-01", "winrate": 50.0}, {"data": "2025-02", "winrate": 0.0}, {"data": "2025-03", "winrate": 54.55}], "Luca Proie": [{"data": "2024-12", "winrate": 40.0}, {"data": "2025-01", "winrate": 25.0}, {"data": "2025-02", "winrate": 0.0}, {"data": "2025-03", "winrate": 12.5}], "Lucio": [{"data": "2024-11", "winrate": 0.0}, {"data": "2024-12", "winrate": 0.0}, {"data": "2025-02", "winrate": 0.0}, {"data": "2025-03", "winrate": 0.0}], "Marco": [{"data": "2024-12", "winrate": 0.0}], "Matte": [{"data": "2024-10", "winrate": 60.0}, {"data": "2024-11", "winrate": 50.0}, {"data": "2024-12", "winrate": 50.0}, {"data": "2025-01", "winrate": 35.29}, {"data": "2025-02", "winrate": 50.0}, {"data": "2025-03", "winrate": 52.0}, {"data": "2025-04", "winrate": 33.33}], "Monta": [{"data": "2025-01", "winrate": 50.0}], "Pain": [{"data": "2025-01", "winrate": 100.0}, {"data": "2025-02", "winrate": 100.0}, {"data": "2025-03", "winrate": 0.0}], "Paolo": [{"data": "2025-03", "winrate": 60.0}], "Phyga": [{"data": "2024-11", "winrate": 33.33}, {"data": "2024-12", "winrate": 0.0}, {"data": "2025-01", "winrate": 0.0}, {"data": "2025-02", "winrate": 50.0}], "Ru": [{"data": "2024-10", "winrate": 20.0}, {"data": "2024-11", "winrate": 33.33}, {"data": "2024-12", "winrate": 34.62}, {"data": "2025-01", "winrate": 27.78}, {"data": "2025-02", "winrate": 36.36}, {"data": "2025-03", "winrate": 37.5}, {"data": "2025-04", "winrate": 50.0}], "Simo": [{"data": "2024-12", "winrate": 0.0}], "Sisco": [{"data": "2024-10", "winrate": 0.0}, {"data": "2024-11", "winrate": 7.69}, {"data": "2024-12", "winrate": 22.22}, {"data": "2025-01", "winrate": 5.26}, {"data": "2025-02", "winrate": 10.0}, {"data": "2025-03", "winrate": 10.0}, {"data": "2025-04", "winrate": 0.0}], "nico gym": [{"data": "2025-03", "winrate": 0.0}], "nicolo": [{"data": "2025-02", "winrate": 100.0}], "simone": [{"data": "2025-02", "winrate": 0.0}]};
 $(document).ready(function() {
-    $('#colorStatsTable, #playerStatsTable, #commanderStatsTable, #playerVsOthersTable').DataTable();
+    $('#colorStatsTable, #playerStatsTable, #commanderStatsTable, #playerVsOthersTable, #topCommandersPlayedTable, #topCommandersWinrateTable').DataTable();
     $('.player-commander-section table.display').each(function() {
         $(this).DataTable({ paging: false, info: false });
     });
