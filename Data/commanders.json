@@ -1,1 +1,2006 @@
-
+{
+    "commanders": [
+        {
+            "id": 142,
+            "name": "rograkh, son of rohgahh",
+            "mana_cost": "{0}",
+            "cmc": 0.0,
+            "color_identity": [
+                "R"
+            ],
+            "partite": 22,
+            "vittorie": 4
+        },
+        {
+            "id": 27,
+            "name": "shalai and hallar",
+            "mana_cost": "{1}{R}{G}{W}",
+            "cmc": 4.0,
+            "color_identity": [
+                "RGW"
+            ],
+            "partite": 20,
+            "vittorie": 4
+        },
+        {
+            "id": 168,
+            "name": "disa the restless",
+            "mana_cost": "{2}{B}{R}{G}",
+            "cmc": 5.0,
+            "color_identity": [
+                "BRG"
+            ],
+            "partite": 19,
+            "vittorie": 4
+        },
+        {
+            "id": 215,
+            "name": "archangel avacyn // avacyn, the purifier",
+            "mana_cost": "",
+            "cmc": 5.0,
+            "color_identity": [
+                "RW"
+            ],
+            "partite": 18,
+            "vittorie": 3
+        },
+        {
+            "id": 38,
+            "name": "imodane, the pyrohammer",
+            "mana_cost": "{2}{R}{R}",
+            "cmc": 4.0,
+            "color_identity": [
+                "R"
+            ],
+            "partite": 18,
+            "vittorie": 4
+        },
+        {
+            "id": 181,
+            "name": "dihada, binder of wills",
+            "mana_cost": "{1}{R}{W}{B}",
+            "cmc": 4.0,
+            "color_identity": [
+                "RWB"
+            ],
+            "partite": 17,
+            "vittorie": 11
+        },
+        {
+            "id": 26,
+            "name": "ms. bumbleflower",
+            "mana_cost": "{1}{G}{W}{U}",
+            "cmc": 4.0,
+            "color_identity": [
+                "GWU"
+            ],
+            "partite": 15,
+            "vittorie": 1
+        },
+        {
+            "id": 25,
+            "name": "bello, bard of the brambles",
+            "mana_cost": "{1}{R}{G}",
+            "cmc": 3.0,
+            "color_identity": [
+                "GR"
+            ],
+            "partite": 14,
+            "vittorie": 4
+        },
+        {
+            "id": 195,
+            "name": "ghyrson starn, kelermorph",
+            "mana_cost": " {1}{U}{R}",
+            "cmc": 3.0,
+            "color_identity": [
+                "UR"
+            ],
+            "partite": 14,
+            "vittorie": 0
+        },
+        {
+            "id": 227,
+            "name": "hashaton, scarab's fist",
+            "mana_cost": "{W}{B}",
+            "cmc": 2.0,
+            "color_identity": [
+                "BUW"
+            ],
+            "partite": 14,
+            "vittorie": 4
+        },
+        {
+            "id": 133,
+            "name": "rakdos, the muscle",
+            "mana_cost": "{2}{B}{B}{R}",
+            "cmc": 5.0,
+            "color_identity": [
+                "BR"
+            ],
+            "partite": 14,
+            "vittorie": 8
+        },
+        {
+            "id": 148,
+            "name": "braids, arisen nightmare",
+            "mana_cost": " {1}{B}{B}",
+            "cmc": 3.0,
+            "color_identity": [
+                "B"
+            ],
+            "partite": 13,
+            "vittorie": 3
+        },
+        {
+            "id": 220,
+            "name": "sliver hivelord",
+            "mana_cost": "{W}{U}{B}{R}{G}",
+            "cmc": 5.0,
+            "color_identity": [
+                "BGRUW"
+            ],
+            "partite": 13,
+            "vittorie": 2
+        },
+        {
+            "id": 166,
+            "name": "aragorn, the uniter",
+            "mana_cost": "{R}{G}{W}{U}",
+            "cmc": 4.0,
+            "color_identity": [
+                "RGWU"
+            ],
+            "partite": 11,
+            "vittorie": 3
+        },
+        {
+            "id": 71,
+            "name": "baylen, the haymaker",
+            "mana_cost": "{R}{G}{W}",
+            "cmc": 3.0,
+            "color_identity": [
+                "RGW"
+            ],
+            "partite": 11,
+            "vittorie": 1
+        },
+        {
+            "id": 5,
+            "name": "jetmir, nexus of revels",
+            "mana_cost": "{1}{R}{G}{W}",
+            "cmc": 4.0,
+            "color_identity": [
+                "GRW"
+            ],
+            "partite": 11,
+            "vittorie": 7
+        },
+        {
+            "id": 37,
+            "name": "valgavoth, harrower of souls",
+            "mana_cost": "{2}{B}{R}",
+            "cmc": 4.0,
+            "color_identity": [
+                "BR"
+            ],
+            "partite": 11,
+            "vittorie": 3
+        },
+        {
+            "id": 164,
+            "name": "caesar, legion's emperor",
+            "mana_cost": "{1}{R}{W}{B}",
+            "cmc": 4.0,
+            "color_identity": [
+                "RWB"
+            ],
+            "partite": 10,
+            "vittorie": 3
+        },
+        {
+            "id": 44,
+            "name": "hamza, guardian of arashin",
+            "mana_cost": "{4}{G}{W}",
+            "cmc": 6.0,
+            "color_identity": [
+                "GW"
+            ],
+            "partite": 10,
+            "vittorie": 3
+        },
+        {
+            "id": 28,
+            "name": "toski, bearer of secrets",
+            "mana_cost": "{3}{G}",
+            "cmc": 4.0,
+            "color_identity": [
+                "G"
+            ],
+            "partite": 10,
+            "vittorie": 2
+        },
+        {
+            "id": 45,
+            "name": "Frodo, Adventurous Hobbit // Sam, Loyal Attendant",
+            "mana_cost": "{W}{B}",
+            "cmc": 2.0,
+            "color_identity": [
+                "WB"
+            ],
+            "partite": 9,
+            "vittorie": 5
+        },
+        {
+            "id": 30,
+            "name": "baru, wurmspeaker",
+            "mana_cost": "{2}{G}{G}",
+            "cmc": 4.0,
+            "color_identity": [
+                "G"
+            ],
+            "partite": 9,
+            "vittorie": 2
+        },
+        {
+            "id": 41,
+            "name": "coram, the undertaker",
+            "mana_cost": "{1}{B}{R}{G}",
+            "cmc": 4.0,
+            "color_identity": [
+                "BGR"
+            ],
+            "partite": 9,
+            "vittorie": 0
+        },
+        {
+            "id": 184,
+            "name": "eluge, the shoreless sea",
+            "mana_cost": "{1}{U}{U}{U}",
+            "cmc": 4.0,
+            "color_identity": [
+                "U"
+            ],
+            "partite": 9,
+            "vittorie": 3
+        },
+        {
+            "id": 169,
+            "name": "mahadi, emporium master",
+            "mana_cost": " {1}{B}{R}",
+            "cmc": 3.0,
+            "color_identity": [
+                "BR"
+            ],
+            "partite": 9,
+            "vittorie": 1
+        },
+        {
+            "id": 237,
+            "name": "mendicant core, guidelight",
+            "mana_cost": "{W}{U}",
+            "cmc": 2.0,
+            "color_identity": [
+                "UW"
+            ],
+            "partite": 9,
+            "vittorie": 3
+        },
+        {
+            "id": 22,
+            "name": "muerra, trash tactician",
+            "mana_cost": "{1}{R}{G}",
+            "cmc": 3.0,
+            "color_identity": [
+                "GR"
+            ],
+            "partite": 9,
+            "vittorie": 3
+        },
+        {
+            "id": 72,
+            "name": "nahiri, forged in fury",
+            "mana_cost": "{2}{R}{W}",
+            "cmc": 4.0,
+            "color_identity": [
+                "RW"
+            ],
+            "partite": 9,
+            "vittorie": 3
+        },
+        {
+            "id": 83,
+            "name": "pantlaza, sun-favored",
+            "mana_cost": "{2}{R}{G}{W}",
+            "cmc": 5.0,
+            "color_identity": [
+                "RGW"
+            ],
+            "partite": 9,
+            "vittorie": 5
+        },
+        {
+            "id": 178,
+            "name": "raffine, scheming seer",
+            "mana_cost": " {W}{U}{B}",
+            "cmc": 3.0,
+            "color_identity": [
+                "WUR"
+            ],
+            "partite": 9,
+            "vittorie": 5
+        },
+        {
+            "id": 36,
+            "name": "ratadrabik of urborg",
+            "mana_cost": "{2}{W}{B}",
+            "cmc": 4.0,
+            "color_identity": [
+                "BW"
+            ],
+            "partite": 9,
+            "vittorie": 3
+        },
+        {
+            "id": 232,
+            "name": "vraska, the silencer",
+            "mana_cost": "{1}{B}{G}",
+            "cmc": 3.0,
+            "color_identity": [
+                "BG"
+            ],
+            "partite": 9,
+            "vittorie": 3
+        },
+        {
+            "id": 40,
+            "name": "alela, artful provocateur",
+            "mana_cost": "{1}{W}{U}{B}",
+            "cmc": 4.0,
+            "color_identity": [
+                "WUB"
+            ],
+            "partite": 8,
+            "vittorie": 4
+        },
+        {
+            "id": 214,
+            "name": "bonny pall, clearcutter",
+            "mana_cost": "{3}{G}{U}{U}",
+            "cmc": 6.0,
+            "color_identity": [
+                "GU"
+            ],
+            "partite": 8,
+            "vittorie": 5
+        },
+        {
+            "id": 61,
+            "name": "mondrak, glory dominus",
+            "mana_cost": "{2}{W}{W}",
+            "cmc": 4.0,
+            "color_identity": [
+                "W"
+            ],
+            "partite": 8,
+            "vittorie": 3
+        },
+        {
+            "id": 211,
+            "name": "nymris, oona's trickster",
+            "mana_cost": "{3}{U}{B}",
+            "cmc": 5.0,
+            "color_identity": [
+                "BU"
+            ],
+            "partite": 8,
+            "vittorie": 2
+        },
+        {
+            "id": 64,
+            "name": "rocco, cabaretti caterer",
+            "mana_cost": "{X}{R}{G}{W}",
+            "cmc": 3.0,
+            "color_identity": [
+                "RGW"
+            ],
+            "partite": 8,
+            "vittorie": 5
+        },
+        {
+            "id": 194,
+            "name": "satya, aetherflux genius",
+            "mana_cost": "{1}{U}{R}{W}",
+            "cmc": "4.O",
+            "color_identity": [
+                "URW"
+            ],
+            "partite": 8,
+            "vittorie": 3
+        },
+        {
+            "id": 4,
+            "name": "the wise mothman",
+            "mana_cost": "{1}{B}{G}{U}",
+            "cmc": 4.0,
+            "color_identity": [
+                "BGU"
+            ],
+            "partite": 8,
+            "vittorie": 0
+        },
+        {
+            "id": 174,
+            "name": "atraxa, praetors' voice",
+            "mana_cost": "{G}{W}{U}{B}",
+            "cmc": 4.0,
+            "color_identity": [
+                "GWUB"
+            ],
+            "partite": 7,
+            "vittorie": 1
+        },
+        {
+            "id": 218,
+            "name": "davros, dalek creator",
+            "mana_cost": "{1}{U}{B}{R}",
+            "cmc": 4.0,
+            "color_identity": [
+                "BRU"
+            ],
+            "partite": 7,
+            "vittorie": 1
+        },
+        {
+            "id": 16,
+            "name": "edgar markov",
+            "mana_cost": "{3}{R}{W}{B}",
+            "cmc": 6.0,
+            "color_identity": [
+                "BRW"
+            ],
+            "partite": 7,
+            "vittorie": 2
+        },
+        {
+            "id": 60,
+            "name": "genku, future shaper",
+            "mana_cost": "{2}{W}{U}",
+            "cmc": 4.0,
+            "color_identity": [
+                "WU"
+            ],
+            "partite": 7,
+            "vittorie": 3
+        },
+        {
+            "id": 52,
+            "name": "goro-goro and satoru",
+            "mana_cost": "{U}{B}{R}",
+            "cmc": 3.0,
+            "color_identity": [
+                "UBR"
+            ],
+            "partite": 7,
+            "vittorie": 1
+        },
+        {
+            "id": 149,
+            "name": "ivy, gleeful spellthief",
+            "mana_cost": " {G}{U}",
+            "cmc": 2.0,
+            "color_identity": [
+                "GU"
+            ],
+            "partite": 7,
+            "vittorie": 1
+        },
+        {
+            "id": 63,
+            "name": "kasla, the broken halo",
+            "mana_cost": "{3}{U}{R}{W}",
+            "cmc": 6.0,
+            "color_identity": [
+                "URW"
+            ],
+            "partite": 7,
+            "vittorie": 2
+        },
+        {
+            "id": 80,
+            "name": "marchesa, dealer of death",
+            "mana_cost": "{U}{B}{R}",
+            "cmc": 3.0,
+            "color_identity": [
+                "UBR"
+            ],
+            "partite": 7,
+            "vittorie": 5
+        },
+        {
+            "id": 222,
+            "name": "the necrobloom",
+            "mana_cost": "{1}{W}{B}{G}",
+            "cmc": 4.0,
+            "color_identity": [
+                "BGW"
+            ],
+            "partite": 7,
+            "vittorie": 1
+        },
+        {
+            "id": 18,
+            "name": "zaxara, the exemplary",
+            "mana_cost": "{1}{B}{G}{U}",
+            "cmc": 4.0,
+            "color_identity": [
+                "BGU"
+            ],
+            "partite": 7,
+            "vittorie": 0
+        },
+        {
+            "id": 163,
+            "name": "éowyn, shieldmaiden",
+            "mana_cost": "{2}{U}{R}{W}",
+            "cmc": 5.0,
+            "color_identity": [
+                "URW"
+            ],
+            "partite": 7,
+            "vittorie": 2
+        },
+        {
+            "id": 13,
+            "name": "chishiro, the shattered blade",
+            "mana_cost": "{2}{R}{G}",
+            "cmc": 4.0,
+            "color_identity": [
+                "GR"
+            ],
+            "partite": 6,
+            "vittorie": 0
+        },
+        {
+            "id": 23,
+            "name": "doran, the siege tower",
+            "mana_cost": "{W}{B}{G}",
+            "cmc": 3.0,
+            "color_identity": [
+                "BGW"
+            ],
+            "partite": 6,
+            "vittorie": 1
+        },
+        {
+            "id": 139,
+            "name": "eriette of the charmed apple",
+            "mana_cost": "{1}{W}{B}",
+            "cmc": 3.0,
+            "color_identity": [
+                "WB"
+            ],
+            "partite": 6,
+            "vittorie": 2
+        },
+        {
+            "id": 32,
+            "name": "hakbal of the surging soul",
+            "mana_cost": "{2}{G}{U}",
+            "cmc": 4.0,
+            "color_identity": [
+                "GU"
+            ],
+            "partite": 6,
+            "vittorie": 1
+        },
+        {
+            "id": 236,
+            "name": "maccready, lamplight mayor",
+            "mana_cost": "{W}{B}",
+            "cmc": 2.0,
+            "color_identity": [
+                "BW"
+            ],
+            "partite": 6,
+            "vittorie": 1
+        },
+        {
+            "id": 48,
+            "name": "ognis, the dragon's lash",
+            "mana_cost": "{1}{B/R}{R}{R/G}",
+            "cmc": 4.0,
+            "color_identity": [
+                "BRG"
+            ],
+            "partite": 6,
+            "vittorie": 1
+        },
+        {
+            "id": 70,
+            "name": "raphael, fiendish savior",
+            "mana_cost": "{3}{B}{R}",
+            "cmc": 5.0,
+            "color_identity": [
+                "BR"
+            ],
+            "partite": 6,
+            "vittorie": 0
+        },
+        {
+            "id": 179,
+            "name": "riku of two reflections",
+            "mana_cost": "{2}{G}{U}{R}",
+            "cmc": 5.0,
+            "color_identity": [
+                "GUR"
+            ],
+            "partite": 6,
+            "vittorie": 1
+        },
+        {
+            "id": 67,
+            "name": "satoru, the infiltrator",
+            "mana_cost": "{U}{B}",
+            "cmc": 2.0,
+            "color_identity": [
+                "{U}{B}"
+            ],
+            "partite": 6,
+            "vittorie": 1
+        },
+        {
+            "id": 162,
+            "name": "tatyova, benthic druid",
+            "mana_cost": " {3}{G}{U}",
+            "cmc": 5.0,
+            "color_identity": [
+                "GU"
+            ],
+            "partite": 6,
+            "vittorie": 4
+        },
+        {
+            "id": 84,
+            "name": "tegwyll, duke of splendor",
+            "mana_cost": " {1}{U}{B}",
+            "cmc": 3.0,
+            "color_identity": [
+                "UB"
+            ],
+            "partite": 6,
+            "vittorie": 2
+        },
+        {
+            "id": 233,
+            "name": "varina, lich queen",
+            "mana_cost": "{1}{W}{U}{B}",
+            "cmc": 4.0,
+            "color_identity": [
+                "BUW"
+            ],
+            "partite": 6,
+            "vittorie": 4
+        },
+        {
+            "id": 230,
+            "name": "anzrag, the quake-mole",
+            "mana_cost": "{2}{R}{G}",
+            "cmc": 4.0,
+            "color_identity": [
+                "GR"
+            ],
+            "partite": 5,
+            "vittorie": 2
+        },
+        {
+            "id": 242,
+            "name": "chiss-goria, forge tyrant",
+            "mana_cost": "{6}{R}{R}{R}",
+            "cmc": 9.0,
+            "color_identity": [
+                "R"
+            ],
+            "partite": 5,
+            "vittorie": 1
+        },
+        {
+            "id": 141,
+            "name": "gandalf of the secret fire",
+            "mana_cost": "{1}{U}{R}{W}",
+            "cmc": 4.0,
+            "color_identity": [
+                "URW"
+            ],
+            "partite": 5,
+            "vittorie": 0
+        },
+        {
+            "id": 33,
+            "name": "helga, skittish seer",
+            "mana_cost": "{G}{W}{U}",
+            "cmc": 3.0,
+            "color_identity": [
+                "GUW"
+            ],
+            "partite": 5,
+            "vittorie": 1
+        },
+        {
+            "id": 231,
+            "name": "karador, ghost chieftain",
+            "mana_cost": "{5}{W}{B}{G}",
+            "cmc": 8.0,
+            "color_identity": [
+                "BGW"
+            ],
+            "partite": 5,
+            "vittorie": 1
+        },
+        {
+            "id": 165,
+            "name": "marrow-gnawer",
+            "mana_cost": " {3}{B}{B}",
+            "cmc": 5.0,
+            "color_identity": [
+                "B"
+            ],
+            "partite": 5,
+            "vittorie": 0
+        },
+        {
+            "id": 19,
+            "name": "nine-fingers keene",
+            "mana_cost": "{2}{U}",
+            "cmc": 4.0,
+            "color_identity": [
+                "BGU"
+            ],
+            "partite": 5,
+            "vittorie": 3
+        },
+        {
+            "id": 136,
+            "name": "shirei, shizo's caretaker",
+            "mana_cost": " {4}{B}",
+            "cmc": 5.0,
+            "color_identity": [
+                "B"
+            ],
+            "partite": 5,
+            "vittorie": 1
+        },
+        {
+            "id": 24,
+            "name": "sidar jabari of zhalfir",
+            "mana_cost": "{1}{W}{U}{B}",
+            "cmc": 4.0,
+            "color_identity": [
+                "BUW"
+            ],
+            "partite": 5,
+            "vittorie": 3
+        },
+        {
+            "id": 160,
+            "name": "storm, force of nature",
+            "mana_cost": "{1}{G}{U}{R}",
+            "cmc": 4.0,
+            "color_identity": [
+                "GUR"
+            ],
+            "partite": 5,
+            "vittorie": 1
+        },
+        {
+            "id": 150,
+            "name": "urza, lord high artificer",
+            "mana_cost": " {2}{U}{U}",
+            "cmc": 4.0,
+            "color_identity": [
+                "U"
+            ],
+            "partite": 5,
+            "vittorie": 1
+        },
+        {
+            "id": 167,
+            "name": "valgavoth, terror eater",
+            "mana_cost": "{6}{B}{B}{B}",
+            "cmc": 9.0,
+            "color_identity": [
+                "B"
+            ],
+            "partite": 5,
+            "vittorie": 0
+        },
+        {
+            "id": 58,
+            "name": "voja, jaws of the conclave",
+            "mana_cost": "{2}{R}{G}{W}",
+            "cmc": 5.0,
+            "color_identity": [
+                "RGW"
+            ],
+            "partite": 5,
+            "vittorie": 3
+        },
+        {
+            "id": 62,
+            "name": "zur, eternal schemer",
+            "mana_cost": "{W}{U}{B}",
+            "cmc": 3.0,
+            "color_identity": [
+                "WUB"
+            ],
+            "partite": 5,
+            "vittorie": 0
+        },
+        {
+            "id": 161,
+            "name": "animar, soul of elements",
+            "mana_cost": " {G}{U}{R}",
+            "cmc": 3.0,
+            "color_identity": [
+                "GUR"
+            ],
+            "partite": 4,
+            "vittorie": 2
+        },
+        {
+            "id": 185,
+            "name": "aragorn, hornburg hero",
+            "mana_cost": "{1}{R}{G}{W}",
+            "cmc": 4.0,
+            "color_identity": [
+                "RGW"
+            ],
+            "partite": 4,
+            "vittorie": 1
+        },
+        {
+            "id": 213,
+            "name": "calix, guided by fate",
+            "mana_cost": "{1}{G}{W}",
+            "cmc": 3.0,
+            "color_identity": [
+                "GW"
+            ],
+            "partite": 4,
+            "vittorie": 1
+        },
+        {
+            "id": 241,
+            "name": "captain howler, sea scourge",
+            "mana_cost": "{2}{U}{R}",
+            "cmc": 4.0,
+            "color_identity": [
+                "RU"
+            ],
+            "partite": 4,
+            "vittorie": 2
+        },
+        {
+            "id": 155,
+            "name": "codie, vociferous codex",
+            "mana_cost": " {C}",
+            "cmc": 3.0,
+            "color_identity": [
+                "C"
+            ],
+            "partite": 4,
+            "vittorie": 1
+        },
+        {
+            "id": 191,
+            "name": "esika, god of the tree // the prismatic bridge",
+            "mana_cost": "{2}{G}{W}{U}{B}{R}",
+            "cmc": 7.0,
+            "color_identity": [
+                "GWUBR"
+            ],
+            "partite": 4,
+            "vittorie": 1
+        },
+        {
+            "id": 180,
+            "name": "flubs, the fool",
+            "mana_cost": "{G}{U}{R}",
+            "cmc": 3.0,
+            "color_identity": [
+                "GUR"
+            ],
+            "partite": 4,
+            "vittorie": 2
+        },
+        {
+            "id": 212,
+            "name": "ghave, guru of spores",
+            "mana_cost": "{2}{W}{B}{G}",
+            "cmc": 5.0,
+            "color_identity": [
+                "BGW"
+            ],
+            "partite": 4,
+            "vittorie": 3
+        },
+        {
+            "id": 238,
+            "name": "gisa, the hellraiser",
+            "mana_cost": "{3}{B}{B}",
+            "cmc": 5.0,
+            "color_identity": [
+                "B"
+            ],
+            "partite": 4,
+            "vittorie": 1
+        },
+        {
+            "id": 200,
+            "name": "karlov of the ghost council",
+            "mana_cost": " {W}{B}",
+            "cmc": 2.0,
+            "color_identity": [
+                "WB"
+            ],
+            "partite": 4,
+            "vittorie": 1
+        },
+        {
+            "id": 177,
+            "name": "kenessos, priest of thassa",
+            "mana_cost": " {1}{U}",
+            "cmc": 2.0,
+            "color_identity": [
+                "U"
+            ],
+            "partite": 4,
+            "vittorie": 2
+        },
+        {
+            "id": 246,
+            "name": "king macar, the gold-cursed",
+            "mana_cost": "{2}{B}{B}",
+            "cmc": 4.0,
+            "color_identity": [
+                "B"
+            ],
+            "partite": 4,
+            "vittorie": 0
+        },
+        {
+            "id": 1,
+            "name": "krenko, mob boss",
+            "mana_cost": "{2}{R}{R}",
+            "cmc": 4.0,
+            "color_identity": [
+                "R"
+            ],
+            "partite": 4,
+            "vittorie": 2
+        },
+        {
+            "id": 158,
+            "name": "nekusar, the mindrazer",
+            "mana_cost": "{2}{U}{B}{R}",
+            "cmc": 5.0,
+            "color_identity": [
+                "UBR"
+            ],
+            "partite": 4,
+            "vittorie": 2
+        },
+        {
+            "id": 11,
+            "name": "omnath, locus of all",
+            "mana_cost": "{W}{U}{B/P}{R}{G}",
+            "cmc": 5.0,
+            "color_identity": [
+                "BGRUW"
+            ],
+            "partite": 4,
+            "vittorie": 1
+        },
+        {
+            "id": 240,
+            "name": "omo, queen of vesuva",
+            "mana_cost": "{2}{G/U}",
+            "cmc": 3.0,
+            "color_identity": [
+                "GU"
+            ],
+            "partite": 4,
+            "vittorie": 2
+        },
+        {
+            "id": 186,
+            "name": "pearl-ear, imperial advisor",
+            "mana_cost": " {1}{B}{B}",
+            "cmc": 3.0,
+            "color_identity": [
+                "B"
+            ],
+            "partite": 4,
+            "vittorie": 2
+        },
+        {
+            "id": 203,
+            "name": "samut, vizier of naktamun",
+            "mana_cost": " {1}{G}{R}",
+            "cmc": 3.0,
+            "color_identity": [
+                "GR"
+            ],
+            "partite": 4,
+            "vittorie": 0
+        },
+        {
+            "id": 3,
+            "name": "sigarda, host of herons",
+            "mana_cost": "{2}{G}{W}{W}",
+            "cmc": 5.0,
+            "color_identity": [
+                "GW"
+            ],
+            "partite": 4,
+            "vittorie": 1
+        },
+        {
+            "id": 144,
+            "name": "tergrid, god of fright // tergrid's lantern",
+            "mana_cost": " {3}{B}{B}",
+            "cmc": 5.0,
+            "color_identity": [
+                "B"
+            ],
+            "partite": 4,
+            "vittorie": 2
+        },
+        {
+            "id": 223,
+            "name": "ulalek, fused atrocity",
+            "mana_cost": "{C/W}{C/U}{C/B}{C/R}{C/G}",
+            "cmc": 5.0,
+            "color_identity": [
+                "BGRUW"
+            ],
+            "partite": 4,
+            "vittorie": 0
+        },
+        {
+            "id": 88,
+            "name": "xantcha, sleeper agent",
+            "mana_cost": "{1}{B}{R}",
+            "cmc": 3.0,
+            "color_identity": [
+                "BR"
+            ],
+            "partite": 4,
+            "vittorie": 2
+        },
+        {
+            "id": 10,
+            "name": "Winter, Misanthropic Guide",
+            "mana_cost": "{1}{B}{R}{G}",
+            "cmc": 4.0,
+            "color_identity": [
+                "BRG"
+            ],
+            "partite": 3,
+            "vittorie": 1
+        },
+        {
+            "id": 74,
+            "name": "abdel adrian, gorion's ward",
+            "mana_cost": "{4}{W}",
+            "cmc": 4.0,
+            "color_identity": [
+                "W"
+            ],
+            "partite": 3,
+            "vittorie": 3
+        },
+        {
+            "id": 35,
+            "name": "aegar, the freezing flame",
+            "mana_cost": "{1}{U}{R}",
+            "cmc": 3.0,
+            "color_identity": [
+                "UR"
+            ],
+            "partite": 3,
+            "vittorie": 0
+        },
+        {
+            "id": 57,
+            "name": "anhelo, the painter",
+            "mana_cost": "{U}{B}{R}",
+            "cmc": 3.0,
+            "color_identity": [
+                "UBR"
+            ],
+            "partite": 3,
+            "vittorie": 1
+        },
+        {
+            "id": 248,
+            "name": "astarion, the decadent",
+            "mana_cost": "{4}{W}{B}",
+            "cmc": 6.0,
+            "color_identity": [
+                "BW"
+            ],
+            "partite": 3,
+            "vittorie": 1
+        },
+        {
+            "id": 31,
+            "name": "atraxa, praetors’ voice",
+            "mana_cost": "{G}{W}{U}{B}",
+            "cmc": 4.0,
+            "color_identity": [
+                "GWUB"
+            ],
+            "partite": 3,
+            "vittorie": 0
+        },
+        {
+            "id": 12,
+            "name": "delney, streetwise lookout",
+            "mana_cost": "{2}{W}",
+            "cmc": 3.0,
+            "color_identity": [
+                "W"
+            ],
+            "partite": 3,
+            "vittorie": 2
+        },
+        {
+            "id": 197,
+            "name": "gavi, nest warden",
+            "mana_cost": "{2}{U}{R}{W}",
+            "cmc": 5.0,
+            "color_identity": [
+                "URW"
+            ],
+            "partite": 3,
+            "vittorie": 3
+        },
+        {
+            "id": 140,
+            "name": "hazel of the rootbloom",
+            "mana_cost": "{2}{G}{B}",
+            "cmc": 4.0,
+            "color_identity": [
+                "GB"
+            ],
+            "partite": 3,
+            "vittorie": 1
+        },
+        {
+            "id": 202,
+            "name": "koma, cosmos serpent",
+            "mana_cost": "{3}{G}{G}{U}{U}",
+            "cmc": 7.0,
+            "color_identity": [
+                "GU"
+            ],
+            "partite": 3,
+            "vittorie": 3
+        },
+        {
+            "id": 81,
+            "name": "millicent, restless revenant",
+            "mana_cost": "{5}{W}{U}",
+            "cmc": 7.0,
+            "color_identity": [
+                "WU"
+            ],
+            "partite": 3,
+            "vittorie": 1
+        },
+        {
+            "id": 39,
+            "name": "rendmaw, creaking nest",
+            "mana_cost": "{3}{B}{G}",
+            "cmc": 5.0,
+            "color_identity": [
+                "BG"
+            ],
+            "partite": 3,
+            "vittorie": 1
+        },
+        {
+            "id": 86,
+            "name": "thalia and the gitrog monster",
+            "mana_cost": "{1}{W}{B}{G}",
+            "cmc": 5.0,
+            "color_identity": [
+                "WBG"
+            ],
+            "partite": 3,
+            "vittorie": 0
+        },
+        {
+            "id": 46,
+            "name": "the scarab god",
+            "mana_cost": "{3}{U}{B}",
+            "cmc": 5.0,
+            "color_identity": [
+                "BU"
+            ],
+            "partite": 3,
+            "vittorie": 1
+        },
+        {
+            "id": 2,
+            "name": "tivit, seller of secrets",
+            "mana_cost": "{3}{W}{U}{B}",
+            "cmc": 6.0,
+            "color_identity": [
+                "BUW"
+            ],
+            "partite": 3,
+            "vittorie": 1
+        },
+        {
+            "id": 138,
+            "name": "wyleth, soul of steel",
+            "mana_cost": "{1}{W}{R}",
+            "cmc": 3.0,
+            "color_identity": [
+                "WR"
+            ],
+            "partite": 3,
+            "vittorie": 0
+        },
+        {
+            "id": 157,
+            "name": "zacama, primal calamity",
+            "mana_cost": "{6}{R}{G}{W}",
+            "cmc": 9.0,
+            "color_identity": [
+                "RGW"
+            ],
+            "partite": 3,
+            "vittorie": 2
+        },
+        {
+            "id": 29,
+            "name": "zhulodok, void gorger",
+            "mana_cost": "{5}{C}",
+            "cmc": 6.0,
+            "color_identity": [
+                "C"
+            ],
+            "partite": 3,
+            "vittorie": 0
+        },
+        {
+            "id": 73,
+            "name": "alesha, who smiles at death",
+            "mana_cost": "{2}{R}",
+            "cmc": 3.0,
+            "color_identity": [
+                "R"
+            ],
+            "partite": 2,
+            "vittorie": 0
+        },
+        {
+            "id": 188,
+            "name": "arahbo, the first fang",
+            "mana_cost": "{2}{W}",
+            "cmc": 3.0,
+            "color_identity": [
+                "W"
+            ],
+            "partite": 2,
+            "vittorie": 0
+        },
+        {
+            "id": 190,
+            "name": "atraxa, grand unifier",
+            "mana_cost": "{3}{G}{W}{U}{B}",
+            "cmc": 7.0,
+            "color_identity": [
+                "GWUB"
+            ],
+            "partite": 2,
+            "vittorie": 0
+        },
+        {
+            "id": 77,
+            "name": "captain n'ghathrod",
+            "mana_cost": "{3}{U}{B}",
+            "cmc": 5.0,
+            "color_identity": [
+                "UB"
+            ],
+            "partite": 2,
+            "vittorie": 0
+        },
+        {
+            "id": 224,
+            "name": "carmen, cruel skymarcher",
+            "mana_cost": "{3}{W}{B}",
+            "cmc": 5.0,
+            "color_identity": [
+                "BW"
+            ],
+            "partite": 2,
+            "vittorie": 0
+        },
+        {
+            "id": 145,
+            "name": "dina, soul steeper",
+            "mana_cost": " {B}{G}",
+            "cmc": 2.0,
+            "color_identity": [
+                "BG"
+            ],
+            "partite": 2,
+            "vittorie": 0
+        },
+        {
+            "id": 14,
+            "name": "dogmeat, ever loyal",
+            "mana_cost": "{R}{G}{W}",
+            "cmc": 3.0,
+            "color_identity": [
+                "GRW"
+            ],
+            "partite": 2,
+            "vittorie": 0
+        },
+        {
+            "id": 56,
+            "name": "dragonhawk, fate's tempest",
+            "mana_cost": "{3}{R}{R}",
+            "cmc": 5.0,
+            "color_identity": [
+                "R"
+            ],
+            "partite": 2,
+            "vittorie": 1
+        },
+        {
+            "id": 66,
+            "name": "esika, god of the tree",
+            "mana_cost": "{2}{G}{W}{U}{B}{R}",
+            "cmc": 7.0,
+            "color_identity": [
+                "GWUBR"
+            ],
+            "partite": 2,
+            "vittorie": 0
+        },
+        {
+            "id": 47,
+            "name": "kaima, the fractured calm",
+            "mana_cost": "{2}{R}{G}",
+            "cmc": 4.0,
+            "color_identity": [
+                "RG"
+            ],
+            "partite": 2,
+            "vittorie": 1
+        },
+        {
+            "id": 51,
+            "name": "killian, ink duelist",
+            "mana_cost": "{W}{B}",
+            "cmc": 2.0,
+            "color_identity": [
+                "WB"
+            ],
+            "partite": 2,
+            "vittorie": 0
+        },
+        {
+            "id": 189,
+            "name": "lae'zel, vlaakith's champion",
+            "mana_cost": " {2}{W}",
+            "cmc": 3.0,
+            "color_identity": [
+                "W"
+            ],
+            "partite": 2,
+            "vittorie": 1
+        },
+        {
+            "id": 208,
+            "name": "merry, warden of isengard",
+            "mana_cost": "{1}{G}{W}",
+            "cmc": 3.0,
+            "color_identity": [
+                "GW"
+            ],
+            "partite": 2,
+            "vittorie": 0
+        },
+        {
+            "id": 210,
+            "name": "prosper, tome-bound",
+            "mana_cost": "{2}{B}{R}",
+            "cmc": 4.0,
+            "color_identity": [
+                "BR"
+            ],
+            "partite": 2,
+            "vittorie": 1
+        },
+        {
+            "id": 7,
+            "name": "queen marchesa",
+            "mana_cost": "{1}{R}{W}{B}",
+            "cmc": 4.0,
+            "color_identity": [
+                "BRW"
+            ],
+            "partite": 2,
+            "vittorie": 0
+        },
+        {
+            "id": 153,
+            "name": "saruman, the white hand",
+            "mana_cost": "{1}{U}{B}{R}",
+            "cmc": 4.0,
+            "color_identity": [
+                "UBR"
+            ],
+            "partite": 2,
+            "vittorie": 1
+        },
+        {
+            "id": 216,
+            "name": "satoru umezawa",
+            "mana_cost": "{1}{U}{B}",
+            "cmc": 3.0,
+            "color_identity": [
+                "BU"
+            ],
+            "partite": 2,
+            "vittorie": 0
+        },
+        {
+            "id": 69,
+            "name": "sovereign okinec ahau",
+            "mana_cost": "{2}{G}{W}",
+            "cmc": 4.0,
+            "color_identity": [
+                "GW"
+            ],
+            "partite": 2,
+            "vittorie": 0
+        },
+        {
+            "id": 78,
+            "name": "the infamous cruelclaw",
+            "mana_cost": "{1}{B}{R}",
+            "cmc": 3.0,
+            "color_identity": [
+                "BR"
+            ],
+            "partite": 2,
+            "vittorie": 0
+        },
+        {
+            "id": 209,
+            "name": "vannifar, evolved enigma",
+            "mana_cost": "{2}{G}{U}",
+            "cmc": 4.0,
+            "color_identity": [
+                "GU"
+            ],
+            "partite": 2,
+            "vittorie": 0
+        },
+        {
+            "id": 152,
+            "name": "winter, misanthropic guide",
+            "mana_cost": "{1}{B}{R}{G}",
+            "cmc": 4.0,
+            "color_identity": [
+                "BRG"
+            ],
+            "partite": 2,
+            "vittorie": 1
+        },
+        {
+            "id": 183,
+            "name": "yarok, the desecrated",
+            "mana_cost": "{2}{B}{G}{U}",
+            "cmc": 5.0,
+            "color_identity": [
+                "BGU"
+            ],
+            "partite": 2,
+            "vittorie": 0
+        },
+        {
+            "id": 217,
+            "name": "ziatora, the incinerator",
+            "mana_cost": "{3}{B}{R}{G}",
+            "cmc": 6.0,
+            "color_identity": [
+                "BGR"
+            ],
+            "partite": 2,
+            "vittorie": 0
+        },
+        {
+            "id": 172,
+            "name": "zo-zu the punisher",
+            "mana_cost": " {1}{R}{R}",
+            "cmc": 3.0,
+            "color_identity": [
+                "R"
+            ],
+            "partite": 2,
+            "vittorie": 0
+        },
+        {
+            "id": 15,
+            "name": "Sythis, Harvest's Hand",
+            "mana_cost": "{G}{W}",
+            "cmc": 2.0,
+            "color_identity": [
+                "GW"
+            ],
+            "partite": 1,
+            "vittorie": 0
+        },
+        {
+            "id": 175,
+            "name": "alania, divergent storm",
+            "mana_cost": "{3}{U}{R}",
+            "cmc": 5.0,
+            "color_identity": [
+                "UR"
+            ],
+            "partite": 1,
+            "vittorie": 0
+        },
+        {
+            "id": 50,
+            "name": "aminatou, veil piercer",
+            "mana_cost": "{1}{W}{U}{B}",
+            "cmc": 4.0,
+            "color_identity": [
+                "WUB"
+            ],
+            "partite": 1,
+            "vittorie": 0
+        },
+        {
+            "id": 176,
+            "name": "ashaya, soul of the wild",
+            "mana_cost": "{3}{G}{G}",
+            "cmc": 5.0,
+            "color_identity": [
+                "G"
+            ],
+            "partite": 1,
+            "vittorie": 1
+        },
+        {
+            "id": 239,
+            "name": "bane, lord of darkness",
+            "mana_cost": "{1}{W}{U}{B}",
+            "cmc": 4.0,
+            "color_identity": [
+                "BUW"
+            ],
+            "partite": 1,
+            "vittorie": 0
+        },
+        {
+            "id": 21,
+            "name": "breya, etherium shaper",
+            "mana_cost": "{W}{U}{B}{R}",
+            "cmc": 4.0,
+            "color_identity": [
+                "BRUW"
+            ],
+            "partite": 1,
+            "vittorie": 0
+        },
+        {
+            "id": 173,
+            "name": "brudiclad, telchor engineer",
+            "mana_cost": " {4}{U}{R}",
+            "cmc": 6.0,
+            "color_identity": [
+                "UR"
+            ],
+            "partite": 1,
+            "vittorie": 1
+        },
+        {
+            "id": 187,
+            "name": "chatterfang, squirrel general",
+            "mana_cost": "{2}{G}",
+            "cmc": 3.0,
+            "color_identity": [
+                "G"
+            ],
+            "partite": 1,
+            "vittorie": 0
+        },
+        {
+            "id": 193,
+            "name": "clavileño, first of the blessed",
+            "mana_cost": "{1}{W}{B}",
+            "cmc": 3.0,
+            "color_identity": [
+                "WB"
+            ],
+            "partite": 1,
+            "vittorie": 0
+        },
+        {
+            "id": 234,
+            "name": "extus, oriq overlord // awaken the blood avatar",
+            "mana_cost": "",
+            "cmc": 4.0,
+            "color_identity": [
+                "BRW"
+            ],
+            "partite": 1,
+            "vittorie": 0
+        },
+        {
+            "id": 243,
+            "name": "galadriel, light of valinor",
+            "mana_cost": "{2}{G}{W}{U}",
+            "cmc": 5.0,
+            "color_identity": [
+                "GUW"
+            ],
+            "partite": 1,
+            "vittorie": 1
+        },
+        {
+            "id": 59,
+            "name": "imoen, mystic trickster",
+            "mana_cost": "{2}{U}",
+            "cmc": 3.0,
+            "color_identity": [
+                "U"
+            ],
+            "partite": 1,
+            "vittorie": 1
+        },
+        {
+            "id": 207,
+            "name": "kykar, wind's fury",
+            "mana_cost": "{1}{U}{R}{W}",
+            "cmc": 4.0,
+            "color_identity": [
+                "RUW"
+            ],
+            "partite": 1,
+            "vittorie": 0
+        },
+        {
+            "id": 135,
+            "name": "kynaios and tiro of meletis",
+            "mana_cost": "{R}{G}{W}{U}",
+            "cmc": 4.0,
+            "color_identity": [
+                "RGWU"
+            ],
+            "partite": 1,
+            "vittorie": 0
+        },
+        {
+            "id": 89,
+            "name": "lae’zel, vlaakith's champion",
+            "mana_cost": " {2}{W}",
+            "cmc": 3.0,
+            "color_identity": [
+                "W"
+            ],
+            "partite": 1,
+            "vittorie": 0
+        },
+        {
+            "id": 137,
+            "name": "lagrella, the magpie",
+            "mana_cost": "{{G}{W}{U}",
+            "cmc": 3.0,
+            "color_identity": [
+                "GWU"
+            ],
+            "partite": 1,
+            "vittorie": 0
+        },
+        {
+            "id": 244,
+            "name": "magus lucea kane",
+            "mana_cost": "{1}{G}{U}{R}",
+            "cmc": 4.0,
+            "color_identity": [
+                "GRU"
+            ],
+            "partite": 1,
+            "vittorie": 0
+        },
+        {
+            "id": 75,
+            "name": "miirym, sentinel wyrm",
+            "mana_cost": "{3}{G}{U}{R}",
+            "cmc": 6.0,
+            "color_identity": [
+                "GUR"
+            ],
+            "partite": 1,
+            "vittorie": 0
+        },
+        {
+            "id": 20,
+            "name": "morska, undersea sleuth",
+            "mana_cost": "{G}{W}{U}",
+            "cmc": 3.0,
+            "color_identity": [
+                "GUW"
+            ],
+            "partite": 1,
+            "vittorie": 0
+        },
+        {
+            "id": 221,
+            "name": "muldrotha, the gravetide",
+            "mana_cost": "{3}{B}{G}{U}",
+            "cmc": 6.0,
+            "color_identity": [
+                "BGU"
+            ],
+            "partite": 1,
+            "vittorie": 0
+        },
+        {
+            "id": 143,
+            "name": "niv-mizzet, parun",
+            "mana_cost": "{U}{U}{U}{R}{R}{R}",
+            "cmc": 6.0,
+            "color_identity": [
+                "UR"
+            ],
+            "partite": 1,
+            "vittorie": 0
+        },
+        {
+            "id": 225,
+            "name": "ojer axonil, deepest might // temple of power",
+            "mana_cost": "",
+            "cmc": 4.0,
+            "color_identity": [
+                "R"
+            ],
+            "partite": 1,
+            "vittorie": 0
+        },
+        {
+            "id": 198,
+            "name": "omnath, locus of creation",
+            "mana_cost": "{R}{G}{W}{U}",
+            "cmc": 4.0,
+            "color_identity": [
+                "RGWU"
+            ],
+            "partite": 1,
+            "vittorie": 0
+        },
+        {
+            "id": 171,
+            "name": "oswald fiddlebender",
+            "mana_cost": "{1}{W}",
+            "cmc": 2.0,
+            "color_identity": [
+                "W"
+            ],
+            "partite": 1,
+            "vittorie": 0
+        },
+        {
+            "id": 134,
+            "name": "reyhan, last of the abzan",
+            "mana_cost": "{{1}{B}{G}",
+            "cmc": 5.0,
+            "color_identity": [
+                "BGW"
+            ],
+            "partite": 1,
+            "vittorie": 0
+        },
+        {
+            "id": 228,
+            "name": "saheeli, radiant creator",
+            "mana_cost": "{1}{G}{U}{R}",
+            "cmc": 4.0,
+            "color_identity": [
+                "GRU"
+            ],
+            "partite": 1,
+            "vittorie": 0
+        },
+        {
+            "id": 235,
+            "name": "selvala, heart of the wilds",
+            "mana_cost": "{1}{G}{G}",
+            "cmc": 3.0,
+            "color_identity": [
+                "G"
+            ],
+            "partite": 1,
+            "vittorie": 0
+        },
+        {
+            "id": 219,
+            "name": "shanna, purifying blade",
+            "mana_cost": "{G}{W}{U}",
+            "cmc": 3.0,
+            "color_identity": [
+                "GUW"
+            ],
+            "partite": 1,
+            "vittorie": 0
+        },
+        {
+            "id": 199,
+            "name": "shilgengar, sire of famine",
+            "mana_cost": " {3}{B}{B}",
+            "cmc": 5.0,
+            "color_identity": [
+                "B"
+            ],
+            "partite": 1,
+            "vittorie": 0
+        },
+        {
+            "id": 245,
+            "name": "sythis, harvest's hand",
+            "mana_cost": "{G}{W}",
+            "cmc": 2.0,
+            "color_identity": [
+                "GW"
+            ],
+            "partite": 1,
+            "vittorie": 0
+        },
+        {
+            "id": 156,
+            "name": "szarekh, the silent king",
+            "mana_cost": "{1}{B}{B}{B}",
+            "cmc": 4.0,
+            "color_identity": [
+                "B"
+            ],
+            "partite": 1,
+            "vittorie": 0
+        },
+        {
+            "id": 226,
+            "name": "temmet, vizier of naktamun",
+            "mana_cost": "{W}{U}",
+            "cmc": 2.0,
+            "color_identity": [
+                "UW"
+            ],
+            "partite": 1,
+            "vittorie": 0
+        },
+        {
+            "id": 192,
+            "name": "the ur-dragon",
+            "mana_cost": "{4}{W}{U}{B}{R}{G}",
+            "cmc": 9.0,
+            "color_identity": [
+                "WUBRG"
+            ],
+            "partite": 1,
+            "vittorie": 0
+        },
+        {
+            "id": 249,
+            "name": "ureni of the unwritten",
+            "mana_cost": "{4}{G}{U}{R}",
+            "cmc": 7.0,
+            "color_identity": [
+                "GRU"
+            ],
+            "partite": 1,
+            "vittorie": 0
+        },
+        {
+            "id": 206,
+            "name": "urza, chief artificer",
+            "mana_cost": "{3}{W}{U}{B}",
+            "cmc": 6.0,
+            "color_identity": [
+                "BUW"
+            ],
+            "partite": 1,
+            "vittorie": 0
+        },
+        {
+            "id": 196,
+            "name": "winota, joiner of forces",
+            "mana_cost": " {2}{R}{W}",
+            "cmc": 4.0,
+            "color_identity": [
+                "RW"
+            ],
+            "partite": 1,
+            "vittorie": 0
+        },
+        {
+            "id": 247,
+            "name": "witch-king, sky scourge",
+            "mana_cost": "{5}{B}{R}",
+            "cmc": 7.0,
+            "color_identity": [
+                "BR"
+            ],
+            "partite": 1,
+            "vittorie": 0
+        },
+        {
+            "id": 154,
+            "name": "witherbloom apprentice",
+            "mana_cost": " {G}{B}",
+            "cmc": 2.0,
+            "color_identity": [
+                "GB"
+            ],
+            "partite": 1,
+            "vittorie": 0
+        },
+        {
+            "id": 170,
+            "name": "xyris, the writhing storm",
+            "mana_cost": "{2}{G}{U}{R}",
+            "cmc": 5.0,
+            "color_identity": [
+                "GUR"
+            ],
+            "partite": 1,
+            "vittorie": 1
+        },
+        {
+            "id": 146,
+            "name": "yidris, maelstrom wielder",
+            "mana_cost": "{U}{B}{R}{G}",
+            "cmc": 4.0,
+            "color_identity": [
+                "UBRG"
+            ],
+            "partite": 1,
+            "vittorie": 1
+        },
+        {
+            "id": 151,
+            "name": "yusri, fortune's flame",
+            "mana_cost": " {1}{U}{R}",
+            "cmc": 3.0,
+            "color_identity": [
+                "UR"
+            ],
+            "partite": 1,
+            "vittorie": 1
+        },
+        {
+            "id": 229,
+            "name": "zur the enchanter",
+            "mana_cost": "{1}{W}{U}{B}",
+            "cmc": 4.0,
+            "color_identity": [
+                "BUW"
+            ],
+            "partite": 1,
+            "vittorie": 0
+        }
+    ]
+}
