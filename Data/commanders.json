@@ -122,6 +122,17 @@
             "vittorie": 8
         },
         {
+            "id": 220,
+            "name": "sliver hivelord",
+            "mana_cost": "{W}{U}{B}{R}{G}",
+            "cmc": 5.0,
+            "color_identity": [
+                "BGRUW"
+            ],
+            "partite": 14,
+            "vittorie": 2
+        },
+        {
             "id": 148,
             "name": "braids, arisen nightmare",
             "mana_cost": " {1}{B}{B}",
@@ -131,17 +142,6 @@
             ],
             "partite": 13,
             "vittorie": 3
-        },
-        {
-            "id": 220,
-            "name": "sliver hivelord",
-            "mana_cost": "{W}{U}{B}{R}{G}",
-            "cmc": 5.0,
-            "color_identity": [
-                "BGRUW"
-            ],
-            "partite": 13,
-            "vittorie": 2
         },
         {
             "id": 166,
@@ -177,6 +177,17 @@
             "vittorie": 7
         },
         {
+            "id": 237,
+            "name": "mendicant core, guidelight",
+            "mana_cost": "{W}{U}",
+            "cmc": 2.0,
+            "color_identity": [
+                "UW"
+            ],
+            "partite": 11,
+            "vittorie": 4
+        },
+        {
             "id": 37,
             "name": "valgavoth, harrower of souls",
             "mana_cost": "{2}{B}{R}",
@@ -210,6 +221,39 @@
             "vittorie": 3
         },
         {
+            "id": 178,
+            "name": "raffine, scheming seer",
+            "mana_cost": " {W}{U}{B}",
+            "cmc": 3.0,
+            "color_identity": [
+                "WUR"
+            ],
+            "partite": 10,
+            "vittorie": 6
+        },
+        {
+            "id": 36,
+            "name": "ratadrabik of urborg",
+            "mana_cost": "{2}{W}{B}",
+            "cmc": 4.0,
+            "color_identity": [
+                "BW"
+            ],
+            "partite": 10,
+            "vittorie": 3
+        },
+        {
+            "id": 194,
+            "name": "satya, aetherflux genius",
+            "mana_cost": "{1}{U}{R}{W}",
+            "cmc": "4.O",
+            "color_identity": [
+                "URW"
+            ],
+            "partite": 10,
+            "vittorie": 3
+        },
+        {
             "id": 28,
             "name": "toski, bearer of secrets",
             "mana_cost": "{3}{G}",
@@ -219,6 +263,17 @@
             ],
             "partite": 10,
             "vittorie": 2
+        },
+        {
+            "id": 232,
+            "name": "vraska, the silencer",
+            "mana_cost": "{1}{B}{G}",
+            "cmc": 3.0,
+            "color_identity": [
+                "BG"
+            ],
+            "partite": 10,
+            "vittorie": 4
         },
         {
             "id": 45,
@@ -276,17 +331,6 @@
             "vittorie": 1
         },
         {
-            "id": 237,
-            "name": "mendicant core, guidelight",
-            "mana_cost": "{W}{U}",
-            "cmc": 2.0,
-            "color_identity": [
-                "UW"
-            ],
-            "partite": 9,
-            "vittorie": 3
-        },
-        {
             "id": 22,
             "name": "muerra, trash tactician",
             "mana_cost": "{1}{R}{G}",
@@ -318,39 +362,6 @@
             ],
             "partite": 9,
             "vittorie": 5
-        },
-        {
-            "id": 178,
-            "name": "raffine, scheming seer",
-            "mana_cost": " {W}{U}{B}",
-            "cmc": 3.0,
-            "color_identity": [
-                "WUR"
-            ],
-            "partite": 9,
-            "vittorie": 5
-        },
-        {
-            "id": 36,
-            "name": "ratadrabik of urborg",
-            "mana_cost": "{2}{W}{B}",
-            "cmc": 4.0,
-            "color_identity": [
-                "BW"
-            ],
-            "partite": 9,
-            "vittorie": 3
-        },
-        {
-            "id": 232,
-            "name": "vraska, the silencer",
-            "mana_cost": "{1}{B}{G}",
-            "cmc": 3.0,
-            "color_identity": [
-                "BG"
-            ],
-            "partite": 9,
-            "vittorie": 3
         },
         {
             "id": 40,
@@ -406,17 +417,6 @@
             ],
             "partite": 8,
             "vittorie": 5
-        },
-        {
-            "id": 194,
-            "name": "satya, aetherflux genius",
-            "mana_cost": "{1}{U}{R}{W}",
-            "cmc": "4.O",
-            "color_identity": [
-                "URW"
-            ],
-            "partite": 8,
-            "vittorie": 3
         },
         {
             "id": 4,
@@ -716,6 +716,17 @@
             "vittorie": 0
         },
         {
+            "id": 238,
+            "name": "gisa, the hellraiser",
+            "mana_cost": "{3}{B}{B}",
+            "cmc": 5.0,
+            "color_identity": [
+                "B"
+            ],
+            "partite": 5,
+            "vittorie": 1
+        },
+        {
             "id": 33,
             "name": "helga, skittish seer",
             "mana_cost": "{G}{W}{U}",
@@ -758,6 +769,17 @@
             ],
             "partite": 5,
             "vittorie": 3
+        },
+        {
+            "id": 240,
+            "name": "omo, queen of vesuva",
+            "mana_cost": "{2}{G/U}",
+            "cmc": 3.0,
+            "color_identity": [
+                "GU"
+            ],
+            "partite": 5,
+            "vittorie": 2
         },
         {
             "id": 136,
@@ -925,12 +947,12 @@
             "vittorie": 3
         },
         {
-            "id": 238,
-            "name": "gisa, the hellraiser",
-            "mana_cost": "{3}{B}{B}",
-            "cmc": 5.0,
+            "id": 140,
+            "name": "hazel of the rootbloom",
+            "mana_cost": "{2}{G}{B}",
+            "cmc": 4.0,
             "color_identity": [
-                "B"
+                "GB"
             ],
             "partite": 4,
             "vittorie": 1
@@ -1000,17 +1022,6 @@
             ],
             "partite": 4,
             "vittorie": 1
-        },
-        {
-            "id": 240,
-            "name": "omo, queen of vesuva",
-            "mana_cost": "{2}{G/U}",
-            "cmc": 3.0,
-            "color_identity": [
-                "GU"
-            ],
-            "partite": 4,
-            "vittorie": 2
         },
         {
             "id": 186,
@@ -1167,17 +1178,6 @@
             "vittorie": 3
         },
         {
-            "id": 140,
-            "name": "hazel of the rootbloom",
-            "mana_cost": "{2}{G}{B}",
-            "cmc": 4.0,
-            "color_identity": [
-                "GB"
-            ],
-            "partite": 3,
-            "vittorie": 1
-        },
-        {
             "id": 202,
             "name": "koma, cosmos serpent",
             "mana_cost": "{3}{G}{G}{U}{U}",
@@ -1242,6 +1242,17 @@
             ],
             "partite": 3,
             "vittorie": 1
+        },
+        {
+            "id": 209,
+            "name": "vannifar, evolved enigma",
+            "mana_cost": "{2}{G}{U}",
+            "cmc": 4.0,
+            "color_identity": [
+                "GU"
+            ],
+            "partite": 3,
+            "vittorie": 0
         },
         {
             "id": 138,
@@ -1365,6 +1376,17 @@
             "vittorie": 1
         },
         {
+            "id": 251,
+            "name": "eshki, temur's roar",
+            "mana_cost": "{G}{U}{R}",
+            "cmc": 3.0,
+            "color_identity": [
+                "GRU"
+            ],
+            "partite": 2,
+            "vittorie": 0
+        },
+        {
             "id": 66,
             "name": "esika, god of the tree",
             "mana_cost": "{2}{G}{W}{U}{B}{R}",
@@ -1374,6 +1396,17 @@
             ],
             "partite": 2,
             "vittorie": 0
+        },
+        {
+            "id": 243,
+            "name": "galadriel, light of valinor",
+            "mana_cost": "{2}{G}{W}{U}",
+            "cmc": 5.0,
+            "color_identity": [
+                "GUW"
+            ],
+            "partite": 2,
+            "vittorie": 1
         },
         {
             "id": 47,
@@ -1442,6 +1475,17 @@
             "vittorie": 0
         },
         {
+            "id": 252,
+            "name": "roxanne, starfall savant",
+            "mana_cost": "{3}{R}{G}",
+            "cmc": 5.0,
+            "color_identity": [
+                "GR"
+            ],
+            "partite": 2,
+            "vittorie": 1
+        },
+        {
             "id": 153,
             "name": "saruman, the white hand",
             "mana_cost": "{1}{U}{B}{R}",
@@ -1481,17 +1525,6 @@
             "cmc": 3.0,
             "color_identity": [
                 "BR"
-            ],
-            "partite": 2,
-            "vittorie": 0
-        },
-        {
-            "id": 209,
-            "name": "vannifar, evolved enigma",
-            "mana_cost": "{2}{G}{U}",
-            "cmc": 4.0,
-            "color_identity": [
-                "GU"
             ],
             "partite": 2,
             "vittorie": 0
@@ -1574,6 +1607,17 @@
             "vittorie": 0
         },
         {
+            "id": 250,
+            "name": "arna kennerüd, skycaptain",
+            "mana_cost": "{2}{W}{U}{B}",
+            "cmc": 5.0,
+            "color_identity": [
+                "BUW"
+            ],
+            "partite": 1,
+            "vittorie": 1
+        },
+        {
             "id": 176,
             "name": "ashaya, soul of the wild",
             "mana_cost": "{3}{G}{G}",
@@ -1649,17 +1693,6 @@
             ],
             "partite": 1,
             "vittorie": 0
-        },
-        {
-            "id": 243,
-            "name": "galadriel, light of valinor",
-            "mana_cost": "{2}{G}{W}{U}",
-            "cmc": 5.0,
-            "color_identity": [
-                "GUW"
-            ],
-            "partite": 1,
-            "vittorie": 1
         },
         {
             "id": 59,
@@ -1969,38 +2002,4 @@
             "partite": 1,
             "vittorie": 1
         },
-        {
-            "id": 146,
-            "name": "yidris, maelstrom wielder",
-            "mana_cost": "{U}{B}{R}{G}",
-            "cmc": 4.0,
-            "color_identity": [
-                "UBRG"
-            ],
-            "partite": 1,
-            "vittorie": 1
-        },
-        {
-            "id": 151,
-            "name": "yusri, fortune's flame",
-            "mana_cost": " {1}{U}{R}",
-            "cmc": 3.0,
-            "color_identity": [
-                "UR"
-            ],
-            "partite": 1,
-            "vittorie": 1
-        },
-        {
-            "id": 229,
-            "name": "zur the enchanter",
-            "mana_cost": "{1}{W}{U}{B}",
-            "cmc": 4.0,
-            "color_identity": [
-                "BUW"
-            ],
-            "partite": 1,
-            "vittorie": 0
-        }
-    ]
-}
+  
