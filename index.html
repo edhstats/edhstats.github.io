@@ -22,16 +22,24 @@ tr:hover { background-color: #ddd; }
 </head>
 <body>
 <h1>Magic EDH Stats Report</h1>
-<!-- Assicurati di includere day.js -->
-<script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
+<!-- Iniettata da Python -->
+<p id="lastUpdated" data-ts="2025-04-17T10:57">Ultimo aggiornamento: --</p>
 
-<!-- Dove apparirà la data -->
-<p id="lastUpdated">Ultimo aggiornamento: --</p>
+<!-- Includi day.js -->
+<script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/dayjs@1/locale/it.js"></script>
 
 <script>
-  // Ottieni la data e formattala come YYYY-MM-DD HH:mm
-  const now = dayjs().format('YYYY-MM-DD HH:mm');
-  document.getElementById("lastUpdated").textContent = "Ultimo aggiornamento: " + now;
+  dayjs.locale('it');  // Imposta la lingua italiana
+
+  // Recupera il timestamp iniettato da Python (es. nel data attribute)
+  const ts = document.getElementById("lastUpdated").dataset.ts;
+
+  // Formattalo con day.js (solo al primo caricamento)
+  const formatted = dayjs(ts).format('D MMMM YYYY [alle] HH:mm');
+
+  document.getElementById("lastUpdated").textContent =
+    "Ultimo aggiornamento: " + formatted;
 </script>
 <p><strong>CMC Medio Totale:</strong> 4.15</p>
 <p><strong>Numero Totale Giocatori:</strong> 29</p>
