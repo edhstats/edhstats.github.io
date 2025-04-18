@@ -19,8 +19,8 @@
             "color_identity": [
                 "RGW"
             ],
-            "partite": 20,
-            "vittorie": 4
+            "partite": 21,
+            "vittorie": 5
         },
         {
             "id": 168,
@@ -78,6 +78,28 @@
             "vittorie": 1
         },
         {
+            "id": 133,
+            "name": "rakdos, the muscle",
+            "mana_cost": "{2}{B}{B}{R}",
+            "cmc": 5.0,
+            "color_identity": [
+                "BR"
+            ],
+            "partite": 15,
+            "vittorie": 8
+        },
+        {
+            "id": 220,
+            "name": "sliver hivelord",
+            "mana_cost": "{W}{U}{B}{R}{G}",
+            "cmc": 5.0,
+            "color_identity": [
+                "BGRUW"
+            ],
+            "partite": 15,
+            "vittorie": 2
+        },
+        {
             "id": 25,
             "name": "bello, bard of the brambles",
             "mana_cost": "{1}{R}{G}",
@@ -109,28 +131,6 @@
             ],
             "partite": 14,
             "vittorie": 4
-        },
-        {
-            "id": 133,
-            "name": "rakdos, the muscle",
-            "mana_cost": "{2}{B}{B}{R}",
-            "cmc": 5.0,
-            "color_identity": [
-                "BR"
-            ],
-            "partite": 14,
-            "vittorie": 8
-        },
-        {
-            "id": 220,
-            "name": "sliver hivelord",
-            "mana_cost": "{W}{U}{B}{R}{G}",
-            "cmc": 5.0,
-            "color_identity": [
-                "BGRUW"
-            ],
-            "partite": 14,
-            "vittorie": 2
         },
         {
             "id": 148,
@@ -221,6 +221,17 @@
             "vittorie": 3
         },
         {
+            "id": 22,
+            "name": "muerra, trash tactician",
+            "mana_cost": "{1}{R}{G}",
+            "cmc": 3.0,
+            "color_identity": [
+                "GR"
+            ],
+            "partite": 10,
+            "vittorie": 3
+        },
+        {
             "id": 178,
             "name": "raffine, scheming seer",
             "mana_cost": " {W}{U}{B}",
@@ -298,6 +309,17 @@
             "vittorie": 2
         },
         {
+            "id": 214,
+            "name": "bonny pall, clearcutter",
+            "mana_cost": "{3}{G}{U}{U}",
+            "cmc": 6.0,
+            "color_identity": [
+                "GU"
+            ],
+            "partite": 9,
+            "vittorie": 6
+        },
+        {
             "id": 41,
             "name": "coram, the undertaker",
             "mana_cost": "{1}{B}{R}{G}",
@@ -320,6 +342,17 @@
             "vittorie": 3
         },
         {
+            "id": 60,
+            "name": "genku, future shaper",
+            "mana_cost": "{2}{W}{U}",
+            "cmc": 4.0,
+            "color_identity": [
+                "WU"
+            ],
+            "partite": 9,
+            "vittorie": 4
+        },
+        {
             "id": 169,
             "name": "mahadi, emporium master",
             "mana_cost": " {1}{B}{R}",
@@ -329,17 +362,6 @@
             ],
             "partite": 9,
             "vittorie": 1
-        },
-        {
-            "id": 22,
-            "name": "muerra, trash tactician",
-            "mana_cost": "{1}{R}{G}",
-            "cmc": 3.0,
-            "color_identity": [
-                "GR"
-            ],
-            "partite": 9,
-            "vittorie": 3
         },
         {
             "id": 72,
@@ -373,17 +395,6 @@
             ],
             "partite": 8,
             "vittorie": 4
-        },
-        {
-            "id": 214,
-            "name": "bonny pall, clearcutter",
-            "mana_cost": "{3}{G}{U}{U}",
-            "cmc": 6.0,
-            "color_identity": [
-                "GU"
-            ],
-            "partite": 8,
-            "vittorie": 5
         },
         {
             "id": 61,
@@ -461,17 +472,6 @@
             ],
             "partite": 7,
             "vittorie": 2
-        },
-        {
-            "id": 60,
-            "name": "genku, future shaper",
-            "mana_cost": "{2}{W}{U}",
-            "cmc": 4.0,
-            "color_identity": [
-                "WU"
-            ],
-            "partite": 7,
-            "vittorie": 3
         },
         {
             "id": 52,
@@ -804,6 +804,17 @@
             "vittorie": 3
         },
         {
+            "id": 3,
+            "name": "sigarda, host of herons",
+            "mana_cost": "{2}{G}{W}{W}",
+            "cmc": 5.0,
+            "color_identity": [
+                "GW"
+            ],
+            "partite": 5,
+            "vittorie": 1
+        },
+        {
             "id": 160,
             "name": "storm, force of nature",
             "mana_cost": "{1}{G}{U}{R}",
@@ -1035,6 +1046,17 @@
             "vittorie": 2
         },
         {
+            "id": 252,
+            "name": "roxanne, starfall savant",
+            "mana_cost": "{3}{R}{G}",
+            "cmc": 5.0,
+            "color_identity": [
+                "GR"
+            ],
+            "partite": 4,
+            "vittorie": 2
+        },
+        {
             "id": 203,
             "name": "samut, vizier of naktamun",
             "mana_cost": " {1}{G}{R}",
@@ -1044,17 +1066,6 @@
             ],
             "partite": 4,
             "vittorie": 0
-        },
-        {
-            "id": 3,
-            "name": "sigarda, host of herons",
-            "mana_cost": "{2}{G}{W}{W}",
-            "cmc": 5.0,
-            "color_identity": [
-                "GW"
-            ],
-            "partite": 4,
-            "vittorie": 1
         },
         {
             "id": 144,
@@ -1167,6 +1178,17 @@
             "vittorie": 2
         },
         {
+            "id": 251,
+            "name": "eshki, temur's roar",
+            "mana_cost": "{G}{U}{R}",
+            "cmc": 3.0,
+            "color_identity": [
+                "GRU"
+            ],
+            "partite": 3,
+            "vittorie": 0
+        },
+        {
             "id": 197,
             "name": "gavi, nest warden",
             "mana_cost": "{2}{U}{R}{W}",
@@ -1189,12 +1211,34 @@
             "vittorie": 3
         },
         {
+            "id": 135,
+            "name": "kynaios and tiro of meletis",
+            "mana_cost": "{R}{G}{W}{U}",
+            "cmc": 4.0,
+            "color_identity": [
+                "RGWU"
+            ],
+            "partite": 3,
+            "vittorie": 0
+        },
+        {
             "id": 81,
             "name": "millicent, restless revenant",
             "mana_cost": "{5}{W}{U}",
             "cmc": 7.0,
             "color_identity": [
                 "WU"
+            ],
+            "partite": 3,
+            "vittorie": 1
+        },
+        {
+            "id": 20,
+            "name": "morska, undersea sleuth",
+            "mana_cost": "{G}{W}{U}",
+            "cmc": 3.0,
+            "color_identity": [
+                "GUW"
             ],
             "partite": 3,
             "vittorie": 1
@@ -1376,17 +1420,6 @@
             "vittorie": 1
         },
         {
-            "id": 251,
-            "name": "eshki, temur's roar",
-            "mana_cost": "{G}{U}{R}",
-            "cmc": 3.0,
-            "color_identity": [
-                "GRU"
-            ],
-            "partite": 2,
-            "vittorie": 0
-        },
-        {
             "id": 66,
             "name": "esika, god of the tree",
             "mana_cost": "{2}{G}{W}{U}{B}{R}",
@@ -1418,6 +1451,17 @@
             ],
             "partite": 2,
             "vittorie": 1
+        },
+        {
+            "id": 253,
+            "name": "ketramose, the new dawn",
+            "mana_cost": "{1}{W}{B}",
+            "cmc": 3.0,
+            "color_identity": [
+                "BW"
+            ],
+            "partite": 2,
+            "vittorie": 0
         },
         {
             "id": 51,
@@ -1473,17 +1517,6 @@
             ],
             "partite": 2,
             "vittorie": 0
-        },
-        {
-            "id": 252,
-            "name": "roxanne, starfall savant",
-            "mana_cost": "{3}{R}{G}",
-            "cmc": 5.0,
-            "color_identity": [
-                "GR"
-            ],
-            "partite": 2,
-            "vittorie": 1
         },
         {
             "id": 153,
@@ -1717,17 +1750,6 @@
             "vittorie": 0
         },
         {
-            "id": 135,
-            "name": "kynaios and tiro of meletis",
-            "mana_cost": "{R}{G}{W}{U}",
-            "cmc": 4.0,
-            "color_identity": [
-                "RGWU"
-            ],
-            "partite": 1,
-            "vittorie": 0
-        },
-        {
             "id": 89,
             "name": "lae’zel, vlaakith's champion",
             "mana_cost": " {2}{W}",
@@ -1767,17 +1789,6 @@
             "cmc": 6.0,
             "color_identity": [
                 "GUR"
-            ],
-            "partite": 1,
-            "vittorie": 0
-        },
-        {
-            "id": 20,
-            "name": "morska, undersea sleuth",
-            "mana_cost": "{G}{W}{U}",
-            "cmc": 3.0,
-            "color_identity": [
-                "GUW"
             ],
             "partite": 1,
             "vittorie": 0
@@ -2002,4 +2013,38 @@
             "partite": 1,
             "vittorie": 1
         },
-  
+        {
+            "id": 146,
+            "name": "yidris, maelstrom wielder",
+            "mana_cost": "{U}{B}{R}{G}",
+            "cmc": 4.0,
+            "color_identity": [
+                "UBRG"
+            ],
+            "partite": 1,
+            "vittorie": 1
+        },
+        {
+            "id": 151,
+            "name": "yusri, fortune's flame",
+            "mana_cost": " {1}{U}{R}",
+            "cmc": 3.0,
+            "color_identity": [
+                "UR"
+            ],
+            "partite": 1,
+            "vittorie": 1
+        },
+        {
+            "id": 229,
+            "name": "zur the enchanter",
+            "mana_cost": "{1}{W}{U}{B}",
+            "cmc": 4.0,
+            "color_identity": [
+                "BUW"
+            ],
+            "partite": 1,
+            "vittorie": 0
+        }
+    ]
+}
