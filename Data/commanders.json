@@ -9,7 +9,39 @@
                 "R"
             ],
             "partite": 22,
-            "vittorie": 4
+            "vittorie": 4,
+            "storico": [
+                {
+                    "periodo": "Dec 2024",
+                    "mese": "2024-12",
+                    "partite": 9,
+                    "winrate": 22.2
+                },
+                {
+                    "periodo": "Jan 2025",
+                    "mese": "2025-01",
+                    "partite": 5,
+                    "winrate": 0.0
+                },
+                {
+                    "periodo": "Feb 2025",
+                    "mese": "2025-02",
+                    "partite": 3,
+                    "winrate": 33.3
+                },
+                {
+                    "periodo": "Mar 2025",
+                    "mese": "2025-03",
+                    "partite": 4,
+                    "winrate": 25.0
+                },
+                {
+                    "periodo": "Apr 2025",
+                    "mese": "2025-04",
+                    "partite": 1,
+                    "winrate": 0.0
+                }
+            ]
         },
         {
             "id": 27,
@@ -20,7 +52,45 @@
                 "RGW"
             ],
             "partite": 21,
-            "vittorie": 5
+            "vittorie": 5,
+            "storico": [
+                {
+                    "periodo": "Oct 2024",
+                    "mese": "2024-10",
+                    "partite": 1,
+                    "winrate": 0.0
+                },
+                {
+                    "periodo": "Nov 2024",
+                    "mese": "2024-11",
+                    "partite": 5,
+                    "winrate": 20.0
+                },
+                {
+                    "periodo": "Dec 2024",
+                    "mese": "2024-12",
+                    "partite": 12,
+                    "winrate": 16.7
+                },
+                {
+                    "periodo": "Jan 2025",
+                    "mese": "2025-01",
+                    "partite": 1,
+                    "winrate": 0.0
+                },
+                {
+                    "periodo": "Feb 2025",
+                    "mese": "2025-02",
+                    "partite": 1,
+                    "winrate": 100.0
+                },
+                {
+                    "periodo": "Apr 2025",
+                    "mese": "2025-04",
+                    "partite": 1,
+                    "winrate": 100.0
+                }
+            ]
         },
         {
             "id": 168,
@@ -31,7 +101,33 @@
                 "BRG"
             ],
             "partite": 19,
-            "vittorie": 4
+            "vittorie": 4,
+            "storico": [
+                {
+                    "periodo": "Dec 2024",
+                    "mese": "2024-12",
+                    "partite": 6,
+                    "winrate": 33.3
+                },
+                {
+                    "periodo": "Jan 2025",
+                    "mese": "2025-01",
+                    "partite": 4,
+                    "winrate": 25.0
+                },
+                {
+                    "periodo": "Feb 2025",
+                    "mese": "2025-02",
+                    "partite": 1,
+                    "winrate": 0.0
+                },
+                {
+                    "periodo": "Mar 2025",
+                    "mese": "2025-03",
+                    "partite": 8,
+                    "winrate": 12.5
+                }
+            ]
         },
         {
             "id": 215,
@@ -42,7 +138,33 @@
                 "RW"
             ],
             "partite": 18,
-            "vittorie": 3
+            "vittorie": 3,
+            "storico": [
+                {
+                    "periodo": "Jan 2025",
+                    "mese": "2025-01",
+                    "partite": 3,
+                    "winrate": 0.0
+                },
+                {
+                    "periodo": "Feb 2025",
+                    "mese": "2025-02",
+                    "partite": 5,
+                    "winrate": 0.0
+                },
+                {
+                    "periodo": "Mar 2025",
+                    "mese": "2025-03",
+                    "partite": 9,
+                    "winrate": 33.3
+                },
+                {
+                    "periodo": "Apr 2025",
+                    "mese": "2025-04",
+                    "partite": 1,
+                    "winrate": 0.0
+                }
+            ]
         },
         {
             "id": 38,
@@ -53,7 +175,39 @@
                 "R"
             ],
             "partite": 18,
-            "vittorie": 4
+            "vittorie": 4,
+            "storico": [
+                {
+                    "periodo": "Nov 2024",
+                    "mese": "2024-11",
+                    "partite": 5,
+                    "winrate": 20.0
+                },
+                {
+                    "periodo": "Dec 2024",
+                    "mese": "2024-12",
+                    "partite": 5,
+                    "winrate": 40.0
+                },
+                {
+                    "periodo": "Jan 2025",
+                    "mese": "2025-01",
+                    "partite": 2,
+                    "winrate": 50.0
+                },
+                {
+                    "periodo": "Feb 2025",
+                    "mese": "2025-02",
+                    "partite": 1,
+                    "winrate": 0.0
+                },
+                {
+                    "periodo": "Mar 2025",
+                    "mese": "2025-03",
+                    "partite": 5,
+                    "winrate": 0.0
+                }
+            ]
         },
         {
             "id": 181,
@@ -64,7 +218,39 @@
                 "RWB"
             ],
             "partite": 17,
-            "vittorie": 11
+            "vittorie": 11,
+            "storico": [
+                {
+                    "periodo": "Dec 2024",
+                    "mese": "2024-12",
+                    "partite": 2,
+                    "winrate": 0.0
+                },
+                {
+                    "periodo": "Jan 2025",
+                    "mese": "2025-01",
+                    "partite": 6,
+                    "winrate": 66.7
+                },
+                {
+                    "periodo": "Feb 2025",
+                    "mese": "2025-02",
+                    "partite": 3,
+                    "winrate": 66.7
+                },
+                {
+                    "periodo": "Mar 2025",
+                    "mese": "2025-03",
+                    "partite": 4,
+                    "winrate": 100.0
+                },
+                {
+                    "periodo": "Apr 2025",
+                    "mese": "2025-04",
+                    "partite": 2,
+                    "winrate": 50.0
+                }
+            ]
         },
         {
             "id": 26,
@@ -75,7 +261,39 @@
                 "GWU"
             ],
             "partite": 15,
-            "vittorie": 1
+            "vittorie": 1,
+            "storico": [
+                {
+                    "periodo": "Nov 2024",
+                    "mese": "2024-11",
+                    "partite": 4,
+                    "winrate": 25.0
+                },
+                {
+                    "periodo": "Dec 2024",
+                    "mese": "2024-12",
+                    "partite": 5,
+                    "winrate": 0.0
+                },
+                {
+                    "periodo": "Jan 2025",
+                    "mese": "2025-01",
+                    "partite": 2,
+                    "winrate": 0.0
+                },
+                {
+                    "periodo": "Feb 2025",
+                    "mese": "2025-02",
+                    "partite": 3,
+                    "winrate": 0.0
+                },
+                {
+                    "periodo": "Mar 2025",
+                    "mese": "2025-03",
+                    "partite": 1,
+                    "winrate": 0.0
+                }
+            ]
         },
         {
             "id": 133,
@@ -86,7 +304,33 @@
                 "BR"
             ],
             "partite": 15,
-            "vittorie": 8
+            "vittorie": 8,
+            "storico": [
+                {
+                    "periodo": "Dec 2024",
+                    "mese": "2024-12",
+                    "partite": 10,
+                    "winrate": 40.0
+                },
+                {
+                    "periodo": "Jan 2025",
+                    "mese": "2025-01",
+                    "partite": 1,
+                    "winrate": 100.0
+                },
+                {
+                    "periodo": "Feb 2025",
+                    "mese": "2025-02",
+                    "partite": 2,
+                    "winrate": 100.0
+                },
+                {
+                    "periodo": "Apr 2025",
+                    "mese": "2025-04",
+                    "partite": 2,
+                    "winrate": 50.0
+                }
+            ]
         },
         {
             "id": 220,
@@ -97,7 +341,33 @@
                 "BGRUW"
             ],
             "partite": 15,
-            "vittorie": 2
+            "vittorie": 2,
+            "storico": [
+                {
+                    "periodo": "Jan 2025",
+                    "mese": "2025-01",
+                    "partite": 2,
+                    "winrate": 0.0
+                },
+                {
+                    "periodo": "Feb 2025",
+                    "mese": "2025-02",
+                    "partite": 3,
+                    "winrate": 0.0
+                },
+                {
+                    "periodo": "Mar 2025",
+                    "mese": "2025-03",
+                    "partite": 7,
+                    "winrate": 28.6
+                },
+                {
+                    "periodo": "Apr 2025",
+                    "mese": "2025-04",
+                    "partite": 3,
+                    "winrate": 0.0
+                }
+            ]
         },
         {
             "id": 25,
@@ -108,7 +378,33 @@
                 "GR"
             ],
             "partite": 14,
-            "vittorie": 4
+            "vittorie": 4,
+            "storico": [
+                {
+                    "periodo": "Nov 2024",
+                    "mese": "2024-11",
+                    "partite": 2,
+                    "winrate": 50.0
+                },
+                {
+                    "periodo": "Dec 2024",
+                    "mese": "2024-12",
+                    "partite": 3,
+                    "winrate": 0.0
+                },
+                {
+                    "periodo": "Jan 2025",
+                    "mese": "2025-01",
+                    "partite": 6,
+                    "winrate": 16.7
+                },
+                {
+                    "periodo": "Mar 2025",
+                    "mese": "2025-03",
+                    "partite": 3,
+                    "winrate": 66.7
+                }
+            ]
         },
         {
             "id": 195,
@@ -119,7 +415,33 @@
                 "UR"
             ],
             "partite": 14,
-            "vittorie": 0
+            "vittorie": 0,
+            "storico": [
+                {
+                    "periodo": "Jan 2025",
+                    "mese": "2025-01",
+                    "partite": 6,
+                    "winrate": 0.0
+                },
+                {
+                    "periodo": "Feb 2025",
+                    "mese": "2025-02",
+                    "partite": 3,
+                    "winrate": 0.0
+                },
+                {
+                    "periodo": "Mar 2025",
+                    "mese": "2025-03",
+                    "partite": 2,
+                    "winrate": 0.0
+                },
+                {
+                    "periodo": "Apr 2025",
+                    "mese": "2025-04",
+                    "partite": 3,
+                    "winrate": 0.0
+                }
+            ]
         },
         {
             "id": 227,
@@ -130,7 +452,27 @@
                 "BUW"
             ],
             "partite": 14,
-            "vittorie": 4
+            "vittorie": 4,
+            "storico": [
+                {
+                    "periodo": "Feb 2025",
+                    "mese": "2025-02",
+                    "partite": 9,
+                    "winrate": 44.4
+                },
+                {
+                    "periodo": "Mar 2025",
+                    "mese": "2025-03",
+                    "partite": 4,
+                    "winrate": 0.0
+                },
+                {
+                    "periodo": "Apr 2025",
+                    "mese": "2025-04",
+                    "partite": 1,
+                    "winrate": 0.0
+                }
+            ]
         },
         {
             "id": 148,
@@ -141,7 +483,33 @@
                 "B"
             ],
             "partite": 13,
-            "vittorie": 3
+            "vittorie": 3,
+            "storico": [
+                {
+                    "periodo": "Dec 2024",
+                    "mese": "2024-12",
+                    "partite": 6,
+                    "winrate": 33.3
+                },
+                {
+                    "periodo": "Jan 2025",
+                    "mese": "2025-01",
+                    "partite": 5,
+                    "winrate": 20.0
+                },
+                {
+                    "periodo": "Feb 2025",
+                    "mese": "2025-02",
+                    "partite": 1,
+                    "winrate": 0.0
+                },
+                {
+                    "periodo": "Mar 2025",
+                    "mese": "2025-03",
+                    "partite": 1,
+                    "winrate": 0.0
+                }
+            ]
         },
         {
             "id": 166,
@@ -152,7 +520,33 @@
                 "RGWU"
             ],
             "partite": 11,
-            "vittorie": 3
+            "vittorie": 3,
+            "storico": [
+                {
+                    "periodo": "Dec 2024",
+                    "mese": "2024-12",
+                    "partite": 4,
+                    "winrate": 50.0
+                },
+                {
+                    "periodo": "Jan 2025",
+                    "mese": "2025-01",
+                    "partite": 3,
+                    "winrate": 33.3
+                },
+                {
+                    "periodo": "Feb 2025",
+                    "mese": "2025-02",
+                    "partite": 3,
+                    "winrate": 0.0
+                },
+                {
+                    "periodo": "Mar 2025",
+                    "mese": "2025-03",
+                    "partite": 1,
+                    "winrate": 0.0
+                }
+            ]
         },
         {
             "id": 71,
@@ -163,7 +557,33 @@
                 "RGW"
             ],
             "partite": 11,
-            "vittorie": 1
+            "vittorie": 1,
+            "storico": [
+                {
+                    "periodo": "Nov 2024",
+                    "mese": "2024-11",
+                    "partite": 1,
+                    "winrate": 0.0
+                },
+                {
+                    "periodo": "Dec 2024",
+                    "mese": "2024-12",
+                    "partite": 3,
+                    "winrate": 0.0
+                },
+                {
+                    "periodo": "Jan 2025",
+                    "mese": "2025-01",
+                    "partite": 4,
+                    "winrate": 0.0
+                },
+                {
+                    "periodo": "Mar 2025",
+                    "mese": "2025-03",
+                    "partite": 3,
+                    "winrate": 33.3
+                }
+            ]
         },
         {
             "id": 5,
@@ -174,7 +594,39 @@
                 "GRW"
             ],
             "partite": 11,
-            "vittorie": 7
+            "vittorie": 7,
+            "storico": [
+                {
+                    "periodo": "Oct 2024",
+                    "mese": "2024-10",
+                    "partite": 1,
+                    "winrate": 100.0
+                },
+                {
+                    "periodo": "Dec 2024",
+                    "mese": "2024-12",
+                    "partite": 6,
+                    "winrate": 66.7
+                },
+                {
+                    "periodo": "Jan 2025",
+                    "mese": "2025-01",
+                    "partite": 1,
+                    "winrate": 100.0
+                },
+                {
+                    "periodo": "Mar 2025",
+                    "mese": "2025-03",
+                    "partite": 2,
+                    "winrate": 50.0
+                },
+                {
+                    "periodo": "Apr 2025",
+                    "mese": "2025-04",
+                    "partite": 1,
+                    "winrate": 0.0
+                }
+            ]
         },
         {
             "id": 237,
@@ -185,7 +637,21 @@
                 "UW"
             ],
             "partite": 11,
-            "vittorie": 4
+            "vittorie": 4,
+            "storico": [
+                {
+                    "periodo": "Mar 2025",
+                    "mese": "2025-03",
+                    "partite": 8,
+                    "winrate": 37.5
+                },
+                {
+                    "periodo": "Apr 2025",
+                    "mese": "2025-04",
+                    "partite": 3,
+                    "winrate": 33.3
+                }
+            ]
         },
         {
             "id": 37,
@@ -196,7 +662,33 @@
                 "BR"
             ],
             "partite": 11,
-            "vittorie": 3
+            "vittorie": 3,
+            "storico": [
+                {
+                    "periodo": "Nov 2024",
+                    "mese": "2024-11",
+                    "partite": 3,
+                    "winrate": 33.3
+                },
+                {
+                    "periodo": "Dec 2024",
+                    "mese": "2024-12",
+                    "partite": 5,
+                    "winrate": 0.0
+                },
+                {
+                    "periodo": "Jan 2025",
+                    "mese": "2025-01",
+                    "partite": 1,
+                    "winrate": 100.0
+                },
+                {
+                    "periodo": "Mar 2025",
+                    "mese": "2025-03",
+                    "partite": 2,
+                    "winrate": 50.0
+                }
+            ]
         },
         {
             "id": 164,
@@ -207,7 +699,39 @@
                 "RWB"
             ],
             "partite": 10,
-            "vittorie": 3
+            "vittorie": 3,
+            "storico": [
+                {
+                    "periodo": "Dec 2024",
+                    "mese": "2024-12",
+                    "partite": 3,
+                    "winrate": 33.3
+                },
+                {
+                    "periodo": "Jan 2025",
+                    "mese": "2025-01",
+                    "partite": 2,
+                    "winrate": 0.0
+                },
+                {
+                    "periodo": "Feb 2025",
+                    "mese": "2025-02",
+                    "partite": 1,
+                    "winrate": 0.0
+                },
+                {
+                    "periodo": "Mar 2025",
+                    "mese": "2025-03",
+                    "partite": 2,
+                    "winrate": 50.0
+                },
+                {
+                    "periodo": "Apr 2025",
+                    "mese": "2025-04",
+                    "partite": 2,
+                    "winrate": 50.0
+                }
+            ]
         },
         {
             "id": 44,
@@ -218,7 +742,39 @@
                 "GW"
             ],
             "partite": 10,
-            "vittorie": 3
+            "vittorie": 3,
+            "storico": [
+                {
+                    "periodo": "Nov 2024",
+                    "mese": "2024-11",
+                    "partite": 3,
+                    "winrate": 0.0
+                },
+                {
+                    "periodo": "Dec 2024",
+                    "mese": "2024-12",
+                    "partite": 2,
+                    "winrate": 100.0
+                },
+                {
+                    "periodo": "Jan 2025",
+                    "mese": "2025-01",
+                    "partite": 2,
+                    "winrate": 50.0
+                },
+                {
+                    "periodo": "Feb 2025",
+                    "mese": "2025-02",
+                    "partite": 1,
+                    "winrate": 0.0
+                },
+                {
+                    "periodo": "Mar 2025",
+                    "mese": "2025-03",
+                    "partite": 2,
+                    "winrate": 0.0
+                }
+            ]
         },
         {
             "id": 22,
@@ -229,7 +785,33 @@
                 "GR"
             ],
             "partite": 10,
-            "vittorie": 3
+            "vittorie": 3,
+            "storico": [
+                {
+                    "periodo": "Nov 2024",
+                    "mese": "2024-11",
+                    "partite": 5,
+                    "winrate": 40.0
+                },
+                {
+                    "periodo": "Dec 2024",
+                    "mese": "2024-12",
+                    "partite": 3,
+                    "winrate": 33.3
+                },
+                {
+                    "periodo": "Jan 2025",
+                    "mese": "2025-01",
+                    "partite": 1,
+                    "winrate": 0.0
+                },
+                {
+                    "periodo": "Apr 2025",
+                    "mese": "2025-04",
+                    "partite": 1,
+                    "winrate": 0.0
+                }
+            ]
         },
         {
             "id": 178,
@@ -240,7 +822,33 @@
                 "WUR"
             ],
             "partite": 10,
-            "vittorie": 6
+            "vittorie": 6,
+            "storico": [
+                {
+                    "periodo": "Dec 2024",
+                    "mese": "2024-12",
+                    "partite": 4,
+                    "winrate": 75.0
+                },
+                {
+                    "periodo": "Jan 2025",
+                    "mese": "2025-01",
+                    "partite": 4,
+                    "winrate": 50.0
+                },
+                {
+                    "periodo": "Mar 2025",
+                    "mese": "2025-03",
+                    "partite": 1,
+                    "winrate": 0.0
+                },
+                {
+                    "periodo": "Apr 2025",
+                    "mese": "2025-04",
+                    "partite": 1,
+                    "winrate": 100.0
+                }
+            ]
         },
         {
             "id": 36,
@@ -251,7 +859,33 @@
                 "BW"
             ],
             "partite": 10,
-            "vittorie": 3
+            "vittorie": 3,
+            "storico": [
+                {
+                    "periodo": "Nov 2024",
+                    "mese": "2024-11",
+                    "partite": 1,
+                    "winrate": 100.0
+                },
+                {
+                    "periodo": "Dec 2024",
+                    "mese": "2024-12",
+                    "partite": 3,
+                    "winrate": 33.3
+                },
+                {
+                    "periodo": "Jan 2025",
+                    "mese": "2025-01",
+                    "partite": 1,
+                    "winrate": 0.0
+                },
+                {
+                    "periodo": "Apr 2025",
+                    "mese": "2025-04",
+                    "partite": 5,
+                    "winrate": 20.0
+                }
+            ]
         },
         {
             "id": 194,
@@ -262,7 +896,33 @@
                 "URW"
             ],
             "partite": 10,
-            "vittorie": 3
+            "vittorie": 3,
+            "storico": [
+                {
+                    "periodo": "Dec 2024",
+                    "mese": "2024-12",
+                    "partite": 1,
+                    "winrate": 0.0
+                },
+                {
+                    "periodo": "Jan 2025",
+                    "mese": "2025-01",
+                    "partite": 2,
+                    "winrate": 0.0
+                },
+                {
+                    "periodo": "Mar 2025",
+                    "mese": "2025-03",
+                    "partite": 3,
+                    "winrate": 66.7
+                },
+                {
+                    "periodo": "Apr 2025",
+                    "mese": "2025-04",
+                    "partite": 4,
+                    "winrate": 25.0
+                }
+            ]
         },
         {
             "id": 28,
@@ -273,7 +933,27 @@
                 "G"
             ],
             "partite": 10,
-            "vittorie": 2
+            "vittorie": 2,
+            "storico": [
+                {
+                    "periodo": "Nov 2024",
+                    "mese": "2024-11",
+                    "partite": 2,
+                    "winrate": 0.0
+                },
+                {
+                    "periodo": "Dec 2024",
+                    "mese": "2024-12",
+                    "partite": 4,
+                    "winrate": 25.0
+                },
+                {
+                    "periodo": "Mar 2025",
+                    "mese": "2025-03",
+                    "partite": 4,
+                    "winrate": 25.0
+                }
+            ]
         },
         {
             "id": 232,
@@ -284,7 +964,21 @@
                 "BG"
             ],
             "partite": 10,
-            "vittorie": 4
+            "vittorie": 4,
+            "storico": [
+                {
+                    "periodo": "Mar 2025",
+                    "mese": "2025-03",
+                    "partite": 9,
+                    "winrate": 33.3
+                },
+                {
+                    "periodo": "Apr 2025",
+                    "mese": "2025-04",
+                    "partite": 1,
+                    "winrate": 100.0
+                }
+            ]
         },
         {
             "id": 45,
@@ -295,7 +989,39 @@
                 "WB"
             ],
             "partite": 9,
-            "vittorie": 5
+            "vittorie": 5,
+            "storico": [
+                {
+                    "periodo": "Nov 2024",
+                    "mese": "2024-11",
+                    "partite": 2,
+                    "winrate": 50.0
+                },
+                {
+                    "periodo": "Dec 2024",
+                    "mese": "2024-12",
+                    "partite": 1,
+                    "winrate": 100.0
+                },
+                {
+                    "periodo": "Jan 2025",
+                    "mese": "2025-01",
+                    "partite": 1,
+                    "winrate": 0.0
+                },
+                {
+                    "periodo": "Feb 2025",
+                    "mese": "2025-02",
+                    "partite": 2,
+                    "winrate": 50.0
+                },
+                {
+                    "periodo": "Mar 2025",
+                    "mese": "2025-03",
+                    "partite": 3,
+                    "winrate": 66.7
+                }
+            ]
         },
         {
             "id": 30,
@@ -306,7 +1032,33 @@
                 "G"
             ],
             "partite": 9,
-            "vittorie": 2
+            "vittorie": 2,
+            "storico": [
+                {
+                    "periodo": "Nov 2024",
+                    "mese": "2024-11",
+                    "partite": 3,
+                    "winrate": 33.3
+                },
+                {
+                    "periodo": "Dec 2024",
+                    "mese": "2024-12",
+                    "partite": 1,
+                    "winrate": 0.0
+                },
+                {
+                    "periodo": "Jan 2025",
+                    "mese": "2025-01",
+                    "partite": 3,
+                    "winrate": 0.0
+                },
+                {
+                    "periodo": "Feb 2025",
+                    "mese": "2025-02",
+                    "partite": 2,
+                    "winrate": 50.0
+                }
+            ]
         },
         {
             "id": 214,
@@ -317,7 +1069,33 @@
                 "GU"
             ],
             "partite": 9,
-            "vittorie": 6
+            "vittorie": 6,
+            "storico": [
+                {
+                    "periodo": "Jan 2025",
+                    "mese": "2025-01",
+                    "partite": 1,
+                    "winrate": 0.0
+                },
+                {
+                    "periodo": "Feb 2025",
+                    "mese": "2025-02",
+                    "partite": 4,
+                    "winrate": 50.0
+                },
+                {
+                    "periodo": "Mar 2025",
+                    "mese": "2025-03",
+                    "partite": 2,
+                    "winrate": 100.0
+                },
+                {
+                    "periodo": "Apr 2025",
+                    "mese": "2025-04",
+                    "partite": 2,
+                    "winrate": 100.0
+                }
+            ]
         },
         {
             "id": 41,
@@ -328,7 +1106,33 @@
                 "BGR"
             ],
             "partite": 9,
-            "vittorie": 0
+            "vittorie": 0,
+            "storico": [
+                {
+                    "periodo": "Nov 2024",
+                    "mese": "2024-11",
+                    "partite": 2,
+                    "winrate": 0.0
+                },
+                {
+                    "periodo": "Dec 2024",
+                    "mese": "2024-12",
+                    "partite": 4,
+                    "winrate": 0.0
+                },
+                {
+                    "periodo": "Jan 2025",
+                    "mese": "2025-01",
+                    "partite": 2,
+                    "winrate": 0.0
+                },
+                {
+                    "periodo": "Mar 2025",
+                    "mese": "2025-03",
+                    "partite": 1,
+                    "winrate": 0.0
+                }
+            ]
         },
         {
             "id": 184,
@@ -339,7 +1143,27 @@
                 "U"
             ],
             "partite": 9,
-            "vittorie": 3
+            "vittorie": 3,
+            "storico": [
+                {
+                    "periodo": "Dec 2024",
+                    "mese": "2024-12",
+                    "partite": 1,
+                    "winrate": 0.0
+                },
+                {
+                    "periodo": "Jan 2025",
+                    "mese": "2025-01",
+                    "partite": 1,
+                    "winrate": 0.0
+                },
+                {
+                    "periodo": "Mar 2025",
+                    "mese": "2025-03",
+                    "partite": 7,
+                    "winrate": 42.9
+                }
+            ]
         },
         {
             "id": 60,
@@ -350,7 +1174,39 @@
                 "WU"
             ],
             "partite": 9,
-            "vittorie": 4
+            "vittorie": 4,
+            "storico": [
+                {
+                    "periodo": "Nov 2024",
+                    "mese": "2024-11",
+                    "partite": 1,
+                    "winrate": 0.0
+                },
+                {
+                    "periodo": "Dec 2024",
+                    "mese": "2024-12",
+                    "partite": 2,
+                    "winrate": 0.0
+                },
+                {
+                    "periodo": "Jan 2025",
+                    "mese": "2025-01",
+                    "partite": 2,
+                    "winrate": 50.0
+                },
+                {
+                    "periodo": "Mar 2025",
+                    "mese": "2025-03",
+                    "partite": 2,
+                    "winrate": 100.0
+                },
+                {
+                    "periodo": "Apr 2025",
+                    "mese": "2025-04",
+                    "partite": 2,
+                    "winrate": 50.0
+                }
+            ]
         },
         {
             "id": 169,
@@ -361,7 +1217,33 @@
                 "BR"
             ],
             "partite": 9,
-            "vittorie": 1
+            "vittorie": 1,
+            "storico": [
+                {
+                    "periodo": "Dec 2024",
+                    "mese": "2024-12",
+                    "partite": 4,
+                    "winrate": 25.0
+                },
+                {
+                    "periodo": "Jan 2025",
+                    "mese": "2025-01",
+                    "partite": 1,
+                    "winrate": 0.0
+                },
+                {
+                    "periodo": "Feb 2025",
+                    "mese": "2025-02",
+                    "partite": 2,
+                    "winrate": 0.0
+                },
+                {
+                    "periodo": "Mar 2025",
+                    "mese": "2025-03",
+                    "partite": 2,
+                    "winrate": 0.0
+                }
+            ]
         },
         {
             "id": 72,
@@ -372,7 +1254,39 @@
                 "RW"
             ],
             "partite": 9,
-            "vittorie": 3
+            "vittorie": 3,
+            "storico": [
+                {
+                    "periodo": "Nov 2024",
+                    "mese": "2024-11",
+                    "partite": 3,
+                    "winrate": 66.7
+                },
+                {
+                    "periodo": "Dec 2024",
+                    "mese": "2024-12",
+                    "partite": 2,
+                    "winrate": 0.0
+                },
+                {
+                    "periodo": "Jan 2025",
+                    "mese": "2025-01",
+                    "partite": 2,
+                    "winrate": 50.0
+                },
+                {
+                    "periodo": "Feb 2025",
+                    "mese": "2025-02",
+                    "partite": 1,
+                    "winrate": 0.0
+                },
+                {
+                    "periodo": "Mar 2025",
+                    "mese": "2025-03",
+                    "partite": 1,
+                    "winrate": 0.0
+                }
+            ]
         },
         {
             "id": 83,
@@ -383,7 +1297,45 @@
                 "RGW"
             ],
             "partite": 9,
-            "vittorie": 5
+            "vittorie": 5,
+            "storico": [
+                {
+                    "periodo": "Nov 2024",
+                    "mese": "2024-11",
+                    "partite": 1,
+                    "winrate": 100.0
+                },
+                {
+                    "periodo": "Dec 2024",
+                    "mese": "2024-12",
+                    "partite": 1,
+                    "winrate": 100.0
+                },
+                {
+                    "periodo": "Jan 2025",
+                    "mese": "2025-01",
+                    "partite": 4,
+                    "winrate": 50.0
+                },
+                {
+                    "periodo": "Feb 2025",
+                    "mese": "2025-02",
+                    "partite": 1,
+                    "winrate": 100.0
+                },
+                {
+                    "periodo": "Mar 2025",
+                    "mese": "2025-03",
+                    "partite": 1,
+                    "winrate": 0.0
+                },
+                {
+                    "periodo": "Apr 2025",
+                    "mese": "2025-04",
+                    "partite": 1,
+                    "winrate": 0.0
+                }
+            ]
         },
         {
             "id": 40,
@@ -394,7 +1346,33 @@
                 "WUB"
             ],
             "partite": 8,
-            "vittorie": 4
+            "vittorie": 4,
+            "storico": [
+                {
+                    "periodo": "Nov 2024",
+                    "mese": "2024-11",
+                    "partite": 1,
+                    "winrate": 0.0
+                },
+                {
+                    "periodo": "Dec 2024",
+                    "mese": "2024-12",
+                    "partite": 3,
+                    "winrate": 66.7
+                },
+                {
+                    "periodo": "Jan 2025",
+                    "mese": "2025-01",
+                    "partite": 3,
+                    "winrate": 66.7
+                },
+                {
+                    "periodo": "Feb 2025",
+                    "mese": "2025-02",
+                    "partite": 1,
+                    "winrate": 0.0
+                }
+            ]
         },
         {
             "id": 61,
@@ -405,7 +1383,33 @@
                 "W"
             ],
             "partite": 8,
-            "vittorie": 3
+            "vittorie": 3,
+            "storico": [
+                {
+                    "periodo": "Nov 2024",
+                    "mese": "2024-11",
+                    "partite": 1,
+                    "winrate": 100.0
+                },
+                {
+                    "periodo": "Dec 2024",
+                    "mese": "2024-12",
+                    "partite": 4,
+                    "winrate": 25.0
+                },
+                {
+                    "periodo": "Jan 2025",
+                    "mese": "2025-01",
+                    "partite": 2,
+                    "winrate": 50.0
+                },
+                {
+                    "periodo": "Feb 2025",
+                    "mese": "2025-02",
+                    "partite": 1,
+                    "winrate": 0.0
+                }
+            ]
         },
         {
             "id": 211,
@@ -416,7 +1420,27 @@
                 "BU"
             ],
             "partite": 8,
-            "vittorie": 2
+            "vittorie": 2,
+            "storico": [
+                {
+                    "periodo": "Jan 2025",
+                    "mese": "2025-01",
+                    "partite": 1,
+                    "winrate": 100.0
+                },
+                {
+                    "periodo": "Feb 2025",
+                    "mese": "2025-02",
+                    "partite": 1,
+                    "winrate": 100.0
+                },
+                {
+                    "periodo": "Mar 2025",
+                    "mese": "2025-03",
+                    "partite": 6,
+                    "winrate": 0.0
+                }
+            ]
         },
         {
             "id": 64,
@@ -427,7 +1451,33 @@
                 "RGW"
             ],
             "partite": 8,
-            "vittorie": 5
+            "vittorie": 5,
+            "storico": [
+                {
+                    "periodo": "Nov 2024",
+                    "mese": "2024-11",
+                    "partite": 2,
+                    "winrate": 100.0
+                },
+                {
+                    "periodo": "Dec 2024",
+                    "mese": "2024-12",
+                    "partite": 4,
+                    "winrate": 50.0
+                },
+                {
+                    "periodo": "Jan 2025",
+                    "mese": "2025-01",
+                    "partite": 1,
+                    "winrate": 0.0
+                },
+                {
+                    "periodo": "Feb 2025",
+                    "mese": "2025-02",
+                    "partite": 1,
+                    "winrate": 100.0
+                }
+            ]
         },
         {
             "id": 4,
@@ -438,7 +1488,39 @@
                 "BGU"
             ],
             "partite": 8,
-            "vittorie": 0
+            "vittorie": 0,
+            "storico": [
+                {
+                    "periodo": "Oct 2024",
+                    "mese": "2024-10",
+                    "partite": 1,
+                    "winrate": 0.0
+                },
+                {
+                    "periodo": "Nov 2024",
+                    "mese": "2024-11",
+                    "partite": 1,
+                    "winrate": 0.0
+                },
+                {
+                    "periodo": "Dec 2024",
+                    "mese": "2024-12",
+                    "partite": 2,
+                    "winrate": 0.0
+                },
+                {
+                    "periodo": "Jan 2025",
+                    "mese": "2025-01",
+                    "partite": 2,
+                    "winrate": 0.0
+                },
+                {
+                    "periodo": "Mar 2025",
+                    "mese": "2025-03",
+                    "partite": 2,
+                    "winrate": 0.0
+                }
+            ]
         },
         {
             "id": 174,
@@ -449,7 +1531,27 @@
                 "GWUB"
             ],
             "partite": 7,
-            "vittorie": 1
+            "vittorie": 1,
+            "storico": [
+                {
+                    "periodo": "Dec 2024",
+                    "mese": "2024-12",
+                    "partite": 2,
+                    "winrate": 50.0
+                },
+                {
+                    "periodo": "Jan 2025",
+                    "mese": "2025-01",
+                    "partite": 3,
+                    "winrate": 0.0
+                },
+                {
+                    "periodo": "Mar 2025",
+                    "mese": "2025-03",
+                    "partite": 2,
+                    "winrate": 0.0
+                }
+            ]
         },
         {
             "id": 218,
@@ -460,7 +1562,27 @@
                 "BRU"
             ],
             "partite": 7,
-            "vittorie": 1
+            "vittorie": 1,
+            "storico": [
+                {
+                    "periodo": "Jan 2025",
+                    "mese": "2025-01",
+                    "partite": 1,
+                    "winrate": 100.0
+                },
+                {
+                    "periodo": "Feb 2025",
+                    "mese": "2025-02",
+                    "partite": 2,
+                    "winrate": 0.0
+                },
+                {
+                    "periodo": "Mar 2025",
+                    "mese": "2025-03",
+                    "partite": 4,
+                    "winrate": 0.0
+                }
+            ]
         },
         {
             "id": 16,
@@ -471,7 +1593,27 @@
                 "BRW"
             ],
             "partite": 7,
-            "vittorie": 2
+            "vittorie": 2,
+            "storico": [
+                {
+                    "periodo": "Nov 2024",
+                    "mese": "2024-11",
+                    "partite": 3,
+                    "winrate": 33.3
+                },
+                {
+                    "periodo": "Jan 2025",
+                    "mese": "2025-01",
+                    "partite": 1,
+                    "winrate": 0.0
+                },
+                {
+                    "periodo": "Apr 2025",
+                    "mese": "2025-04",
+                    "partite": 3,
+                    "winrate": 33.3
+                }
+            ]
         },
         {
             "id": 52,
@@ -482,7 +1624,27 @@
                 "UBR"
             ],
             "partite": 7,
-            "vittorie": 1
+            "vittorie": 1,
+            "storico": [
+                {
+                    "periodo": "Nov 2024",
+                    "mese": "2024-11",
+                    "partite": 3,
+                    "winrate": 0.0
+                },
+                {
+                    "periodo": "Jan 2025",
+                    "mese": "2025-01",
+                    "partite": 3,
+                    "winrate": 33.3
+                },
+                {
+                    "periodo": "Mar 2025",
+                    "mese": "2025-03",
+                    "partite": 1,
+                    "winrate": 0.0
+                }
+            ]
         },
         {
             "id": 149,
@@ -493,7 +1655,27 @@
                 "GU"
             ],
             "partite": 7,
-            "vittorie": 1
+            "vittorie": 1,
+            "storico": [
+                {
+                    "periodo": "Dec 2024",
+                    "mese": "2024-12",
+                    "partite": 4,
+                    "winrate": 0.0
+                },
+                {
+                    "periodo": "Jan 2025",
+                    "mese": "2025-01",
+                    "partite": 1,
+                    "winrate": 100.0
+                },
+                {
+                    "periodo": "Mar 2025",
+                    "mese": "2025-03",
+                    "partite": 2,
+                    "winrate": 0.0
+                }
+            ]
         },
         {
             "id": 63,
@@ -504,7 +1686,33 @@
                 "URW"
             ],
             "partite": 7,
-            "vittorie": 2
+            "vittorie": 2,
+            "storico": [
+                {
+                    "periodo": "Nov 2024",
+                    "mese": "2024-11",
+                    "partite": 1,
+                    "winrate": 0.0
+                },
+                {
+                    "periodo": "Dec 2024",
+                    "mese": "2024-12",
+                    "partite": 1,
+                    "winrate": 100.0
+                },
+                {
+                    "periodo": "Feb 2025",
+                    "mese": "2025-02",
+                    "partite": 4,
+                    "winrate": 25.0
+                },
+                {
+                    "periodo": "Mar 2025",
+                    "mese": "2025-03",
+                    "partite": 1,
+                    "winrate": 0.0
+                }
+            ]
         },
         {
             "id": 80,
@@ -515,7 +1723,33 @@
                 "UBR"
             ],
             "partite": 7,
-            "vittorie": 5
+            "vittorie": 5,
+            "storico": [
+                {
+                    "periodo": "Nov 2024",
+                    "mese": "2024-11",
+                    "partite": 1,
+                    "winrate": 100.0
+                },
+                {
+                    "periodo": "Dec 2024",
+                    "mese": "2024-12",
+                    "partite": 1,
+                    "winrate": 100.0
+                },
+                {
+                    "periodo": "Jan 2025",
+                    "mese": "2025-01",
+                    "partite": 2,
+                    "winrate": 50.0
+                },
+                {
+                    "periodo": "Mar 2025",
+                    "mese": "2025-03",
+                    "partite": 3,
+                    "winrate": 66.7
+                }
+            ]
         },
         {
             "id": 222,
@@ -526,7 +1760,27 @@
                 "BGW"
             ],
             "partite": 7,
-            "vittorie": 1
+            "vittorie": 1,
+            "storico": [
+                {
+                    "periodo": "Feb 2025",
+                    "mese": "2025-02",
+                    "partite": 4,
+                    "winrate": 0.0
+                },
+                {
+                    "periodo": "Mar 2025",
+                    "mese": "2025-03",
+                    "partite": 2,
+                    "winrate": 0.0
+                },
+                {
+                    "periodo": "Apr 2025",
+                    "mese": "2025-04",
+                    "partite": 1,
+                    "winrate": 100.0
+                }
+            ]
         },
         {
             "id": 18,
@@ -537,7 +1791,27 @@
                 "BGU"
             ],
             "partite": 7,
-            "vittorie": 0
+            "vittorie": 0,
+            "storico": [
+                {
+                    "periodo": "Nov 2024",
+                    "mese": "2024-11",
+                    "partite": 3,
+                    "winrate": 0.0
+                },
+                {
+                    "periodo": "Dec 2024",
+                    "mese": "2024-12",
+                    "partite": 2,
+                    "winrate": 0.0
+                },
+                {
+                    "periodo": "Jan 2025",
+                    "mese": "2025-01",
+                    "partite": 2,
+                    "winrate": 0.0
+                }
+            ]
         },
         {
             "id": 163,
@@ -548,7 +1822,21 @@
                 "URW"
             ],
             "partite": 7,
-            "vittorie": 2
+            "vittorie": 2,
+            "storico": [
+                {
+                    "periodo": "Dec 2024",
+                    "mese": "2024-12",
+                    "partite": 5,
+                    "winrate": 20.0
+                },
+                {
+                    "periodo": "Mar 2025",
+                    "mese": "2025-03",
+                    "partite": 2,
+                    "winrate": 50.0
+                }
+            ]
         },
         {
             "id": 13,
@@ -559,7 +1847,27 @@
                 "GR"
             ],
             "partite": 6,
-            "vittorie": 0
+            "vittorie": 0,
+            "storico": [
+                {
+                    "periodo": "Oct 2024",
+                    "mese": "2024-10",
+                    "partite": 1,
+                    "winrate": 0.0
+                },
+                {
+                    "periodo": "Nov 2024",
+                    "mese": "2024-11",
+                    "partite": 3,
+                    "winrate": 0.0
+                },
+                {
+                    "periodo": "Mar 2025",
+                    "mese": "2025-03",
+                    "partite": 2,
+                    "winrate": 0.0
+                }
+            ]
         },
         {
             "id": 23,
@@ -570,7 +1878,33 @@
                 "BGW"
             ],
             "partite": 6,
-            "vittorie": 1
+            "vittorie": 1,
+            "storico": [
+                {
+                    "periodo": "Nov 2024",
+                    "mese": "2024-11",
+                    "partite": 1,
+                    "winrate": 0.0
+                },
+                {
+                    "periodo": "Dec 2024",
+                    "mese": "2024-12",
+                    "partite": 3,
+                    "winrate": 33.3
+                },
+                {
+                    "periodo": "Jan 2025",
+                    "mese": "2025-01",
+                    "partite": 1,
+                    "winrate": 0.0
+                },
+                {
+                    "periodo": "Mar 2025",
+                    "mese": "2025-03",
+                    "partite": 1,
+                    "winrate": 0.0
+                }
+            ]
         },
         {
             "id": 139,
@@ -581,7 +1915,27 @@
                 "WB"
             ],
             "partite": 6,
-            "vittorie": 2
+            "vittorie": 2,
+            "storico": [
+                {
+                    "periodo": "Dec 2024",
+                    "mese": "2024-12",
+                    "partite": 1,
+                    "winrate": 0.0
+                },
+                {
+                    "periodo": "Feb 2025",
+                    "mese": "2025-02",
+                    "partite": 3,
+                    "winrate": 0.0
+                },
+                {
+                    "periodo": "Mar 2025",
+                    "mese": "2025-03",
+                    "partite": 2,
+                    "winrate": 100.0
+                }
+            ]
         },
         {
             "id": 32,
@@ -592,7 +1946,33 @@
                 "GU"
             ],
             "partite": 6,
-            "vittorie": 1
+            "vittorie": 1,
+            "storico": [
+                {
+                    "periodo": "Nov 2024",
+                    "mese": "2024-11",
+                    "partite": 3,
+                    "winrate": 33.3
+                },
+                {
+                    "periodo": "Dec 2024",
+                    "mese": "2024-12",
+                    "partite": 1,
+                    "winrate": 0.0
+                },
+                {
+                    "periodo": "Jan 2025",
+                    "mese": "2025-01",
+                    "partite": 1,
+                    "winrate": 0.0
+                },
+                {
+                    "periodo": "Mar 2025",
+                    "mese": "2025-03",
+                    "partite": 1,
+                    "winrate": 0.0
+                }
+            ]
         },
         {
             "id": 236,
@@ -603,7 +1983,15 @@
                 "BW"
             ],
             "partite": 6,
-            "vittorie": 1
+            "vittorie": 1,
+            "storico": [
+                {
+                    "periodo": "Mar 2025",
+                    "mese": "2025-03",
+                    "partite": 6,
+                    "winrate": 16.7
+                }
+            ]
         },
         {
             "id": 48,
@@ -614,7 +2002,33 @@
                 "BRG"
             ],
             "partite": 6,
-            "vittorie": 1
+            "vittorie": 1,
+            "storico": [
+                {
+                    "periodo": "Nov 2024",
+                    "mese": "2024-11",
+                    "partite": 2,
+                    "winrate": 0.0
+                },
+                {
+                    "periodo": "Dec 2024",
+                    "mese": "2024-12",
+                    "partite": 2,
+                    "winrate": 0.0
+                },
+                {
+                    "periodo": "Mar 2025",
+                    "mese": "2025-03",
+                    "partite": 1,
+                    "winrate": 0.0
+                },
+                {
+                    "periodo": "Apr 2025",
+                    "mese": "2025-04",
+                    "partite": 1,
+                    "winrate": 100.0
+                }
+            ]
         },
         {
             "id": 70,
@@ -625,7 +2039,27 @@
                 "BR"
             ],
             "partite": 6,
-            "vittorie": 0
+            "vittorie": 0,
+            "storico": [
+                {
+                    "periodo": "Nov 2024",
+                    "mese": "2024-11",
+                    "partite": 1,
+                    "winrate": 0.0
+                },
+                {
+                    "periodo": "Jan 2025",
+                    "mese": "2025-01",
+                    "partite": 3,
+                    "winrate": 0.0
+                },
+                {
+                    "periodo": "Mar 2025",
+                    "mese": "2025-03",
+                    "partite": 2,
+                    "winrate": 0.0
+                }
+            ]
         },
         {
             "id": 179,
@@ -636,7 +2070,27 @@
                 "GUR"
             ],
             "partite": 6,
-            "vittorie": 1
+            "vittorie": 1,
+            "storico": [
+                {
+                    "periodo": "Dec 2024",
+                    "mese": "2024-12",
+                    "partite": 3,
+                    "winrate": 0.0
+                },
+                {
+                    "periodo": "Jan 2025",
+                    "mese": "2025-01",
+                    "partite": 2,
+                    "winrate": 50.0
+                },
+                {
+                    "periodo": "Feb 2025",
+                    "mese": "2025-02",
+                    "partite": 1,
+                    "winrate": 0.0
+                }
+            ]
         },
         {
             "id": 67,
@@ -647,7 +2101,15 @@
                 "{U}{B}"
             ],
             "partite": 6,
-            "vittorie": 1
+            "vittorie": 1,
+            "storico": [
+                {
+                    "periodo": "Nov 2024",
+                    "mese": "2024-11",
+                    "partite": 6,
+                    "winrate": 16.7
+                }
+            ]
         },
         {
             "id": 162,
@@ -658,7 +2120,27 @@
                 "GU"
             ],
             "partite": 6,
-            "vittorie": 4
+            "vittorie": 4,
+            "storico": [
+                {
+                    "periodo": "Dec 2024",
+                    "mese": "2024-12",
+                    "partite": 2,
+                    "winrate": 50.0
+                },
+                {
+                    "periodo": "Jan 2025",
+                    "mese": "2025-01",
+                    "partite": 2,
+                    "winrate": 50.0
+                },
+                {
+                    "periodo": "Mar 2025",
+                    "mese": "2025-03",
+                    "partite": 2,
+                    "winrate": 100.0
+                }
+            ]
         },
         {
             "id": 84,
@@ -669,7 +2151,27 @@
                 "UB"
             ],
             "partite": 6,
-            "vittorie": 2
+            "vittorie": 2,
+            "storico": [
+                {
+                    "periodo": "Nov 2024",
+                    "mese": "2024-11",
+                    "partite": 1,
+                    "winrate": 100.0
+                },
+                {
+                    "periodo": "Dec 2024",
+                    "mese": "2024-12",
+                    "partite": 4,
+                    "winrate": 25.0
+                },
+                {
+                    "periodo": "Mar 2025",
+                    "mese": "2025-03",
+                    "partite": 1,
+                    "winrate": 0.0
+                }
+            ]
         },
         {
             "id": 233,
@@ -680,7 +2182,21 @@
                 "BUW"
             ],
             "partite": 6,
-            "vittorie": 4
+            "vittorie": 4,
+            "storico": [
+                {
+                    "periodo": "Feb 2025",
+                    "mese": "2025-02",
+                    "partite": 2,
+                    "winrate": 100.0
+                },
+                {
+                    "periodo": "Mar 2025",
+                    "mese": "2025-03",
+                    "partite": 4,
+                    "winrate": 50.0
+                }
+            ]
         },
         {
             "id": 230,
@@ -691,7 +2207,33 @@
                 "GR"
             ],
             "partite": 5,
-            "vittorie": 2
+            "vittorie": 2,
+            "storico": [
+                {
+                    "periodo": "Oct 2024",
+                    "mese": "2024-10",
+                    "partite": 1,
+                    "winrate": 100.0
+                },
+                {
+                    "periodo": "Nov 2024",
+                    "mese": "2024-11",
+                    "partite": 1,
+                    "winrate": 100.0
+                },
+                {
+                    "periodo": "Feb 2025",
+                    "mese": "2025-02",
+                    "partite": 2,
+                    "winrate": 0.0
+                },
+                {
+                    "periodo": "Mar 2025",
+                    "mese": "2025-03",
+                    "partite": 1,
+                    "winrate": 0.0
+                }
+            ]
         },
         {
             "id": 242,
@@ -702,7 +2244,21 @@
                 "R"
             ],
             "partite": 5,
-            "vittorie": 1
+            "vittorie": 1,
+            "storico": [
+                {
+                    "periodo": "Mar 2025",
+                    "mese": "2025-03",
+                    "partite": 4,
+                    "winrate": 25.0
+                },
+                {
+                    "periodo": "Apr 2025",
+                    "mese": "2025-04",
+                    "partite": 1,
+                    "winrate": 0.0
+                }
+            ]
         },
         {
             "id": 141,
@@ -713,7 +2269,33 @@
                 "URW"
             ],
             "partite": 5,
-            "vittorie": 0
+            "vittorie": 0,
+            "storico": [
+                {
+                    "periodo": "Nov 2024",
+                    "mese": "2024-11",
+                    "partite": 1,
+                    "winrate": 0.0
+                },
+                {
+                    "periodo": "Dec 2024",
+                    "mese": "2024-12",
+                    "partite": 2,
+                    "winrate": 0.0
+                },
+                {
+                    "periodo": "Mar 2025",
+                    "mese": "2025-03",
+                    "partite": 1,
+                    "winrate": 0.0
+                },
+                {
+                    "periodo": "Apr 2025",
+                    "mese": "2025-04",
+                    "partite": 1,
+                    "winrate": 0.0
+                }
+            ]
         },
         {
             "id": 238,
@@ -724,7 +2306,21 @@
                 "B"
             ],
             "partite": 5,
-            "vittorie": 1
+            "vittorie": 1,
+            "storico": [
+                {
+                    "periodo": "Mar 2025",
+                    "mese": "2025-03",
+                    "partite": 3,
+                    "winrate": 0.0
+                },
+                {
+                    "periodo": "Apr 2025",
+                    "mese": "2025-04",
+                    "partite": 2,
+                    "winrate": 50.0
+                }
+            ]
         },
         {
             "id": 33,
@@ -735,7 +2331,21 @@
                 "GUW"
             ],
             "partite": 5,
-            "vittorie": 1
+            "vittorie": 1,
+            "storico": [
+                {
+                    "periodo": "Nov 2024",
+                    "mese": "2024-11",
+                    "partite": 2,
+                    "winrate": 50.0
+                },
+                {
+                    "periodo": "Dec 2024",
+                    "mese": "2024-12",
+                    "partite": 3,
+                    "winrate": 0.0
+                }
+            ]
         },
         {
             "id": 231,
@@ -746,7 +2356,15 @@
                 "BGW"
             ],
             "partite": 5,
-            "vittorie": 1
+            "vittorie": 1,
+            "storico": [
+                {
+                    "periodo": "Mar 2025",
+                    "mese": "2025-03",
+                    "partite": 5,
+                    "winrate": 20.0
+                }
+            ]
         },
         {
             "id": 165,
@@ -757,7 +2375,33 @@
                 "B"
             ],
             "partite": 5,
-            "vittorie": 0
+            "vittorie": 0,
+            "storico": [
+                {
+                    "periodo": "Oct 2024",
+                    "mese": "2024-10",
+                    "partite": 2,
+                    "winrate": 0.0
+                },
+                {
+                    "periodo": "Nov 2024",
+                    "mese": "2024-11",
+                    "partite": 1,
+                    "winrate": 0.0
+                },
+                {
+                    "periodo": "Dec 2024",
+                    "mese": "2024-12",
+                    "partite": 1,
+                    "winrate": 0.0
+                },
+                {
+                    "periodo": "Jan 2025",
+                    "mese": "2025-01",
+                    "partite": 1,
+                    "winrate": 0.0
+                }
+            ]
         },
         {
             "id": 19,
@@ -768,7 +2412,33 @@
                 "BGU"
             ],
             "partite": 5,
-            "vittorie": 3
+            "vittorie": 3,
+            "storico": [
+                {
+                    "periodo": "Nov 2024",
+                    "mese": "2024-11",
+                    "partite": 2,
+                    "winrate": 100.0
+                },
+                {
+                    "periodo": "Dec 2024",
+                    "mese": "2024-12",
+                    "partite": 1,
+                    "winrate": 0.0
+                },
+                {
+                    "periodo": "Jan 2025",
+                    "mese": "2025-01",
+                    "partite": 1,
+                    "winrate": 100.0
+                },
+                {
+                    "periodo": "Mar 2025",
+                    "mese": "2025-03",
+                    "partite": 1,
+                    "winrate": 0.0
+                }
+            ]
         },
         {
             "id": 240,
@@ -779,7 +2449,21 @@
                 "GU"
             ],
             "partite": 5,
-            "vittorie": 2
+            "vittorie": 2,
+            "storico": [
+                {
+                    "periodo": "Mar 2025",
+                    "mese": "2025-03",
+                    "partite": 3,
+                    "winrate": 33.3
+                },
+                {
+                    "periodo": "Apr 2025",
+                    "mese": "2025-04",
+                    "partite": 2,
+                    "winrate": 50.0
+                }
+            ]
         },
         {
             "id": 136,
@@ -790,7 +2474,21 @@
                 "B"
             ],
             "partite": 5,
-            "vittorie": 1
+            "vittorie": 1,
+            "storico": [
+                {
+                    "periodo": "Nov 2024",
+                    "mese": "2024-11",
+                    "partite": 4,
+                    "winrate": 25.0
+                },
+                {
+                    "periodo": "Dec 2024",
+                    "mese": "2024-12",
+                    "partite": 1,
+                    "winrate": 0.0
+                }
+            ]
         },
         {
             "id": 24,
@@ -801,7 +2499,27 @@
                 "BUW"
             ],
             "partite": 5,
-            "vittorie": 3
+            "vittorie": 3,
+            "storico": [
+                {
+                    "periodo": "Nov 2024",
+                    "mese": "2024-11",
+                    "partite": 1,
+                    "winrate": 100.0
+                },
+                {
+                    "periodo": "Jan 2025",
+                    "mese": "2025-01",
+                    "partite": 1,
+                    "winrate": 0.0
+                },
+                {
+                    "periodo": "Feb 2025",
+                    "mese": "2025-02",
+                    "partite": 3,
+                    "winrate": 66.7
+                }
+            ]
         },
         {
             "id": 3,
@@ -812,7 +2530,33 @@
                 "GW"
             ],
             "partite": 5,
-            "vittorie": 1
+            "vittorie": 1,
+            "storico": [
+                {
+                    "periodo": "Oct 2024",
+                    "mese": "2024-10",
+                    "partite": 1,
+                    "winrate": 0.0
+                },
+                {
+                    "periodo": "Feb 2025",
+                    "mese": "2025-02",
+                    "partite": 1,
+                    "winrate": 0.0
+                },
+                {
+                    "periodo": "Mar 2025",
+                    "mese": "2025-03",
+                    "partite": 2,
+                    "winrate": 50.0
+                },
+                {
+                    "periodo": "Apr 2025",
+                    "mese": "2025-04",
+                    "partite": 1,
+                    "winrate": 0.0
+                }
+            ]
         },
         {
             "id": 160,
@@ -823,7 +2567,21 @@
                 "GUR"
             ],
             "partite": 5,
-            "vittorie": 1
+            "vittorie": 1,
+            "storico": [
+                {
+                    "periodo": "Dec 2024",
+                    "mese": "2024-12",
+                    "partite": 4,
+                    "winrate": 25.0
+                },
+                {
+                    "periodo": "Jan 2025",
+                    "mese": "2025-01",
+                    "partite": 1,
+                    "winrate": 0.0
+                }
+            ]
         },
         {
             "id": 150,
@@ -834,7 +2592,27 @@
                 "U"
             ],
             "partite": 5,
-            "vittorie": 1
+            "vittorie": 1,
+            "storico": [
+                {
+                    "periodo": "Dec 2024",
+                    "mese": "2024-12",
+                    "partite": 1,
+                    "winrate": 0.0
+                },
+                {
+                    "periodo": "Jan 2025",
+                    "mese": "2025-01",
+                    "partite": 3,
+                    "winrate": 0.0
+                },
+                {
+                    "periodo": "Feb 2025",
+                    "mese": "2025-02",
+                    "partite": 1,
+                    "winrate": 100.0
+                }
+            ]
         },
         {
             "id": 167,
@@ -845,7 +2623,21 @@
                 "B"
             ],
             "partite": 5,
-            "vittorie": 0
+            "vittorie": 0,
+            "storico": [
+                {
+                    "periodo": "Dec 2024",
+                    "mese": "2024-12",
+                    "partite": 2,
+                    "winrate": 0.0
+                },
+                {
+                    "periodo": "Jan 2025",
+                    "mese": "2025-01",
+                    "partite": 3,
+                    "winrate": 0.0
+                }
+            ]
         },
         {
             "id": 58,
@@ -856,7 +2648,15 @@
                 "RGW"
             ],
             "partite": 5,
-            "vittorie": 3
+            "vittorie": 3,
+            "storico": [
+                {
+                    "periodo": "Nov 2024",
+                    "mese": "2024-11",
+                    "partite": 5,
+                    "winrate": 60.0
+                }
+            ]
         },
         {
             "id": 62,
@@ -867,7 +2667,27 @@
                 "WUB"
             ],
             "partite": 5,
-            "vittorie": 0
+            "vittorie": 0,
+            "storico": [
+                {
+                    "periodo": "Nov 2024",
+                    "mese": "2024-11",
+                    "partite": 1,
+                    "winrate": 0.0
+                },
+                {
+                    "periodo": "Dec 2024",
+                    "mese": "2024-12",
+                    "partite": 2,
+                    "winrate": 0.0
+                },
+                {
+                    "periodo": "Mar 2025",
+                    "mese": "2025-03",
+                    "partite": 2,
+                    "winrate": 0.0
+                }
+            ]
         },
         {
             "id": 161,
@@ -878,7 +2698,33 @@
                 "GUR"
             ],
             "partite": 4,
-            "vittorie": 2
+            "vittorie": 2,
+            "storico": [
+                {
+                    "periodo": "Nov 2024",
+                    "mese": "2024-11",
+                    "partite": 1,
+                    "winrate": 0.0
+                },
+                {
+                    "periodo": "Dec 2024",
+                    "mese": "2024-12",
+                    "partite": 1,
+                    "winrate": 0.0
+                },
+                {
+                    "periodo": "Jan 2025",
+                    "mese": "2025-01",
+                    "partite": 1,
+                    "winrate": 100.0
+                },
+                {
+                    "periodo": "Mar 2025",
+                    "mese": "2025-03",
+                    "partite": 1,
+                    "winrate": 100.0
+                }
+            ]
         },
         {
             "id": 185,
@@ -889,7 +2735,27 @@
                 "RGW"
             ],
             "partite": 4,
-            "vittorie": 1
+            "vittorie": 1,
+            "storico": [
+                {
+                    "periodo": "Dec 2024",
+                    "mese": "2024-12",
+                    "partite": 1,
+                    "winrate": 100.0
+                },
+                {
+                    "periodo": "Feb 2025",
+                    "mese": "2025-02",
+                    "partite": 1,
+                    "winrate": 0.0
+                },
+                {
+                    "periodo": "Apr 2025",
+                    "mese": "2025-04",
+                    "partite": 2,
+                    "winrate": 0.0
+                }
+            ]
         },
         {
             "id": 213,
@@ -900,7 +2766,15 @@
                 "GW"
             ],
             "partite": 4,
-            "vittorie": 1
+            "vittorie": 1,
+            "storico": [
+                {
+                    "periodo": "Jan 2025",
+                    "mese": "2025-01",
+                    "partite": 4,
+                    "winrate": 25.0
+                }
+            ]
         },
         {
             "id": 241,
@@ -911,7 +2785,15 @@
                 "RU"
             ],
             "partite": 4,
-            "vittorie": 2
+            "vittorie": 2,
+            "storico": [
+                {
+                    "periodo": "Mar 2025",
+                    "mese": "2025-03",
+                    "partite": 4,
+                    "winrate": 50.0
+                }
+            ]
         },
         {
             "id": 155,
@@ -922,7 +2804,21 @@
                 "C"
             ],
             "partite": 4,
-            "vittorie": 1
+            "vittorie": 1,
+            "storico": [
+                {
+                    "periodo": "Dec 2024",
+                    "mese": "2024-12",
+                    "partite": 2,
+                    "winrate": 50.0
+                },
+                {
+                    "periodo": "Mar 2025",
+                    "mese": "2025-03",
+                    "partite": 2,
+                    "winrate": 0.0
+                }
+            ]
         },
         {
             "id": 191,
@@ -933,7 +2829,33 @@
                 "GWUBR"
             ],
             "partite": 4,
-            "vittorie": 1
+            "vittorie": 1,
+            "storico": [
+                {
+                    "periodo": "Dec 2024",
+                    "mese": "2024-12",
+                    "partite": 1,
+                    "winrate": 0.0
+                },
+                {
+                    "periodo": "Jan 2025",
+                    "mese": "2025-01",
+                    "partite": 1,
+                    "winrate": 0.0
+                },
+                {
+                    "periodo": "Feb 2025",
+                    "mese": "2025-02",
+                    "partite": 1,
+                    "winrate": 100.0
+                },
+                {
+                    "periodo": "Mar 2025",
+                    "mese": "2025-03",
+                    "partite": 1,
+                    "winrate": 0.0
+                }
+            ]
         },
         {
             "id": 180,
@@ -944,7 +2866,15 @@
                 "GUR"
             ],
             "partite": 4,
-            "vittorie": 2
+            "vittorie": 2,
+            "storico": [
+                {
+                    "periodo": "Dec 2024",
+                    "mese": "2024-12",
+                    "partite": 4,
+                    "winrate": 50.0
+                }
+            ]
         },
         {
             "id": 212,
@@ -955,7 +2885,21 @@
                 "BGW"
             ],
             "partite": 4,
-            "vittorie": 3
+            "vittorie": 3,
+            "storico": [
+                {
+                    "periodo": "Jan 2025",
+                    "mese": "2025-01",
+                    "partite": 1,
+                    "winrate": 0.0
+                },
+                {
+                    "periodo": "Mar 2025",
+                    "mese": "2025-03",
+                    "partite": 3,
+                    "winrate": 100.0
+                }
+            ]
         },
         {
             "id": 140,
@@ -966,7 +2910,33 @@
                 "GB"
             ],
             "partite": 4,
-            "vittorie": 1
+            "vittorie": 1,
+            "storico": [
+                {
+                    "periodo": "Dec 2024",
+                    "mese": "2024-12",
+                    "partite": 1,
+                    "winrate": 0.0
+                },
+                {
+                    "periodo": "Jan 2025",
+                    "mese": "2025-01",
+                    "partite": 1,
+                    "winrate": 100.0
+                },
+                {
+                    "periodo": "Mar 2025",
+                    "mese": "2025-03",
+                    "partite": 1,
+                    "winrate": 0.0
+                },
+                {
+                    "periodo": "Apr 2025",
+                    "mese": "2025-04",
+                    "partite": 1,
+                    "winrate": 0.0
+                }
+            ]
         },
         {
             "id": 200,
@@ -977,7 +2947,15 @@
                 "WB"
             ],
             "partite": 4,
-            "vittorie": 1
+            "vittorie": 1,
+            "storico": [
+                {
+                    "periodo": "Jan 2025",
+                    "mese": "2025-01",
+                    "partite": 4,
+                    "winrate": 25.0
+                }
+            ]
         },
         {
             "id": 177,
@@ -988,7 +2966,21 @@
                 "U"
             ],
             "partite": 4,
-            "vittorie": 2
+            "vittorie": 2,
+            "storico": [
+                {
+                    "periodo": "Dec 2024",
+                    "mese": "2024-12",
+                    "partite": 3,
+                    "winrate": 33.3
+                },
+                {
+                    "periodo": "Jan 2025",
+                    "mese": "2025-01",
+                    "partite": 1,
+                    "winrate": 100.0
+                }
+            ]
         },
         {
             "id": 246,
@@ -999,7 +2991,21 @@
                 "B"
             ],
             "partite": 4,
-            "vittorie": 0
+            "vittorie": 0,
+            "storico": [
+                {
+                    "periodo": "Mar 2025",
+                    "mese": "2025-03",
+                    "partite": 3,
+                    "winrate": 0.0
+                },
+                {
+                    "periodo": "Apr 2025",
+                    "mese": "2025-04",
+                    "partite": 1,
+                    "winrate": 0.0
+                }
+            ]
         },
         {
             "id": 1,
@@ -1010,7 +3016,33 @@
                 "R"
             ],
             "partite": 4,
-            "vittorie": 2
+            "vittorie": 2,
+            "storico": [
+                {
+                    "periodo": "Oct 2024",
+                    "mese": "2024-10",
+                    "partite": 1,
+                    "winrate": 100.0
+                },
+                {
+                    "periodo": "Dec 2024",
+                    "mese": "2024-12",
+                    "partite": 1,
+                    "winrate": 0.0
+                },
+                {
+                    "periodo": "Feb 2025",
+                    "mese": "2025-02",
+                    "partite": 1,
+                    "winrate": 0.0
+                },
+                {
+                    "periodo": "Mar 2025",
+                    "mese": "2025-03",
+                    "partite": 1,
+                    "winrate": 100.0
+                }
+            ]
         },
         {
             "id": 158,
@@ -1021,7 +3053,27 @@
                 "UBR"
             ],
             "partite": 4,
-            "vittorie": 2
+            "vittorie": 2,
+            "storico": [
+                {
+                    "periodo": "Dec 2024",
+                    "mese": "2024-12",
+                    "partite": 1,
+                    "winrate": 0.0
+                },
+                {
+                    "periodo": "Feb 2025",
+                    "mese": "2025-02",
+                    "partite": 2,
+                    "winrate": 50.0
+                },
+                {
+                    "periodo": "Mar 2025",
+                    "mese": "2025-03",
+                    "partite": 1,
+                    "winrate": 100.0
+                }
+            ]
         },
         {
             "id": 11,
@@ -1032,7 +3084,33 @@
                 "BGRUW"
             ],
             "partite": 4,
-            "vittorie": 1
+            "vittorie": 1,
+            "storico": [
+                {
+                    "periodo": "Oct 2024",
+                    "mese": "2024-10",
+                    "partite": 1,
+                    "winrate": 0.0
+                },
+                {
+                    "periodo": "Dec 2024",
+                    "mese": "2024-12",
+                    "partite": 1,
+                    "winrate": 0.0
+                },
+                {
+                    "periodo": "Mar 2025",
+                    "mese": "2025-03",
+                    "partite": 1,
+                    "winrate": 100.0
+                },
+                {
+                    "periodo": "Apr 2025",
+                    "mese": "2025-04",
+                    "partite": 1,
+                    "winrate": 0.0
+                }
+            ]
         },
         {
             "id": 186,
@@ -1043,7 +3121,27 @@
                 "B"
             ],
             "partite": 4,
-            "vittorie": 2
+            "vittorie": 2,
+            "storico": [
+                {
+                    "periodo": "Dec 2024",
+                    "mese": "2024-12",
+                    "partite": 2,
+                    "winrate": 0.0
+                },
+                {
+                    "periodo": "Jan 2025",
+                    "mese": "2025-01",
+                    "partite": 1,
+                    "winrate": 100.0
+                },
+                {
+                    "periodo": "Mar 2025",
+                    "mese": "2025-03",
+                    "partite": 1,
+                    "winrate": 100.0
+                }
+            ]
         },
         {
             "id": 252,
@@ -1054,7 +3152,15 @@
                 "GR"
             ],
             "partite": 4,
-            "vittorie": 2
+            "vittorie": 2,
+            "storico": [
+                {
+                    "periodo": "Apr 2025",
+                    "mese": "2025-04",
+                    "partite": 4,
+                    "winrate": 50.0
+                }
+            ]
         },
         {
             "id": 203,
@@ -1065,7 +3171,21 @@
                 "GR"
             ],
             "partite": 4,
-            "vittorie": 0
+            "vittorie": 0,
+            "storico": [
+                {
+                    "periodo": "Jan 2025",
+                    "mese": "2025-01",
+                    "partite": 3,
+                    "winrate": 0.0
+                },
+                {
+                    "periodo": "Feb 2025",
+                    "mese": "2025-02",
+                    "partite": 1,
+                    "winrate": 0.0
+                }
+            ]
         },
         {
             "id": 144,
@@ -1076,7 +3196,21 @@
                 "B"
             ],
             "partite": 4,
-            "vittorie": 2
+            "vittorie": 2,
+            "storico": [
+                {
+                    "periodo": "Dec 2024",
+                    "mese": "2024-12",
+                    "partite": 2,
+                    "winrate": 50.0
+                },
+                {
+                    "periodo": "Mar 2025",
+                    "mese": "2025-03",
+                    "partite": 2,
+                    "winrate": 50.0
+                }
+            ]
         },
         {
             "id": 223,
@@ -1087,7 +3221,15 @@
                 "BGRUW"
             ],
             "partite": 4,
-            "vittorie": 0
+            "vittorie": 0,
+            "storico": [
+                {
+                    "periodo": "Feb 2025",
+                    "mese": "2025-02",
+                    "partite": 4,
+                    "winrate": 0.0
+                }
+            ]
         },
         {
             "id": 88,
@@ -1098,7 +3240,21 @@
                 "BR"
             ],
             "partite": 4,
-            "vittorie": 2
+            "vittorie": 2,
+            "storico": [
+                {
+                    "periodo": "Nov 2024",
+                    "mese": "2024-11",
+                    "partite": 2,
+                    "winrate": 100.0
+                },
+                {
+                    "periodo": "Dec 2024",
+                    "mese": "2024-12",
+                    "partite": 2,
+                    "winrate": 0.0
+                }
+            ]
         },
         {
             "id": 10,
@@ -1109,7 +3265,21 @@
                 "BRG"
             ],
             "partite": 3,
-            "vittorie": 1
+            "vittorie": 1,
+            "storico": [
+                {
+                    "periodo": "Oct 2024",
+                    "mese": "2024-10",
+                    "partite": 2,
+                    "winrate": 50.0
+                },
+                {
+                    "periodo": "Nov 2024",
+                    "mese": "2024-11",
+                    "partite": 1,
+                    "winrate": 0.0
+                }
+            ]
         },
         {
             "id": 74,
@@ -1120,7 +3290,27 @@
                 "W"
             ],
             "partite": 3,
-            "vittorie": 3
+            "vittorie": 3,
+            "storico": [
+                {
+                    "periodo": "Nov 2024",
+                    "mese": "2024-11",
+                    "partite": 1,
+                    "winrate": 100.0
+                },
+                {
+                    "periodo": "Feb 2025",
+                    "mese": "2025-02",
+                    "partite": 1,
+                    "winrate": 100.0
+                },
+                {
+                    "periodo": "Apr 2025",
+                    "mese": "2025-04",
+                    "partite": 1,
+                    "winrate": 100.0
+                }
+            ]
         },
         {
             "id": 35,
@@ -1131,7 +3321,27 @@
                 "UR"
             ],
             "partite": 3,
-            "vittorie": 0
+            "vittorie": 0,
+            "storico": [
+                {
+                    "periodo": "Nov 2024",
+                    "mese": "2024-11",
+                    "partite": 1,
+                    "winrate": 0.0
+                },
+                {
+                    "periodo": "Dec 2024",
+                    "mese": "2024-12",
+                    "partite": 1,
+                    "winrate": 0.0
+                },
+                {
+                    "periodo": "Feb 2025",
+                    "mese": "2025-02",
+                    "partite": 1,
+                    "winrate": 0.0
+                }
+            ]
         },
         {
             "id": 57,
@@ -1142,7 +3352,21 @@
                 "UBR"
             ],
             "partite": 3,
-            "vittorie": 1
+            "vittorie": 1,
+            "storico": [
+                {
+                    "periodo": "Nov 2024",
+                    "mese": "2024-11",
+                    "partite": 1,
+                    "winrate": 0.0
+                },
+                {
+                    "periodo": "Feb 2025",
+                    "mese": "2025-02",
+                    "partite": 2,
+                    "winrate": 50.0
+                }
+            ]
         },
         {
             "id": 248,
@@ -1153,7 +3377,15 @@
                 "BW"
             ],
             "partite": 3,
-            "vittorie": 1
+            "vittorie": 1,
+            "storico": [
+                {
+                    "periodo": "Apr 2025",
+                    "mese": "2025-04",
+                    "partite": 3,
+                    "winrate": 33.3
+                }
+            ]
         },
         {
             "id": 31,
@@ -1164,7 +3396,15 @@
                 "GWUB"
             ],
             "partite": 3,
-            "vittorie": 0
+            "vittorie": 0,
+            "storico": [
+                {
+                    "periodo": "Nov 2024",
+                    "mese": "2024-11",
+                    "partite": 3,
+                    "winrate": 0.0
+                }
+            ]
         },
         {
             "id": 12,
@@ -1175,7 +3415,27 @@
                 "W"
             ],
             "partite": 3,
-            "vittorie": 2
+            "vittorie": 2,
+            "storico": [
+                {
+                    "periodo": "Oct 2024",
+                    "mese": "2024-10",
+                    "partite": 1,
+                    "winrate": 100.0
+                },
+                {
+                    "periodo": "Nov 2024",
+                    "mese": "2024-11",
+                    "partite": 1,
+                    "winrate": 0.0
+                },
+                {
+                    "periodo": "Dec 2024",
+                    "mese": "2024-12",
+                    "partite": 1,
+                    "winrate": 100.0
+                }
+            ]
         },
         {
             "id": 251,
@@ -1186,7 +3446,15 @@
                 "GRU"
             ],
             "partite": 3,
-            "vittorie": 0
+            "vittorie": 0,
+            "storico": [
+                {
+                    "periodo": "Apr 2025",
+                    "mese": "2025-04",
+                    "partite": 3,
+                    "winrate": 0.0
+                }
+            ]
         },
         {
             "id": 197,
@@ -1197,7 +3465,21 @@
                 "URW"
             ],
             "partite": 3,
-            "vittorie": 3
+            "vittorie": 3,
+            "storico": [
+                {
+                    "periodo": "Jan 2025",
+                    "mese": "2025-01",
+                    "partite": 1,
+                    "winrate": 100.0
+                },
+                {
+                    "periodo": "Mar 2025",
+                    "mese": "2025-03",
+                    "partite": 2,
+                    "winrate": 100.0
+                }
+            ]
         },
         {
             "id": 202,
@@ -1208,7 +3490,15 @@
                 "GU"
             ],
             "partite": 3,
-            "vittorie": 3
+            "vittorie": 3,
+            "storico": [
+                {
+                    "periodo": "Jan 2025",
+                    "mese": "2025-01",
+                    "partite": 3,
+                    "winrate": 100.0
+                }
+            ]
         },
         {
             "id": 135,
@@ -1219,7 +3509,21 @@
                 "RGWU"
             ],
             "partite": 3,
-            "vittorie": 0
+            "vittorie": 0,
+            "storico": [
+                {
+                    "periodo": "Dec 2024",
+                    "mese": "2024-12",
+                    "partite": 1,
+                    "winrate": 0.0
+                },
+                {
+                    "periodo": "Apr 2025",
+                    "mese": "2025-04",
+                    "partite": 2,
+                    "winrate": 0.0
+                }
+            ]
         },
         {
             "id": 81,
@@ -1230,7 +3534,27 @@
                 "WU"
             ],
             "partite": 3,
-            "vittorie": 1
+            "vittorie": 1,
+            "storico": [
+                {
+                    "periodo": "Nov 2024",
+                    "mese": "2024-11",
+                    "partite": 1,
+                    "winrate": 0.0
+                },
+                {
+                    "periodo": "Jan 2025",
+                    "mese": "2025-01",
+                    "partite": 1,
+                    "winrate": 0.0
+                },
+                {
+                    "periodo": "Feb 2025",
+                    "mese": "2025-02",
+                    "partite": 1,
+                    "winrate": 100.0
+                }
+            ]
         },
         {
             "id": 20,
@@ -1241,7 +3565,21 @@
                 "GUW"
             ],
             "partite": 3,
-            "vittorie": 1
+            "vittorie": 1,
+            "storico": [
+                {
+                    "periodo": "Nov 2024",
+                    "mese": "2024-11",
+                    "partite": 1,
+                    "winrate": 0.0
+                },
+                {
+                    "periodo": "Apr 2025",
+                    "mese": "2025-04",
+                    "partite": 2,
+                    "winrate": 50.0
+                }
+            ]
         },
         {
             "id": 39,
@@ -1252,7 +3590,21 @@
                 "BG"
             ],
             "partite": 3,
-            "vittorie": 1
+            "vittorie": 1,
+            "storico": [
+                {
+                    "periodo": "Nov 2024",
+                    "mese": "2024-11",
+                    "partite": 2,
+                    "winrate": 50.0
+                },
+                {
+                    "periodo": "Mar 2025",
+                    "mese": "2025-03",
+                    "partite": 1,
+                    "winrate": 0.0
+                }
+            ]
         },
         {
             "id": 86,
@@ -1263,7 +3615,27 @@
                 "WBG"
             ],
             "partite": 3,
-            "vittorie": 0
+            "vittorie": 0,
+            "storico": [
+                {
+                    "periodo": "Nov 2024",
+                    "mese": "2024-11",
+                    "partite": 1,
+                    "winrate": 0.0
+                },
+                {
+                    "periodo": "Jan 2025",
+                    "mese": "2025-01",
+                    "partite": 1,
+                    "winrate": 0.0
+                },
+                {
+                    "periodo": "Mar 2025",
+                    "mese": "2025-03",
+                    "partite": 1,
+                    "winrate": 0.0
+                }
+            ]
         },
         {
             "id": 46,
@@ -1274,7 +3646,27 @@
                 "BU"
             ],
             "partite": 3,
-            "vittorie": 1
+            "vittorie": 1,
+            "storico": [
+                {
+                    "periodo": "Nov 2024",
+                    "mese": "2024-11",
+                    "partite": 1,
+                    "winrate": 0.0
+                },
+                {
+                    "periodo": "Dec 2024",
+                    "mese": "2024-12",
+                    "partite": 1,
+                    "winrate": 100.0
+                },
+                {
+                    "periodo": "Jan 2025",
+                    "mese": "2025-01",
+                    "partite": 1,
+                    "winrate": 0.0
+                }
+            ]
         },
         {
             "id": 2,
@@ -1285,7 +3677,27 @@
                 "BUW"
             ],
             "partite": 3,
-            "vittorie": 1
+            "vittorie": 1,
+            "storico": [
+                {
+                    "periodo": "Oct 2024",
+                    "mese": "2024-10",
+                    "partite": 1,
+                    "winrate": 0.0
+                },
+                {
+                    "periodo": "Dec 2024",
+                    "mese": "2024-12",
+                    "partite": 1,
+                    "winrate": 100.0
+                },
+                {
+                    "periodo": "Mar 2025",
+                    "mese": "2025-03",
+                    "partite": 1,
+                    "winrate": 0.0
+                }
+            ]
         },
         {
             "id": 209,
@@ -1296,7 +3708,27 @@
                 "GU"
             ],
             "partite": 3,
-            "vittorie": 0
+            "vittorie": 0,
+            "storico": [
+                {
+                    "periodo": "Jan 2025",
+                    "mese": "2025-01",
+                    "partite": 1,
+                    "winrate": 0.0
+                },
+                {
+                    "periodo": "Mar 2025",
+                    "mese": "2025-03",
+                    "partite": 1,
+                    "winrate": 0.0
+                },
+                {
+                    "periodo": "Apr 2025",
+                    "mese": "2025-04",
+                    "partite": 1,
+                    "winrate": 0.0
+                }
+            ]
         },
         {
             "id": 138,
@@ -1307,7 +3739,21 @@
                 "WR"
             ],
             "partite": 3,
-            "vittorie": 0
+            "vittorie": 0,
+            "storico": [
+                {
+                    "periodo": "Dec 2024",
+                    "mese": "2024-12",
+                    "partite": 2,
+                    "winrate": 0.0
+                },
+                {
+                    "periodo": "Jan 2025",
+                    "mese": "2025-01",
+                    "partite": 1,
+                    "winrate": 0.0
+                }
+            ]
         },
         {
             "id": 157,
@@ -1318,7 +3764,27 @@
                 "RGW"
             ],
             "partite": 3,
-            "vittorie": 2
+            "vittorie": 2,
+            "storico": [
+                {
+                    "periodo": "Dec 2024",
+                    "mese": "2024-12",
+                    "partite": 1,
+                    "winrate": 100.0
+                },
+                {
+                    "periodo": "Jan 2025",
+                    "mese": "2025-01",
+                    "partite": 1,
+                    "winrate": 0.0
+                },
+                {
+                    "periodo": "Mar 2025",
+                    "mese": "2025-03",
+                    "partite": 1,
+                    "winrate": 100.0
+                }
+            ]
         },
         {
             "id": 29,
@@ -1329,7 +3795,21 @@
                 "C"
             ],
             "partite": 3,
-            "vittorie": 0
+            "vittorie": 0,
+            "storico": [
+                {
+                    "periodo": "Nov 2024",
+                    "mese": "2024-11",
+                    "partite": 1,
+                    "winrate": 0.0
+                },
+                {
+                    "periodo": "Mar 2025",
+                    "mese": "2025-03",
+                    "partite": 2,
+                    "winrate": 0.0
+                }
+            ]
         },
         {
             "id": 73,
@@ -1340,7 +3820,21 @@
                 "R"
             ],
             "partite": 2,
-            "vittorie": 0
+            "vittorie": 0,
+            "storico": [
+                {
+                    "periodo": "Nov 2024",
+                    "mese": "2024-11",
+                    "partite": 1,
+                    "winrate": 0.0
+                },
+                {
+                    "periodo": "Dec 2024",
+                    "mese": "2024-12",
+                    "partite": 1,
+                    "winrate": 0.0
+                }
+            ]
         },
         {
             "id": 188,
@@ -1351,7 +3845,15 @@
                 "W"
             ],
             "partite": 2,
-            "vittorie": 0
+            "vittorie": 0,
+            "storico": [
+                {
+                    "periodo": "Dec 2024",
+                    "mese": "2024-12",
+                    "partite": 2,
+                    "winrate": 0.0
+                }
+            ]
         },
         {
             "id": 190,
@@ -1362,7 +3864,21 @@
                 "GWUB"
             ],
             "partite": 2,
-            "vittorie": 0
+            "vittorie": 0,
+            "storico": [
+                {
+                    "periodo": "Dec 2024",
+                    "mese": "2024-12",
+                    "partite": 1,
+                    "winrate": 0.0
+                },
+                {
+                    "periodo": "Feb 2025",
+                    "mese": "2025-02",
+                    "partite": 1,
+                    "winrate": 0.0
+                }
+            ]
         },
         {
             "id": 77,
@@ -1373,7 +3889,21 @@
                 "UB"
             ],
             "partite": 2,
-            "vittorie": 0
+            "vittorie": 0,
+            "storico": [
+                {
+                    "periodo": "Nov 2024",
+                    "mese": "2024-11",
+                    "partite": 1,
+                    "winrate": 0.0
+                },
+                {
+                    "periodo": "Feb 2025",
+                    "mese": "2025-02",
+                    "partite": 1,
+                    "winrate": 0.0
+                }
+            ]
         },
         {
             "id": 224,
@@ -1384,7 +3914,15 @@
                 "BW"
             ],
             "partite": 2,
-            "vittorie": 0
+            "vittorie": 0,
+            "storico": [
+                {
+                    "periodo": "Feb 2025",
+                    "mese": "2025-02",
+                    "partite": 2,
+                    "winrate": 0.0
+                }
+            ]
         },
         {
             "id": 145,
@@ -1395,7 +3933,21 @@
                 "BG"
             ],
             "partite": 2,
-            "vittorie": 0
+            "vittorie": 0,
+            "storico": [
+                {
+                    "periodo": "Dec 2024",
+                    "mese": "2024-12",
+                    "partite": 1,
+                    "winrate": 0.0
+                },
+                {
+                    "periodo": "Jan 2025",
+                    "mese": "2025-01",
+                    "partite": 1,
+                    "winrate": 0.0
+                }
+            ]
         },
         {
             "id": 14,
@@ -1406,7 +3958,21 @@
                 "GRW"
             ],
             "partite": 2,
-            "vittorie": 0
+            "vittorie": 0,
+            "storico": [
+                {
+                    "periodo": "Oct 2024",
+                    "mese": "2024-10",
+                    "partite": 1,
+                    "winrate": 0.0
+                },
+                {
+                    "periodo": "Nov 2024",
+                    "mese": "2024-11",
+                    "partite": 1,
+                    "winrate": 0.0
+                }
+            ]
         },
         {
             "id": 56,
@@ -1417,7 +3983,21 @@
                 "R"
             ],
             "partite": 2,
-            "vittorie": 1
+            "vittorie": 1,
+            "storico": [
+                {
+                    "periodo": "Nov 2024",
+                    "mese": "2024-11",
+                    "partite": 1,
+                    "winrate": 100.0
+                },
+                {
+                    "periodo": "Mar 2025",
+                    "mese": "2025-03",
+                    "partite": 1,
+                    "winrate": 0.0
+                }
+            ]
         },
         {
             "id": 66,
@@ -1428,7 +4008,15 @@
                 "GWUBR"
             ],
             "partite": 2,
-            "vittorie": 0
+            "vittorie": 0,
+            "storico": [
+                {
+                    "periodo": "Nov 2024",
+                    "mese": "2024-11",
+                    "partite": 2,
+                    "winrate": 0.0
+                }
+            ]
         },
         {
             "id": 243,
@@ -1439,7 +4027,21 @@
                 "GUW"
             ],
             "partite": 2,
-            "vittorie": 1
+            "vittorie": 1,
+            "storico": [
+                {
+                    "periodo": "Mar 2025",
+                    "mese": "2025-03",
+                    "partite": 1,
+                    "winrate": 100.0
+                },
+                {
+                    "periodo": "Apr 2025",
+                    "mese": "2025-04",
+                    "partite": 1,
+                    "winrate": 0.0
+                }
+            ]
         },
         {
             "id": 47,
@@ -1450,7 +4052,21 @@
                 "RG"
             ],
             "partite": 2,
-            "vittorie": 1
+            "vittorie": 1,
+            "storico": [
+                {
+                    "periodo": "Nov 2024",
+                    "mese": "2024-11",
+                    "partite": 1,
+                    "winrate": 100.0
+                },
+                {
+                    "periodo": "Mar 2025",
+                    "mese": "2025-03",
+                    "partite": 1,
+                    "winrate": 0.0
+                }
+            ]
         },
         {
             "id": 253,
@@ -1461,7 +4077,15 @@
                 "BW"
             ],
             "partite": 2,
-            "vittorie": 0
+            "vittorie": 0,
+            "storico": [
+                {
+                    "periodo": "Apr 2025",
+                    "mese": "2025-04",
+                    "partite": 2,
+                    "winrate": 0.0
+                }
+            ]
         },
         {
             "id": 51,
@@ -1472,7 +4096,21 @@
                 "WB"
             ],
             "partite": 2,
-            "vittorie": 0
+            "vittorie": 0,
+            "storico": [
+                {
+                    "periodo": "Nov 2024",
+                    "mese": "2024-11",
+                    "partite": 1,
+                    "winrate": 0.0
+                },
+                {
+                    "periodo": "Dec 2024",
+                    "mese": "2024-12",
+                    "partite": 1,
+                    "winrate": 0.0
+                }
+            ]
         },
         {
             "id": 189,
@@ -1483,7 +4121,21 @@
                 "W"
             ],
             "partite": 2,
-            "vittorie": 1
+            "vittorie": 1,
+            "storico": [
+                {
+                    "periodo": "Dec 2024",
+                    "mese": "2024-12",
+                    "partite": 1,
+                    "winrate": 0.0
+                },
+                {
+                    "periodo": "Feb 2025",
+                    "mese": "2025-02",
+                    "partite": 1,
+                    "winrate": 100.0
+                }
+            ]
         },
         {
             "id": 208,
@@ -1494,7 +4146,15 @@
                 "GW"
             ],
             "partite": 2,
-            "vittorie": 0
+            "vittorie": 0,
+            "storico": [
+                {
+                    "periodo": "Jan 2025",
+                    "mese": "2025-01",
+                    "partite": 2,
+                    "winrate": 0.0
+                }
+            ]
         },
         {
             "id": 210,
@@ -1505,7 +4165,21 @@
                 "BR"
             ],
             "partite": 2,
-            "vittorie": 1
+            "vittorie": 1,
+            "storico": [
+                {
+                    "periodo": "Jan 2025",
+                    "mese": "2025-01",
+                    "partite": 1,
+                    "winrate": 100.0
+                },
+                {
+                    "periodo": "Mar 2025",
+                    "mese": "2025-03",
+                    "partite": 1,
+                    "winrate": 0.0
+                }
+            ]
         },
         {
             "id": 7,
@@ -1516,7 +4190,21 @@
                 "BRW"
             ],
             "partite": 2,
-            "vittorie": 0
+            "vittorie": 0,
+            "storico": [
+                {
+                    "periodo": "Oct 2024",
+                    "mese": "2024-10",
+                    "partite": 1,
+                    "winrate": 0.0
+                },
+                {
+                    "periodo": "Feb 2025",
+                    "mese": "2025-02",
+                    "partite": 1,
+                    "winrate": 0.0
+                }
+            ]
         },
         {
             "id": 153,
@@ -1527,7 +4215,15 @@
                 "UBR"
             ],
             "partite": 2,
-            "vittorie": 1
+            "vittorie": 1,
+            "storico": [
+                {
+                    "periodo": "Dec 2024",
+                    "mese": "2024-12",
+                    "partite": 2,
+                    "winrate": 50.0
+                }
+            ]
         },
         {
             "id": 216,
@@ -1538,7 +4234,21 @@
                 "BU"
             ],
             "partite": 2,
-            "vittorie": 0
+            "vittorie": 0,
+            "storico": [
+                {
+                    "periodo": "Jan 2025",
+                    "mese": "2025-01",
+                    "partite": 1,
+                    "winrate": 0.0
+                },
+                {
+                    "periodo": "Mar 2025",
+                    "mese": "2025-03",
+                    "partite": 1,
+                    "winrate": 0.0
+                }
+            ]
         },
         {
             "id": 69,
@@ -1549,7 +4259,21 @@
                 "GW"
             ],
             "partite": 2,
-            "vittorie": 0
+            "vittorie": 0,
+            "storico": [
+                {
+                    "periodo": "Nov 2024",
+                    "mese": "2024-11",
+                    "partite": 1,
+                    "winrate": 0.0
+                },
+                {
+                    "periodo": "Dec 2024",
+                    "mese": "2024-12",
+                    "partite": 1,
+                    "winrate": 0.0
+                }
+            ]
         },
         {
             "id": 78,
@@ -1560,7 +4284,15 @@
                 "BR"
             ],
             "partite": 2,
-            "vittorie": 0
+            "vittorie": 0,
+            "storico": [
+                {
+                    "periodo": "Nov 2024",
+                    "mese": "2024-11",
+                    "partite": 2,
+                    "winrate": 0.0
+                }
+            ]
         },
         {
             "id": 152,
@@ -1571,7 +4303,21 @@
                 "BRG"
             ],
             "partite": 2,
-            "vittorie": 1
+            "vittorie": 1,
+            "storico": [
+                {
+                    "periodo": "Dec 2024",
+                    "mese": "2024-12",
+                    "partite": 1,
+                    "winrate": 100.0
+                },
+                {
+                    "periodo": "Jan 2025",
+                    "mese": "2025-01",
+                    "partite": 1,
+                    "winrate": 0.0
+                }
+            ]
         },
         {
             "id": 183,
@@ -1582,7 +4328,15 @@
                 "BGU"
             ],
             "partite": 2,
-            "vittorie": 0
+            "vittorie": 0,
+            "storico": [
+                {
+                    "periodo": "Dec 2024",
+                    "mese": "2024-12",
+                    "partite": 2,
+                    "winrate": 0.0
+                }
+            ]
         },
         {
             "id": 217,
@@ -1593,7 +4347,21 @@
                 "BGR"
             ],
             "partite": 2,
-            "vittorie": 0
+            "vittorie": 0,
+            "storico": [
+                {
+                    "periodo": "Jan 2025",
+                    "mese": "2025-01",
+                    "partite": 1,
+                    "winrate": 0.0
+                },
+                {
+                    "periodo": "Mar 2025",
+                    "mese": "2025-03",
+                    "partite": 1,
+                    "winrate": 0.0
+                }
+            ]
         },
         {
             "id": 172,
@@ -1604,7 +4372,15 @@
                 "R"
             ],
             "partite": 2,
-            "vittorie": 0
+            "vittorie": 0,
+            "storico": [
+                {
+                    "periodo": "Dec 2024",
+                    "mese": "2024-12",
+                    "partite": 2,
+                    "winrate": 0.0
+                }
+            ]
         },
         {
             "id": 15,
@@ -1615,7 +4391,15 @@
                 "GW"
             ],
             "partite": 1,
-            "vittorie": 0
+            "vittorie": 0,
+            "storico": [
+                {
+                    "periodo": "Nov 2024",
+                    "mese": "2024-11",
+                    "partite": 1,
+                    "winrate": 0.0
+                }
+            ]
         },
         {
             "id": 175,
@@ -1626,7 +4410,15 @@
                 "UR"
             ],
             "partite": 1,
-            "vittorie": 0
+            "vittorie": 0,
+            "storico": [
+                {
+                    "periodo": "Dec 2024",
+                    "mese": "2024-12",
+                    "partite": 1,
+                    "winrate": 0.0
+                }
+            ]
         },
         {
             "id": 50,
@@ -1637,7 +4429,15 @@
                 "WUB"
             ],
             "partite": 1,
-            "vittorie": 0
+            "vittorie": 0,
+            "storico": [
+                {
+                    "periodo": "Nov 2024",
+                    "mese": "2024-11",
+                    "partite": 1,
+                    "winrate": 0.0
+                }
+            ]
         },
         {
             "id": 250,
@@ -1648,7 +4448,15 @@
                 "BUW"
             ],
             "partite": 1,
-            "vittorie": 1
+            "vittorie": 1,
+            "storico": [
+                {
+                    "periodo": "Apr 2025",
+                    "mese": "2025-04",
+                    "partite": 1,
+                    "winrate": 100.0
+                }
+            ]
         },
         {
             "id": 176,
@@ -1659,7 +4467,15 @@
                 "G"
             ],
             "partite": 1,
-            "vittorie": 1
+            "vittorie": 1,
+            "storico": [
+                {
+                    "periodo": "Dec 2024",
+                    "mese": "2024-12",
+                    "partite": 1,
+                    "winrate": 100.0
+                }
+            ]
         },
         {
             "id": 239,
@@ -1670,7 +4486,15 @@
                 "BUW"
             ],
             "partite": 1,
-            "vittorie": 0
+            "vittorie": 0,
+            "storico": [
+                {
+                    "periodo": "Mar 2025",
+                    "mese": "2025-03",
+                    "partite": 1,
+                    "winrate": 0.0
+                }
+            ]
         },
         {
             "id": 21,
@@ -1681,7 +4505,15 @@
                 "BRUW"
             ],
             "partite": 1,
-            "vittorie": 0
+            "vittorie": 0,
+            "storico": [
+                {
+                    "periodo": "Nov 2024",
+                    "mese": "2024-11",
+                    "partite": 1,
+                    "winrate": 0.0
+                }
+            ]
         },
         {
             "id": 173,
@@ -1692,7 +4524,15 @@
                 "UR"
             ],
             "partite": 1,
-            "vittorie": 1
+            "vittorie": 1,
+            "storico": [
+                {
+                    "periodo": "Dec 2024",
+                    "mese": "2024-12",
+                    "partite": 1,
+                    "winrate": 100.0
+                }
+            ]
         },
         {
             "id": 187,
@@ -1703,7 +4543,15 @@
                 "G"
             ],
             "partite": 1,
-            "vittorie": 0
+            "vittorie": 0,
+            "storico": [
+                {
+                    "periodo": "Dec 2024",
+                    "mese": "2024-12",
+                    "partite": 1,
+                    "winrate": 0.0
+                }
+            ]
         },
         {
             "id": 193,
@@ -1714,7 +4562,15 @@
                 "WB"
             ],
             "partite": 1,
-            "vittorie": 0
+            "vittorie": 0,
+            "storico": [
+                {
+                    "periodo": "Dec 2024",
+                    "mese": "2024-12",
+                    "partite": 1,
+                    "winrate": 0.0
+                }
+            ]
         },
         {
             "id": 234,
@@ -1725,7 +4581,15 @@
                 "BRW"
             ],
             "partite": 1,
-            "vittorie": 0
+            "vittorie": 0,
+            "storico": [
+                {
+                    "periodo": "Feb 2025",
+                    "mese": "2025-02",
+                    "partite": 1,
+                    "winrate": 0.0
+                }
+            ]
         },
         {
             "id": 59,
@@ -1736,7 +4600,15 @@
                 "U"
             ],
             "partite": 1,
-            "vittorie": 1
+            "vittorie": 1,
+            "storico": [
+                {
+                    "periodo": "Nov 2024",
+                    "mese": "2024-11",
+                    "partite": 1,
+                    "winrate": 100.0
+                }
+            ]
         },
         {
             "id": 207,
@@ -1747,7 +4619,15 @@
                 "RUW"
             ],
             "partite": 1,
-            "vittorie": 0
+            "vittorie": 0,
+            "storico": [
+                {
+                    "periodo": "Jan 2025",
+                    "mese": "2025-01",
+                    "partite": 1,
+                    "winrate": 0.0
+                }
+            ]
         },
         {
             "id": 89,
@@ -1758,7 +4638,15 @@
                 "W"
             ],
             "partite": 1,
-            "vittorie": 0
+            "vittorie": 0,
+            "storico": [
+                {
+                    "periodo": "Nov 2024",
+                    "mese": "2024-11",
+                    "partite": 1,
+                    "winrate": 0.0
+                }
+            ]
         },
         {
             "id": 137,
@@ -1769,7 +4657,15 @@
                 "GWU"
             ],
             "partite": 1,
-            "vittorie": 0
+            "vittorie": 0,
+            "storico": [
+                {
+                    "periodo": "Dec 2024",
+                    "mese": "2024-12",
+                    "partite": 1,
+                    "winrate": 0.0
+                }
+            ]
         },
         {
             "id": 244,
@@ -1780,7 +4676,15 @@
                 "GRU"
             ],
             "partite": 1,
-            "vittorie": 0
+            "vittorie": 0,
+            "storico": [
+                {
+                    "periodo": "Mar 2025",
+                    "mese": "2025-03",
+                    "partite": 1,
+                    "winrate": 0.0
+                }
+            ]
         },
         {
             "id": 75,
@@ -1791,7 +4695,15 @@
                 "GUR"
             ],
             "partite": 1,
-            "vittorie": 0
+            "vittorie": 0,
+            "storico": [
+                {
+                    "periodo": "Nov 2024",
+                    "mese": "2024-11",
+                    "partite": 1,
+                    "winrate": 0.0
+                }
+            ]
         },
         {
             "id": 221,
@@ -1802,7 +4714,15 @@
                 "BGU"
             ],
             "partite": 1,
-            "vittorie": 0
+            "vittorie": 0,
+            "storico": [
+                {
+                    "periodo": "Jan 2025",
+                    "mese": "2025-01",
+                    "partite": 1,
+                    "winrate": 0.0
+                }
+            ]
         },
         {
             "id": 143,
@@ -1813,7 +4733,15 @@
                 "UR"
             ],
             "partite": 1,
-            "vittorie": 0
+            "vittorie": 0,
+            "storico": [
+                {
+                    "periodo": "Dec 2024",
+                    "mese": "2024-12",
+                    "partite": 1,
+                    "winrate": 0.0
+                }
+            ]
         },
         {
             "id": 225,
@@ -1824,7 +4752,15 @@
                 "R"
             ],
             "partite": 1,
-            "vittorie": 0
+            "vittorie": 0,
+            "storico": [
+                {
+                    "periodo": "Feb 2025",
+                    "mese": "2025-02",
+                    "partite": 1,
+                    "winrate": 0.0
+                }
+            ]
         },
         {
             "id": 198,
@@ -1835,7 +4771,15 @@
                 "RGWU"
             ],
             "partite": 1,
-            "vittorie": 0
+            "vittorie": 0,
+            "storico": [
+                {
+                    "periodo": "Jan 2025",
+                    "mese": "2025-01",
+                    "partite": 1,
+                    "winrate": 0.0
+                }
+            ]
         },
         {
             "id": 171,
@@ -1846,7 +4790,15 @@
                 "W"
             ],
             "partite": 1,
-            "vittorie": 0
+            "vittorie": 0,
+            "storico": [
+                {
+                    "periodo": "Dec 2024",
+                    "mese": "2024-12",
+                    "partite": 1,
+                    "winrate": 0.0
+                }
+            ]
         },
         {
             "id": 134,
@@ -1857,7 +4809,15 @@
                 "BGW"
             ],
             "partite": 1,
-            "vittorie": 0
+            "vittorie": 0,
+            "storico": [
+                {
+                    "periodo": "Dec 2024",
+                    "mese": "2024-12",
+                    "partite": 1,
+                    "winrate": 0.0
+                }
+            ]
         },
         {
             "id": 228,
@@ -1868,7 +4828,15 @@
                 "GRU"
             ],
             "partite": 1,
-            "vittorie": 0
+            "vittorie": 0,
+            "storico": [
+                {
+                    "periodo": "Feb 2025",
+                    "mese": "2025-02",
+                    "partite": 1,
+                    "winrate": 0.0
+                }
+            ]
         },
         {
             "id": 235,
@@ -1879,7 +4847,15 @@
                 "G"
             ],
             "partite": 1,
-            "vittorie": 0
+            "vittorie": 0,
+            "storico": [
+                {
+                    "periodo": "Mar 2025",
+                    "mese": "2025-03",
+                    "partite": 1,
+                    "winrate": 0.0
+                }
+            ]
         },
         {
             "id": 219,
@@ -1890,7 +4866,15 @@
                 "GUW"
             ],
             "partite": 1,
-            "vittorie": 0
+            "vittorie": 0,
+            "storico": [
+                {
+                    "periodo": "Jan 2025",
+                    "mese": "2025-01",
+                    "partite": 1,
+                    "winrate": 0.0
+                }
+            ]
         },
         {
             "id": 199,
@@ -1901,7 +4885,15 @@
                 "B"
             ],
             "partite": 1,
-            "vittorie": 0
+            "vittorie": 0,
+            "storico": [
+                {
+                    "periodo": "Jan 2025",
+                    "mese": "2025-01",
+                    "partite": 1,
+                    "winrate": 0.0
+                }
+            ]
         },
         {
             "id": 245,
@@ -1912,7 +4904,15 @@
                 "GW"
             ],
             "partite": 1,
-            "vittorie": 0
+            "vittorie": 0,
+            "storico": [
+                {
+                    "periodo": "Mar 2025",
+                    "mese": "2025-03",
+                    "partite": 1,
+                    "winrate": 0.0
+                }
+            ]
         },
         {
             "id": 156,
@@ -1923,7 +4923,15 @@
                 "B"
             ],
             "partite": 1,
-            "vittorie": 0
+            "vittorie": 0,
+            "storico": [
+                {
+                    "periodo": "Dec 2024",
+                    "mese": "2024-12",
+                    "partite": 1,
+                    "winrate": 0.0
+                }
+            ]
         },
         {
             "id": 226,
@@ -1934,7 +4942,15 @@
                 "UW"
             ],
             "partite": 1,
-            "vittorie": 0
+            "vittorie": 0,
+            "storico": [
+                {
+                    "periodo": "Feb 2025",
+                    "mese": "2025-02",
+                    "partite": 1,
+                    "winrate": 0.0
+                }
+            ]
         },
         {
             "id": 192,
@@ -1945,7 +4961,15 @@
                 "WUBRG"
             ],
             "partite": 1,
-            "vittorie": 0
+            "vittorie": 0,
+            "storico": [
+                {
+                    "periodo": "Dec 2024",
+                    "mese": "2024-12",
+                    "partite": 1,
+                    "winrate": 0.0
+                }
+            ]
         },
         {
             "id": 249,
@@ -1956,7 +4980,15 @@
                 "GRU"
             ],
             "partite": 1,
-            "vittorie": 0
+            "vittorie": 0,
+            "storico": [
+                {
+                    "periodo": "Apr 2025",
+                    "mese": "2025-04",
+                    "partite": 1,
+                    "winrate": 0.0
+                }
+            ]
         },
         {
             "id": 206,
@@ -1967,7 +4999,15 @@
                 "BUW"
             ],
             "partite": 1,
-            "vittorie": 0
+            "vittorie": 0,
+            "storico": [
+                {
+                    "periodo": "Mar 2025",
+                    "mese": "2025-03",
+                    "partite": 1,
+                    "winrate": 0.0
+                }
+            ]
         },
         {
             "id": 196,
@@ -1978,7 +5018,15 @@
                 "RW"
             ],
             "partite": 1,
-            "vittorie": 0
+            "vittorie": 0,
+            "storico": [
+                {
+                    "periodo": "Jan 2025",
+                    "mese": "2025-01",
+                    "partite": 1,
+                    "winrate": 0.0
+                }
+            ]
         },
         {
             "id": 247,
@@ -1989,7 +5037,15 @@
                 "BR"
             ],
             "partite": 1,
-            "vittorie": 0
+            "vittorie": 0,
+            "storico": [
+                {
+                    "periodo": "Mar 2025",
+                    "mese": "2025-03",
+                    "partite": 1,
+                    "winrate": 0.0
+                }
+            ]
         },
         {
             "id": 154,
@@ -2000,7 +5056,15 @@
                 "GB"
             ],
             "partite": 1,
-            "vittorie": 0
+            "vittorie": 0,
+            "storico": [
+                {
+                    "periodo": "Dec 2024",
+                    "mese": "2024-12",
+                    "partite": 1,
+                    "winrate": 0.0
+                }
+            ]
         },
         {
             "id": 170,
@@ -2011,7 +5075,15 @@
                 "GUR"
             ],
             "partite": 1,
-            "vittorie": 1
+            "vittorie": 1,
+            "storico": [
+                {
+                    "periodo": "Dec 2024",
+                    "mese": "2024-12",
+                    "partite": 1,
+                    "winrate": 100.0
+                }
+            ]
         },
         {
             "id": 146,
@@ -2022,7 +5094,15 @@
                 "UBRG"
             ],
             "partite": 1,
-            "vittorie": 1
+            "vittorie": 1,
+            "storico": [
+                {
+                    "periodo": "Dec 2024",
+                    "mese": "2024-12",
+                    "partite": 1,
+                    "winrate": 100.0
+                }
+            ]
         },
         {
             "id": 151,
@@ -2033,7 +5113,15 @@
                 "UR"
             ],
             "partite": 1,
-            "vittorie": 1
+            "vittorie": 1,
+            "storico": [
+                {
+                    "periodo": "Dec 2024",
+                    "mese": "2024-12",
+                    "partite": 1,
+                    "winrate": 100.0
+                }
+            ]
         },
         {
             "id": 229,
@@ -2044,7 +5132,15 @@
                 "BUW"
             ],
             "partite": 1,
-            "vittorie": 0
+            "vittorie": 0,
+            "storico": [
+                {
+                    "periodo": "Feb 2025",
+                    "mese": "2025-02",
+                    "partite": 1,
+                    "winrate": 0.0
+                }
+            ]
         }
     ]
 }
