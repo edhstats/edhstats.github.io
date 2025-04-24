@@ -23,7 +23,7 @@ tr:hover { background-color: #ddd; }
 <body>
 <h1>Magic EDH Stats Report</h1>
 <!-- Iniettata da Python -->
-<p id="lastUpdated" data-ts="2025-04-23T16:56">Ultimo aggiornamento: --</p>
+<p id="lastUpdated" data-ts="2025-04-24T17:10">Ultimo aggiornamento: --</p>
 
 <!-- Includi day.js -->
 <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
@@ -41,14 +41,14 @@ tr:hover { background-color: #ddd; }
   document.getElementById("lastUpdated").textContent =
     "Ultimo aggiornamento: " + formatted;
 </script>
-<p><strong>CMC Medio Totale:</strong> 4.14</p>
-<p><strong>Numero Totale Giocatori:</strong> 29</p>
-<p><strong>Numero Totale Comandanti Giocati:</strong> 186</p>
+<p><strong>CMC Medio Totale:</strong> 4.13</p>
+<p><strong>Numero Totale Giocatori:</strong> 30</p>
+<p><strong>Numero Totale Comandanti Giocati:</strong> 187</p>
 <h2>Dettaglio Comandanti per Giocatore</h2>
 <label for="commanderPlayerSelect">Seleziona Giocatore:</label>
 <select id="commanderPlayerSelect">
 <option value="">Seleziona un giocatore</option>
-<option value="Andrea">Andrea</option><option value="Betto">Betto</option><option value="Claudio">Claudio</option><option value="Daniele">Daniele</option><option value="Davide">Davide</option><option value="Don">Don</option><option value="Ema">Ema</option><option value="Emi">Emi</option><option value="Ettore">Ettore</option><option value="Gabriele">Gabriele</option><option value="Giulia">Giulia</option><option value="Gymbro">Gymbro</option><option value="Jappy">Jappy</option><option value="Lore">Lore</option><option value="Luca">Luca</option><option value="Luca Proie">Luca Proie</option><option value="Lucio">Lucio</option><option value="Marco">Marco</option><option value="Matte">Matte</option><option value="Monta">Monta</option><option value="Pain">Pain</option><option value="Paolo">Paolo</option><option value="Phyga">Phyga</option><option value="Ru">Ru</option><option value="Simo">Simo</option><option value="Sisco">Sisco</option><option value="nico gym">nico gym</option><option value="nicolo">nicolo</option><option value="simone">simone</option>
+<option value="Andrea">Andrea</option><option value="Betto">Betto</option><option value="Claudio">Claudio</option><option value="Daniele">Daniele</option><option value="Davide">Davide</option><option value="Don">Don</option><option value="Ema">Ema</option><option value="Emi">Emi</option><option value="Ettore">Ettore</option><option value="Gabriele">Gabriele</option><option value="Giulia">Giulia</option><option value="Gymbro">Gymbro</option><option value="Jappy">Jappy</option><option value="Lore">Lore</option><option value="Luca">Luca</option><option value="Luca Proie">Luca Proie</option><option value="Lucio">Lucio</option><option value="Marco">Marco</option><option value="Matte">Matte</option><option value="Monta">Monta</option><option value="Pain">Pain</option><option value="Paolo">Paolo</option><option value="Phyga">Phyga</option><option value="Ru">Ru</option><option value="Simo">Simo</option><option value="Sisco">Sisco</option><option value="nico gym">nico gym</option><option value="nicolo">nicolo</option><option value="ru">ru</option><option value="simone">simone</option>
 </select>
 
 <div id="player-Andrea" class="player-section hidden player-commander-section">
@@ -319,9 +319,17 @@ tr:hover { background-color: #ddd; }
       <td>toski, bearer of secrets</td>
       <td>G</td>
       <td>4.0</td>
-      <td>10</td>
+      <td>11</td>
       <td>2</td>
-      <td>20.00</td>
+      <td>18.18</td>
+    </tr>
+    <tr>
+      <td>nahiri, forged in fury</td>
+      <td>RW</td>
+      <td>4.0</td>
+      <td>10</td>
+      <td>3</td>
+      <td>30.00</td>
     </tr>
     <tr>
       <td>hashaton, scarab's fist</td>
@@ -332,20 +340,12 @@ tr:hover { background-color: #ddd; }
       <td>40.00</td>
     </tr>
     <tr>
-      <td>nahiri, forged in fury</td>
-      <td>RW</td>
-      <td>4.0</td>
-      <td>9</td>
-      <td>3</td>
-      <td>33.33</td>
-    </tr>
-    <tr>
       <td>caesar, legion's emperor</td>
       <td>RWB</td>
       <td>4.0</td>
-      <td>9</td>
+      <td>10</td>
       <td>3</td>
-      <td>33.33</td>
+      <td>30.00</td>
     </tr>
     <tr>
       <td>eluge, the shoreless sea</td>
@@ -436,6 +436,14 @@ tr:hover { background-color: #ddd; }
       <td>50.00</td>
     </tr>
     <tr>
+      <td>breena, the demagogue</td>
+      <td>BW</td>
+      <td>3.0</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
       <td>kykar, wind's fury</td>
       <td>RUW</td>
       <td>4.0</td>
@@ -512,6 +520,14 @@ tr:hover { background-color: #ddd; }
       <td>53.33</td>
     </tr>
     <tr>
+      <td>bonny pall, clearcutter</td>
+      <td>GU</td>
+      <td>6.0</td>
+      <td>11</td>
+      <td>8</td>
+      <td>72.73</td>
+    </tr>
+    <tr>
       <td>vraska, the silencer</td>
       <td>BG</td>
       <td>3.0</td>
@@ -526,14 +542,6 @@ tr:hover { background-color: #ddd; }
       <td>10</td>
       <td>3</td>
       <td>30.00</td>
-    </tr>
-    <tr>
-      <td>bonny pall, clearcutter</td>
-      <td>GU</td>
-      <td>6.0</td>
-      <td>9</td>
-      <td>6</td>
-      <td>66.67</td>
     </tr>
     <tr>
       <td>éowyn, shieldmaiden</td>
@@ -563,17 +571,25 @@ tr:hover { background-color: #ddd; }
       <td>pantlaza, sun-favored</td>
       <td>RGW</td>
       <td>5.0</td>
-      <td>5</td>
+      <td>6</td>
       <td>2</td>
-      <td>40.00</td>
+      <td>33.33</td>
     </tr>
     <tr>
       <td>gisa, the hellraiser</td>
       <td>B</td>
       <td>5.0</td>
-      <td>5</td>
-      <td>1</td>
-      <td>20.00</td>
+      <td>6</td>
+      <td>2</td>
+      <td>33.33</td>
+    </tr>
+    <tr>
+      <td>dragonhawk, fate's tempest</td>
+      <td>R</td>
+      <td>5.0</td>
+      <td>3</td>
+      <td>2</td>
+      <td>66.67</td>
     </tr>
     <tr>
       <td>merry, warden of isengard</td>
@@ -582,14 +598,6 @@ tr:hover { background-color: #ddd; }
       <td>2</td>
       <td>0</td>
       <td>0.00</td>
-    </tr>
-    <tr>
-      <td>dragonhawk, fate's tempest</td>
-      <td>R</td>
-      <td>5.0</td>
-      <td>2</td>
-      <td>1</td>
-      <td>50.00</td>
     </tr>
     <tr>
       <td>zur the enchanter</td>
@@ -1827,9 +1835,9 @@ tr:hover { background-color: #ddd; }
       <td>bello, bard of the brambles</td>
       <td>GR</td>
       <td>3.0</td>
-      <td>12</td>
+      <td>13</td>
       <td>4</td>
-      <td>33.33</td>
+      <td>30.77</td>
     </tr>
     <tr>
       <td>ratadrabik of urborg</td>
@@ -1856,6 +1864,22 @@ tr:hover { background-color: #ddd; }
       <td>50.00</td>
     </tr>
     <tr>
+      <td>omo, queen of vesuva</td>
+      <td>GU</td>
+      <td>3.0</td>
+      <td>6</td>
+      <td>3</td>
+      <td>50.00</td>
+    </tr>
+    <tr>
+      <td>tergrid, god of fright // tergrid's lantern</td>
+      <td>B</td>
+      <td>5.0</td>
+      <td>5</td>
+      <td>2</td>
+      <td>40.00</td>
+    </tr>
+    <tr>
       <td>storm, force of nature</td>
       <td>GUR</td>
       <td>4.0</td>
@@ -1864,20 +1888,12 @@ tr:hover { background-color: #ddd; }
       <td>20.00</td>
     </tr>
     <tr>
-      <td>omo, queen of vesuva</td>
-      <td>GU</td>
-      <td>3.0</td>
+      <td>esika, god of the tree // the prismatic bridge</td>
+      <td>GWUBR</td>
+      <td>7.0</td>
       <td>5</td>
-      <td>2</td>
-      <td>40.00</td>
-    </tr>
-    <tr>
-      <td>tergrid, god of fright // tergrid's lantern</td>
-      <td>B</td>
-      <td>5.0</td>
-      <td>4</td>
-      <td>2</td>
-      <td>50.00</td>
+      <td>1</td>
+      <td>20.00</td>
     </tr>
     <tr>
       <td>pearl-ear, imperial advisor</td>
@@ -1907,14 +1923,6 @@ tr:hover { background-color: #ddd; }
       <td>hazel of the rootbloom</td>
       <td>GB</td>
       <td>4.0</td>
-      <td>4</td>
-      <td>1</td>
-      <td>25.00</td>
-    </tr>
-    <tr>
-      <td>esika, god of the tree // the prismatic bridge</td>
-      <td>GWUBR</td>
-      <td>7.0</td>
       <td>4</td>
       <td>1</td>
       <td>25.00</td>
@@ -2267,6 +2275,32 @@ tr:hover { background-color: #ddd; }
 </table>
 </div>
 
+<div id="player-ru" class="player-section hidden player-commander-section">
+<h3>Comandanti di ru</h3>
+<table class="dataframe display" id="commanderStatsTable-ru">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Comandante</th>
+      <th>Colori</th>
+      <th>CMC</th>
+      <th>Partite</th>
+      <th>Vittorie</th>
+      <th>Winrate (%)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>kasla, the broken halo</td>
+      <td>URW</td>
+      <td>6.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0.0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
 <div id="player-simone" class="player-section hidden player-commander-section">
 <h3>Comandanti di simone</h3>
 <table class="dataframe display" id="commanderStatsTable-simone">
@@ -2304,11 +2338,11 @@ tr:hover { background-color: #ddd; }
   <tbody>
     <tr>
       <td>RGW</td>
-      <td>61</td>
+      <td>62</td>
     </tr>
     <tr>
       <td>R</td>
-      <td>56</td>
+      <td>57</td>
     </tr>
     <tr>
       <td>BR</td>
@@ -2316,19 +2350,19 @@ tr:hover { background-color: #ddd; }
     </tr>
     <tr>
       <td>B</td>
-      <td>47</td>
+      <td>49</td>
     </tr>
     <tr>
       <td>GR</td>
-      <td>43</td>
+      <td>44</td>
     </tr>
     <tr>
       <td>GU</td>
-      <td>39</td>
+      <td>42</td>
     </tr>
     <tr>
       <td>URW</td>
-      <td>34</td>
+      <td>35</td>
     </tr>
     <tr>
       <td>BUW</td>
@@ -2340,11 +2374,11 @@ tr:hover { background-color: #ddd; }
     </tr>
     <tr>
       <td>RW</td>
-      <td>28</td>
+      <td>29</td>
     </tr>
     <tr>
       <td>RWB</td>
-      <td>27</td>
+      <td>28</td>
     </tr>
     <tr>
       <td>GW</td>
@@ -2352,14 +2386,14 @@ tr:hover { background-color: #ddd; }
     </tr>
     <tr>
       <td>G</td>
-      <td>24</td>
-    </tr>
-    <tr>
-      <td>UBR</td>
-      <td>23</td>
+      <td>25</td>
     </tr>
     <tr>
       <td>BW</td>
+      <td>25</td>
+    </tr>
+    <tr>
+      <td>UBR</td>
       <td>23</td>
     </tr>
     <tr>
@@ -2451,6 +2485,10 @@ tr:hover { background-color: #ddd; }
       <td>8</td>
     </tr>
     <tr>
+      <td>GWUBR</td>
+      <td>7</td>
+    </tr>
+    <tr>
       <td>C</td>
       <td>7</td>
     </tr>
@@ -2460,10 +2498,6 @@ tr:hover { background-color: #ddd; }
     </tr>
     <tr>
       <td>{U}{B}</td>
-      <td>6</td>
-    </tr>
-    <tr>
-      <td>GWUBR</td>
       <td>6</td>
     </tr>
     <tr>
@@ -2551,9 +2585,9 @@ tr:hover { background-color: #ddd; }
     </tr>
     <tr>
       <td>Don</td>
-      <td>94</td>
+      <td>99</td>
       <td>28</td>
-      <td>29.79</td>
+      <td>28.28</td>
     </tr>
     <tr>
       <td>Ema</td>
@@ -2563,9 +2597,9 @@ tr:hover { background-color: #ddd; }
     </tr>
     <tr>
       <td>Emi</td>
-      <td>78</td>
-      <td>30</td>
-      <td>38.46</td>
+      <td>83</td>
+      <td>34</td>
+      <td>40.96</td>
     </tr>
     <tr>
       <td>Ettore</td>
@@ -2659,9 +2693,9 @@ tr:hover { background-color: #ddd; }
     </tr>
     <tr>
       <td>Ru</td>
-      <td>104</td>
-      <td>35</td>
-      <td>33.65</td>
+      <td>108</td>
+      <td>36</td>
+      <td>33.33</td>
     </tr>
     <tr>
       <td>Simo</td>
@@ -2686,6 +2720,12 @@ tr:hover { background-color: #ddd; }
       <td>1</td>
       <td>1</td>
       <td>100.00</td>
+    </tr>
+    <tr>
+      <td>ru</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0.00</td>
     </tr>
     <tr>
       <td>simone</td>
@@ -2739,6 +2779,12 @@ tr:hover { background-color: #ddd; }
   </thead>
   <tbody>
     <tr>
+      <td>bonny pall, clearcutter</td>
+      <td>11</td>
+      <td>8</td>
+      <td>72.73</td>
+    </tr>
+    <tr>
       <td>marchesa, dealer of death</td>
       <td>7</td>
       <td>5</td>
@@ -2754,12 +2800,6 @@ tr:hover { background-color: #ddd; }
       <td>tatyova, benthic druid</td>
       <td>6</td>
       <td>4</td>
-      <td>66.67</td>
-    </tr>
-    <tr>
-      <td>bonny pall, clearcutter</td>
-      <td>9</td>
-      <td>6</td>
       <td>66.67</td>
     </tr>
     <tr>
@@ -2849,6 +2889,12 @@ tr:hover { background-color: #ddd; }
       <td>75.00</td>
     </tr>
     <tr>
+      <td>bonny pall, clearcutter</td>
+      <td>11</td>
+      <td>8</td>
+      <td>72.73</td>
+    </tr>
+    <tr>
       <td>marchesa, dealer of death</td>
       <td>7</td>
       <td>5</td>
@@ -2873,15 +2919,15 @@ tr:hover { background-color: #ddd; }
       <td>66.67</td>
     </tr>
     <tr>
-      <td>delney, streetwise lookout</td>
+      <td>dragonhawk, fate's tempest</td>
       <td>3</td>
       <td>2</td>
       <td>66.67</td>
     </tr>
     <tr>
-      <td>bonny pall, clearcutter</td>
-      <td>9</td>
-      <td>6</td>
+      <td>delney, streetwise lookout</td>
+      <td>3</td>
+      <td>2</td>
       <td>66.67</td>
     </tr>
     <tr>
@@ -2927,12 +2973,6 @@ tr:hover { background-color: #ddd; }
       <td>60.00</td>
     </tr>
     <tr>
-      <td>pantlaza, sun-favored</td>
-      <td>9</td>
-      <td>5</td>
-      <td>55.56</td>
-    </tr>
-    <tr>
       <td>Frodo, Adventurous Hobbit // Sam, Loyal Attendant</td>
       <td>9</td>
       <td>5</td>
@@ -2957,12 +2997,6 @@ tr:hover { background-color: #ddd; }
       <td>50.00</td>
     </tr>
     <tr>
-      <td>tergrid, god of fright // tergrid's lantern</td>
-      <td>4</td>
-      <td>2</td>
-      <td>50.00</td>
-    </tr>
-    <tr>
       <td>saruman, the white hand</td>
       <td>2</td>
       <td>1</td>
@@ -2984,6 +3018,18 @@ tr:hover { background-color: #ddd; }
       <td>pearl-ear, imperial advisor</td>
       <td>4</td>
       <td>2</td>
+      <td>50.00</td>
+    </tr>
+    <tr>
+      <td>pantlaza, sun-favored</td>
+      <td>10</td>
+      <td>5</td>
+      <td>50.00</td>
+    </tr>
+    <tr>
+      <td>omo, queen of vesuva</td>
+      <td>6</td>
+      <td>3</td>
       <td>50.00</td>
     </tr>
     <tr>
@@ -3029,12 +3075,6 @@ tr:hover { background-color: #ddd; }
       <td>50.00</td>
     </tr>
     <tr>
-      <td>dragonhawk, fate's tempest</td>
-      <td>2</td>
-      <td>1</td>
-      <td>50.00</td>
-    </tr>
-    <tr>
       <td>captain howler, sea scourge</td>
       <td>4</td>
       <td>2</td>
@@ -3065,7 +3105,7 @@ tr:hover { background-color: #ddd; }
       <td>40.00</td>
     </tr>
     <tr>
-      <td>omo, queen of vesuva</td>
+      <td>tergrid, god of fright // tergrid's lantern</td>
       <td>5</td>
       <td>2</td>
       <td>40.00</td>
@@ -3113,12 +3153,6 @@ tr:hover { background-color: #ddd; }
       <td>33.33</td>
     </tr>
     <tr>
-      <td>nahiri, forged in fury</td>
-      <td>9</td>
-      <td>3</td>
-      <td>33.33</td>
-    </tr>
-    <tr>
       <td>morska, undersea sleuth</td>
       <td>3</td>
       <td>1</td>
@@ -3128,6 +3162,12 @@ tr:hover { background-color: #ddd; }
       <td>millicent, restless revenant</td>
       <td>3</td>
       <td>1</td>
+      <td>33.33</td>
+    </tr>
+    <tr>
+      <td>gisa, the hellraiser</td>
+      <td>6</td>
+      <td>2</td>
       <td>33.33</td>
     </tr>
     <tr>
@@ -3167,6 +3207,12 @@ tr:hover { background-color: #ddd; }
       <td>30.00</td>
     </tr>
     <tr>
+      <td>nahiri, forged in fury</td>
+      <td>10</td>
+      <td>3</td>
+      <td>30.00</td>
+    </tr>
+    <tr>
       <td>muerra, trash tactician</td>
       <td>10</td>
       <td>3</td>
@@ -3179,19 +3225,7 @@ tr:hover { background-color: #ddd; }
       <td>30.00</td>
     </tr>
     <tr>
-      <td>caesar, legion's emperor</td>
-      <td>10</td>
-      <td>3</td>
-      <td>30.00</td>
-    </tr>
-    <tr>
       <td>éowyn, shieldmaiden</td>
-      <td>7</td>
-      <td>2</td>
-      <td>28.57</td>
-    </tr>
-    <tr>
-      <td>kasla, the broken halo</td>
       <td>7</td>
       <td>2</td>
       <td>28.57</td>
@@ -3209,13 +3243,13 @@ tr:hover { background-color: #ddd; }
       <td>28.57</td>
     </tr>
     <tr>
-      <td>bello, bard of the brambles</td>
-      <td>14</td>
-      <td>4</td>
-      <td>28.57</td>
+      <td>valgavoth, harrower of souls</td>
+      <td>11</td>
+      <td>3</td>
+      <td>27.27</td>
     </tr>
     <tr>
-      <td>valgavoth, harrower of souls</td>
+      <td>caesar, legion's emperor</td>
       <td>11</td>
       <td>3</td>
       <td>27.27</td>
@@ -3231,6 +3265,12 @@ tr:hover { background-color: #ddd; }
       <td>11</td>
       <td>3</td>
       <td>27.27</td>
+    </tr>
+    <tr>
+      <td>bello, bard of the brambles</td>
+      <td>15</td>
+      <td>4</td>
+      <td>26.67</td>
     </tr>
     <tr>
       <td>satya, aetherflux genius</td>
@@ -3251,6 +3291,12 @@ tr:hover { background-color: #ddd; }
       <td>25.00</td>
     </tr>
     <tr>
+      <td>kasla, the broken halo</td>
+      <td>8</td>
+      <td>2</td>
+      <td>25.00</td>
+    </tr>
+    <tr>
       <td>karlov of the ghost council</td>
       <td>4</td>
       <td>1</td>
@@ -3258,12 +3304,6 @@ tr:hover { background-color: #ddd; }
     </tr>
     <tr>
       <td>hazel of the rootbloom</td>
-      <td>4</td>
-      <td>1</td>
-      <td>25.00</td>
-    </tr>
-    <tr>
-      <td>esika, god of the tree // the prismatic bridge</td>
       <td>4</td>
       <td>1</td>
       <td>25.00</td>
@@ -3311,12 +3351,6 @@ tr:hover { background-color: #ddd; }
       <td>20.00</td>
     </tr>
     <tr>
-      <td>toski, bearer of secrets</td>
-      <td>10</td>
-      <td>2</td>
-      <td>20.00</td>
-    </tr>
-    <tr>
       <td>storm, force of nature</td>
       <td>5</td>
       <td>1</td>
@@ -3347,7 +3381,7 @@ tr:hover { background-color: #ddd; }
       <td>20.00</td>
     </tr>
     <tr>
-      <td>gisa, the hellraiser</td>
+      <td>esika, god of the tree // the prismatic bridge</td>
       <td>5</td>
       <td>1</td>
       <td>20.00</td>
@@ -3363,6 +3397,12 @@ tr:hover { background-color: #ddd; }
       <td>21</td>
       <td>4</td>
       <td>19.05</td>
+    </tr>
+    <tr>
+      <td>toski, bearer of secrets</td>
+      <td>11</td>
+      <td>2</td>
+      <td>18.18</td>
     </tr>
     <tr>
       <td>rograkh, son of rohgahh</td>
@@ -3845,6 +3885,12 @@ tr:hover { background-color: #ddd; }
       <td>0.00</td>
     </tr>
     <tr>
+      <td>breena, the demagogue</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
       <td>bane, lord of darkness</td>
       <td>1</td>
       <td>0</td>
@@ -3904,7 +3950,7 @@ tr:hover { background-color: #ddd; }
 <label for="playerSelect">Seleziona Giocatore:</label>
 <select id="playerSelect">
 <option value="Tutti">Tutti</option>
-<option value="Andrea">Andrea</option><option value="Betto">Betto</option><option value="Claudio">Claudio</option><option value="Daniele">Daniele</option><option value="Davide">Davide</option><option value="Don">Don</option><option value="Ema">Ema</option><option value="Emi">Emi</option><option value="Ettore">Ettore</option><option value="Gabriele">Gabriele</option><option value="Giulia">Giulia</option><option value="Gymbro">Gymbro</option><option value="Jappy">Jappy</option><option value="Lore">Lore</option><option value="Luca">Luca</option><option value="Luca Proie">Luca Proie</option><option value="Lucio">Lucio</option><option value="Marco">Marco</option><option value="Matte">Matte</option><option value="Monta">Monta</option><option value="Pain">Pain</option><option value="Paolo">Paolo</option><option value="Phyga">Phyga</option><option value="Ru">Ru</option><option value="Simo">Simo</option><option value="Sisco">Sisco</option><option value="nico gym">nico gym</option><option value="nicolo">nicolo</option><option value="simone">simone</option>
+<option value="Andrea">Andrea</option><option value="Betto">Betto</option><option value="Claudio">Claudio</option><option value="Daniele">Daniele</option><option value="Davide">Davide</option><option value="Don">Don</option><option value="Ema">Ema</option><option value="Emi">Emi</option><option value="Ettore">Ettore</option><option value="Gabriele">Gabriele</option><option value="Giulia">Giulia</option><option value="Gymbro">Gymbro</option><option value="Jappy">Jappy</option><option value="Lore">Lore</option><option value="Luca">Luca</option><option value="Luca Proie">Luca Proie</option><option value="Lucio">Lucio</option><option value="Marco">Marco</option><option value="Matte">Matte</option><option value="Monta">Monta</option><option value="Pain">Pain</option><option value="Paolo">Paolo</option><option value="Phyga">Phyga</option><option value="Ru">Ru</option><option value="Simo">Simo</option><option value="Sisco">Sisco</option><option value="nico gym">nico gym</option><option value="nicolo">nicolo</option><option value="ru">ru</option><option value="simone">simone</option>
 </select>
 <table class="dataframe display" id="playerVsOthersTable">
   <thead>
@@ -4298,16 +4344,9 @@ tr:hover { background-color: #ddd; }
     <tr>
       <td>Don</td>
       <td>Ru</td>
-      <td>33</td>
+      <td>37</td>
       <td>10</td>
-      <td>30.30</td>
-    </tr>
-    <tr>
-      <td>Don</td>
-      <td>Emi</td>
-      <td>42</td>
-      <td>11</td>
-      <td>26.19</td>
+      <td>27.03</td>
     </tr>
     <tr>
       <td>Don</td>
@@ -4332,6 +4371,13 @@ tr:hover { background-color: #ddd; }
     </tr>
     <tr>
       <td>Don</td>
+      <td>Emi</td>
+      <td>47</td>
+      <td>11</td>
+      <td>23.40</td>
+    </tr>
+    <tr>
+      <td>Don</td>
       <td>Matte</td>
       <td>27</td>
       <td>6</td>
@@ -4343,6 +4389,13 @@ tr:hover { background-color: #ddd; }
       <td>13</td>
       <td>2</td>
       <td>15.38</td>
+    </tr>
+    <tr>
+      <td>Don</td>
+      <td>ru</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0.00</td>
     </tr>
     <tr>
       <td>Don</td>
@@ -4385,6 +4438,13 @@ tr:hover { background-color: #ddd; }
       <td>1</td>
       <td>0</td>
       <td>0.00</td>
+    </tr>
+    <tr>
+      <td>Emi</td>
+      <td>ru</td>
+      <td>1</td>
+      <td>1</td>
+      <td>100.00</td>
     </tr>
     <tr>
       <td>Emi</td>
@@ -4445,16 +4505,16 @@ tr:hover { background-color: #ddd; }
     <tr>
       <td>Emi</td>
       <td>Don</td>
-      <td>42</td>
-      <td>15</td>
-      <td>35.71</td>
+      <td>47</td>
+      <td>19</td>
+      <td>40.43</td>
     </tr>
     <tr>
       <td>Emi</td>
       <td>Ru</td>
-      <td>29</td>
-      <td>8</td>
-      <td>27.59</td>
+      <td>33</td>
+      <td>11</td>
+      <td>33.33</td>
     </tr>
     <tr>
       <td>Emi</td>
@@ -5761,16 +5821,16 @@ tr:hover { background-color: #ddd; }
     <tr>
       <td>Ru</td>
       <td>Don</td>
-      <td>33</td>
-      <td>9</td>
-      <td>27.27</td>
+      <td>37</td>
+      <td>10</td>
+      <td>27.03</td>
     </tr>
     <tr>
       <td>Ru</td>
       <td>Emi</td>
-      <td>29</td>
-      <td>7</td>
-      <td>24.14</td>
+      <td>33</td>
+      <td>8</td>
+      <td>24.24</td>
     </tr>
     <tr>
       <td>Ru</td>
@@ -6018,6 +6078,20 @@ tr:hover { background-color: #ddd; }
       <td>100.00</td>
     </tr>
     <tr>
+      <td>ru</td>
+      <td>Emi</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>ru</td>
+      <td>Don</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
       <td>simone</td>
       <td>Gymbro</td>
       <td>1</td>
@@ -6037,12 +6111,12 @@ tr:hover { background-color: #ddd; }
 <label for="winratePlayerSelect">Seleziona Giocatore:</label>
 <select id="winratePlayerSelect">
 <option value="">Seleziona un giocatore</option>
-<option value="Andrea">Andrea</option><option value="Betto">Betto</option><option value="Claudio">Claudio</option><option value="Daniele">Daniele</option><option value="Davide">Davide</option><option value="Don">Don</option><option value="Ema">Ema</option><option value="Emi">Emi</option><option value="Ettore">Ettore</option><option value="Gabriele">Gabriele</option><option value="Giulia">Giulia</option><option value="Gymbro">Gymbro</option><option value="Jappy">Jappy</option><option value="Lore">Lore</option><option value="Luca">Luca</option><option value="Luca Proie">Luca Proie</option><option value="Lucio">Lucio</option><option value="Marco">Marco</option><option value="Matte">Matte</option><option value="Monta">Monta</option><option value="Pain">Pain</option><option value="Paolo">Paolo</option><option value="Phyga">Phyga</option><option value="Ru">Ru</option><option value="Simo">Simo</option><option value="Sisco">Sisco</option><option value="nico gym">nico gym</option><option value="nicolo">nicolo</option><option value="simone">simone</option>
+<option value="Andrea">Andrea</option><option value="Betto">Betto</option><option value="Claudio">Claudio</option><option value="Daniele">Daniele</option><option value="Davide">Davide</option><option value="Don">Don</option><option value="Ema">Ema</option><option value="Emi">Emi</option><option value="Ettore">Ettore</option><option value="Gabriele">Gabriele</option><option value="Giulia">Giulia</option><option value="Gymbro">Gymbro</option><option value="Jappy">Jappy</option><option value="Lore">Lore</option><option value="Luca">Luca</option><option value="Luca Proie">Luca Proie</option><option value="Lucio">Lucio</option><option value="Marco">Marco</option><option value="Matte">Matte</option><option value="Monta">Monta</option><option value="Pain">Pain</option><option value="Paolo">Paolo</option><option value="Phyga">Phyga</option><option value="Ru">Ru</option><option value="Simo">Simo</option><option value="Sisco">Sisco</option><option value="nico gym">nico gym</option><option value="nicolo">nicolo</option><option value="ru">ru</option><option value="simone">simone</option>
 </select>
 <canvas id="winrateChart" width="800" height="400"></canvas>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
-const chartData = {"Andrea": [{"data": "2025-03", "winrate": 20.0}], "Betto": [{"data": "2025-01", "winrate": 50.0}], "Claudio": [{"data": "2024-10", "winrate": 100.0}, {"data": "2024-11", "winrate": 22.22}, {"data": "2024-12", "winrate": 16.67}, {"data": "2025-01", "winrate": 21.43}, {"data": "2025-02", "winrate": 0.0}, {"data": "2025-03", "winrate": 29.17}, {"data": "2025-04", "winrate": 25.0}], "Daniele": [{"data": "2025-01", "winrate": 0.0}, {"data": "2025-04", "winrate": 0.0}], "Davide": [{"data": "2024-12", "winrate": 0.0}], "Don": [{"data": "2024-11", "winrate": 38.1}, {"data": "2024-12", "winrate": 23.81}, {"data": "2025-01", "winrate": 30.0}, {"data": "2025-02", "winrate": 40.0}, {"data": "2025-03", "winrate": 26.09}, {"data": "2025-04", "winrate": 22.22}], "Ema": [{"data": "2024-12", "winrate": 0.0}], "Emi": [{"data": "2024-11", "winrate": 40.0}, {"data": "2024-12", "winrate": 31.82}, {"data": "2025-01", "winrate": 28.57}, {"data": "2025-02", "winrate": 57.14}, {"data": "2025-03", "winrate": 33.33}, {"data": "2025-04", "winrate": 55.56}], "Ettore": [{"data": "2024-11", "winrate": 14.29}, {"data": "2024-12", "winrate": 17.39}, {"data": "2025-01", "winrate": 13.33}, {"data": "2025-02", "winrate": 12.5}, {"data": "2025-03", "winrate": 28.0}, {"data": "2025-04", "winrate": 33.33}], "Gabriele": [{"data": "2024-12", "winrate": 33.33}], "Giulia": [{"data": "2024-11", "winrate": 20.0}, {"data": "2024-12", "winrate": 20.0}, {"data": "2025-01", "winrate": 16.67}, {"data": "2025-02", "winrate": 0.0}, {"data": "2025-03", "winrate": 0.0}], "Gymbro": [{"data": "2024-11", "winrate": 50.0}, {"data": "2024-12", "winrate": 22.73}, {"data": "2025-01", "winrate": 22.22}, {"data": "2025-02", "winrate": 50.0}, {"data": "2025-03", "winrate": 38.46}], "Jappy": [{"data": "2024-11", "winrate": 25.0}, {"data": "2024-12", "winrate": 28.57}, {"data": "2025-01", "winrate": 25.0}, {"data": "2025-02", "winrate": 0.0}, {"data": "2025-03", "winrate": 14.29}, {"data": "2025-04", "winrate": 50.0}], "Lore": [{"data": "2024-12", "winrate": 100.0}], "Luca": [{"data": "2024-11", "winrate": 0.0}, {"data": "2024-12", "winrate": 46.15}, {"data": "2025-01", "winrate": 50.0}, {"data": "2025-02", "winrate": 0.0}, {"data": "2025-03", "winrate": 54.55}, {"data": "2025-04", "winrate": 50.0}], "Luca Proie": [{"data": "2024-12", "winrate": 40.0}, {"data": "2025-01", "winrate": 25.0}, {"data": "2025-02", "winrate": 0.0}, {"data": "2025-03", "winrate": 12.5}, {"data": "2025-04", "winrate": 0.0}], "Lucio": [{"data": "2024-11", "winrate": 0.0}, {"data": "2024-12", "winrate": 0.0}, {"data": "2025-02", "winrate": 0.0}, {"data": "2025-03", "winrate": 0.0}, {"data": "2025-04", "winrate": 0.0}], "Marco": [{"data": "2024-12", "winrate": 0.0}], "Matte": [{"data": "2024-10", "winrate": 60.0}, {"data": "2024-11", "winrate": 50.0}, {"data": "2024-12", "winrate": 50.0}, {"data": "2025-01", "winrate": 35.29}, {"data": "2025-02", "winrate": 50.0}, {"data": "2025-03", "winrate": 52.0}, {"data": "2025-04", "winrate": 22.22}], "Monta": [{"data": "2025-01", "winrate": 50.0}], "Pain": [{"data": "2025-01", "winrate": 100.0}, {"data": "2025-02", "winrate": 100.0}, {"data": "2025-03", "winrate": 0.0}], "Paolo": [{"data": "2025-03", "winrate": 60.0}], "Phyga": [{"data": "2024-11", "winrate": 33.33}, {"data": "2024-12", "winrate": 0.0}, {"data": "2025-01", "winrate": 0.0}, {"data": "2025-02", "winrate": 50.0}, {"data": "2025-04", "winrate": 50.0}], "Ru": [{"data": "2024-10", "winrate": 20.0}, {"data": "2024-11", "winrate": 33.33}, {"data": "2024-12", "winrate": 34.62}, {"data": "2025-01", "winrate": 27.78}, {"data": "2025-02", "winrate": 36.36}, {"data": "2025-03", "winrate": 37.5}, {"data": "2025-04", "winrate": 38.46}], "Simo": [{"data": "2024-12", "winrate": 0.0}], "Sisco": [{"data": "2024-10", "winrate": 0.0}, {"data": "2024-11", "winrate": 7.69}, {"data": "2024-12", "winrate": 22.22}, {"data": "2025-01", "winrate": 5.26}, {"data": "2025-02", "winrate": 10.0}, {"data": "2025-03", "winrate": 10.0}, {"data": "2025-04", "winrate": 9.09}], "nico gym": [{"data": "2025-03", "winrate": 0.0}], "nicolo": [{"data": "2025-02", "winrate": 100.0}], "simone": [{"data": "2025-02", "winrate": 0.0}]};
+const chartData = {"Andrea": [{"data": "2025-03", "winrate": 20.0}], "Betto": [{"data": "2025-01", "winrate": 50.0}], "Claudio": [{"data": "2024-10", "winrate": 100.0}, {"data": "2024-11", "winrate": 22.22}, {"data": "2024-12", "winrate": 16.67}, {"data": "2025-01", "winrate": 21.43}, {"data": "2025-02", "winrate": 0.0}, {"data": "2025-03", "winrate": 29.17}, {"data": "2025-04", "winrate": 25.0}], "Daniele": [{"data": "2025-01", "winrate": 0.0}, {"data": "2025-04", "winrate": 0.0}], "Davide": [{"data": "2024-12", "winrate": 0.0}], "Don": [{"data": "2024-11", "winrate": 38.1}, {"data": "2024-12", "winrate": 23.81}, {"data": "2025-01", "winrate": 30.0}, {"data": "2025-02", "winrate": 40.0}, {"data": "2025-03", "winrate": 26.09}, {"data": "2025-04", "winrate": 14.29}], "Ema": [{"data": "2024-12", "winrate": 0.0}], "Emi": [{"data": "2024-11", "winrate": 40.0}, {"data": "2024-12", "winrate": 31.82}, {"data": "2025-01", "winrate": 28.57}, {"data": "2025-02", "winrate": 57.14}, {"data": "2025-03", "winrate": 33.33}, {"data": "2025-04", "winrate": 64.29}], "Ettore": [{"data": "2024-11", "winrate": 14.29}, {"data": "2024-12", "winrate": 17.39}, {"data": "2025-01", "winrate": 13.33}, {"data": "2025-02", "winrate": 12.5}, {"data": "2025-03", "winrate": 28.0}, {"data": "2025-04", "winrate": 33.33}], "Gabriele": [{"data": "2024-12", "winrate": 33.33}], "Giulia": [{"data": "2024-11", "winrate": 20.0}, {"data": "2024-12", "winrate": 20.0}, {"data": "2025-01", "winrate": 16.67}, {"data": "2025-02", "winrate": 0.0}, {"data": "2025-03", "winrate": 0.0}], "Gymbro": [{"data": "2024-11", "winrate": 50.0}, {"data": "2024-12", "winrate": 22.73}, {"data": "2025-01", "winrate": 22.22}, {"data": "2025-02", "winrate": 50.0}, {"data": "2025-03", "winrate": 38.46}], "Jappy": [{"data": "2024-11", "winrate": 25.0}, {"data": "2024-12", "winrate": 28.57}, {"data": "2025-01", "winrate": 25.0}, {"data": "2025-02", "winrate": 0.0}, {"data": "2025-03", "winrate": 14.29}, {"data": "2025-04", "winrate": 50.0}], "Lore": [{"data": "2024-12", "winrate": 100.0}], "Luca": [{"data": "2024-11", "winrate": 0.0}, {"data": "2024-12", "winrate": 46.15}, {"data": "2025-01", "winrate": 50.0}, {"data": "2025-02", "winrate": 0.0}, {"data": "2025-03", "winrate": 54.55}, {"data": "2025-04", "winrate": 50.0}], "Luca Proie": [{"data": "2024-12", "winrate": 40.0}, {"data": "2025-01", "winrate": 25.0}, {"data": "2025-02", "winrate": 0.0}, {"data": "2025-03", "winrate": 12.5}, {"data": "2025-04", "winrate": 0.0}], "Lucio": [{"data": "2024-11", "winrate": 0.0}, {"data": "2024-12", "winrate": 0.0}, {"data": "2025-02", "winrate": 0.0}, {"data": "2025-03", "winrate": 0.0}, {"data": "2025-04", "winrate": 0.0}], "Marco": [{"data": "2024-12", "winrate": 0.0}], "Matte": [{"data": "2024-10", "winrate": 60.0}, {"data": "2024-11", "winrate": 50.0}, {"data": "2024-12", "winrate": 50.0}, {"data": "2025-01", "winrate": 35.29}, {"data": "2025-02", "winrate": 50.0}, {"data": "2025-03", "winrate": 52.0}, {"data": "2025-04", "winrate": 22.22}], "Monta": [{"data": "2025-01", "winrate": 50.0}], "Pain": [{"data": "2025-01", "winrate": 100.0}, {"data": "2025-02", "winrate": 100.0}, {"data": "2025-03", "winrate": 0.0}], "Paolo": [{"data": "2025-03", "winrate": 60.0}], "Phyga": [{"data": "2024-11", "winrate": 33.33}, {"data": "2024-12", "winrate": 0.0}, {"data": "2025-01", "winrate": 0.0}, {"data": "2025-02", "winrate": 50.0}, {"data": "2025-04", "winrate": 50.0}], "Ru": [{"data": "2024-10", "winrate": 20.0}, {"data": "2024-11", "winrate": 33.33}, {"data": "2024-12", "winrate": 34.62}, {"data": "2025-01", "winrate": 27.78}, {"data": "2025-02", "winrate": 36.36}, {"data": "2025-03", "winrate": 37.5}, {"data": "2025-04", "winrate": 35.29}], "Simo": [{"data": "2024-12", "winrate": 0.0}], "Sisco": [{"data": "2024-10", "winrate": 0.0}, {"data": "2024-11", "winrate": 7.69}, {"data": "2024-12", "winrate": 22.22}, {"data": "2025-01", "winrate": 5.26}, {"data": "2025-02", "winrate": 10.0}, {"data": "2025-03", "winrate": 10.0}, {"data": "2025-04", "winrate": 9.09}], "nico gym": [{"data": "2025-03", "winrate": 0.0}], "nicolo": [{"data": "2025-02", "winrate": 100.0}], "ru": [{"data": "2025-04", "winrate": 0.0}], "simone": [{"data": "2025-02", "winrate": 0.0}]};
 $(document).ready(function() {
     $('#colorStatsTable, #playerStatsTable, #commanderStatsTable, #playerVsOthersTable, #topCommandersPlayedTable, #topCommandersWinrateTable').DataTable();
     $('.player-commander-section table.display').each(function() {
