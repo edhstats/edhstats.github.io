@@ -23,7 +23,7 @@ tr:hover { background-color: #ddd; }
 <body>
 <h1>Magic EDH Stats Report</h1>
 <!-- Iniettata da Python -->
-<p id="lastUpdated" data-ts="2025-05-26T09:44">Ultimo aggiornamento: --</p>
+<p id="lastUpdated" data-ts="2025-05-26T10:06">Ultimo aggiornamento: --</p>
 
 <!-- Includi day.js -->
 <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
@@ -2529,55 +2529,111 @@ tr:hover { background-color: #ddd; }
 </table>
 </div>
 
-<h2>Colori Più Utilizzati</h2>
-<table class="dataframe display" id="colorStatsTable">
+<div style="display: flex; gap: 2em;">
+  <div style="flex: 1;">
+    <h2>Colori Più Utilizzati</h2>
+    <table class="dataframe display" id="colorStatsMostPlayed">
   <thead>
     <tr style="text-align: right;">
-      <th>color_identity</th>
+      <th>color_visual</th>
+      <th>color_name</th>
       <th>total_games</th>
       <th>total_wins</th>
       <th>win_rate</th>
-      <th>color_visual</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>R</td>
+      <td>🔴</td>
+      <td>Red</td>
       <td>71</td>
       <td>15</td>
       <td>21.13</td>
-      <td>🔴</td>
     </tr>
     <tr>
-      <td>RGW</td>
+      <td>⚪️🔴🟢</td>
+      <td>WRG</td>
       <td>70</td>
       <td>23</td>
       <td>32.86</td>
-      <td>🟢🔴⚪️</td>
     </tr>
     <tr>
-      <td>BR</td>
+      <td>⚫️🔴</td>
+      <td>Rakdos</td>
       <td>58</td>
       <td>18</td>
       <td>31.03</td>
-      <td>⚫️🔴</td>
     </tr>
     <tr>
-      <td>B</td>
+      <td>⚫️</td>
+      <td>Black</td>
       <td>56</td>
       <td>12</td>
       <td>21.43</td>
-      <td>⚫️</td>
     </tr>
     <tr>
-      <td>GR</td>
+      <td>🔴🟢</td>
+      <td>Gruul</td>
       <td>50</td>
       <td>16</td>
       <td>32.00</td>
-      <td>🟢🔴</td>
     </tr>
   </tbody>
 </table>
+  </div>
+  <div style="flex: 1;">
+    <h2>Colori Più Vincenti</h2>
+    <table class="dataframe display" id="colorStatsBestWinrate">
+  <thead>
+    <tr style="text-align: right;">
+      <th>color_visual</th>
+      <th>color_name</th>
+      <th>total_games</th>
+      <th>total_wins</th>
+      <th>win_rate</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>⚪️🔵🔴</td>
+      <td>Jeskai</td>
+      <td>11</td>
+      <td>6</td>
+      <td>54.55</td>
+    </tr>
+    <tr>
+      <td>⚪️🔴🟢</td>
+      <td>WRG</td>
+      <td>15</td>
+      <td>8</td>
+      <td>53.33</td>
+    </tr>
+    <tr>
+      <td>🔵🔴</td>
+      <td>Izzet</td>
+      <td>6</td>
+      <td>3</td>
+      <td>50.00</td>
+    </tr>
+    <tr>
+      <td>⚪️⚫️🔴</td>
+      <td>WBR</td>
+      <td>35</td>
+      <td>17</td>
+      <td>48.57</td>
+    </tr>
+    <tr>
+      <td>🔵🟢</td>
+      <td>Simic</td>
+      <td>49</td>
+      <td>23</td>
+      <td>46.94</td>
+    </tr>
+  </tbody>
+</table>
+  </div>
+</div>
+
 <h2>Statistiche dei Giocatori</h2>
 <table class="dataframe display" id="playerStatsTable">
   <thead>
