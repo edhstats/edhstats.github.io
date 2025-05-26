@@ -23,7 +23,7 @@ tr:hover { background-color: #ddd; }
 <body>
 <h1>Magic EDH Stats Report</h1>
 <!-- Iniettata da Python -->
-<p id="lastUpdated" data-ts="2025-05-26T23:11">Ultimo aggiornamento: --</p>
+<p id="lastUpdated" data-ts="2025-05-26T23:14">Ultimo aggiornamento: --</p>
 
 <!-- Includi day.js -->
 <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
@@ -2756,6 +2756,130 @@ tr:hover { background-color: #ddd; }
 <table class="dataframe display" id="winStreakTable">
   <thead>
     <tr style="text-align: right;">
+      <th>player</th>
+      <th>streak_length</th>
+      <th>streak_start</th>
+      <th>streak_end</th>
+      <th>commanders_used</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Emi</td>
+      <td>7</td>
+      <td>2024-11-25</td>
+      <td>2024-12-03</td>
+      <td>muerra, trash tactician (1),satoru, the infiltrator (1),pantlaza, sun-favored (1),tegwyll, duke of splendor (1),rakdos, the muscle (3)</td>
+    </tr>
+    <tr>
+      <td>Emi</td>
+      <td>5</td>
+      <td>2024-12-28</td>
+      <td>2025-01-07</td>
+      <td>muerra, trash tactician (1),pantlaza, sun-favored (1),tegwyll, duke of splendor (1),rakdos, the muscle (1),éowyn, shieldmaiden (1)</td>
+    </tr>
+    <tr>
+      <td>Luca</td>
+      <td>5</td>
+      <td>2024-12-28</td>
+      <td>2025-01-21</td>
+      <td>alela, artful provocateur (2),hamza, guardian of arashin (1),genku, future shaper (1),aragorn, the uniter (1)</td>
+    </tr>
+    <tr>
+      <td>Matte</td>
+      <td>5</td>
+      <td>2025-02-22</td>
+      <td>2025-03-03</td>
+      <td>tatyova, benthic druid (2),dihada, binder of wills (3)</td>
+    </tr>
+    <tr>
+      <td>Don</td>
+      <td>4</td>
+      <td>2024-11-18</td>
+      <td>2024-11-22</td>
+      <td>voja, jaws of the conclave (3),nahiri, forged in fury (1)</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>Top 5 Comandanti con Maggior Winrate (min. 5 partite)</h2>
+<table class="dataframe display" id="topCommandersWinrateTable">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Comandante</th>
+      <th>Partite</th>
+      <th>Vittorie</th>
+      <th>Winrate (%)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>ghave, guru of spores</td>
+      <td>5</td>
+      <td>4</td>
+      <td>80.00</td>
+    </tr>
+    <tr>
+      <td>roxanne, starfall savant</td>
+      <td>8</td>
+      <td>6</td>
+      <td>75.00</td>
+    </tr>
+    <tr>
+      <td>the scarab god</td>
+      <td>10</td>
+      <td>7</td>
+      <td>70.00</td>
+    </tr>
+    <tr>
+      <td>bonny pall, clearcutter</td>
+      <td>13</td>
+      <td>9</td>
+      <td>69.23</td>
+    </tr>
+    <tr>
+      <td>varina, lich queen</td>
+      <td>6</td>
+      <td>4</td>
+      <td>66.67</td>
+    </tr>
+    <tr>
+      <td>tatyova, benthic druid</td>
+      <td>6</td>
+      <td>4</td>
+      <td>66.67</td>
+    </tr>
+    <tr>
+      <td>nine-fingers keene</td>
+      <td>6</td>
+      <td>4</td>
+      <td>66.67</td>
+    </tr>
+    <tr>
+      <td>marchesa, dealer of death</td>
+      <td>8</td>
+      <td>5</td>
+      <td>62.50</td>
+    </tr>
+    <tr>
+      <td>jetmir, nexus of revels</td>
+      <td>13</td>
+      <td>8</td>
+      <td>61.54</td>
+    </tr>
+    <tr>
+      <td>dihada, binder of wills</td>
+      <td>23</td>
+      <td>14</td>
+      <td>60.87</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>Statistiche dei Comandanti</h2>
+<table class="dataframe display" id="commanderStatsTable">
+  <thead>
+    <tr style="text-align: right;">
       <th>Comandante</th>
       <th>Partite</th>
       <th>Vittorie</th>
@@ -3980,130 +4104,6 @@ tr:hover { background-color: #ddd; }
       <td>1</td>
       <td>0</td>
       <td>0.00</td>
-    </tr>
-  </tbody>
-</table>
-
-<h2>Top 5 Comandanti con Maggior Winrate (min. 5 partite)</h2>
-<table class="dataframe display" id="topCommandersWinrateTable">
-  <thead>
-    <tr style="text-align: right;">
-      <th>Comandante</th>
-      <th>Partite</th>
-      <th>Vittorie</th>
-      <th>Winrate (%)</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>ghave, guru of spores</td>
-      <td>5</td>
-      <td>4</td>
-      <td>80.00</td>
-    </tr>
-    <tr>
-      <td>roxanne, starfall savant</td>
-      <td>8</td>
-      <td>6</td>
-      <td>75.00</td>
-    </tr>
-    <tr>
-      <td>the scarab god</td>
-      <td>10</td>
-      <td>7</td>
-      <td>70.00</td>
-    </tr>
-    <tr>
-      <td>bonny pall, clearcutter</td>
-      <td>13</td>
-      <td>9</td>
-      <td>69.23</td>
-    </tr>
-    <tr>
-      <td>varina, lich queen</td>
-      <td>6</td>
-      <td>4</td>
-      <td>66.67</td>
-    </tr>
-    <tr>
-      <td>tatyova, benthic druid</td>
-      <td>6</td>
-      <td>4</td>
-      <td>66.67</td>
-    </tr>
-    <tr>
-      <td>nine-fingers keene</td>
-      <td>6</td>
-      <td>4</td>
-      <td>66.67</td>
-    </tr>
-    <tr>
-      <td>marchesa, dealer of death</td>
-      <td>8</td>
-      <td>5</td>
-      <td>62.50</td>
-    </tr>
-    <tr>
-      <td>jetmir, nexus of revels</td>
-      <td>13</td>
-      <td>8</td>
-      <td>61.54</td>
-    </tr>
-    <tr>
-      <td>dihada, binder of wills</td>
-      <td>23</td>
-      <td>14</td>
-      <td>60.87</td>
-    </tr>
-  </tbody>
-</table>
-
-<h2>Statistiche dei Comandanti</h2>
-<table class="dataframe display" id="commanderStatsTable">
-  <thead>
-    <tr style="text-align: right;">
-      <th>player</th>
-      <th>streak_length</th>
-      <th>streak_start</th>
-      <th>streak_end</th>
-      <th>commanders_used</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Emi</td>
-      <td>7</td>
-      <td>2024-11-25</td>
-      <td>2024-12-03</td>
-      <td>muerra, trash tactician (1),satoru, the infiltrator (1),pantlaza, sun-favored (1),tegwyll, duke of splendor (1),rakdos, the muscle (3)</td>
-    </tr>
-    <tr>
-      <td>Emi</td>
-      <td>5</td>
-      <td>2024-12-28</td>
-      <td>2025-01-07</td>
-      <td>muerra, trash tactician (1),pantlaza, sun-favored (1),tegwyll, duke of splendor (1),rakdos, the muscle (1),éowyn, shieldmaiden (1)</td>
-    </tr>
-    <tr>
-      <td>Luca</td>
-      <td>5</td>
-      <td>2024-12-28</td>
-      <td>2025-01-21</td>
-      <td>alela, artful provocateur (2),hamza, guardian of arashin (1),genku, future shaper (1),aragorn, the uniter (1)</td>
-    </tr>
-    <tr>
-      <td>Matte</td>
-      <td>5</td>
-      <td>2025-02-22</td>
-      <td>2025-03-03</td>
-      <td>tatyova, benthic druid (2),dihada, binder of wills (3)</td>
-    </tr>
-    <tr>
-      <td>Don</td>
-      <td>4</td>
-      <td>2024-11-18</td>
-      <td>2024-11-22</td>
-      <td>voja, jaws of the conclave (3),nahiri, forged in fury (1)</td>
     </tr>
   </tbody>
 </table>
