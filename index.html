@@ -14,13 +14,14 @@
   body {
     font-family: 'Inter', 'Roboto', 'Helvetica Neue', sans-serif;
     margin: 20px;
-    background-color: #f4f6f9;
+    background-color: #f5f7fa;
     color: #2e2e2e;
     line-height: 1.6;
+    transition: background-color 0.3s, color 0.3s;
   }
 
   h1, h2, h3 {
-    color: #333;
+    color: #1a1a1a;
     font-weight: 600;
   }
 
@@ -28,10 +29,10 @@
     width: 100%;
     border-collapse: collapse;
     margin-bottom: 24px;
-    background-color: #ffffff;
-    border-radius: 8px;
+    background-color: #fff;
+    border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.06);
   }
 
   th, td {
@@ -43,40 +44,84 @@
 
   th {
     background-color: #5865f2;
-    color: #ffffff;
+    color: #fff;
     text-transform: uppercase;
     font-size: 0.85rem;
-    letter-spacing: 0.03em;
+    letter-spacing: 0.05em;
   }
 
   tr:nth-child(even) {
-    background-color: #f0f1f5;
+    background-color: #f1f3f5;
   }
 
   tr:hover {
-    background-color: #e8eaf6;
+    background-color: #e4e8ee;
   }
 
   .player-section {
     margin-bottom: 30px;
-    border: 1px solid #d1d9e6;
+    border: 1px solid #d8dee9;
     padding: 20px;
-    border-radius: 10px;
+    border-radius: 12px;
     background-color: #ffffff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.03);
   }
 
   .player-section h3 {
     margin-top: 0;
-    background-color: #f0f1f5;
+    background-color: #f0f2f5;
     padding: 12px;
     border-radius: 6px;
     font-weight: 600;
-    color: #5865f2;
+    color: #3b5bdb;
   }
 
   .hidden {
     display: none;
+  }
+
+  /* 🌙 Modalità Scura */
+  @media (prefers-color-scheme: dark) {
+    body {
+      background-color: #121212;
+      color: #e4e4e4;
+    }
+
+    h1, h2, h3 {
+      color: #f1f1f1;
+    }
+
+    table {
+      background-color: #1e1e1e;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.4);
+    }
+
+    th {
+      background-color: #3b5bdb;
+      color: #ffffff;
+    }
+
+    td, th {
+      border-color: #2a2a2a;
+    }
+
+    tr:nth-child(even) {
+      background-color: #222;
+    }
+
+    tr:hover {
+      background-color: #2c2c2c;
+    }
+
+    .player-section {
+      background-color: #1c1c1c;
+      border-color: #2a2a2a;
+    }
+
+    .player-section h3 {
+      background-color: #2a2a2a;
+      color: #8faaff;
+    }
   }
 </style>
 
@@ -84,7 +129,7 @@
 <body>
 <h1>Magic EDH Stats Report</h1>
 <!-- Iniettata da Python -->
-<p id="lastUpdated" data-ts="2025-05-26T23:48">Ultimo aggiornamento: --</p>
+<p id="lastUpdated" data-ts="2025-05-26T23:51">Ultimo aggiornamento: --</p>
 
 <!-- Includi day.js -->
 <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
