@@ -9,65 +9,70 @@
 <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
 
 <style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
   body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Inter', 'Roboto', 'Helvetica Neue', sans-serif;
     margin: 20px;
-    background-color: #f8f9fa;
-    color: #212529;
+    background-color: #f4f6f9;
+    color: #2e2e2e;
+    line-height: 1.6;
   }
 
   h1, h2, h3 {
-    color: #343a40;
+    color: #333;
+    font-weight: 600;
   }
 
   table {
     width: 100%;
     border-collapse: collapse;
-    margin-bottom: 20px;
-    background-color: white;
-    border-radius: 0.5rem;
+    margin-bottom: 24px;
+    background-color: #ffffff;
+    border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
   }
 
   th, td {
-    padding: 1rem;
-    border: 1px solid #dee2e6;
+    padding: 14px;
+    border: 1px solid #e0e0e0;
     text-align: center;
+    font-size: 0.95rem;
   }
 
   th {
-    background-color: #198754;
-    color: white;
+    background-color: #5865f2;
+    color: #ffffff;
     text-transform: uppercase;
-    font-size: 0.9rem;
-    letter-spacing: 0.05em;
+    font-size: 0.85rem;
+    letter-spacing: 0.03em;
   }
 
   tr:nth-child(even) {
-    background-color: #f1f3f5;
+    background-color: #f0f1f5;
   }
 
   tr:hover {
-    background-color: #e9ecef;
+    background-color: #e8eaf6;
   }
 
   .player-section {
     margin-bottom: 30px;
-    border: 1px solid #dee2e6;
+    border: 1px solid #d1d9e6;
     padding: 20px;
-    border-radius: 12px;
+    border-radius: 10px;
     background-color: #ffffff;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
   }
 
   .player-section h3 {
     margin-top: 0;
-    background-color: #f8f9fa;
-    padding: 10px;
+    background-color: #f0f1f5;
+    padding: 12px;
     border-radius: 6px;
     font-weight: 600;
-    color: #0d6efd;
+    color: #5865f2;
   }
 
   .hidden {
@@ -79,7 +84,7 @@
 <body>
 <h1>Magic EDH Stats Report</h1>
 <!-- Iniettata da Python -->
-<p id="lastUpdated" data-ts="2025-05-26T23:46">Ultimo aggiornamento: --</p>
+<p id="lastUpdated" data-ts="2025-05-26T23:48">Ultimo aggiornamento: --</p>
 
 <!-- Includi day.js -->
 <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
