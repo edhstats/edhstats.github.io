@@ -1,0 +1,1033 @@
+{
+  "season": {
+    "id": 1,
+    "name": "Test Season",
+    "start_date": "2025-09-08",
+    "end_date": "2025-12-07",
+    "is_active": 1
+  },
+  "leaderboard": [],
+  "unlocked_milestones": [
+    {
+      "title": "Non è forte sto mazzo, ho solo topdeckato",
+      "description": "Accumula 5 vittorie nella season",
+      "unlocked_by": "Matte",
+      "unlocked_at": "2025-09-08 13:21:36"
+    },
+    {
+      "title": "Considerate che questo mazzo meme",
+      "description": "Accumula 10 vittorie nella season",
+      "unlocked_by": "Ru",
+      "unlocked_at": "2025-09-08 13:21:36"
+    },
+    {
+      "title": "vinco ma solo per questo matchup",
+      "description": "Accumula 15 vittorie nella season",
+      "unlocked_by": "Matte",
+      "unlocked_at": "2025-09-08 13:21:36"
+    },
+    {
+      "title": "Io non sono una minaccia",
+      "description": "Accumula 20 vittorie nella season",
+      "unlocked_by": "Ru",
+      "unlocked_at": "2025-09-08 13:21:37"
+    },
+    {
+      "title": "Tecnicamente non ho una wincon nel mazzo",
+      "description": "Accumula 25 vittorie nella season",
+      "unlocked_by": "Matte",
+      "unlocked_at": "2025-09-08 13:21:37"
+    },
+    {
+      "title": "Gioco comandante meme con 25 gamechangers",
+      "description": "Accumula 30 vittorie nella season",
+      "unlocked_by": "Matte",
+      "unlocked_at": "2025-09-08 13:21:37"
+    }
+  ],
+  "available_milestones": [
+    {
+      "id": 1,
+      "number": 1,
+      "title": "Non è forte sto mazzo, ho solo topdeckato",
+      "description": "Accumula 5 vittorie nella season",
+      "points_required": 5,
+      "reward": "Badge fortunello "
+    },
+    {
+      "id": 2,
+      "number": 2,
+      "title": "Considerate che questo mazzo meme",
+      "description": "Accumula 10 vittorie nella season",
+      "points_required": 10,
+      "reward": "Badge mazzo Meme"
+    },
+    {
+      "id": 3,
+      "number": 3,
+      "title": "vinco ma solo per questo matchup",
+      "description": "Accumula 15 vittorie nella season",
+      "points_required": 15,
+      "reward": "Badge dissuasore"
+    },
+    {
+      "id": 4,
+      "number": 4,
+      "title": "Io non sono una minaccia",
+      "description": "Accumula 20 vittorie nella season",
+      "points_required": 20,
+      "reward": "Badge bugiardo"
+    },
+    {
+      "id": 5,
+      "number": 5,
+      "title": "Tecnicamente non ho una wincon nel mazzo",
+      "description": "Accumula 25 vittorie nella season",
+      "points_required": 25,
+      "reward": "Badge Downplayer"
+    },
+    {
+      "id": 6,
+      "number": 6,
+      "title": "Gioco comandante meme con 25 gamechangers",
+      "description": "Accumula 30 vittorie nella season",
+      "points_required": 30,
+      "reward": "Badge Downplayer supremo"
+    }
+  ],
+  "player_buffs": {
+    "Claudio": [
+      {
+        "id": 37,
+        "name": "Mana Surge",
+        "description": "Aggiungi 2 mana di un colore a scelta",
+        "tier": 2,
+        "is_used": false,
+        "used_at": null
+      },
+      {
+        "id": 58,
+        "name": "Life Buffer",
+        "description": "Inizia con 42 punti vita invece di 40",
+        "tier": 1,
+        "is_used": false,
+        "used_at": null
+      },
+      {
+        "id": 84,
+        "name": "Tutor Light",
+        "description": "Cerca una carta basic land dal mazzo",
+        "tier": 2,
+        "is_used": false,
+        "used_at": null
+      },
+      {
+        "id": 1,
+        "name": "Card Draw",
+        "description": "Pesca una carta extra",
+        "tier": 2,
+        "is_used": false,
+        "used_at": null
+      },
+      {
+        "id": 12,
+        "name": "Mana Boost",
+        "description": "Aggiungi 1 mana colorless",
+        "tier": 1,
+        "is_used": false,
+        "used_at": null
+      },
+      {
+        "id": 24,
+        "name": "Scrying Advantage",
+        "description": "Scry 2 all'inizio del turno",
+        "tier": 1,
+        "is_used": false,
+        "used_at": null
+      }
+    ],
+    "Ru": [
+      {
+        "id": 59,
+        "name": "Scrying Advantage",
+        "description": "Scry 2 all'inizio del turno",
+        "tier": 1,
+        "is_used": false,
+        "used_at": null
+      },
+      {
+        "id": 85,
+        "name": "Mana Boost",
+        "description": "Aggiungi 1 mana colorless",
+        "tier": 1,
+        "is_used": false,
+        "used_at": null
+      },
+      {
+        "id": 2,
+        "name": "Card Glimpse",
+        "description": "Guarda la prima carta del mazzo a inizio partita",
+        "tier": 1,
+        "is_used": false,
+        "used_at": null
+      },
+      {
+        "id": 25,
+        "name": "Life Buffer",
+        "description": "Inizia con 42 punti vita invece di 40",
+        "tier": 1,
+        "is_used": false,
+        "used_at": null
+      }
+    ],
+    "Matte": [
+      {
+        "id": 38,
+        "name": "Mana Surge",
+        "description": "Aggiungi 2 mana di un colore a scelta",
+        "tier": 2,
+        "is_used": false,
+        "used_at": null
+      },
+      {
+        "id": 13,
+        "name": "Scrying Advantage",
+        "description": "Scry 2 all'inizio del turno",
+        "tier": 1,
+        "is_used": false,
+        "used_at": null
+      }
+    ],
+    "Sisco": [
+      {
+        "id": 39,
+        "name": "Life Buffer",
+        "description": "Inizia con 42 punti vita invece di 40",
+        "tier": 1,
+        "is_used": false,
+        "used_at": null
+      },
+      {
+        "id": 60,
+        "name": "Resurrection",
+        "description": "Rimetti in gioco una creatura dal cimitero",
+        "tier": 3,
+        "is_used": false,
+        "used_at": null
+      },
+      {
+        "id": 86,
+        "name": "Life Buffer",
+        "description": "Inizia con 42 punti vita invece di 40",
+        "tier": 1,
+        "is_used": false,
+        "used_at": null
+      },
+      {
+        "id": 3,
+        "name": "Card Glimpse",
+        "description": "Guarda la prima carta del mazzo a inizio partita",
+        "tier": 1,
+        "is_used": false,
+        "used_at": null
+      },
+      {
+        "id": 14,
+        "name": "Scrying Advantage",
+        "description": "Scry 2 all'inizio del turno",
+        "tier": 1,
+        "is_used": false,
+        "used_at": null
+      },
+      {
+        "id": 26,
+        "name": "Card Glimpse",
+        "description": "Guarda la prima carta del mazzo a inizio partita",
+        "tier": 1,
+        "is_used": false,
+        "used_at": null
+      }
+    ],
+    "Ettore": [
+      {
+        "id": 40,
+        "name": "Card Glimpse",
+        "description": "Guarda la prima carta del mazzo a inizio partita",
+        "tier": 1,
+        "is_used": false,
+        "used_at": null
+      },
+      {
+        "id": 61,
+        "name": "Scrying Advantage",
+        "description": "Scry 2 all'inizio del turno",
+        "tier": 1,
+        "is_used": false,
+        "used_at": null
+      },
+      {
+        "id": 87,
+        "name": "Scrying Advantage",
+        "description": "Scry 2 all'inizio del turno",
+        "tier": 1,
+        "is_used": false,
+        "used_at": null
+      },
+      {
+        "id": 4,
+        "name": "Card Glimpse",
+        "description": "Guarda la prima carta del mazzo a inizio partita",
+        "tier": 1,
+        "is_used": false,
+        "used_at": null
+      },
+      {
+        "id": 15,
+        "name": "Mana Boost",
+        "description": "Aggiungi 1 mana colorless",
+        "tier": 1,
+        "is_used": false,
+        "used_at": null
+      },
+      {
+        "id": 27,
+        "name": "Tutor Light",
+        "description": "Cerca una carta basic land dal mazzo",
+        "tier": 2,
+        "is_used": false,
+        "used_at": null
+      }
+    ],
+    "Don": [
+      {
+        "id": 41,
+        "name": "Mana Boost",
+        "description": "Aggiungi 1 mana colorless",
+        "tier": 1,
+        "is_used": false,
+        "used_at": null
+      },
+      {
+        "id": 62,
+        "name": "Card Glimpse",
+        "description": "Guarda la prima carta del mazzo a inizio partita",
+        "tier": 1,
+        "is_used": false,
+        "used_at": null
+      },
+      {
+        "id": 88,
+        "name": "Tutor Light",
+        "description": "Cerca una carta basic land dal mazzo",
+        "tier": 2,
+        "is_used": false,
+        "used_at": null
+      },
+      {
+        "id": 5,
+        "name": "Life Buffer",
+        "description": "Inizia con 42 punti vita invece di 40",
+        "tier": 1,
+        "is_used": false,
+        "used_at": null
+      },
+      {
+        "id": 16,
+        "name": "Card Draw",
+        "description": "Pesca una carta extra",
+        "tier": 2,
+        "is_used": false,
+        "used_at": null
+      },
+      {
+        "id": 28,
+        "name": "Mana Surge",
+        "description": "Aggiungi 2 mana di un colore a scelta",
+        "tier": 2,
+        "is_used": false,
+        "used_at": null
+      }
+    ],
+    "Jappy": [
+      {
+        "id": 42,
+        "name": "Card Glimpse",
+        "description": "Guarda la prima carta del mazzo a inizio partita",
+        "tier": 1,
+        "is_used": false,
+        "used_at": null
+      },
+      {
+        "id": 63,
+        "name": "Protection Ward",
+        "description": "Previeni il prossimo danno che subiresti",
+        "tier": 2,
+        "is_used": false,
+        "used_at": null
+      },
+      {
+        "id": 89,
+        "name": "Card Glimpse",
+        "description": "Guarda la prima carta del mazzo a inizio partita",
+        "tier": 1,
+        "is_used": false,
+        "used_at": null
+      },
+      {
+        "id": 6,
+        "name": "Mana Explosion",
+        "description": "Aggiungi 3 mana di qualsiasi combinazione",
+        "tier": 3,
+        "is_used": false,
+        "used_at": null
+      },
+      {
+        "id": 17,
+        "name": "Scrying Advantage",
+        "description": "Scry 2 all'inizio del turno",
+        "tier": 1,
+        "is_used": false,
+        "used_at": null
+      },
+      {
+        "id": 29,
+        "name": "Mana Surge",
+        "description": "Aggiungi 2 mana di un colore a scelta",
+        "tier": 2,
+        "is_used": false,
+        "used_at": null
+      }
+    ],
+    "Emi": [
+      {
+        "id": 43,
+        "name": "Mana Surge",
+        "description": "Aggiungi 2 mana di un colore a scelta",
+        "tier": 2,
+        "is_used": false,
+        "used_at": null
+      },
+      {
+        "id": 64,
+        "name": "Mana Boost",
+        "description": "Aggiungi 1 mana colorless",
+        "tier": 1,
+        "is_used": false,
+        "used_at": null
+      },
+      {
+        "id": 90,
+        "name": "Tutor Light",
+        "description": "Cerca una carta basic land dal mazzo",
+        "tier": 2,
+        "is_used": false,
+        "used_at": null
+      },
+      {
+        "id": 7,
+        "name": "Mana Surge",
+        "description": "Aggiungi 2 mana di un colore a scelta",
+        "tier": 2,
+        "is_used": false,
+        "used_at": null
+      },
+      {
+        "id": 18,
+        "name": "Resurrection",
+        "description": "Rimetti in gioco una creatura dal cimitero",
+        "tier": 3,
+        "is_used": false,
+        "used_at": null
+      },
+      {
+        "id": 30,
+        "name": "Life Buffer",
+        "description": "Inizia con 42 punti vita invece di 40",
+        "tier": 1,
+        "is_used": false,
+        "used_at": null
+      }
+    ],
+    "Giulia": [
+      {
+        "id": 44,
+        "name": "Scrying Advantage",
+        "description": "Scry 2 all'inizio del turno",
+        "tier": 1,
+        "is_used": false,
+        "used_at": null
+      },
+      {
+        "id": 65,
+        "name": "Card Draw",
+        "description": "Pesca una carta extra",
+        "tier": 2,
+        "is_used": false,
+        "used_at": null
+      },
+      {
+        "id": 91,
+        "name": "Scrying Advantage",
+        "description": "Scry 2 all'inizio del turno",
+        "tier": 1,
+        "is_used": false,
+        "used_at": null
+      },
+      {
+        "id": 8,
+        "name": "Protection Ward",
+        "description": "Previeni il prossimo danno che subiresti",
+        "tier": 2,
+        "is_used": false,
+        "used_at": null
+      },
+      {
+        "id": 19,
+        "name": "Tutor Light",
+        "description": "Cerca una carta basic land dal mazzo",
+        "tier": 2,
+        "is_used": false,
+        "used_at": null
+      },
+      {
+        "id": 31,
+        "name": "Life Buffer",
+        "description": "Inizia con 42 punti vita invece di 40",
+        "tier": 1,
+        "is_used": false,
+        "used_at": null
+      }
+    ],
+    "Gymbro": [
+      {
+        "id": 45,
+        "name": "Scrying Advantage",
+        "description": "Scry 2 all'inizio del turno",
+        "tier": 1,
+        "is_used": false,
+        "used_at": null
+      },
+      {
+        "id": 66,
+        "name": "Scrying Advantage",
+        "description": "Scry 2 all'inizio del turno",
+        "tier": 1,
+        "is_used": false,
+        "used_at": null
+      },
+      {
+        "id": 92,
+        "name": "Power Tutor",
+        "description": "Cerca una carta non basic dal mazzo",
+        "tier": 3,
+        "is_used": false,
+        "used_at": null
+      },
+      {
+        "id": 9,
+        "name": "Mana Boost",
+        "description": "Aggiungi 1 mana colorless",
+        "tier": 1,
+        "is_used": false,
+        "used_at": null
+      },
+      {
+        "id": 20,
+        "name": "Mana Boost",
+        "description": "Aggiungi 1 mana colorless",
+        "tier": 1,
+        "is_used": false,
+        "used_at": null
+      },
+      {
+        "id": 32,
+        "name": "Protection Ward",
+        "description": "Previeni il prossimo danno che subiresti",
+        "tier": 2,
+        "is_used": false,
+        "used_at": null
+      }
+    ],
+    "Phyga": [
+      {
+        "id": 46,
+        "name": "Life Buffer",
+        "description": "Inizia con 42 punti vita invece di 40",
+        "tier": 1,
+        "is_used": false,
+        "used_at": null
+      },
+      {
+        "id": 67,
+        "name": "Card Draw",
+        "description": "Pesca una carta extra",
+        "tier": 2,
+        "is_used": false,
+        "used_at": null
+      },
+      {
+        "id": 93,
+        "name": "Life Buffer",
+        "description": "Inizia con 42 punti vita invece di 40",
+        "tier": 1,
+        "is_used": false,
+        "used_at": null
+      },
+      {
+        "id": 10,
+        "name": "Card Glimpse",
+        "description": "Guarda la prima carta del mazzo a inizio partita",
+        "tier": 1,
+        "is_used": false,
+        "used_at": null
+      },
+      {
+        "id": 21,
+        "name": "Power Tutor",
+        "description": "Cerca una carta non basic dal mazzo",
+        "tier": 3,
+        "is_used": false,
+        "used_at": null
+      },
+      {
+        "id": 33,
+        "name": "Scrying Advantage",
+        "description": "Scry 2 all'inizio del turno",
+        "tier": 1,
+        "is_used": false,
+        "used_at": null
+      }
+    ],
+    "Luca": [
+      {
+        "id": 47,
+        "name": "Card Glimpse",
+        "description": "Guarda la prima carta del mazzo a inizio partita",
+        "tier": 1,
+        "is_used": false,
+        "used_at": null
+      },
+      {
+        "id": 68,
+        "name": "Mana Surge",
+        "description": "Aggiungi 2 mana di un colore a scelta",
+        "tier": 2,
+        "is_used": false,
+        "used_at": null
+      },
+      {
+        "id": 94,
+        "name": "Mana Explosion",
+        "description": "Aggiungi 3 mana di qualsiasi combinazione",
+        "tier": 3,
+        "is_used": false,
+        "used_at": null
+      },
+      {
+        "id": 11,
+        "name": "Mana Explosion",
+        "description": "Aggiungi 3 mana di qualsiasi combinazione",
+        "tier": 3,
+        "is_used": false,
+        "used_at": null
+      },
+      {
+        "id": 22,
+        "name": "Life Buffer",
+        "description": "Inizia con 42 punti vita invece di 40",
+        "tier": 1,
+        "is_used": false,
+        "used_at": null
+      },
+      {
+        "id": 34,
+        "name": "Mana Boost",
+        "description": "Aggiungi 1 mana colorless",
+        "tier": 1,
+        "is_used": false,
+        "used_at": null
+      }
+    ],
+    "Lucio": [
+      {
+        "id": 48,
+        "name": "Card Glimpse",
+        "description": "Guarda la prima carta del mazzo a inizio partita",
+        "tier": 1,
+        "is_used": false,
+        "used_at": null
+      },
+      {
+        "id": 69,
+        "name": "Life Buffer",
+        "description": "Inizia con 42 punti vita invece di 40",
+        "tier": 1,
+        "is_used": false,
+        "used_at": null
+      },
+      {
+        "id": 95,
+        "name": "Mana Boost",
+        "description": "Aggiungi 1 mana colorless",
+        "tier": 1,
+        "is_used": false,
+        "used_at": null
+      },
+      {
+        "id": 23,
+        "name": "Power Tutor",
+        "description": "Cerca una carta non basic dal mazzo",
+        "tier": 3,
+        "is_used": false,
+        "used_at": null
+      },
+      {
+        "id": 35,
+        "name": "Scrying Advantage",
+        "description": "Scry 2 all'inizio del turno",
+        "tier": 1,
+        "is_used": false,
+        "used_at": null
+      }
+    ],
+    "Luca Proie": [
+      {
+        "id": 49,
+        "name": "Extra Turn",
+        "description": "Prendi un turno extra dopo questo, perdi la partita dopo il turno",
+        "tier": 3,
+        "is_used": false,
+        "used_at": null
+      },
+      {
+        "id": 70,
+        "name": "Life Buffer",
+        "description": "Inizia con 42 punti vita invece di 40",
+        "tier": 1,
+        "is_used": false,
+        "used_at": null
+      },
+      {
+        "id": 96,
+        "name": "Card Draw",
+        "description": "Pesca una carta extra",
+        "tier": 2,
+        "is_used": false,
+        "used_at": null
+      },
+      {
+        "id": 36,
+        "name": "Card Glimpse",
+        "description": "Guarda la prima carta del mazzo a inizio partita",
+        "tier": 1,
+        "is_used": false,
+        "used_at": null
+      }
+    ],
+    "Gabriele": [
+      {
+        "id": 50,
+        "name": "Mana Surge",
+        "description": "Aggiungi 2 mana di un colore a scelta",
+        "tier": 2,
+        "is_used": false,
+        "used_at": null
+      },
+      {
+        "id": 71,
+        "name": "Scrying Advantage",
+        "description": "Scry 2 all'inizio del turno",
+        "tier": 1,
+        "is_used": false,
+        "used_at": null
+      },
+      {
+        "id": 97,
+        "name": "Mana Boost",
+        "description": "Aggiungi 1 mana colorless",
+        "tier": 1,
+        "is_used": false,
+        "used_at": null
+      }
+    ],
+    "Ema": [
+      {
+        "id": 51,
+        "name": "Protection Ward",
+        "description": "Previeni il prossimo danno che subiresti",
+        "tier": 2,
+        "is_used": false,
+        "used_at": null
+      },
+      {
+        "id": 72,
+        "name": "Life Buffer",
+        "description": "Inizia con 42 punti vita invece di 40",
+        "tier": 1,
+        "is_used": false,
+        "used_at": null
+      },
+      {
+        "id": 98,
+        "name": "Card Draw",
+        "description": "Pesca una carta extra",
+        "tier": 2,
+        "is_used": false,
+        "used_at": null
+      }
+    ],
+    "Lore": [
+      {
+        "id": 52,
+        "name": "Protection Ward",
+        "description": "Previeni il prossimo danno che subiresti",
+        "tier": 2,
+        "is_used": false,
+        "used_at": null
+      },
+      {
+        "id": 73,
+        "name": "Mana Boost",
+        "description": "Aggiungi 1 mana colorless",
+        "tier": 1,
+        "is_used": false,
+        "used_at": null
+      },
+      {
+        "id": 99,
+        "name": "Life Buffer",
+        "description": "Inizia con 42 punti vita invece di 40",
+        "tier": 1,
+        "is_used": false,
+        "used_at": null
+      }
+    ],
+    "Simo": [
+      {
+        "id": 53,
+        "name": "Mana Boost",
+        "description": "Aggiungi 1 mana colorless",
+        "tier": 1,
+        "is_used": false,
+        "used_at": null
+      },
+      {
+        "id": 74,
+        "name": "Card Glimpse",
+        "description": "Guarda la prima carta del mazzo a inizio partita",
+        "tier": 1,
+        "is_used": false,
+        "used_at": null
+      },
+      {
+        "id": 100,
+        "name": "Card Glimpse",
+        "description": "Guarda la prima carta del mazzo a inizio partita",
+        "tier": 1,
+        "is_used": false,
+        "used_at": null
+      }
+    ],
+    "Marco": [
+      {
+        "id": 54,
+        "name": "Card Glimpse",
+        "description": "Guarda la prima carta del mazzo a inizio partita",
+        "tier": 1,
+        "is_used": false,
+        "used_at": null
+      },
+      {
+        "id": 75,
+        "name": "Life Buffer",
+        "description": "Inizia con 42 punti vita invece di 40",
+        "tier": 1,
+        "is_used": false,
+        "used_at": null
+      },
+      {
+        "id": 101,
+        "name": "Mana Boost",
+        "description": "Aggiungi 1 mana colorless",
+        "tier": 1,
+        "is_used": false,
+        "used_at": null
+      }
+    ],
+    "Davide": [
+      {
+        "id": 55,
+        "name": "Card Draw",
+        "description": "Pesca una carta extra",
+        "tier": 2,
+        "is_used": false,
+        "used_at": null
+      },
+      {
+        "id": 76,
+        "name": "Scrying Advantage",
+        "description": "Scry 2 all'inizio del turno",
+        "tier": 1,
+        "is_used": false,
+        "used_at": null
+      },
+      {
+        "id": 102,
+        "name": "Protection Ward",
+        "description": "Previeni il prossimo danno che subiresti",
+        "tier": 2,
+        "is_used": false,
+        "used_at": null
+      }
+    ],
+    "Monta": [
+      {
+        "id": 56,
+        "name": "Mana Explosion",
+        "description": "Aggiungi 3 mana di qualsiasi combinazione",
+        "tier": 3,
+        "is_used": false,
+        "used_at": null
+      },
+      {
+        "id": 77,
+        "name": "Card Glimpse",
+        "description": "Guarda la prima carta del mazzo a inizio partita",
+        "tier": 1,
+        "is_used": false,
+        "used_at": null
+      },
+      {
+        "id": 103,
+        "name": "Protection Ward",
+        "description": "Previeni il prossimo danno che subiresti",
+        "tier": 2,
+        "is_used": false,
+        "used_at": null
+      }
+    ],
+    "Betto": [
+      {
+        "id": 57,
+        "name": "Card Glimpse",
+        "description": "Guarda la prima carta del mazzo a inizio partita",
+        "tier": 1,
+        "is_used": false,
+        "used_at": null
+      },
+      {
+        "id": 78,
+        "name": "Protection Ward",
+        "description": "Previeni il prossimo danno che subiresti",
+        "tier": 2,
+        "is_used": false,
+        "used_at": null
+      },
+      {
+        "id": 104,
+        "name": "Scrying Advantage",
+        "description": "Scry 2 all'inizio del turno",
+        "tier": 1,
+        "is_used": false,
+        "used_at": null
+      }
+    ],
+    "Daniele": [
+      {
+        "id": 79,
+        "name": "Card Glimpse",
+        "description": "Guarda la prima carta del mazzo a inizio partita",
+        "tier": 1,
+        "is_used": false,
+        "used_at": null
+      },
+      {
+        "id": 105,
+        "name": "Card Glimpse",
+        "description": "Guarda la prima carta del mazzo a inizio partita",
+        "tier": 1,
+        "is_used": false,
+        "used_at": null
+      }
+    ],
+    "Pain": [
+      {
+        "id": 80,
+        "name": "Life Buffer",
+        "description": "Inizia con 42 punti vita invece di 40",
+        "tier": 1,
+        "is_used": false,
+        "used_at": null
+      },
+      {
+        "id": 106,
+        "name": "Power Tutor",
+        "description": "Cerca una carta non basic dal mazzo",
+        "tier": 3,
+        "is_used": false,
+        "used_at": null
+      }
+    ],
+    "simone": [
+      {
+        "id": 81,
+        "name": "Card Glimpse",
+        "description": "Guarda la prima carta del mazzo a inizio partita",
+        "tier": 1,
+        "is_used": false,
+        "used_at": null
+      },
+      {
+        "id": 107,
+        "name": "Protection Ward",
+        "description": "Previeni il prossimo danno che subiresti",
+        "tier": 2,
+        "is_used": false,
+        "used_at": null
+      }
+    ],
+    "nicolo": [
+      {
+        "id": 82,
+        "name": "Protection Ward",
+        "description": "Previeni il prossimo danno che subiresti",
+        "tier": 2,
+        "is_used": false,
+        "used_at": null
+      },
+      {
+        "id": 108,
+        "name": "Life Buffer",
+        "description": "Inizia con 42 punti vita invece di 40",
+        "tier": 1,
+        "is_used": false,
+        "used_at": null
+      }
+    ],
+    "Andrea": [
+      {
+        "id": 83,
+        "name": "Card Glimpse",
+        "description": "Guarda la prima carta del mazzo a inizio partita",
+        "tier": 1,
+        "is_used": false,
+        "used_at": null
+      },
+      {
+        "id": 109,
+        "name": "Card Glimpse",
+        "description": "Guarda la prima carta del mazzo a inizio partita",
+        "tier": 1,
+        "is_used": false,
+        "used_at": null
+      }
+    ],
+    "nico gym": [],
+    "Paolo": [],
+    "ru": [],
+    "Ska": [],
+    "Mone": [],
+    "Edoardo": [],
+    "Enrico": []
+  }
+}
