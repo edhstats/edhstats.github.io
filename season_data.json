@@ -1,62 +1,59 @@
 {
   "season": {
-    "id": 2,
-    "name": "SEASON 1 Q425",
-    "start_date": "2025-09-09",
+    "season_name": "SEASON 1 Q425",
+    "start_date": "2025-09-08",
     "end_date": "2025-12-08",
-    "is_active": 1
-  },
-  "leaderboard": [],
-  "unlocked_milestones": [],
-  "available_milestones": [
-    {
-      "id": 1,
-      "number": 1,
-      "title": "Non è forte sto mazzo, ho solo topdeckato",
-      "description": "Accumula 5 vittorie nella season",
-      "points_required": 5,
-      "reward": "Badge fortunello "
-    },
-    {
-      "id": 2,
-      "number": 2,
-      "title": "Considerate che questo mazzo meme",
-      "description": "Accumula 10 vittorie nella season",
-      "points_required": 10,
-      "reward": "Badge mazzo Meme"
-    },
-    {
-      "id": 3,
-      "number": 3,
-      "title": "vinco ma solo per questo matchup",
-      "description": "Accumula 15 vittorie nella season",
-      "points_required": 15,
-      "reward": "Badge dissuasore"
-    },
-    {
-      "id": 4,
-      "number": 4,
-      "title": "Io non sono una minaccia",
-      "description": "Accumula 20 vittorie nella season",
-      "points_required": 20,
-      "reward": "Badge bugiardo"
-    },
-    {
-      "id": 5,
-      "number": 5,
-      "title": "Tecnicamente non ho una wincon nel mazzo",
-      "description": "Accumula 25 vittorie nella season",
-      "points_required": 25,
-      "reward": "Badge Downplayer"
-    },
-    {
-      "id": 6,
-      "number": 6,
-      "title": "Gioco comandante meme con 25 gamechangers",
-      "description": "Accumula 30 vittorie nella season",
-      "points_required": 30,
-      "reward": "Badge Downplayer supremo"
-    }
-  ],
-  "player_buffs": {}
+    "leaderboard": [
+      {
+        "name": "Giulia",
+        "points": 32,
+        "wins": 16,
+        "games": 24,
+        "has_themed_deck": 1,
+        "themed_deck_description": "Placeholder",
+        "winrate": 66.67,
+        "thematic_wins": 16
+      },
+      {
+        "name": "Andrea",
+        "points": 8,
+        "wins": 8,
+        "games": 24,
+        "has_themed_deck": 1,
+        "themed_deck_description": "Placeholder",
+        "winrate": 33.33,
+        "thematic_wins": 0
+      },
+      {
+        "name": "Luca",
+        "points": 8,
+        "wins": 8,
+        "games": 24,
+        "has_themed_deck": 1,
+        "themed_deck_description": "Placeholder",
+        "winrate": 33.33,
+        "thematic_wins": 0
+      },
+      {
+        "name": "Marco",
+        "points": 0,
+        "wins": 0,
+        "games": 8,
+        "has_themed_deck": 0,
+        "themed_deck_description": "Placeholder",
+        "winrate": 0.0,
+        "thematic_wins": 0
+      },
+      {
+        "name": "Ru",
+        "points": 0,
+        "wins": 0,
+        "games": 16,
+        "has_themed_deck": 1,
+        "themed_deck_description": "Placeholder",
+        "winrate": 0.0,
+        "thematic_wins": 0
+      }
+    ]
+  }
 }
