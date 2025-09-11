@@ -487,17 +487,13 @@
 </head>
 <body>
     <div class="container">
-        <!-- Header -->
         <div class="header">
             <h1>🏆 EDH Season Report</h1>
             <div id="seasonInfo" class="season-info">
-                <!-- Sarà popolato dinamicamente -->
-            </div>
+                </div>
         </div>
 
-        <!-- Dashboard Grid -->
         <div class="dashboard-grid">
-            <!-- Leaderboard -->
             <div class="card">
                 <div class="card-header">
                     <div class="card-icon" style="background: linear-gradient(135deg, #8b5cf6, #06b6d4);">
@@ -513,7 +509,6 @@
                 </div>
             </div>
 
-            <!-- Milestones -->
             <div class="card">
                 <div class="card-header">
                     <div class="card-icon" style="background: linear-gradient(135deg, #10b981, #059669);">
@@ -530,7 +525,6 @@
             </div>
         </div>
 
-        <!-- Buffs Section -->
         <div class="card">
             <div class="card-header">
                 <div class="card-icon" style="background: linear-gradient(135deg, #f59e0b, #d97706);">
@@ -546,7 +540,6 @@
             </div>
         </div>
 
-        <!-- Progress Tracking -->
         <div class="card progress-section">
             <div class="card-header">
                 <div class="card-icon" style="background: linear-gradient(135deg, #06b6d4, #0891b2);">
@@ -567,129 +560,20 @@
         // Configurazione globale
         dayjs.locale('it');
 
+        // ### PLACEHOLDER DATI ####
+        // Questo blocco di codice verrà sostituito dal tuo script Python
+        const seasonData = {"season":{"id":4,"name":"SEASON 1 Q425","start_date":"2025-09-08","end_date":"2025-12-08","is_active":1,"created_at":"2025-09-09 10:45:56","theme_multiplier":2},"leaderboard":[{"name":"Giulia","points":48,"wins":1,"games":1,"has_themed_deck":false,"thematic_wins":0,"winrate":100.0,"themed_deck_description":"Placeholder"},{"name":"Luca","points":12,"wins":0,"games":1,"has_themed_deck":false,"thematic_wins":0,"winrate":0.0,"themed_deck_description":"Placeholder"},{"name":"Andrea","points":12,"wins":0,"games":1,"has_themed_deck":false,"thematic_wins":0,"winrate":0.0,"themed_deck_description":"Placeholder"},{"name":"Ru","points":0,"wins":0,"games":1,"has_themed_deck":false,"thematic_wins":0,"winrate":0.0,"themed_deck_description":"Placeholder"},{"name":"Marco","points":0,"wins":0,"games":1,"has_themed_deck":false,"thematic_wins":0,"winrate":0.0,"themed_deck_description":"Placeholder"}],"unlocked_milestones":[],"player_buffs":{},"available_milestones":[{"id":1,"title":"Non è forte sto mazzo, ho solo topdeckato","description":"Accumula 5 vittorie nella season","effect_type":"generic","points_required":5},{"id":2,"title":"Considerate che questo mazzo meme","description":"Accumula 10 vittorie nella season","effect_type":"generic","points_required":10},{"id":3,"title":"vinco ma solo per questo matchup","description":"Accumula 15 vittorie nella season","effect_type":"generic","points_required":15},{"id":4,"title":"Io non sono una minaccia","description":"Accumula 20 vittorie nella season","effect_type":"generic","points_required":20},{"id":5,"title":"Tecnicamente non ho una wincon nel mazzo","description":"Accumula 25 vittorie nella season","effect_type":"generic","points_required":25},{"id":6,"title":"Gioco comandante meme con 25 gamechangers","description":"Accumula 30 vittorie nella season","effect_type":"generic","points_required":30}]}; 
+        // ### FINE PLACEHOLDER DATI ####
+    
         class SeasonReport {
             constructor() {
-                this.seasonData = null;
-                this.init();
-            }
-
-            async init() {
-                try {
-                    await this.loadSeasonData();
+                // Rimuovi la logica di caricamento, i dati sono già disponibili
+                this.seasonData = seasonData;
+                if (Object.keys(this.seasonData).length === 0) {
+                    this.showError("Nessun dato trovato. Apri il report tramite un server web o esegui lo script di generazione.");
+                } else {
                     this.renderAll();
-                } catch (error) {
-                    console.error('Errore nel caricamento dei dati:', error);
-                    this.showError('Errore nel caricamento dei dati della season');
                 }
-            }
-
-            async loadSeasonData() {
-                // In un ambiente reale, questo farebbe una chiamata AJAX
-                // Per ora, simuliamo i dati o li leggiamo da un file JSON
-                try {
-                    const response = await fetch('season_data.json');
-                    this.seasonData = await response.json();
-                } catch (error) {
-                    // Dati di esempio per testing
-                    this.seasonData = this.generateMockData();
-                }
-            }
-
-            generateMockData() {
-                return {
-                    season: {
-                        id: 1,
-                        name: "Winter Championship 2025",
-                        start_date: "2025-01-01",
-                        end_date: "2025-03-31",
-                        is_active: true
-                    },
-                    leaderboard: [
-                        {
-                            name: "Marco",
-                            points: 45,
-                            wins: 9,
-                            games: 12,
-                            has_themed_deck: true,
-                            themed_deck_description: "Tribal Dragons",
-                            winrate: 75.0
-                        },
-                        {
-                            name: "Luca", 
-                            points: 35,
-                            wins: 7,
-                            games: 11,
-                            has_themed_deck: false,
-                            themed_deck_description: "",
-                            winrate: 63.6
-                        },
-                        {
-                            name: "Andrea",
-                            points: 30,
-                            wins: 6,
-                            games: 10,
-                            has_themed_deck: true,
-                            themed_deck_description: "Aristocrats",
-                            winrate: 60.0
-                        }
-                    ],
-                    available_milestones: [
-                        {
-                            id: 1,
-                            number: 1,
-                            title: "Prima Vittoria",
-                            description: "Raggiungi la prima vittoria della season",
-                            points_required: 5,
-                            reward: "Badge Iniziatore"
-                        },
-                        {
-                            id: 2,
-                            number: 2,
-                            title: "Veterano",
-                            description: "Accumula 2 vittorie nella season",
-                            points_required: 10,
-                            reward: "Badge Veterano"
-                        }
-                    ],
-                    unlocked_milestones: [
-                        {
-                            title: "Prima Vittoria",
-                            description: "Raggiungi la prima vittoria della season",
-                            unlocked_by: "Marco",
-                            unlocked_at: "2025-01-15T10:30:00"
-                        }
-                    ],
-                    player_buffs: {
-                        "Luca": [
-                            {
-                                id: 1,
-                                name: "Scrying Advantage",
-                                description: "Scry 2 all'inizio del turno",
-                                tier: 1,
-                                is_used: false,
-                                used_at: null
-                            },
-                            {
-                                id: 2,
-                                name: "Card Draw",
-                                description: "Pesca una carta extra",
-                                tier: 2,
-                                is_used: true,
-                                used_at: "2025-01-20T15:45:00"
-                            }
-                        ],
-                        "Andrea": [
-                            {
-                                id: 3,
-                                name: "Mana Boost",
-                                description: "Aggiungi 1 mana colorless",
-                                tier: 1,
-                                is_used: false,
-                                used_at: null
-                            }
-                        ]
-                    }
-                };
             }
 
             renderAll() {
@@ -700,6 +584,7 @@
                 this.renderProgressTracking();
             }
 
+            // Funzione di rendering per le informazioni della stagione
             renderSeasonInfo() {
                 const season = this.seasonData.season;
                 const totalPlayers = this.seasonData.leaderboard.length;
@@ -734,6 +619,7 @@
                 `;
             }
 
+            // Funzione di rendering per la classifica
             renderLeaderboard() {
                 const leaderboard = this.seasonData.leaderboard;
                 let html = '';
@@ -768,6 +654,7 @@
                 document.getElementById('leaderboard').innerHTML = html;
             }
 
+            // Funzione di rendering per le milestone
             renderMilestones() {
                 const milestones = this.seasonData.available_milestones;
                 const unlocked = this.seasonData.unlocked_milestones;
@@ -796,6 +683,7 @@
                 document.getElementById('milestones').innerHTML = html;
             }
 
+            // Funzione di rendering per i buff
             renderPlayerBuffs() {
                 const buffs = this.seasonData.player_buffs;
                 let html = '';
@@ -832,6 +720,7 @@
                 document.getElementById('playerBuffs').innerHTML = html;
             }
 
+            // Funzione di rendering per il progresso delle milestone
             renderProgressTracking() {
                 const leaderboard = this.seasonData.leaderboard;
                 const milestones = this.seasonData.available_milestones;
@@ -881,15 +770,15 @@
 
         // Inizializza l'applicazione quando il DOM è pronto
         document.addEventListener('DOMContentLoaded', () => {
-            new SeasonReport();
-        });
-
-        // Auto-refresh ogni 5 minuti
-        setInterval(() => {
-            if (window.seasonReport) {
-                window.seasonReport.init();
+            // Controlla se i dati sono disponibili
+            if (Object.keys(seasonData).length > 0) {
+                new SeasonReport();
+            } else {
+                // Mostra un errore se non ci sono dati, ad es. quando il file viene aperto direttamente senza essere generato dallo script
+                const report = new SeasonReport();
+                report.showError("Nessun dato trovato. Apri il report tramite un server web o esegui lo script di generazione.");
             }
-        }, 5 * 60 * 1000);
+        });
     </script>
 </body>
 </html>

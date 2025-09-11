@@ -1,59 +1,109 @@
 {
   "season": {
-    "season_name": "SEASON 1 Q425",
+    "id": 4,
+    "name": "SEASON 1 Q425",
     "start_date": "2025-09-08",
     "end_date": "2025-12-08",
-    "leaderboard": [
-      {
-        "name": "Giulia",
-        "points": 32,
-        "wins": 16,
-        "games": 24,
-        "has_themed_deck": 1,
-        "themed_deck_description": "Placeholder",
-        "winrate": 66.67,
-        "thematic_wins": 16
-      },
-      {
-        "name": "Andrea",
-        "points": 8,
-        "wins": 8,
-        "games": 24,
-        "has_themed_deck": 1,
-        "themed_deck_description": "Placeholder",
-        "winrate": 33.33,
-        "thematic_wins": 0
-      },
-      {
-        "name": "Luca",
-        "points": 8,
-        "wins": 8,
-        "games": 24,
-        "has_themed_deck": 1,
-        "themed_deck_description": "Placeholder",
-        "winrate": 33.33,
-        "thematic_wins": 0
-      },
-      {
-        "name": "Marco",
-        "points": 0,
-        "wins": 0,
-        "games": 8,
-        "has_themed_deck": 0,
-        "themed_deck_description": "Placeholder",
-        "winrate": 0.0,
-        "thematic_wins": 0
-      },
-      {
-        "name": "Ru",
-        "points": 0,
-        "wins": 0,
-        "games": 16,
-        "has_themed_deck": 1,
-        "themed_deck_description": "Placeholder",
-        "winrate": 0.0,
-        "thematic_wins": 0
-      }
-    ]
-  }
+    "is_active": 1,
+    "created_at": "2025-09-09 10:45:56",
+    "theme_multiplier": 2
+  },
+  "leaderboard": [
+    {
+      "name": "Giulia",
+      "points": 48,
+      "wins": 1,
+      "games": 1,
+      "has_themed_deck": false,
+      "thematic_wins": 0,
+      "winrate": 100.0,
+      "themed_deck_description": "Placeholder"
+    },
+    {
+      "name": "Luca",
+      "points": 12,
+      "wins": 0,
+      "games": 1,
+      "has_themed_deck": false,
+      "thematic_wins": 0,
+      "winrate": 0.0,
+      "themed_deck_description": "Placeholder"
+    },
+    {
+      "name": "Andrea",
+      "points": 12,
+      "wins": 0,
+      "games": 1,
+      "has_themed_deck": false,
+      "thematic_wins": 0,
+      "winrate": 0.0,
+      "themed_deck_description": "Placeholder"
+    },
+    {
+      "name": "Ru",
+      "points": 0,
+      "wins": 0,
+      "games": 1,
+      "has_themed_deck": false,
+      "thematic_wins": 0,
+      "winrate": 0.0,
+      "themed_deck_description": "Placeholder"
+    },
+    {
+      "name": "Marco",
+      "points": 0,
+      "wins": 0,
+      "games": 1,
+      "has_themed_deck": false,
+      "thematic_wins": 0,
+      "winrate": 0.0,
+      "themed_deck_description": "Placeholder"
+    }
+  ],
+  "unlocked_milestones": [],
+  "player_buffs": {},
+  "available_milestones": [
+    {
+      "id": 1,
+      "title": "Non è forte sto mazzo, ho solo topdeckato",
+      "description": "Accumula 5 vittorie nella season",
+      "effect_type": "generic",
+      "points_required": 5
+    },
+    {
+      "id": 2,
+      "title": "Considerate che questo mazzo meme",
+      "description": "Accumula 10 vittorie nella season",
+      "effect_type": "generic",
+      "points_required": 10
+    },
+    {
+      "id": 3,
+      "title": "vinco ma solo per questo matchup",
+      "description": "Accumula 15 vittorie nella season",
+      "effect_type": "generic",
+      "points_required": 15
+    },
+    {
+      "id": 4,
+      "title": "Io non sono una minaccia",
+      "description": "Accumula 20 vittorie nella season",
+      "effect_type": "generic",
+      "points_required": 20
+    },
+    {
+      "id": 5,
+      "title": "Tecnicamente non ho una wincon nel mazzo",
+      "description": "Accumula 25 vittorie nella season",
+      "effect_type": "generic",
+      "points_required": 25
+    },
+    {
+      "id": 6,
+      "title": "Gioco comandante meme con 25 gamechangers",
+      "description": "Accumula 30 vittorie nella season",
+      "effect_type": "generic",
+      "points_required": 30
+    }
+  ]
 }
