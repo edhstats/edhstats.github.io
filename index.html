@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EDH Stats Dashboard - Gruppo Magic</title>
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.5.0/css/responsive.dataTables.min.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     
     <style>
@@ -167,6 +168,19 @@
             .header h1 {
                 font-size: 2rem;
             }
+            .container {
+                padding: 1rem;
+                max-width: 100%;
+            }
+            .stat-card .stat-value {
+                font-size: 1.6rem;
+            }
+            .section-content {
+                padding: 1rem;
+            }
+            .chart-container {
+                height: 320px;
+            }
         }
         
         table.display {
@@ -189,6 +203,14 @@
         
         table.display tbody tr:hover {
             background: var(--bg-secondary);
+        }
+        /* Ensure tables are scrollable on small screens */
+        .section-content {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+        table.dataTable td, table.dataTable th {
+            white-space: nowrap;
         }
         
         .meta-badge {
@@ -269,7 +291,7 @@
         <h1><i class="fas fa-magic"></i> EDH Stats Dashboard</h1>
         <p>Statistiche complete del gruppo Magic EDH</p>
         <div class="last-updated">
-            <i class="fas fa-clock"></i> Ultimo aggiornamento: 17/09/2025 alle 10:04
+            <i class="fas fa-clock"></i> Ultimo aggiornamento: 18/09/2025 alle 14:37
         </div>
     </div>
     
@@ -294,7 +316,7 @@
             <div class="stat-card">
                 <i class="fas fa-chart-line stat-icon"></i>
                 <h3>CMC Medio</h3>
-                <div class="stat-value">4.09</div>
+                <div class="stat-value">4.06</div>
             </div>
         </div>
         
@@ -664,45 +686,51 @@
       <th>color_identity</th>
       <th>total_games</th>
       <th>total_wins</th>
+      <th>win_rate</th>
       <th>color_visual</th>
       <th>color_name</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>BR</td>
-      <td>77</td>
-      <td>27</td>
-      <td>⚫🔴</td>
-      <td>Rakdos</td>
-    </tr>
-    <tr>
       <td>WRG</td>
-      <td>83</td>
-      <td>26</td>
+      <td>22</td>
+      <td>11</td>
+      <td>50.00</td>
       <td>⚪🔴🟢</td>
       <td>Naya</td>
     </tr>
     <tr>
-      <td>RG</td>
-      <td>84</td>
-      <td>26</td>
-      <td>🔴🟢</td>
-      <td>Gruul</td>
+      <td>UR</td>
+      <td>12</td>
+      <td>6</td>
+      <td>50.00</td>
+      <td>🔵🔴</td>
+      <td>Izzet</td>
+    </tr>
+    <tr>
+      <td>WBR</td>
+      <td>45</td>
+      <td>20</td>
+      <td>44.44</td>
+      <td>⚪⚫🔴</td>
+      <td>Mardu</td>
     </tr>
     <tr>
       <td>UG</td>
       <td>53</td>
       <td>23</td>
+      <td>43.40</td>
       <td>🔵🟢</td>
       <td>Simic</td>
     </tr>
     <tr>
-      <td>WUB</td>
-      <td>59</td>
-      <td>23</td>
-      <td>⚪🔵⚫</td>
-      <td>Esper</td>
+      <td>W</td>
+      <td>30</td>
+      <td>13</td>
+      <td>43.33</td>
+      <td>⚪</td>
+      <td>Mono White</td>
     </tr>
   </tbody>
 </table>
@@ -6539,6 +6567,7 @@
     <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.5.0/js/dataTables.responsive.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     
     <script>
