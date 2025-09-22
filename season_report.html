@@ -1,784 +1,416 @@
 <!DOCTYPE html>
-<html lang="it">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EDH Season Report</title>
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/locale/it.js"></script>
-    
-    <style>
-        :root {
-            --primary-color: #8b5cf6;
-            --secondary-color: #06b6d4;
-            --success-color: #10b981;
-            --warning-color: #f59e0b;
-            --danger-color: #ef4444;
-            --dark-bg: #1f2937;
-            --darker-bg: #111827;
-            --light-bg: #f9fafb;
-            --card-bg: #ffffff;
-            --text-primary: #1f2937;
-            --text-secondary: #6b7280;
-            --border-color: #e5e7eb;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, var(--light-bg) 0%, #e0e7ff 100%);
-            color: var(--text-primary);
-            line-height: 1.6;
-            min-height: 100vh;
-        }
-
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        .header {
-            text-align: center;
-            margin-bottom: 30px;
-            padding: 30px 0;
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            border-radius: 20px;
-            color: white;
-            box-shadow: 0 10px 30px rgba(139, 92, 246, 0.3);
-        }
-
-        .header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-            font-weight: 700;
-        }
-
-        .season-info {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin-top: 20px;
-            flex-wrap: wrap;
-        }
-
-        .season-stat {
-            text-align: center;
-            background: rgba(255, 255, 255, 0.1);
-            padding: 15px 20px;
-            border-radius: 10px;
-            backdrop-filter: blur(10px);
-        }
-
-        .season-stat .number {
-            font-size: 1.8rem;
-            font-weight: bold;
-            display: block;
-        }
-
-        .season-stat .label {
-            font-size: 0.9rem;
-            opacity: 0.9;
-        }
-
-        .dashboard-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-            margin-bottom: 30px;
-        }
-
-        @media (max-width: 768px) {
-            .dashboard-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        .card {
-            background: var(--card-bg);
-            border-radius: 15px;
-            padding: 25px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-            border: 1px solid var(--border-color);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-
-        .card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
-        }
-
-        .card-header {
-            display: flex;
-            align-items: center;
-            margin-bottom: 20px;
-            padding-bottom: 15px;
-            border-bottom: 2px solid var(--border-color);
-        }
-
-        .card-icon {
-            width: 40px;
-            height: 40px;
-            margin-right: 15px;
-            font-size: 1.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 10px;
-        }
-
-        .card-title {
-            font-size: 1.3rem;
-            font-weight: 600;
-            color: var(--text-primary);
-        }
-
-        /* Leaderboard Styles */
-        .leaderboard-item {
-            display: flex;
-            align-items: center;
-            padding: 15px;
-            margin-bottom: 10px;
-            background: linear-gradient(135deg, #f8fafc, #e2e8f0);
-            border-radius: 12px;
-            border-left: 4px solid var(--primary-color);
-            transition: all 0.3s ease;
-        }
-
-        .leaderboard-item:hover {
-            transform: translateX(5px);
-            box-shadow: 0 4px 15px rgba(139, 92, 246, 0.2);
-        }
-
-        .leaderboard-item.first {
-            background: linear-gradient(135deg, #fef3c7, #fbbf24);
-            border-left-color: #f59e0b;
-        }
-
-        .leaderboard-item.second {
-            background: linear-gradient(135deg, #f3f4f6, #9ca3af);
-            border-left-color: #6b7280;
-        }
-
-        .leaderboard-item.third {
-            background: linear-gradient(135deg, #fed7aa, #fb923c);
-            border-left-color: #ea580c;
-        }
-
-        .player-rank {
-            font-size: 1.5rem;
-            font-weight: bold;
-            width: 40px;
-            text-align: center;
-            margin-right: 15px;
-        }
-
-        .player-info {
-            flex: 1;
-        }
-
-        .player-name {
-            font-weight: 600;
-            font-size: 1.1rem;
-            margin-bottom: 5px;
-        }
-
-        .player-stats {
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-        }
-
-        .themed-deck-indicator {
-            margin-left: 10px;
-            padding: 4px 8px;
-            background: var(--success-color);
-            color: white;
-            border-radius: 15px;
-            font-size: 0.8rem;
-            font-weight: 500;
-        }
-
-        .points-display {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: var(--primary-color);
-            text-align: center;
-            min-width: 80px;
-        }
-
-        /* Milestone Styles */
-        .milestone-item {
-            display: flex;
-            align-items: center;
-            padding: 15px;
-            margin-bottom: 12px;
-            background: white;
-            border-radius: 10px;
-            border: 2px solid var(--border-color);
-            transition: all 0.3s ease;
-        }
-
-        .milestone-item.unlocked {
-            border-color: var(--success-color);
-            background: linear-gradient(135deg, #ecfdf5, #d1fae5);
-        }
-
-        .milestone-item.unlocked::before {
-            content: "✅";
-            margin-right: 10px;
-            font-size: 1.2rem;
-        }
-
-        .milestone-item:not(.unlocked)::before {
-            content: "🔒";
-            margin-right: 10px;
-            font-size: 1.2rem;
-            opacity: 0.5;
-        }
-
-        .milestone-info {
-            flex: 1;
-        }
-
-        .milestone-title {
-            font-weight: 600;
-            margin-bottom: 5px;
-        }
-
-        .milestone-description {
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-        }
-
-        .milestone-points {
-            background: var(--primary-color);
-            color: white;
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-weight: bold;
-            white-space: nowrap;
-        }
-
-        .milestone-unlocker {
-            font-size: 0.8rem;
-            color: var(--success-color);
-            font-weight: 500;
-            margin-left: 10px;
-        }
-
-        /* Buff Styles */
-        .buff-container {
-            max-height: 400px;
-            overflow-y: auto;
-            padding-right: 10px;
-        }
-
-        .player-buffs {
-            margin-bottom: 25px;
-        }
-
-        .player-buffs h4 {
-            color: var(--primary-color);
-            margin-bottom: 15px;
-            padding-bottom: 8px;
-            border-bottom: 2px solid var(--border-color);
-        }
-
-        .buff-item {
-            display: flex;
-            align-items: center;
-            padding: 12px;
-            margin-bottom: 8px;
-            border-radius: 8px;
-            border: 1px solid var(--border-color);
-        }
-
-        .buff-item.tier-1 {
-            background: linear-gradient(135deg, #f0f9ff, #dbeafe);
-            border-color: var(--secondary-color);
-        }
-
-        .buff-item.tier-2 {
-            background: linear-gradient(135deg, #f0fdf4, #dcfce7);
-            border-color: var(--success-color);
-        }
-
-        .buff-item.tier-3 {
-            background: linear-gradient(135deg, #fef3c7, #fde68a);
-            border-color: var(--warning-color);
-        }
-
-        .buff-item.used {
-            opacity: 0.6;
-            background: #f3f4f6;
-        }
-
-        .buff-tier {
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            color: white;
-            margin-right: 12px;
-        }
-
-        .buff-tier.tier-1 { background: var(--secondary-color); }
-        .buff-tier.tier-2 { background: var(--success-color); }
-        .buff-tier.tier-3 { background: var(--warning-color); }
-
-        .buff-info {
-            flex: 1;
-        }
-
-        .buff-name {
-            font-weight: 600;
-            margin-bottom: 3px;
-        }
-
-        .buff-description {
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-        }
-
-        .buff-status {
-            padding: 4px 10px;
-            border-radius: 15px;
-            font-size: 0.8rem;
-            font-weight: 500;
-        }
-
-        .buff-status.available {
-            background: var(--success-color);
-            color: white;
-        }
-
-        .buff-status.used {
-            background: var(--text-secondary);
-            color: white;
-        }
-
-        /* Progress Bars */
-        .progress-section {
-            margin-top: 30px;
-        }
-
-        .progress-item {
-            margin-bottom: 15px;
-        }
-
-        .progress-label {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 5px;
-            font-size: 0.9rem;
-        }
-
-        .progress-bar {
-            width: 100%;
-            height: 8px;
-            background: var(--border-color);
-            border-radius: 4px;
-            overflow: hidden;
-        }
-
-        .progress-fill {
-            height: 100%;
-            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
-            transition: width 0.3s ease;
-        }
-
-        /* Animations */
-        @keyframes slideInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .card {
-            animation: slideInUp 0.6s ease;
-        }
-
-        /* Loading States */
-        .loading {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 200px;
-            font-size: 1.2rem;
-            color: var(--text-secondary);
-        }
-
-        .spinner {
-            width: 40px;
-            height: 40px;
-            border: 4px solid var(--border-color);
-            border-top-color: var(--primary-color);
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-            margin-right: 15px;
-        }
-
-        @keyframes spin {
-            to {
-                transform: rotate(360deg);
-            }
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .container {
-                padding: 10px;
-            }
-            
-            .header h1 {
-                font-size: 2rem;
-            }
-            
-            .season-info {
-                flex-direction: column;
-                gap: 15px;
-            }
-            
-            .dashboard-grid {
-                gap: 20px;
-            }
-            
-            .card {
-                padding: 20px;
-            }
-        }
-
-        /* Dark mode support */
-        @media (prefers-color-scheme: dark) {
+    <html lang="it">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>EDH Season Report</title>
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/dayjs@1/locale/it.js"></script>
+        
+        <style>
             :root {
-                --card-bg: #1f2937;
-                --text-primary: #f9fafb;
-                --text-secondary: #d1d5db;
-                --border-color: #374151;
-                --light-bg: #111827;
+                --primary-color: #8b5cf6;
+                --secondary-color: #06b6d4;
+                --success-color: #10b981;
+                --warning-color: #f59e0b;
+                --danger-color: #ef4444;
+                --dark-bg: #1f2937;
+                --darker-bg: #111827;
+                --light-bg: #f9fafb;
+                --card-bg: #ffffff;
+                --text-primary: #1f2937;
+                --text-secondary: #6b7280;
+                --border-color: #e5e7eb;
+            }
+
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
             }
 
             body {
-                background: linear-gradient(135deg, var(--darker-bg) 0%, #1f2937 100%);
+                font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                background: linear-gradient(135deg, var(--light-bg) 0%, #e0e7ff 100%);
+                color: var(--text-primary);
+                line-height: 1.6;
+                min-height: 100vh;
             }
 
-            .milestone-item:not(.unlocked) {
-                background: #374151;
+            .container {
+                max-width: 1400px;
+                margin: 0 auto;
+                padding: 20px;
             }
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <div class="header">
-            <h1>🏆 EDH Season Report</h1>
-            <div id="seasonInfo" class="season-info">
-                </div>
-        </div>
 
-        <div class="dashboard-grid">
-            <div class="card">
-                <div class="card-header">
-                    <div class="card-icon" style="background: linear-gradient(135deg, #8b5cf6, #06b6d4);">
-                        🏆
-                    </div>
-                    <h2 class="card-title">Classifica Season</h2>
-                </div>
-                <div id="leaderboard">
-                    <div class="loading">
-                        <div class="spinner"></div>
-                        Caricamento classifica...
-                    </div>
-                </div>
-            </div>
+            .header {
+                text-align: center;
+                margin-bottom: 30px;
+                padding: 30px 0;
+                background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+                border-radius: 20px;
+                color: white;
+                box-shadow: 0 10px 30px rgba(139, 92, 246, 0.3);
+            }
 
-            <div class="card">
-                <div class="card-header">
-                    <div class="card-icon" style="background: linear-gradient(135deg, #10b981, #059669);">
-                        🎯
-                    </div>
-                    <h2 class="card-title">Milestone Progress</h2>
-                </div>
-                <div id="milestones">
-                    <div class="loading">
-                        <div class="spinner"></div>
-                        Caricamento milestone...
-                    </div>
-                </div>
-            </div>
-        </div>
+            .header h1 {
+                font-size: 2.5rem;
+                margin-bottom: 10px;
+                font-weight: 700;
+            }
 
-        <div class="card">
-            <div class="card-header">
-                <div class="card-icon" style="background: linear-gradient(135deg, #f59e0b, #d97706);">
-                    🎁
-                </div>
-                <h2 class="card-title">Buff dei Giocatori</h2>
-            </div>
-            <div id="playerBuffs" class="buff-container">
-                <div class="loading">
-                    <div class="spinner"></div>
-                    Caricamento buff...
-                </div>
-            </div>
-        </div>
+            .season-info {
+                display: flex;
+                justify-content: center;
+                gap: 30px;
+                margin-top: 20px;
+                flex-wrap: wrap;
+            }
 
-        <div class="card progress-section">
-            <div class="card-header">
-                <div class="card-icon" style="background: linear-gradient(135deg, #06b6d4, #0891b2);">
-                    📊
-                </div>
-                <h2 class="card-title">Progresso verso Prossime Milestone</h2>
-            </div>
-            <div id="progressTracking">
-                <div class="loading">
-                    <div class="spinner"></div>
-                    Calcolando progressi...
-                </div>
-            </div>
-        </div>
-    </div>
+            .season-stat {
+                text-align: center;
+                background: rgba(255, 255, 255, 0.1);
+                padding: 15px 20px;
+                border-radius: 10px;
+                backdrop-filter: blur(10px);
+            }
 
-    <script>
-        // Configurazione globale
-        dayjs.locale('it');
+            .season-stat .number {
+                font-size: 1.8rem;
+                font-weight: bold;
+                display: block;
+            }
 
-        // ### PLACEHOLDER DATI ####
-        // Questo blocco di codice verrà sostituito dal tuo script Python
-        const seasonData = {"season":{"id":4,"name":"SEASON 1 Q425","start_date":"2025-09-08","end_date":"2025-12-08","is_active":1,"created_at":"2025-09-09 10:45:56","theme_multiplier":2},"leaderboard":[{"name":"Giulia","points":48,"wins":1,"games":1,"has_themed_deck":false,"thematic_wins":0,"winrate":100.0,"themed_deck_description":"Placeholder"},{"name":"Luca","points":12,"wins":0,"games":1,"has_themed_deck":false,"thematic_wins":0,"winrate":0.0,"themed_deck_description":"Placeholder"},{"name":"Andrea","points":12,"wins":0,"games":1,"has_themed_deck":false,"thematic_wins":0,"winrate":0.0,"themed_deck_description":"Placeholder"},{"name":"Ru","points":0,"wins":0,"games":1,"has_themed_deck":false,"thematic_wins":0,"winrate":0.0,"themed_deck_description":"Placeholder"},{"name":"Marco","points":0,"wins":0,"games":1,"has_themed_deck":false,"thematic_wins":0,"winrate":0.0,"themed_deck_description":"Placeholder"}],"unlocked_milestones":[],"player_buffs":{},"available_milestones":[{"id":1,"title":"Non è forte sto mazzo, ho solo topdeckato","description":"Accumula 5 vittorie nella season","effect_type":"generic","points_required":5},{"id":2,"title":"Considerate che questo mazzo meme","description":"Accumula 10 vittorie nella season","effect_type":"generic","points_required":10},{"id":3,"title":"vinco ma solo per questo matchup","description":"Accumula 15 vittorie nella season","effect_type":"generic","points_required":15},{"id":4,"title":"Io non sono una minaccia","description":"Accumula 20 vittorie nella season","effect_type":"generic","points_required":20},{"id":5,"title":"Tecnicamente non ho una wincon nel mazzo","description":"Accumula 25 vittorie nella season","effect_type":"generic","points_required":25},{"id":6,"title":"Gioco comandante meme con 25 gamechangers","description":"Accumula 30 vittorie nella season","effect_type":"generic","points_required":30}]}; 
-        // ### FINE PLACEHOLDER DATI ####
-    
-        class SeasonReport {
-            constructor() {
-                // Rimuovi la logica di caricamento, i dati sono già disponibili
-                this.seasonData = seasonData;
-                if (Object.keys(this.seasonData).length === 0) {
-                    this.showError("Nessun dato trovato. Apri il report tramite un server web o esegui lo script di generazione.");
-                } else {
-                    this.renderAll();
+            .season-stat .label {
+                font-size: 0.9rem;
+                opacity: 0.9;
+            }
+
+            .dashboard-grid {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 30px;
+                margin-bottom: 30px;
+            }
+
+            @media (max-width: 768px) {
+                .dashboard-grid {
+                    grid-template-columns: 1fr;
                 }
             }
 
-            renderAll() {
-                this.renderSeasonInfo();
-                this.renderLeaderboard();
-                this.renderMilestones();
-                this.renderPlayerBuffs();
-                this.renderProgressTracking();
+            .card {
+                background: var(--card-bg);
+                border-radius: 15px;
+                padding: 25px;
+                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+                border: 1px solid var(--border-color);
+                transition: transform 0.2s ease, box-shadow 0.2s ease;
             }
 
-            // Funzione di rendering per le informazioni della stagione
-            renderSeasonInfo() {
-                const season = this.seasonData.season;
-                const totalPlayers = this.seasonData.leaderboard.length;
-                const totalGames = this.seasonData.leaderboard.reduce((sum, p) => sum + p.games, 0);
-                const unlockedMilestones = this.seasonData.unlocked_milestones.length;
-
-                const startDate = dayjs(season.start_date).format('D MMM YYYY');
-                const endDate = dayjs(season.end_date).format('D MMM YYYY');
-                const daysLeft = dayjs(season.end_date).diff(dayjs(), 'day');
-
-                document.getElementById('seasonInfo').innerHTML = `
-                    <div class="season-stat">
-                        <span class="number">${season.name}</span>
-                        <span class="label">${startDate} - ${endDate}</span>
-                    </div>
-                    <div class="season-stat">
-                        <span class="number">${daysLeft}</span>
-                        <span class="label">Giorni rimanenti</span>
-                    </div>
-                    <div class="season-stat">
-                        <span class="number">${totalPlayers}</span>
-                        <span class="label">Giocatori attivi</span>
-                    </div>
-                    <div class="season-stat">
-                        <span class="number">${totalGames}</span>
-                        <span class="label">Partite giocate</span>
-                    </div>
-                    <div class="season-stat">
-                        <span class="number">${unlockedMilestones}</span>
-                        <span class="label">Milestone sbloccate</span>
-                    </div>
-                `;
+            .card:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
             }
 
-            // Funzione di rendering per la classifica
-            renderLeaderboard() {
-                const leaderboard = this.seasonData.leaderboard;
-                let html = '';
+            .card-header {
+                display: flex;
+                align-items: center;
+                margin-bottom: 20px;
+                padding-bottom: 15px;
+                border-bottom: 2px solid var(--border-color);
+            }
 
-                leaderboard.forEach((player, index) => {
-                    const rank = index + 1;
-                    let rankClass = '';
-                    if (rank === 1) rankClass = 'first';
-                    else if (rank === 2) rankClass = 'second';
-                    else if (rank === 3) rankClass = 'third';
+            .card-icon {
+                width: 40px;
+                height: 40px;
+                margin-right: 15px;
+                font-size: 1.5rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 10px;
+            }
 
-                    const themedDeckBadge = player.has_themed_deck ? 
-                        `<span class="themed-deck-indicator" title="${player.themed_deck_description}">🎨 Tematico</span>` : '';
+            .card-title {
+                font-size: 1.3rem;
+                font-weight: 600;
+                color: var(--text-primary);
+            }
 
-                    html += `
-                        <div class="leaderboard-item ${rankClass}">
-                            <div class="player-rank">${rank}</div>
-                            <div class="player-info">
-                                <div class="player-name">
-                                    ${player.name}
-                                    ${themedDeckBadge}
-                                </div>
-                                <div class="player-stats">
-                                    ${player.wins}W/${player.games}G • WinRate: ${player.winrate.toFixed(1)}%
-                                </div>
-                            </div>
-                            <div class="points-display">${player.points} pts</div>
+            /* Leaderboard Styles */
+            .leaderboard-item {
+                display: flex;
+                align-items: center;
+                padding: 15px;
+                margin-bottom: 10px;
+                background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+                border-radius: 12px;
+                border-left: 4px solid var(--primary-color);
+                transition: all 0.3s ease;
+            }
+
+            .leaderboard-item:hover {
+                transform: translateX(5px);
+                box-shadow: 0 4px 15px rgba(139, 92, 246, 0.2);
+            }
+
+            .leaderboard-item.first {
+                background: linear-gradient(135deg, #fef3c7, #fbbf24);
+                border-left-color: #f59e0b;
+            }
+
+            .leaderboard-item.second {
+                background: linear-gradient(135deg, #f3f4f6, #9ca3af);
+                border-left-color: #6b7280;
+            }
+
+            .leaderboard-item.third {
+                background: linear-gradient(135deg, #fed7aa, #fb923c);
+                border-left-color: #ea580c;
+            }
+
+            .player-rank {
+                font-size: 1.5rem;
+                font-weight: bold;
+                width: 40px;
+                text-align: center;
+                margin-right: 15px;
+            }
+
+            .player-info {
+                flex: 1;
+            }
+
+            .player-name {
+                font-weight: 600;
+                font-size: 1.1rem;
+                margin-bottom: 5px;
+            }
+
+            .player-stats {
+                font-size: 0.9rem;
+                color: var(--text-secondary);
+            }
+
+            .themed-deck-indicator {
+                margin-left: 10px;
+                padding: 4px 8px;
+                background: var(--success-color);
+                color: white;
+                border-radius: 15px;
+                font-size: 0.8rem;
+                font-weight: 500;
+            }
+
+            .points-display {
+                font-size: 1.5rem;
+                font-weight: bold;
+                color: var(--primary-color);
+                text-align: center;
+                min-width: 80px;
+            }
+
+            .loading {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 200px;
+                font-size: 1.2rem;
+                color: var(--text-secondary);
+            }
+
+            .spinner {
+                width: 40px;
+                height: 40px;
+                border: 4px solid var(--border-color);
+                border-top-color: var(--primary-color);
+                border-radius: 50%;
+                animation: spin 1s linear infinite;
+                margin-right: 15px;
+            }
+
+            @keyframes spin {
+                to {
+                    transform: rotate(360deg);
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <!-- Header -->
+            <div class="header">
+                <h1>🏆 EDH Season Report</h1>
+                <div id="seasonInfo" class="season-info">
+                    <!-- Sarà popolato dinamicamente -->
+                </div>
+            </div>
+
+            <!-- Dashboard Grid -->
+            <div class="dashboard-grid">
+                <!-- Leaderboard -->
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon" style="background: linear-gradient(135deg, #8b5cf6, #06b6d4);">
+                            🏆
+                        </div>
+                        <h2 class="card-title">Classifica Season</h2>
+                    </div>
+                    <div id="leaderboard">
+                        <div class="loading">
+                            <div class="spinner"></div>
+                            Caricamento classifica...
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Milestones -->
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon" style="background: linear-gradient(135deg, #10b981, #059669);">
+                            🎯
+                        </div>
+                        <h2 class="card-title">Milestone Progress</h2>
+                    </div>
+                    <div id="milestones">
+                        <div class="loading">
+                            <div class="spinner"></div>
+                            Caricamento milestone...
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            // Configurazione globale
+            dayjs.locale('it');
+
+            class SeasonReport {
+                constructor() {
+                    this.seasonData = null;
+                    this.init();
+                }
+
+                async init() {
+                    try {
+                        await this.loadSeasonData();
+                        this.renderAll();
+                    } catch (error) {
+                        console.error('Errore nel caricamento dei dati:', error);
+                        this.showError('Errore nel caricamento dei dati della season');
+                    }
+                }
+
+                async loadSeasonData() {
+                    // Dati dal JSON generato
+                    try {
+                        const response = await fetch('season_data.json');
+                        this.seasonData = await response.json();
+                    } catch (error) {
+                        // Dati di fallback se il JSON non è disponibile
+                        this.seasonData = { season: {}, leaderboard: [], unlocked_milestones: [] };
+                    }
+                }
+
+                renderAll() {
+                    this.renderSeasonInfo();
+                    this.renderLeaderboard();
+                    this.renderMilestones();
+                }
+
+                renderSeasonInfo() {
+                    const season = this.seasonData.season;
+                    const totalPlayers = this.seasonData.leaderboard.length;
+                    
+                    document.getElementById('seasonInfo').innerHTML = `
+                        <div class="season-stat">
+                            <span class="number">${season.name || 'Season Attiva'}</span>
+                            <span class="label">Nome Stagione</span>
+                        </div>
+                        <div class="season-stat">
+                            <span class="number">${totalPlayers}</span>
+                            <span class="label">Giocatori</span>
                         </div>
                     `;
-                });
+                }
 
-                document.getElementById('leaderboard').innerHTML = html;
-            }
+                renderLeaderboard() {
+                    const leaderboard = this.seasonData.leaderboard;
+                    let html = '';
 
-            // Funzione di rendering per le milestone
-            renderMilestones() {
-                const milestones = this.seasonData.available_milestones;
-                const unlocked = this.seasonData.unlocked_milestones;
-                const unlockedSet = new Set(unlocked.map(m => m.title));
+                    leaderboard.forEach((player, index) => {
+                        const rank = index + 1;
+                        let rankClass = '';
+                        if (rank === 1) rankClass = 'first';
+                        else if (rank === 2) rankClass = 'second';
+                        else if (rank === 3) rankClass = 'third';
 
-                let html = '';
-
-                milestones.forEach(milestone => {
-                    const isUnlocked = unlockedSet.has(milestone.title);
-                    const unlockedData = unlocked.find(u => u.title === milestone.title);
-                    const unlockerInfo = unlockedData ? 
-                        `<span class="milestone-unlocker">Sbloccata da ${unlockedData.unlocked_by}</span>` : '';
-
-                    html += `
-                        <div class="milestone-item ${isUnlocked ? 'unlocked' : ''}">
-                            <div class="milestone-info">
-                                <div class="milestone-title">${milestone.title}</div>
-                                <div class="milestone-description">${milestone.description}</div>
-                                ${unlockerInfo}
-                            </div>
-                            <div class="milestone-points">${milestone.points_required} pts</div>
-                        </div>
-                    `;
-                });
-
-                document.getElementById('milestones').innerHTML = html;
-            }
-
-            // Funzione di rendering per i buff
-            renderPlayerBuffs() {
-                const buffs = this.seasonData.player_buffs;
-                let html = '';
-
-                Object.entries(buffs).forEach(([playerName, playerBuffs]) => {
-                    if (playerBuffs.length === 0) return;
-
-                    html += `<div class="player-buffs">`;
-                    html += `<h4>🎁 ${playerName}</h4>`;
-
-                    playerBuffs.forEach(buff => {
-                        const statusClass = buff.is_used ? 'used' : 'available';
-                        const statusText = buff.is_used ? 'Usato' : 'Disponibile';
+                        const themedBadge = player.has_themed_deck ? 
+                            `<span class="themed-deck-indicator">🎨 Tematico</span>` : '';
 
                         html += `
-                            <div class="buff-item tier-${buff.tier} ${statusClass}">
-                                <div class="buff-tier tier-${buff.tier}">${buff.tier}</div>
-                                <div class="buff-info">
-                                    <div class="buff-name">${buff.name}</div>
-                                    <div class="buff-description">${buff.description}</div>
+                            <div class="leaderboard-item ${rankClass}">
+                                <div class="player-rank">${rank}</div>
+                                <div class="player-info">
+                                    <div class="player-name">
+                                        ${player.name}
+                                        ${themedBadge}
+                                    </div>
+                                    <div class="player-stats">
+                                        ${player.wins}W/${player.games}G • WinRate: ${player.winrate.toFixed(1)}%
+                                    </div>
                                 </div>
-                                <div class="buff-status ${statusClass}">${statusText}</div>
+                                <div class="points-display">${player.points} pts</div>
                             </div>
                         `;
                     });
 
-                    html += `</div>`;
-                });
-
-                if (!html) {
-                    html = '<div class="text-center">Nessun buff assegnato ancora.</div>';
+                    document.getElementById('leaderboard').innerHTML = html || '<p>Nessun giocatore trovato</p>';
                 }
 
-                document.getElementById('playerBuffs').innerHTML = html;
-            }
+                renderMilestones() {
+                    const milestones = this.seasonData.unlocked_milestones || [];
+                    let html = '';
 
-            // Funzione di rendering per il progresso delle milestone
-            renderProgressTracking() {
-                const leaderboard = this.seasonData.leaderboard;
-                const milestones = this.seasonData.available_milestones;
-                let html = '';
+                    if (milestones.length > 0) {
+                        milestones.forEach(milestone => {
+                            html += `
+                                <div style="padding: 10px; background: #f0fdf4; border-radius: 8px; margin-bottom: 10px;">
+                                    <strong>${milestone.title || 'Milestone'}</strong>
+                                    <p>${milestone.description || ''}</p>
+                                    <small>Sbloccata da ${milestone.unlocked_by || 'N/A'}</small>
+                                </div>
+                            `;
+                        });
+                    } else {
+                        html = '<p>Nessuna milestone ancora sbloccata</p>';
+                    }
 
-                leaderboard.forEach(player => {
-                    const nextMilestone = milestones.find(m => m.points_required > player.points);
-                    if (!nextMilestone) return;
+                    document.getElementById('milestones').innerHTML = html;
+                }
 
-                    const progress = (player.points / nextMilestone.points_required) * 100;
-                    const pointsNeeded = nextMilestone.points_required - player.points;
-
-                    html += `
-                        <div class="progress-item">
-                            <div class="progress-label">
-                                <span><strong>${player.name}</strong> → ${nextMilestone.title}</span>
-                                <span>${player.points}/${nextMilestone.points_required} pts (${pointsNeeded} rimanenti)</span>
-                            </div>
-                            <div class="progress-bar">
-                                <div class="progress-fill" style="width: ${progress}%"></div>
-                            </div>
+                showError(message) {
+                    const errorHtml = `
+                        <div style="text-align: center; color: #ef4444; padding: 20px;">
+                            <h3>⚠️ Errore</h3>
+                            <p>${message}</p>
                         </div>
                     `;
-                });
-
-                if (!html) {
-                    html = '<div class="text-center">Tutti i giocatori hanno completato le milestone disponibili!</div>';
+                    document.getElementById('leaderboard').innerHTML = errorHtml;
+                    document.getElementById('milestones').innerHTML = errorHtml;
                 }
-
-                document.getElementById('progressTracking').innerHTML = html;
             }
 
-            showError(message) {
-                const errorHtml = `
-                    <div style="text-align: center; color: var(--danger-color); padding: 20px;">
-                        <h3>⚠️ Errore</h3>
-                        <p>${message}</p>
-                    </div>
-                `;
-
-                document.getElementById('leaderboard').innerHTML = errorHtml;
-                document.getElementById('milestones').innerHTML = errorHtml;
-                document.getElementById('playerBuffs').innerHTML = errorHtml;
-                document.getElementById('progressTracking').innerHTML = errorHtml;
-            }
-        }
-
-        // Inizializza l'applicazione quando il DOM è pronto
-        document.addEventListener('DOMContentLoaded', () => {
-            // Controlla se i dati sono disponibili
-            if (Object.keys(seasonData).length > 0) {
+            // Inizializza quando il DOM è pronto
+            document.addEventListener('DOMContentLoaded', () => {
                 new SeasonReport();
-            } else {
-                // Mostra un errore se non ci sono dati, ad es. quando il file viene aperto direttamente senza essere generato dallo script
-                const report = new SeasonReport();
-                report.showError("Nessun dato trovato. Apri il report tramite un server web o esegui lo script di generazione.");
-            }
-        });
-    </script>
-</body>
-</html>
+            });
+        </script>
+    </body>
+    </html>
