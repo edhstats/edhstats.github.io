@@ -291,7 +291,7 @@
         <h1><i class="fas fa-magic"></i> EDH Stats Dashboard</h1>
         <p>Statistiche complete del gruppo Magic EDH</p>
         <div class="last-updated">
-            <i class="fas fa-clock"></i> Ultimo aggiornamento: 22/09/2025 alle 16:36
+            <i class="fas fa-clock"></i> Ultimo aggiornamento: 06/10/2025 alle 23:24
         </div>
     </div>
     
@@ -301,17 +301,17 @@
             <div class="stat-card">
                 <i class="fas fa-gamepad stat-icon"></i>
                 <h3>Partite Totali</h3>
-                <div class="stat-value">496</div>
+                <div class="stat-value">520</div>
             </div>
             <div class="stat-card">
                 <i class="fas fa-users stat-icon"></i>
                 <h3>Giocatori Attivi</h3>
-                <div class="stat-value">34</div>
+                <div class="stat-value">35</div>
             </div>
             <div class="stat-card">
                 <i class="fas fa-chess-king stat-icon"></i>
                 <h3>Comandanti Giocati</h3>
-                <div class="stat-value">248</div>
+                <div class="stat-value">293</div>
             </div>
             <div class="stat-card">
                 <i class="fas fa-chart-line stat-icon"></i>
@@ -319,51 +319,83 @@
                 <div class="stat-value">4.06</div>
             </div>
         </div>
-        
-        <!-- Activity Status -->
+
+        <!-- Season 1 Standings (01 Ottobre - 01 Gennaio) -->
         <div class="section">
             <div class="section-header">
-                <h2><i class="fas fa-calendar-check"></i> Attivita Recente</h2>
+                <h2><i class="fas fa-trophy"></i> Classifica Season 1 (01 Ottobre - 01 Gennaio)</h2>
             </div>
             <div class="section-content">
-                <div class="activity-indicator">
-                    <i class="fas fa-circle"></i> Gruppo Attivo
-                </div>
-                <table class="dataframe display" id="recentActivity">
+                <table class="dataframe display" id="season1Standings">
   <thead>
     <tr style="text-align: right;">
-      <th>Mese</th>
+      <th>Giocatore</th>
+      <th>Punti</th>
+      <th>Vittorie</th>
       <th>Partite</th>
-      <th>Giocatori_Attivi</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>2025-09</td>
+      <td>Don</td>
+      <td>5</td>
+      <td>5</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <td>Gymbro</td>
+      <td>4</td>
+      <td>4</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <td>Matte</td>
+      <td>3</td>
+      <td>2</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <td>Ru</td>
+      <td>2</td>
+      <td>2</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>Emi</td>
+      <td>1</td>
+      <td>1</td>
       <td>9</td>
-      <td>11</td>
     </tr>
     <tr>
-      <td>2025-08</td>
-      <td>36</td>
-      <td>14</td>
+      <td>Fonsat</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
     </tr>
     <tr>
-      <td>2025-07</td>
-      <td>42</td>
-      <td>17</td>
+      <td>Giulia</td>
+      <td>0</td>
+      <td>0</td>
+      <td>3</td>
     </tr>
     <tr>
-      <td>2025-06</td>
-      <td>10</td>
-      <td>10</td>
+      <td>Ettore</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>Sisco</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2</td>
     </tr>
   </tbody>
 </table>
             </div>
         </div>
-        
-        <!-- Player Performance -->
+
+        <!-- Performance Giocatori -->
         <div class="section">
             <div class="section-header">
                 <h2><i class="fas fa-trophy"></i> Performance Giocatori</h2>
@@ -384,39 +416,39 @@
   <tbody>
     <tr>
       <td>Matte</td>
-      <td>170</td>
-      <td>73</td>
-      <td>42.94</td>
-    </tr>
-    <tr>
-      <td>Emi</td>
-      <td>125</td>
-      <td>48</td>
-      <td>38.40</td>
+      <td>181</td>
+      <td>75</td>
+      <td>41.44</td>
     </tr>
     <tr>
       <td>Gymbro</td>
-      <td>155</td>
-      <td>57</td>
-      <td>36.77</td>
+      <td>166</td>
+      <td>63</td>
+      <td>37.95</td>
+    </tr>
+    <tr>
+      <td>Emi</td>
+      <td>138</td>
+      <td>50</td>
+      <td>36.23</td>
     </tr>
     <tr>
       <td>Don</td>
-      <td>177</td>
-      <td>62</td>
-      <td>35.03</td>
+      <td>191</td>
+      <td>69</td>
+      <td>36.13</td>
     </tr>
     <tr>
       <td>Ru</td>
-      <td>190</td>
-      <td>66</td>
-      <td>34.74</td>
+      <td>203</td>
+      <td>70</td>
+      <td>34.48</td>
     </tr>
     <tr>
       <td>Luca</td>
-      <td>72</td>
+      <td>75</td>
       <td>25</td>
-      <td>34.72</td>
+      <td>33.33</td>
     </tr>
     <tr>
       <td>Jappy</td>
@@ -432,33 +464,33 @@
     </tr>
     <tr>
       <td>Phyga</td>
-      <td>25</td>
+      <td>26</td>
       <td>6</td>
-      <td>24.00</td>
+      <td>23.08</td>
     </tr>
     <tr>
       <td>Claudio</td>
-      <td>156</td>
+      <td>158</td>
       <td>35</td>
-      <td>22.44</td>
+      <td>22.15</td>
     </tr>
     <tr>
       <td>Ettore</td>
-      <td>153</td>
-      <td>32</td>
-      <td>20.92</td>
+      <td>156</td>
+      <td>33</td>
+      <td>21.15</td>
     </tr>
     <tr>
       <td>Sisco</td>
-      <td>170</td>
-      <td>19</td>
-      <td>11.18</td>
+      <td>175</td>
+      <td>20</td>
+      <td>11.43</td>
     </tr>
     <tr>
       <td>Giulia</td>
-      <td>38</td>
+      <td>41</td>
       <td>4</td>
-      <td>10.53</td>
+      <td>9.76</td>
     </tr>
   </tbody>
 </table>
@@ -482,33 +514,33 @@
   <tbody>
     <tr>
       <td>Matte</td>
-      <td>42</td>
-      <td>170</td>
-      <td>24.71</td>
+      <td>48</td>
+      <td>181</td>
+      <td>26.52</td>
     </tr>
     <tr>
       <td>Ru</td>
-      <td>37</td>
-      <td>190</td>
-      <td>19.47</td>
+      <td>47</td>
+      <td>203</td>
+      <td>23.15</td>
     </tr>
     <tr>
       <td>Ettore</td>
-      <td>36</td>
-      <td>153</td>
-      <td>23.53</td>
-    </tr>
-    <tr>
-      <td>Sisco</td>
-      <td>21</td>
-      <td>170</td>
-      <td>12.35</td>
+      <td>39</td>
+      <td>156</td>
+      <td>25.00</td>
     </tr>
     <tr>
       <td>Don</td>
-      <td>21</td>
-      <td>177</td>
-      <td>11.86</td>
+      <td>30</td>
+      <td>191</td>
+      <td>15.71</td>
+    </tr>
+    <tr>
+      <td>Gymbro</td>
+      <td>26</td>
+      <td>166</td>
+      <td>15.66</td>
     </tr>
   </tbody>
 </table>
@@ -568,6 +600,13 @@
       <td>Meta Dominante</td>
     </tr>
     <tr>
+      <td>Shadow the Hedgehog</td>
+      <td>4</td>
+      <td>3</td>
+      <td>75.00</td>
+      <td>Bilanciato</td>
+    </tr>
+    <tr>
       <td>gavi, nest warden</td>
       <td>4</td>
       <td>3</td>
@@ -602,13 +641,6 @@
       <td>66.67</td>
       <td>Bilanciato</td>
     </tr>
-    <tr>
-      <td>sephiroth, fabled soldier // sephiroth, one-winged angel</td>
-      <td>3</td>
-      <td>2</td>
-      <td>66.67</td>
-      <td>Bilanciato</td>
-    </tr>
   </tbody>
 </table>
             </div>
@@ -635,6 +667,14 @@
     </tr>
   </thead>
   <tbody>
+    <tr>
+      <td></td>
+      <td>100</td>
+      <td>28</td>
+      <td>28.00</td>
+      <td></td>
+      <td>Colorless</td>
+    </tr>
     <tr>
       <td>R</td>
       <td>97</td>
@@ -666,14 +706,6 @@
       <td>35.06</td>
       <td>⚫🔴</td>
       <td>Rakdos</td>
-    </tr>
-    <tr>
-      <td>UBG</td>
-      <td>73</td>
-      <td>20</td>
-      <td>27.40</td>
-      <td>🔵⚫🟢</td>
-      <td>Sultai</td>
     </tr>
   </tbody>
 </table>
@@ -737,9 +769,7 @@
                     </div>
                 </div>
                 
-                <div class="chart-container">
-                    <canvas id="cmcChart"></canvas>
-                </div>
+                <!-- Chart rimosso per HTML statico senza JS -->
             </div>
         </div>
         
@@ -769,66 +799,66 @@
     <tr>
       <td>Don</td>
       <td>Emi</td>
-      <td>22</td>
       <td>24</td>
-      <td>71</td>
-      <td>2.8</td>
+      <td>26</td>
+      <td>78</td>
+      <td>2.6</td>
     </tr>
     <tr>
       <td>Ru</td>
       <td>Don</td>
-      <td>19</td>
-      <td>23</td>
-      <td>67</td>
-      <td>6.0</td>
+      <td>21</td>
+      <td>26</td>
+      <td>75</td>
+      <td>6.7</td>
+    </tr>
+    <tr>
+      <td>Ru</td>
+      <td>Matte</td>
+      <td>21</td>
+      <td>21</td>
+      <td>65</td>
+      <td>0.0</td>
     </tr>
     <tr>
       <td>Matte</td>
       <td>Sisco</td>
-      <td>31</td>
+      <td>32</td>
       <td>4</td>
-      <td>59</td>
-      <td>45.8</td>
+      <td>61</td>
+      <td>45.9</td>
+    </tr>
+    <tr>
+      <td>Ru</td>
+      <td>Gymbro</td>
+      <td>18</td>
+      <td>22</td>
+      <td>60</td>
+      <td>6.7</td>
     </tr>
     <tr>
       <td>Claudio</td>
       <td>Ettore</td>
       <td>15</td>
-      <td>14</td>
-      <td>59</td>
-      <td>1.7</td>
-    </tr>
-    <tr>
-      <td>Ru</td>
-      <td>Matte</td>
-      <td>18</td>
-      <td>21</td>
-      <td>58</td>
-      <td>5.2</td>
-    </tr>
-    <tr>
-      <td>Ru</td>
-      <td>Gymbro</td>
-      <td>18</td>
-      <td>18</td>
-      <td>54</td>
+      <td>15</td>
+      <td>60</td>
       <td>0.0</td>
     </tr>
     <tr>
-      <td>Claudio</td>
-      <td>Matte</td>
-      <td>11</td>
+      <td>Ru</td>
+      <td>Emi</td>
+      <td>16</td>
       <td>19</td>
-      <td>52</td>
-      <td>15.4</td>
+      <td>57</td>
+      <td>5.3</td>
     </tr>
     <tr>
-      <td>Sisco</td>
-      <td>Gymbro</td>
-      <td>4</td>
-      <td>19</td>
-      <td>49</td>
-      <td>30.6</td>
+      <td>Matte</td>
+      <td>Don</td>
+      <td>18</td>
+      <td>16</td>
+      <td>54</td>
+      <td>3.7</td>
     </tr>
   </tbody>
 </table>
@@ -898,18 +928,8 @@
                 <h2><i class="fas fa-crown"></i> Analisi Comandanti</h2>
             </div>
             <div class="section-content">
-                <div class="player-selector">
-                    <label for="commanderPlayerSelect">
-                        <i class="fas fa-user"></i> Seleziona Giocatore:
-                    </label>
-                    <select id="commanderPlayerSelect">
-                        <option value="">Seleziona un giocatore</option>
-                        <option value="Andrea">Andrea</option><option value="Betto">Betto</option><option value="Claudio">Claudio</option><option value="Daniele">Daniele</option><option value="Davide">Davide</option><option value="Don">Don</option><option value="Edoardo">Edoardo</option><option value="Ema">Ema</option><option value="Emi">Emi</option><option value="Enrico">Enrico</option><option value="Ettore">Ettore</option><option value="Gabriele">Gabriele</option><option value="Giulia">Giulia</option><option value="Gymbro">Gymbro</option><option value="Jappy">Jappy</option><option value="Lore">Lore</option><option value="Luca">Luca</option><option value="Luca Proie">Luca Proie</option><option value="Lucio">Lucio</option><option value="Marco">Marco</option><option value="Matte">Matte</option><option value="Mone">Mone</option><option value="Monta">Monta</option><option value="Pain">Pain</option><option value="Paolo">Paolo</option><option value="Phyga">Phyga</option><option value="Ru">Ru</option><option value="Simo">Simo</option><option value="Sisco">Sisco</option><option value="Ska">Ska</option><option value="nico gym">nico gym</option><option value="nicolo">nicolo</option><option value="ru">ru</option><option value="simone">simone</option>
-                    </select>
-                </div>
                 
-                
-        <div id="player-Andrea" class="player-section" style="display: none;">
+        <div id="player-Andrea" class="player-section">
             <h3>Comandanti di Andrea</h3>
             <table class="dataframe display" id="commanderStats-Andrea">
   <thead>
@@ -919,7 +939,6 @@
       <th>CMC</th>
       <th>Partite</th>
       <th>Vittorie</th>
-      <th>Winrate (%)</th>
     </tr>
   </thead>
   <tbody>
@@ -929,7 +948,6 @@
       <td>8.0</td>
       <td>5</td>
       <td>1</td>
-      <td>20.0</td>
     </tr>
     <tr>
       <td>thalia and the gitrog monster</td>
@@ -937,15 +955,6 @@
       <td>5.0</td>
       <td>3</td>
       <td>0</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <td>tayam, luminous enigma</td>
-      <td>BGW</td>
-      <td>4.0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0.0</td>
     </tr>
     <tr>
       <td>felothar, dawn of the abzan</td>
@@ -953,13 +962,19 @@
       <td>3.0</td>
       <td>1</td>
       <td>0</td>
-      <td>0.0</td>
+    </tr>
+    <tr>
+      <td>tayam, luminous enigma</td>
+      <td>BGW</td>
+      <td>4.0</td>
+      <td>1</td>
+      <td>0</td>
     </tr>
   </tbody>
 </table>
         </div>
         
-        <div id="player-Betto" class="player-section" style="display: none;">
+        <div id="player-Betto" class="player-section">
             <h3>Comandanti di Betto</h3>
             <table class="dataframe display" id="commanderStats-Betto">
   <thead>
@@ -969,7 +984,6 @@
       <th>CMC</th>
       <th>Partite</th>
       <th>Vittorie</th>
-      <th>Winrate (%)</th>
     </tr>
   </thead>
   <tbody>
@@ -979,7 +993,6 @@
       <td>2.0</td>
       <td>4</td>
       <td>1</td>
-      <td>25.0</td>
     </tr>
     <tr>
       <td>koma, cosmos serpent</td>
@@ -987,7 +1000,6 @@
       <td>7.0</td>
       <td>3</td>
       <td>3</td>
-      <td>100.0</td>
     </tr>
     <tr>
       <td>eluge, the shoreless sea</td>
@@ -995,13 +1007,12 @@
       <td>4.0</td>
       <td>1</td>
       <td>0</td>
-      <td>0.0</td>
     </tr>
   </tbody>
 </table>
         </div>
         
-        <div id="player-Claudio" class="player-section" style="display: none;">
+        <div id="player-Claudio" class="player-section">
             <h3>Comandanti di Claudio</h3>
             <table class="dataframe display" id="commanderStats-Claudio">
   <thead>
@@ -1011,7 +1022,6 @@
       <th>CMC</th>
       <th>Partite</th>
       <th>Vittorie</th>
-      <th>Winrate (%)</th>
     </tr>
   </thead>
   <tbody>
@@ -1021,7 +1031,6 @@
       <td>5.0</td>
       <td>31</td>
       <td>6</td>
-      <td>19.35</td>
     </tr>
     <tr>
       <td>satya, aetherflux genius</td>
@@ -1029,7 +1038,6 @@
       <td>4.O</td>
       <td>18</td>
       <td>7</td>
-      <td>38.89</td>
     </tr>
     <tr>
       <td>neyith of the dire hunt</td>
@@ -1037,7 +1045,6 @@
       <td>4.0</td>
       <td>18</td>
       <td>5</td>
-      <td>27.78</td>
     </tr>
     <tr>
       <td>braids, arisen nightmare</td>
@@ -1045,7 +1052,6 @@
       <td>3.0</td>
       <td>17</td>
       <td>3</td>
-      <td>17.65</td>
     </tr>
     <tr>
       <td>teval, the balanced scale</td>
@@ -1053,7 +1059,6 @@
       <td>4.0</td>
       <td>13</td>
       <td>2</td>
-      <td>15.38</td>
     </tr>
     <tr>
       <td>krenko, mob boss</td>
@@ -1061,7 +1066,6 @@
       <td>4.0</td>
       <td>10</td>
       <td>2</td>
-      <td>20.00</td>
     </tr>
     <tr>
       <td>mondrak, glory dominus</td>
@@ -1069,7 +1073,6 @@
       <td>4.0</td>
       <td>8</td>
       <td>3</td>
-      <td>37.50</td>
     </tr>
     <tr>
       <td>zaxara, the exemplary</td>
@@ -1077,7 +1080,6 @@
       <td>4.0</td>
       <td>7</td>
       <td>0</td>
-      <td>0.00</td>
     </tr>
     <tr>
       <td>maccready, lamplight mayor</td>
@@ -1085,7 +1087,6 @@
       <td>2.0</td>
       <td>6</td>
       <td>1</td>
-      <td>16.67</td>
     </tr>
     <tr>
       <td>shirei, shizo's caretaker</td>
@@ -1093,7 +1094,6 @@
       <td>5.0</td>
       <td>5</td>
       <td>1</td>
-      <td>20.00</td>
     </tr>
     <tr>
       <td>astarion, the decadent</td>
@@ -1101,15 +1101,6 @@
       <td>6.0</td>
       <td>4</td>
       <td>1</td>
-      <td>25.00</td>
-    </tr>
-    <tr>
-      <td>wyleth, soul of steel</td>
-      <td>WR</td>
-      <td>3.0</td>
-      <td>3</td>
-      <td>0</td>
-      <td>0.00</td>
     </tr>
     <tr>
       <td>sephiroth, fabled soldier // sephiroth, one-winged angel</td>
@@ -1117,7 +1108,6 @@
       <td>3.0</td>
       <td>3</td>
       <td>2</td>
-      <td>66.67</td>
     </tr>
     <tr>
       <td>animar, soul of elements</td>
@@ -1125,15 +1115,27 @@
       <td>3.0</td>
       <td>3</td>
       <td>1</td>
-      <td>33.33</td>
     </tr>
     <tr>
-      <td>sidisi, brood tyrant</td>
-      <td>BGU</td>
-      <td>4.0</td>
-      <td>2</td>
+      <td>Neyith of the Dire Hunt</td>
+      <td>None</td>
+      <td>None</td>
+      <td>3</td>
       <td>0</td>
-      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>wyleth, soul of steel</td>
+      <td>WR</td>
+      <td>3.0</td>
+      <td>3</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Sephiroth, Fabled SOLDIER // Sephiroth, One-Winged Angel</td>
+      <td>None</td>
+      <td>None</td>
+      <td>2</td>
+      <td>1</td>
     </tr>
     <tr>
       <td>hashaton, scarab's fist</td>
@@ -1141,39 +1143,13 @@
       <td>2.0</td>
       <td>2</td>
       <td>0</td>
-      <td>0.00</td>
     </tr>
     <tr>
-      <td>Neyith of the Dire Hunt</td>
-      <td>None</td>
-      <td>None</td>
+      <td>sidisi, brood tyrant</td>
+      <td>BGU</td>
+      <td>4.0</td>
       <td>2</td>
       <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td>witherbloom apprentice</td>
-      <td>GB</td>
-      <td>2.0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td>krenko, baron of tin street</td>
-      <td>R</td>
-      <td>3.0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td>Sephiroth, Fabled SOLDIER // Sephiroth, One-Winged Angel</td>
-      <td>None</td>
-      <td>None</td>
-      <td>1</td>
-      <td>1</td>
-      <td>100.00</td>
     </tr>
     <tr>
       <td>Animar, Soul of Elements</td>
@@ -1181,13 +1157,26 @@
       <td>None</td>
       <td>1</td>
       <td>0</td>
-      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>krenko, baron of tin street</td>
+      <td>R</td>
+      <td>3.0</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>witherbloom apprentice</td>
+      <td>GB</td>
+      <td>2.0</td>
+      <td>1</td>
+      <td>0</td>
     </tr>
   </tbody>
 </table>
         </div>
         
-        <div id="player-Daniele" class="player-section" style="display: none;">
+        <div id="player-Daniele" class="player-section">
             <h3>Comandanti di Daniele</h3>
             <table class="dataframe display" id="commanderStats-Daniele">
   <thead>
@@ -1197,7 +1186,6 @@
       <th>CMC</th>
       <th>Partite</th>
       <th>Vittorie</th>
-      <th>Winrate (%)</th>
     </tr>
   </thead>
   <tbody>
@@ -1207,13 +1195,12 @@
       <td>4.O</td>
       <td>9</td>
       <td>2</td>
-      <td>22.22</td>
     </tr>
   </tbody>
 </table>
         </div>
         
-        <div id="player-Davide" class="player-section" style="display: none;">
+        <div id="player-Davide" class="player-section">
             <h3>Comandanti di Davide</h3>
             <table class="dataframe display" id="commanderStats-Davide">
   <thead>
@@ -1223,7 +1210,6 @@
       <th>CMC</th>
       <th>Partite</th>
       <th>Vittorie</th>
-      <th>Winrate (%)</th>
     </tr>
   </thead>
   <tbody>
@@ -1233,15 +1219,6 @@
       <td>5.0</td>
       <td>2</td>
       <td>0</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <td>satya, aetherflux genius</td>
-      <td>URW</td>
-      <td>4.O</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0.0</td>
     </tr>
     <tr>
       <td>clavileño, first of the blessed</td>
@@ -1249,13 +1226,19 @@
       <td>3.0</td>
       <td>1</td>
       <td>0</td>
-      <td>0.0</td>
+    </tr>
+    <tr>
+      <td>satya, aetherflux genius</td>
+      <td>URW</td>
+      <td>4.O</td>
+      <td>1</td>
+      <td>0</td>
     </tr>
   </tbody>
 </table>
         </div>
         
-        <div id="player-Don" class="player-section" style="display: none;">
+        <div id="player-Don" class="player-section">
             <h3>Comandanti di Don</h3>
             <table class="dataframe display" id="commanderStats-Don">
   <thead>
@@ -1265,7 +1248,6 @@
       <th>CMC</th>
       <th>Partite</th>
       <th>Vittorie</th>
-      <th>Winrate (%)</th>
     </tr>
   </thead>
   <tbody>
@@ -1275,7 +1257,6 @@
       <td>8.0</td>
       <td>23</td>
       <td>13</td>
-      <td>56.52</td>
     </tr>
     <tr>
       <td>the scarab god</td>
@@ -1283,15 +1264,6 @@
       <td>5.0</td>
       <td>13</td>
       <td>8</td>
-      <td>61.54</td>
-    </tr>
-    <tr>
-      <td>eluge, the shoreless sea</td>
-      <td>U</td>
-      <td>4.0</td>
-      <td>13</td>
-      <td>4</td>
-      <td>30.77</td>
     </tr>
     <tr>
       <td>edgar markov</td>
@@ -1299,7 +1271,13 @@
       <td>6.0</td>
       <td>13</td>
       <td>4</td>
-      <td>30.77</td>
+    </tr>
+    <tr>
+      <td>eluge, the shoreless sea</td>
+      <td>U</td>
+      <td>4.0</td>
+      <td>13</td>
+      <td>4</td>
     </tr>
     <tr>
       <td>hashaton, scarab's fist</td>
@@ -1307,31 +1285,6 @@
       <td>2.0</td>
       <td>12</td>
       <td>4</td>
-      <td>33.33</td>
-    </tr>
-    <tr>
-      <td>toski, bearer of secrets</td>
-      <td>G</td>
-      <td>4.0</td>
-      <td>11</td>
-      <td>2</td>
-      <td>18.18</td>
-    </tr>
-    <tr>
-      <td>nahiri, forged in fury</td>
-      <td>RW</td>
-      <td>4.0</td>
-      <td>11</td>
-      <td>3</td>
-      <td>27.27</td>
-    </tr>
-    <tr>
-      <td>hakbal of the surging soul</td>
-      <td>GU</td>
-      <td>4.0</td>
-      <td>11</td>
-      <td>3</td>
-      <td>27.27</td>
     </tr>
     <tr>
       <td>caesar, legion's emperor</td>
@@ -1339,7 +1292,27 @@
       <td>4.0</td>
       <td>11</td>
       <td>3</td>
-      <td>27.27</td>
+    </tr>
+    <tr>
+      <td>hakbal of the surging soul</td>
+      <td>GU</td>
+      <td>4.0</td>
+      <td>11</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>nahiri, forged in fury</td>
+      <td>RW</td>
+      <td>4.0</td>
+      <td>11</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>toski, bearer of secrets</td>
+      <td>G</td>
+      <td>4.0</td>
+      <td>11</td>
+      <td>2</td>
     </tr>
     <tr>
       <td>karametra, god of harvests</td>
@@ -1347,7 +1320,6 @@
       <td>5.0</td>
       <td>10</td>
       <td>5</td>
-      <td>50.00</td>
     </tr>
     <tr>
       <td>chiss-goria, forge tyrant</td>
@@ -1355,7 +1327,6 @@
       <td>9.0</td>
       <td>8</td>
       <td>2</td>
-      <td>25.00</td>
     </tr>
     <tr>
       <td>voja, jaws of the conclave</td>
@@ -1363,7 +1334,6 @@
       <td>5.0</td>
       <td>7</td>
       <td>3</td>
-      <td>42.86</td>
     </tr>
     <tr>
       <td>ivy, gleeful spellthief</td>
@@ -1371,7 +1341,6 @@
       <td>2.0</td>
       <td>7</td>
       <td>1</td>
-      <td>14.29</td>
     </tr>
     <tr>
       <td>prosper, tome-bound</td>
@@ -1379,7 +1348,6 @@
       <td>4.0</td>
       <td>6</td>
       <td>3</td>
-      <td>50.00</td>
     </tr>
     <tr>
       <td>breena, the demagogue</td>
@@ -1387,15 +1355,13 @@
       <td>3.0</td>
       <td>6</td>
       <td>1</td>
-      <td>16.67</td>
     </tr>
     <tr>
-      <td>kynaios and tiro of meletis</td>
-      <td>RGWU</td>
-      <td>4.0</td>
+      <td>Shadow the Hedgehog</td>
+      <td>None</td>
+      <td>NaN</td>
       <td>4</td>
-      <td>0</td>
-      <td>0.00</td>
+      <td>3</td>
     </tr>
     <tr>
       <td>flubs, the fool</td>
@@ -1403,7 +1369,20 @@
       <td>3.0</td>
       <td>4</td>
       <td>2</td>
-      <td>50.00</td>
+    </tr>
+    <tr>
+      <td>kynaios and tiro of meletis</td>
+      <td>RGWU</td>
+      <td>4.0</td>
+      <td>4</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Maelstrom Wanderer</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>3</td>
+      <td>1</td>
     </tr>
     <tr>
       <td>rendmaw, creaking nest</td>
@@ -1411,7 +1390,6 @@
       <td>5.0</td>
       <td>3</td>
       <td>1</td>
-      <td>33.33</td>
     </tr>
     <tr>
       <td>kykar, wind's fury</td>
@@ -1419,15 +1397,55 @@
       <td>4.0</td>
       <td>2</td>
       <td>0</td>
-      <td>0.00</td>
     </tr>
     <tr>
-      <td>dogmeat, ever loyal</td>
-      <td>GRW</td>
-      <td>3.0</td>
+      <td>Breena, the Demagogue</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>Eluge, the Shoreless Sea</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>Hakbal of the Surging Soul</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>Chiss-Goria, Forge Tyrant</td>
+      <td>None</td>
+      <td>NaN</td>
       <td>1</td>
       <td>0</td>
-      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>Karametra, God of Harvests</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Prosper, Tome-Bound</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Voja, Jaws of the Conclave</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>1</td>
+      <td>0</td>
     </tr>
     <tr>
       <td>delney, streetwise lookout</td>
@@ -1435,13 +1453,19 @@
       <td>3.0</td>
       <td>1</td>
       <td>0</td>
-      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>dogmeat, ever loyal</td>
+      <td>GRW</td>
+      <td>3.0</td>
+      <td>1</td>
+      <td>0</td>
     </tr>
   </tbody>
 </table>
         </div>
         
-        <div id="player-Edoardo" class="player-section" style="display: none;">
+        <div id="player-Edoardo" class="player-section">
             <h3>Comandanti di Edoardo</h3>
             <table class="dataframe display" id="commanderStats-Edoardo">
   <thead>
@@ -1451,7 +1475,6 @@
       <th>CMC</th>
       <th>Partite</th>
       <th>Vittorie</th>
-      <th>Winrate (%)</th>
     </tr>
   </thead>
   <tbody>
@@ -1461,7 +1484,6 @@
       <td>5.0</td>
       <td>2</td>
       <td>0</td>
-      <td>0.0</td>
     </tr>
     <tr>
       <td>odric, lunarch marshal</td>
@@ -1469,13 +1491,12 @@
       <td>4.0</td>
       <td>1</td>
       <td>0</td>
-      <td>0.0</td>
     </tr>
   </tbody>
 </table>
         </div>
         
-        <div id="player-Ema" class="player-section" style="display: none;">
+        <div id="player-Ema" class="player-section">
             <h3>Comandanti di Ema</h3>
             <table class="dataframe display" id="commanderStats-Ema">
   <thead>
@@ -1485,7 +1506,6 @@
       <th>CMC</th>
       <th>Partite</th>
       <th>Vittorie</th>
-      <th>Winrate (%)</th>
     </tr>
   </thead>
   <tbody>
@@ -1495,13 +1515,12 @@
       <td>5.0</td>
       <td>1</td>
       <td>0</td>
-      <td>0.0</td>
     </tr>
   </tbody>
 </table>
         </div>
         
-        <div id="player-Emi" class="player-section" style="display: none;">
+        <div id="player-Emi" class="player-section">
             <h3>Comandanti di Emi</h3>
             <table class="dataframe display" id="commanderStats-Emi">
   <thead>
@@ -1511,7 +1530,6 @@
       <th>CMC</th>
       <th>Partite</th>
       <th>Vittorie</th>
-      <th>Winrate (%)</th>
     </tr>
   </thead>
   <tbody>
@@ -1521,7 +1539,6 @@
       <td>5.0</td>
       <td>18</td>
       <td>10</td>
-      <td>55.56</td>
     </tr>
     <tr>
       <td>bonny pall, clearcutter</td>
@@ -1529,7 +1546,6 @@
       <td>6.0</td>
       <td>16</td>
       <td>9</td>
-      <td>56.25</td>
     </tr>
     <tr>
       <td>tegwyll, duke of splendor</td>
@@ -1537,15 +1553,6 @@
       <td>3.0</td>
       <td>11</td>
       <td>4</td>
-      <td>36.36</td>
-    </tr>
-    <tr>
-      <td>éowyn, shieldmaiden</td>
-      <td>URW</td>
-      <td>5.0</td>
-      <td>10</td>
-      <td>3</td>
-      <td>30.00</td>
     </tr>
     <tr>
       <td>vraska, the silencer</td>
@@ -1553,7 +1560,6 @@
       <td>3.0</td>
       <td>10</td>
       <td>4</td>
-      <td>40.00</td>
     </tr>
     <tr>
       <td>muerra, trash tactician</td>
@@ -1561,15 +1567,13 @@
       <td>3.0</td>
       <td>10</td>
       <td>3</td>
-      <td>30.00</td>
     </tr>
     <tr>
-      <td>pantlaza, sun-favored</td>
-      <td>RGW</td>
+      <td>éowyn, shieldmaiden</td>
+      <td>URW</td>
       <td>5.0</td>
-      <td>8</td>
-      <td>2</td>
-      <td>25.00</td>
+      <td>10</td>
+      <td>3</td>
     </tr>
     <tr>
       <td>gisa, the hellraiser</td>
@@ -1577,7 +1581,13 @@
       <td>5.0</td>
       <td>8</td>
       <td>3</td>
-      <td>37.50</td>
+    </tr>
+    <tr>
+      <td>pantlaza, sun-favored</td>
+      <td>RGW</td>
+      <td>5.0</td>
+      <td>8</td>
+      <td>2</td>
     </tr>
     <tr>
       <td>zimone and dina</td>
@@ -1585,7 +1595,6 @@
       <td>3.0</td>
       <td>7</td>
       <td>5</td>
-      <td>71.43</td>
     </tr>
     <tr>
       <td>talion, the kindly lord</td>
@@ -1593,15 +1602,6 @@
       <td>4.0</td>
       <td>7</td>
       <td>2</td>
-      <td>28.57</td>
-    </tr>
-    <tr>
-      <td>satoru, the infiltrator</td>
-      <td>{U}{B}</td>
-      <td>2.0</td>
-      <td>6</td>
-      <td>1</td>
-      <td>16.67</td>
     </tr>
     <tr>
       <td>dragonhawk, fate's tempest</td>
@@ -1609,7 +1609,27 @@
       <td>5.0</td>
       <td>6</td>
       <td>2</td>
-      <td>33.33</td>
+    </tr>
+    <tr>
+      <td>satoru, the infiltrator</td>
+      <td>{U}{B}</td>
+      <td>2.0</td>
+      <td>6</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>Talion, the Kindly Lord</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>4</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>Éowyn, Shieldmaiden</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>4</td>
+      <td>1</td>
     </tr>
     <tr>
       <td>pippin, warden of isengard</td>
@@ -1617,15 +1637,20 @@
       <td>2.0</td>
       <td>3</td>
       <td>0</td>
-      <td>0.00</td>
     </tr>
     <tr>
-      <td>merry, warden of isengard</td>
-      <td>GW</td>
-      <td>3.0</td>
+      <td>Bonny Pall, Clearcutter</td>
+      <td>None</td>
+      <td>NaN</td>
       <td>2</td>
       <td>0</td>
-      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>Rakdos, the Muscle</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>2</td>
+      <td>0</td>
     </tr>
     <tr>
       <td>aminatou, veil piercer</td>
@@ -1633,7 +1658,20 @@
       <td>4.0</td>
       <td>2</td>
       <td>0</td>
-      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>merry, warden of isengard</td>
+      <td>GW</td>
+      <td>3.0</td>
+      <td>2</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Pantlaza, Sun-Favored</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>1</td>
+      <td>0</td>
     </tr>
     <tr>
       <td>zur the enchanter</td>
@@ -1641,13 +1679,12 @@
       <td>4.0</td>
       <td>1</td>
       <td>0</td>
-      <td>0.00</td>
     </tr>
   </tbody>
 </table>
         </div>
         
-        <div id="player-Enrico" class="player-section" style="display: none;">
+        <div id="player-Enrico" class="player-section">
             <h3>Comandanti di Enrico</h3>
             <table class="dataframe display" id="commanderStats-Enrico">
   <thead>
@@ -1657,7 +1694,6 @@
       <th>CMC</th>
       <th>Partite</th>
       <th>Vittorie</th>
-      <th>Winrate (%)</th>
     </tr>
   </thead>
   <tbody>
@@ -1667,7 +1703,6 @@
       <td>7.0</td>
       <td>2</td>
       <td>0</td>
-      <td>0.0</td>
     </tr>
     <tr>
       <td>xenagos, god of revels</td>
@@ -1675,13 +1710,12 @@
       <td>5.0</td>
       <td>1</td>
       <td>0</td>
-      <td>0.0</td>
     </tr>
   </tbody>
 </table>
         </div>
         
-        <div id="player-Ettore" class="player-section" style="display: none;">
+        <div id="player-Ettore" class="player-section">
             <h3>Comandanti di Ettore</h3>
             <table class="dataframe display" id="commanderStats-Ettore">
   <thead>
@@ -1691,7 +1725,6 @@
       <th>CMC</th>
       <th>Partite</th>
       <th>Vittorie</th>
-      <th>Winrate (%)</th>
     </tr>
   </thead>
   <tbody>
@@ -1701,7 +1734,6 @@
       <td>4.0</td>
       <td>11</td>
       <td>0</td>
-      <td>0.00</td>
     </tr>
     <tr>
       <td>marchesa, dealer of death</td>
@@ -1709,23 +1741,6 @@
       <td>3.0</td>
       <td>9</td>
       <td>5</td>
-      <td>55.56</td>
-    </tr>
-    <tr>
-      <td>the necrobloom</td>
-      <td>BGW</td>
-      <td>4.0</td>
-      <td>8</td>
-      <td>2</td>
-      <td>25.00</td>
-    </tr>
-    <tr>
-      <td>eshki, temur's roar</td>
-      <td>GRU</td>
-      <td>3.0</td>
-      <td>8</td>
-      <td>2</td>
-      <td>25.00</td>
     </tr>
     <tr>
       <td>arna kennerüd, skycaptain</td>
@@ -1733,7 +1748,20 @@
       <td>5.0</td>
       <td>8</td>
       <td>2</td>
-      <td>25.00</td>
+    </tr>
+    <tr>
+      <td>eshki, temur's roar</td>
+      <td>GRU</td>
+      <td>3.0</td>
+      <td>8</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>the necrobloom</td>
+      <td>BGW</td>
+      <td>4.0</td>
+      <td>8</td>
+      <td>2</td>
     </tr>
     <tr>
       <td>ognis, the dragon's lash</td>
@@ -1741,15 +1769,6 @@
       <td>4.0</td>
       <td>7</td>
       <td>1</td>
-      <td>14.29</td>
-    </tr>
-    <tr>
-      <td>zur, eternal schemer</td>
-      <td>WUB</td>
-      <td>3.0</td>
-      <td>6</td>
-      <td>0</td>
-      <td>0.00</td>
     </tr>
     <tr>
       <td>raphael, fiendish savior</td>
@@ -1757,47 +1776,13 @@
       <td>5.0</td>
       <td>6</td>
       <td>0</td>
-      <td>0.00</td>
     </tr>
     <tr>
-      <td>ureni of the unwritten</td>
-      <td>GRU</td>
-      <td>7.0</td>
-      <td>5</td>
-      <td>2</td>
-      <td>40.00</td>
-    </tr>
-    <tr>
-      <td>shalai and hallar</td>
-      <td>RGW</td>
-      <td>4.0</td>
-      <td>5</td>
-      <td>1</td>
-      <td>20.00</td>
-    </tr>
-    <tr>
-      <td>samut, vizier of naktamun</td>
-      <td>GR</td>
+      <td>zur, eternal schemer</td>
+      <td>WUB</td>
       <td>3.0</td>
-      <td>5</td>
+      <td>6</td>
       <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td>lae'zel, vlaakith's champion</td>
-      <td>W</td>
-      <td>3.0</td>
-      <td>5</td>
-      <td>2</td>
-      <td>40.00</td>
-    </tr>
-    <tr>
-      <td>king macar, the gold-cursed</td>
-      <td>B</td>
-      <td>4.0</td>
-      <td>5</td>
-      <td>0</td>
-      <td>0.00</td>
     </tr>
     <tr>
       <td>ghave, guru of spores</td>
@@ -1805,15 +1790,27 @@
       <td>5.0</td>
       <td>5</td>
       <td>4</td>
-      <td>80.00</td>
     </tr>
     <tr>
-      <td>gandalf of the secret fire</td>
-      <td>URW</td>
+      <td>lae'zel, vlaakith's champion</td>
+      <td>W</td>
+      <td>3.0</td>
+      <td>5</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>ureni of the unwritten</td>
+      <td>GRU</td>
+      <td>7.0</td>
+      <td>5</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>shalai and hallar</td>
+      <td>RGW</td>
       <td>4.0</td>
       <td>5</td>
-      <td>0</td>
-      <td>0.00</td>
+      <td>1</td>
     </tr>
     <tr>
       <td>aegar, the freezing flame</td>
@@ -1821,15 +1818,27 @@
       <td>3.0</td>
       <td>5</td>
       <td>0</td>
-      <td>0.00</td>
     </tr>
     <tr>
-      <td>neriv, crackling vanguard</td>
-      <td>BRW</td>
-      <td>5.0</td>
-      <td>4</td>
+      <td>gandalf of the secret fire</td>
+      <td>URW</td>
+      <td>4.0</td>
+      <td>5</td>
       <td>0</td>
-      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>king macar, the gold-cursed</td>
+      <td>B</td>
+      <td>4.0</td>
+      <td>5</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>samut, vizier of naktamun</td>
+      <td>GR</td>
+      <td>3.0</td>
+      <td>5</td>
+      <td>0</td>
     </tr>
     <tr>
       <td>gavi, nest warden</td>
@@ -1837,7 +1846,6 @@
       <td>5.0</td>
       <td>4</td>
       <td>3</td>
-      <td>75.00</td>
     </tr>
     <tr>
       <td>codie, vociferous codex</td>
@@ -1845,7 +1853,6 @@
       <td>3.0</td>
       <td>4</td>
       <td>2</td>
-      <td>50.00</td>
     </tr>
     <tr>
       <td>aragorn, hornburg hero</td>
@@ -1853,55 +1860,13 @@
       <td>4.0</td>
       <td>4</td>
       <td>1</td>
-      <td>25.00</td>
     </tr>
     <tr>
-      <td>zurgo stormrender</td>
+      <td>neriv, crackling vanguard</td>
       <td>BRW</td>
-      <td>3.0</td>
-      <td>3</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td>ziatora, the incinerator</td>
-      <td>BGR</td>
-      <td>6.0</td>
-      <td>3</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td>yarok, the desecrated</td>
-      <td>BGU</td>
       <td>5.0</td>
-      <td>3</td>
-      <td>1</td>
-      <td>33.33</td>
-    </tr>
-    <tr>
-      <td>vannifar, evolved enigma</td>
-      <td>GU</td>
-      <td>4.0</td>
-      <td>3</td>
+      <td>4</td>
       <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td>sovereign okinec ahau</td>
-      <td>GW</td>
-      <td>4.0</td>
-      <td>3</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td>feather, radiant arbiter</td>
-      <td>RW</td>
-      <td>3.0</td>
-      <td>3</td>
-      <td>1</td>
-      <td>33.33</td>
     </tr>
     <tr>
       <td>brudiclad, telchor engineer</td>
@@ -1909,23 +1874,48 @@
       <td>6.0</td>
       <td>3</td>
       <td>1</td>
-      <td>33.33</td>
     </tr>
     <tr>
-      <td>shanna, purifying blade</td>
-      <td>GUW</td>
+      <td>feather, radiant arbiter</td>
+      <td>RW</td>
       <td>3.0</td>
-      <td>2</td>
-      <td>0</td>
-      <td>0.00</td>
+      <td>3</td>
+      <td>1</td>
     </tr>
     <tr>
-      <td>alesha, who smiles at death</td>
-      <td>R</td>
-      <td>3.0</td>
-      <td>2</td>
+      <td>yarok, the desecrated</td>
+      <td>BGU</td>
+      <td>5.0</td>
+      <td>3</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>sovereign okinec ahau</td>
+      <td>GW</td>
+      <td>4.0</td>
+      <td>3</td>
       <td>0</td>
-      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>vannifar, evolved enigma</td>
+      <td>GU</td>
+      <td>4.0</td>
+      <td>3</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>ziatora, the incinerator</td>
+      <td>BGR</td>
+      <td>6.0</td>
+      <td>3</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>zurgo stormrender</td>
+      <td>BRW</td>
+      <td>3.0</td>
+      <td>3</td>
+      <td>0</td>
     </tr>
     <tr>
       <td>Zurgo Stormrender</td>
@@ -1933,7 +1923,6 @@
       <td>NaN</td>
       <td>2</td>
       <td>2</td>
-      <td>100.00</td>
     </tr>
     <tr>
       <td>Lazav, Familiar Stranger</td>
@@ -1941,39 +1930,41 @@
       <td>NaN</td>
       <td>2</td>
       <td>0</td>
-      <td>0.00</td>
     </tr>
     <tr>
-      <td>oswald fiddlebender</td>
-      <td>W</td>
-      <td>2.0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td>lazav, wearer of faces</td>
-      <td>BU</td>
-      <td>2.0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td>lazav, familiar stranger</td>
-      <td>BU</td>
+      <td>alesha, who smiles at death</td>
+      <td>R</td>
       <td>3.0</td>
-      <td>1</td>
+      <td>2</td>
       <td>0</td>
-      <td>0.00</td>
     </tr>
     <tr>
-      <td>lae’zel, vlaakith's champion</td>
-      <td>W</td>
+      <td>shanna, purifying blade</td>
+      <td>GUW</td>
       <td>3.0</td>
+      <td>2</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Shalai and Hallar</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>Gandalf of the Secret Fire</td>
+      <td>None</td>
+      <td>NaN</td>
       <td>1</td>
       <td>0</td>
-      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>Zur, Eternal Schemer</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>1</td>
+      <td>0</td>
     </tr>
     <tr>
       <td>bane, lord of darkness</td>
@@ -1981,13 +1972,64 @@
       <td>4.0</td>
       <td>1</td>
       <td>0</td>
-      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>lae’zel, vlaakith's champion</td>
+      <td>W</td>
+      <td>3.0</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>lazav, familiar stranger</td>
+      <td>BU</td>
+      <td>3.0</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>lazav, wearer of faces</td>
+      <td>BU</td>
+      <td>2.0</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>oswald fiddlebender</td>
+      <td>W</td>
+      <td>2.0</td>
+      <td>1</td>
+      <td>0</td>
     </tr>
   </tbody>
 </table>
         </div>
         
-        <div id="player-Gabriele" class="player-section" style="display: none;">
+        <div id="player-Fonsat" class="player-section">
+            <h3>Comandanti di Fonsat</h3>
+            <table class="dataframe display" id="commanderStats-Fonsat">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Comandante</th>
+      <th>Colori</th>
+      <th>CMC</th>
+      <th>Partite</th>
+      <th>Vittorie</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Chishiro, the Shattered Blade</td>
+      <td>None</td>
+      <td>None</td>
+      <td>2</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+        </div>
+        
+        <div id="player-Gabriele" class="player-section">
             <h3>Comandanti di Gabriele</h3>
             <table class="dataframe display" id="commanderStats-Gabriele">
   <thead>
@@ -1997,7 +2039,6 @@
       <th>CMC</th>
       <th>Partite</th>
       <th>Vittorie</th>
-      <th>Winrate (%)</th>
     </tr>
   </thead>
   <tbody>
@@ -2007,7 +2048,6 @@
       <td>3.0</td>
       <td>2</td>
       <td>0</td>
-      <td>0.0</td>
     </tr>
     <tr>
       <td>xyris, the writhing storm</td>
@@ -2015,13 +2055,12 @@
       <td>5.0</td>
       <td>1</td>
       <td>1</td>
-      <td>100.0</td>
     </tr>
   </tbody>
 </table>
         </div>
         
-        <div id="player-Giulia" class="player-section" style="display: none;">
+        <div id="player-Giulia" class="player-section">
             <h3>Comandanti di Giulia</h3>
             <table class="dataframe display" id="commanderStats-Giulia">
   <thead>
@@ -2031,7 +2070,6 @@
       <th>CMC</th>
       <th>Partite</th>
       <th>Vittorie</th>
-      <th>Winrate (%)</th>
     </tr>
   </thead>
   <tbody>
@@ -2041,7 +2079,6 @@
       <td>4.0</td>
       <td>17</td>
       <td>2</td>
-      <td>11.76</td>
     </tr>
     <tr>
       <td>ms. bumbleflower</td>
@@ -2049,7 +2086,6 @@
       <td>4.0</td>
       <td>10</td>
       <td>1</td>
-      <td>10.00</td>
     </tr>
     <tr>
       <td>atraxa, praetors' voice</td>
@@ -2057,7 +2093,6 @@
       <td>4.0</td>
       <td>7</td>
       <td>1</td>
-      <td>14.29</td>
     </tr>
     <tr>
       <td>atraxa, praetors’ voice</td>
@@ -2065,7 +2100,27 @@
       <td>4.0</td>
       <td>3</td>
       <td>0</td>
-      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>Atraxa, Praetors' Voice</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Davros, Dalek Creator</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Ms. Bumbleflower</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>1</td>
+      <td>0</td>
     </tr>
     <tr>
       <td>atraxa, grand unifier</td>
@@ -2073,13 +2128,12 @@
       <td>7.0</td>
       <td>1</td>
       <td>0</td>
-      <td>0.00</td>
     </tr>
   </tbody>
 </table>
         </div>
         
-        <div id="player-Gymbro" class="player-section" style="display: none;">
+        <div id="player-Gymbro" class="player-section">
             <h3>Comandanti di Gymbro</h3>
             <table class="dataframe display" id="commanderStats-Gymbro">
   <thead>
@@ -2089,7 +2143,6 @@
       <th>CMC</th>
       <th>Partite</th>
       <th>Vittorie</th>
-      <th>Winrate (%)</th>
     </tr>
   </thead>
   <tbody>
@@ -2099,7 +2152,6 @@
       <td>5.0</td>
       <td>24</td>
       <td>10</td>
-      <td>41.67</td>
     </tr>
     <tr>
       <td>mahadi, emporium master</td>
@@ -2107,7 +2159,6 @@
       <td>3.0</td>
       <td>18</td>
       <td>7</td>
-      <td>38.89</td>
     </tr>
     <tr>
       <td>kotis, the fangkeeper</td>
@@ -2115,7 +2166,6 @@
       <td>4.0</td>
       <td>17</td>
       <td>6</td>
-      <td>35.29</td>
     </tr>
     <tr>
       <td>valgavoth, harrower of souls</td>
@@ -2123,7 +2173,6 @@
       <td>4.0</td>
       <td>16</td>
       <td>4</td>
-      <td>25.00</td>
     </tr>
     <tr>
       <td>rocco, cabaretti caterer</td>
@@ -2131,7 +2180,6 @@
       <td>3.0</td>
       <td>14</td>
       <td>7</td>
-      <td>50.00</td>
     </tr>
     <tr>
       <td>varina, lich queen</td>
@@ -2139,7 +2187,6 @@
       <td>4.0</td>
       <td>11</td>
       <td>5</td>
-      <td>45.45</td>
     </tr>
     <tr>
       <td>Frodo, Adventurous Hobbit // Sam, Loyal Attendant</td>
@@ -2147,7 +2194,6 @@
       <td>2.0</td>
       <td>9</td>
       <td>5</td>
-      <td>55.56</td>
     </tr>
     <tr>
       <td>urza, chief artificer</td>
@@ -2155,15 +2201,6 @@
       <td>6.0</td>
       <td>7</td>
       <td>4</td>
-      <td>57.14</td>
-    </tr>
-    <tr>
-      <td>zhulodok, void gorger</td>
-      <td>C</td>
-      <td>6.0</td>
-      <td>6</td>
-      <td>1</td>
-      <td>16.67</td>
     </tr>
     <tr>
       <td>saruman, the white hand</td>
@@ -2171,15 +2208,13 @@
       <td>4.0</td>
       <td>6</td>
       <td>1</td>
-      <td>16.67</td>
     </tr>
     <tr>
-      <td>helga, skittish seer</td>
-      <td>GUW</td>
-      <td>3.0</td>
-      <td>5</td>
+      <td>zhulodok, void gorger</td>
+      <td>C</td>
+      <td>6.0</td>
+      <td>6</td>
       <td>1</td>
-      <td>20.00</td>
     </tr>
     <tr>
       <td>felothar the steadfast</td>
@@ -2187,15 +2222,20 @@
       <td>4.0</td>
       <td>5</td>
       <td>2</td>
-      <td>40.00</td>
     </tr>
     <tr>
-      <td>urza, lord high artificer</td>
-      <td>U</td>
-      <td>4.0</td>
+      <td>helga, skittish seer</td>
+      <td>GUW</td>
+      <td>3.0</td>
+      <td>5</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>Riku of Two Reflections</td>
+      <td>None</td>
+      <td>NaN</td>
       <td>3</td>
-      <td>0</td>
-      <td>0.00</td>
+      <td>1</td>
     </tr>
     <tr>
       <td>hope estheim</td>
@@ -2203,15 +2243,6 @@
       <td>2.0</td>
       <td>3</td>
       <td>1</td>
-      <td>33.33</td>
-    </tr>
-    <tr>
-      <td>frodo, adventurous hobbit</td>
-      <td>BW</td>
-      <td>2.0</td>
-      <td>3</td>
-      <td>0</td>
-      <td>0.00</td>
     </tr>
     <tr>
       <td>felothar, dawn of the abzan</td>
@@ -2219,7 +2250,41 @@
       <td>3.0</td>
       <td>3</td>
       <td>0</td>
-      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>frodo, adventurous hobbit</td>
+      <td>BW</td>
+      <td>2.0</td>
+      <td>3</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>urza, lord high artificer</td>
+      <td>U</td>
+      <td>4.0</td>
+      <td>3</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Hope Estheim</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>2</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>Frodo, Adventurous Hobbit</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>2</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>Valgavoth, Harrower of Souls</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>2</td>
+      <td>1</td>
     </tr>
     <tr>
       <td>sam, loyal attendant</td>
@@ -2227,23 +2292,13 @@
       <td>3.0</td>
       <td>2</td>
       <td>1</td>
-      <td>50.00</td>
     </tr>
     <tr>
-      <td>temmet, vizier of naktamun</td>
-      <td>UW</td>
-      <td>2.0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td>riku of many paths</td>
-      <td>GRU</td>
-      <td>3.0</td>
+      <td>Helga, Skittish Seer</td>
+      <td>None</td>
+      <td>NaN</td>
       <td>1</td>
       <td>1</td>
-      <td>100.00</td>
     </tr>
     <tr>
       <td>abdel adrian, gorion's ward</td>
@@ -2251,13 +2306,33 @@
       <td>4.0</td>
       <td>1</td>
       <td>1</td>
-      <td>100.00</td>
+    </tr>
+    <tr>
+      <td>riku of many paths</td>
+      <td>GRU</td>
+      <td>3.0</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>Kotis, the Fangkeeper</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>temmet, vizier of naktamun</td>
+      <td>UW</td>
+      <td>2.0</td>
+      <td>1</td>
+      <td>0</td>
     </tr>
   </tbody>
 </table>
         </div>
         
-        <div id="player-Jappy" class="player-section" style="display: none;">
+        <div id="player-Jappy" class="player-section">
             <h3>Comandanti di Jappy</h3>
             <table class="dataframe display" id="commanderStats-Jappy">
   <thead>
@@ -2267,7 +2342,6 @@
       <th>CMC</th>
       <th>Partite</th>
       <th>Vittorie</th>
-      <th>Winrate (%)</th>
     </tr>
   </thead>
   <tbody>
@@ -2277,7 +2351,6 @@
       <td>3.0</td>
       <td>15</td>
       <td>6</td>
-      <td>40.00</td>
     </tr>
     <tr>
       <td>baylen, the haymaker</td>
@@ -2285,7 +2358,6 @@
       <td>3.0</td>
       <td>13</td>
       <td>2</td>
-      <td>15.38</td>
     </tr>
     <tr>
       <td>roxanne, starfall savant</td>
@@ -2293,7 +2365,6 @@
       <td>5.0</td>
       <td>12</td>
       <td>7</td>
-      <td>58.33</td>
     </tr>
     <tr>
       <td>doran, the siege tower</td>
@@ -2301,15 +2372,6 @@
       <td>3.0</td>
       <td>10</td>
       <td>2</td>
-      <td>20.00</td>
-    </tr>
-    <tr>
-      <td>goro-goro and satoru</td>
-      <td>UBR</td>
-      <td>3.0</td>
-      <td>9</td>
-      <td>1</td>
-      <td>11.11</td>
     </tr>
     <tr>
       <td>captain n'ghathrod</td>
@@ -2317,7 +2379,13 @@
       <td>5.0</td>
       <td>9</td>
       <td>1</td>
-      <td>11.11</td>
+    </tr>
+    <tr>
+      <td>goro-goro and satoru</td>
+      <td>UBR</td>
+      <td>3.0</td>
+      <td>9</td>
+      <td>1</td>
     </tr>
     <tr>
       <td>nine-fingers keene</td>
@@ -2325,15 +2393,6 @@
       <td>4.0</td>
       <td>8</td>
       <td>4</td>
-      <td>50.00</td>
-    </tr>
-    <tr>
-      <td>valgavoth, terror eater</td>
-      <td>B</td>
-      <td>9.0</td>
-      <td>5</td>
-      <td>0</td>
-      <td>0.00</td>
     </tr>
     <tr>
       <td>sigarda, host of herons</td>
@@ -2341,15 +2400,13 @@
       <td>5.0</td>
       <td>5</td>
       <td>2</td>
-      <td>40.00</td>
     </tr>
     <tr>
-      <td>extus, oriq overlord // awaken the blood avatar</td>
-      <td>BRW</td>
-      <td>4.0</td>
-      <td>1</td>
+      <td>valgavoth, terror eater</td>
+      <td>B</td>
+      <td>9.0</td>
+      <td>5</td>
       <td>0</td>
-      <td>0.00</td>
     </tr>
     <tr>
       <td>eriette of the charmed apple</td>
@@ -2357,13 +2414,19 @@
       <td>3.0</td>
       <td>1</td>
       <td>0</td>
-      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>extus, oriq overlord // awaken the blood avatar</td>
+      <td>BRW</td>
+      <td>4.0</td>
+      <td>1</td>
+      <td>0</td>
     </tr>
   </tbody>
 </table>
         </div>
         
-        <div id="player-Lore" class="player-section" style="display: none;">
+        <div id="player-Lore" class="player-section">
             <h3>Comandanti di Lore</h3>
             <table class="dataframe display" id="commanderStats-Lore">
   <thead>
@@ -2373,7 +2436,6 @@
       <th>CMC</th>
       <th>Partite</th>
       <th>Vittorie</th>
-      <th>Winrate (%)</th>
     </tr>
   </thead>
   <tbody>
@@ -2383,13 +2445,12 @@
       <td>5.0</td>
       <td>1</td>
       <td>1</td>
-      <td>100.0</td>
     </tr>
   </tbody>
 </table>
         </div>
         
-        <div id="player-Luca" class="player-section" style="display: none;">
+        <div id="player-Luca" class="player-section">
             <h3>Comandanti di Luca</h3>
             <table class="dataframe display" id="commanderStats-Luca">
   <thead>
@@ -2399,7 +2460,6 @@
       <th>CMC</th>
       <th>Partite</th>
       <th>Vittorie</th>
-      <th>Winrate (%)</th>
     </tr>
   </thead>
   <tbody>
@@ -2409,7 +2469,6 @@
       <td>4.0</td>
       <td>12</td>
       <td>3</td>
-      <td>25.00</td>
     </tr>
     <tr>
       <td>hamza, guardian of arashin</td>
@@ -2417,15 +2476,6 @@
       <td>6.0</td>
       <td>11</td>
       <td>3</td>
-      <td>27.27</td>
-    </tr>
-    <tr>
-      <td>genku, future shaper</td>
-      <td>WU</td>
-      <td>4.0</td>
-      <td>10</td>
-      <td>4</td>
-      <td>40.00</td>
     </tr>
     <tr>
       <td>alela, artful provocateur</td>
@@ -2433,7 +2483,13 @@
       <td>4.0</td>
       <td>10</td>
       <td>5</td>
-      <td>50.00</td>
+    </tr>
+    <tr>
+      <td>genku, future shaper</td>
+      <td>WU</td>
+      <td>4.0</td>
+      <td>10</td>
+      <td>4</td>
     </tr>
     <tr>
       <td>eriette of the charmed apple</td>
@@ -2441,7 +2497,6 @@
       <td>3.0</td>
       <td>8</td>
       <td>4</td>
-      <td>50.00</td>
     </tr>
     <tr>
       <td>captain howler, sea scourge</td>
@@ -2449,23 +2504,6 @@
       <td>4.0</td>
       <td>7</td>
       <td>2</td>
-      <td>28.57</td>
-    </tr>
-    <tr>
-      <td>ulalek, fused atrocity</td>
-      <td>BGRUW</td>
-      <td>5.0</td>
-      <td>3</td>
-      <td>1</td>
-      <td>33.33</td>
-    </tr>
-    <tr>
-      <td>obuun, mul daya ancestor</td>
-      <td>GRW</td>
-      <td>4.0</td>
-      <td>3</td>
-      <td>1</td>
-      <td>33.33</td>
     </tr>
     <tr>
       <td>helga, skittish seer</td>
@@ -2473,15 +2511,27 @@
       <td>3.0</td>
       <td>3</td>
       <td>2</td>
-      <td>66.67</td>
     </tr>
     <tr>
-      <td>killian, ink duelist</td>
-      <td>WB</td>
-      <td>2.0</td>
-      <td>2</td>
+      <td>obuun, mul daya ancestor</td>
+      <td>GRW</td>
+      <td>4.0</td>
+      <td>3</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>ulalek, fused atrocity</td>
+      <td>BGRUW</td>
+      <td>5.0</td>
+      <td>3</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>Azlask, the Swelling Scourge</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>3</td>
       <td>0</td>
-      <td>0.00</td>
     </tr>
     <tr>
       <td>disa the restless</td>
@@ -2489,7 +2539,13 @@
       <td>5.0</td>
       <td>2</td>
       <td>0</td>
-      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>killian, ink duelist</td>
+      <td>WB</td>
+      <td>2.0</td>
+      <td>2</td>
+      <td>0</td>
     </tr>
     <tr>
       <td>Obuun, Mul Daya Ancestor</td>
@@ -2497,13 +2553,12 @@
       <td>NaN</td>
       <td>1</td>
       <td>0</td>
-      <td>0.00</td>
     </tr>
   </tbody>
 </table>
         </div>
         
-        <div id="player-Luca-Proie" class="player-section" style="display: none;">
+        <div id="player-Luca-Proie" class="player-section">
             <h3>Comandanti di Luca Proie</h3>
             <table class="dataframe display" id="commanderStats-Luca-Proie">
   <thead>
@@ -2513,7 +2568,6 @@
       <th>CMC</th>
       <th>Partite</th>
       <th>Vittorie</th>
-      <th>Winrate (%)</th>
     </tr>
   </thead>
   <tbody>
@@ -2523,7 +2577,6 @@
       <td>5.0</td>
       <td>27</td>
       <td>9</td>
-      <td>33.33</td>
     </tr>
     <tr>
       <td>ulalek, fused atrocity</td>
@@ -2531,7 +2584,6 @@
       <td>5.0</td>
       <td>10</td>
       <td>2</td>
-      <td>20.00</td>
     </tr>
     <tr>
       <td>eshki dragonclaw</td>
@@ -2539,7 +2591,6 @@
       <td>4.0</td>
       <td>9</td>
       <td>0</td>
-      <td>0.00</td>
     </tr>
     <tr>
       <td>caesar, legion's emperor</td>
@@ -2547,15 +2598,6 @@
       <td>4.0</td>
       <td>5</td>
       <td>1</td>
-      <td>20.00</td>
-    </tr>
-    <tr>
-      <td>zurgo stormrender</td>
-      <td>BRW</td>
-      <td>3.0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0.00</td>
     </tr>
     <tr>
       <td>dragonhawk, fate's tempest</td>
@@ -2563,13 +2605,19 @@
       <td>5.0</td>
       <td>1</td>
       <td>1</td>
-      <td>100.00</td>
+    </tr>
+    <tr>
+      <td>zurgo stormrender</td>
+      <td>BRW</td>
+      <td>3.0</td>
+      <td>1</td>
+      <td>0</td>
     </tr>
   </tbody>
 </table>
         </div>
         
-        <div id="player-Lucio" class="player-section" style="display: none;">
+        <div id="player-Lucio" class="player-section">
             <h3>Comandanti di Lucio</h3>
             <table class="dataframe display" id="commanderStats-Lucio">
   <thead>
@@ -2579,7 +2627,6 @@
       <th>CMC</th>
       <th>Partite</th>
       <th>Vittorie</th>
-      <th>Winrate (%)</th>
     </tr>
   </thead>
   <tbody>
@@ -2589,7 +2636,6 @@
       <td>4.0</td>
       <td>7</td>
       <td>0</td>
-      <td>0.0</td>
     </tr>
     <tr>
       <td>jetmir, nexus of revels</td>
@@ -2597,7 +2643,6 @@
       <td>4.0</td>
       <td>5</td>
       <td>1</td>
-      <td>20.0</td>
     </tr>
     <tr>
       <td>shalai and hallar</td>
@@ -2605,13 +2650,12 @@
       <td>4.0</td>
       <td>2</td>
       <td>0</td>
-      <td>0.0</td>
     </tr>
   </tbody>
 </table>
         </div>
         
-        <div id="player-Marco" class="player-section" style="display: none;">
+        <div id="player-Marco" class="player-section">
             <h3>Comandanti di Marco</h3>
             <table class="dataframe display" id="commanderStats-Marco">
   <thead>
@@ -2621,25 +2665,22 @@
       <th>CMC</th>
       <th>Partite</th>
       <th>Vittorie</th>
-      <th>Winrate (%)</th>
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td>bello, bard of the brambles</td>
-      <td>GR</td>
-      <td>3.0</td>
-      <td>2</td>
-      <td>0</td>
-      <td>0.0</td>
-    </tr>
     <tr>
       <td>arahbo, the first fang</td>
       <td>W</td>
       <td>3.0</td>
       <td>2</td>
       <td>0</td>
-      <td>0.0</td>
+    </tr>
+    <tr>
+      <td>bello, bard of the brambles</td>
+      <td>GR</td>
+      <td>3.0</td>
+      <td>2</td>
+      <td>0</td>
     </tr>
     <tr>
       <td>the ur-dragon</td>
@@ -2647,13 +2688,12 @@
       <td>9.0</td>
       <td>1</td>
       <td>0</td>
-      <td>0.0</td>
     </tr>
   </tbody>
 </table>
         </div>
         
-        <div id="player-Matte" class="player-section" style="display: none;">
+        <div id="player-Matte" class="player-section">
             <h3>Comandanti di Matte</h3>
             <table class="dataframe display" id="commanderStats-Matte">
   <thead>
@@ -2663,7 +2703,6 @@
       <th>CMC</th>
       <th>Partite</th>
       <th>Vittorie</th>
-      <th>Winrate (%)</th>
     </tr>
   </thead>
   <tbody>
@@ -2673,7 +2712,6 @@
       <td>4.0</td>
       <td>26</td>
       <td>16</td>
-      <td>61.54</td>
     </tr>
     <tr>
       <td>mendicant core, guidelight</td>
@@ -2681,7 +2719,6 @@
       <td>2.0</td>
       <td>18</td>
       <td>8</td>
-      <td>44.44</td>
     </tr>
     <tr>
       <td>anzrag, the quake-mole</td>
@@ -2689,7 +2726,6 @@
       <td>4.0</td>
       <td>13</td>
       <td>4</td>
-      <td>30.77</td>
     </tr>
     <tr>
       <td>jetmir, nexus of revels</td>
@@ -2697,7 +2733,6 @@
       <td>4.0</td>
       <td>12</td>
       <td>9</td>
-      <td>75.00</td>
     </tr>
     <tr>
       <td>sidar jabari of zhalfir</td>
@@ -2705,7 +2740,6 @@
       <td>4.0</td>
       <td>11</td>
       <td>5</td>
-      <td>45.45</td>
     </tr>
     <tr>
       <td>rograkh, son of rohgahh</td>
@@ -2713,7 +2747,6 @@
       <td>0.0</td>
       <td>8</td>
       <td>5</td>
-      <td>62.50</td>
     </tr>
     <tr>
       <td>kaima, the fractured calm</td>
@@ -2721,15 +2754,6 @@
       <td>4.0</td>
       <td>6</td>
       <td>1</td>
-      <td>16.67</td>
-    </tr>
-    <tr>
-      <td>zacama, primal calamity</td>
-      <td>RGW</td>
-      <td>9.0</td>
-      <td>5</td>
-      <td>2</td>
-      <td>40.00</td>
     </tr>
     <tr>
       <td>vivi ornitier</td>
@@ -2737,7 +2761,6 @@
       <td>3.0</td>
       <td>5</td>
       <td>4</td>
-      <td>80.00</td>
     </tr>
     <tr>
       <td>tatyova, benthic druid</td>
@@ -2745,7 +2768,13 @@
       <td>5.0</td>
       <td>5</td>
       <td>3</td>
-      <td>60.00</td>
+    </tr>
+    <tr>
+      <td>zacama, primal calamity</td>
+      <td>RGW</td>
+      <td>9.0</td>
+      <td>5</td>
+      <td>2</td>
     </tr>
     <tr>
       <td>omnath, locus of creation</td>
@@ -2753,23 +2782,6 @@
       <td>4.0</td>
       <td>4</td>
       <td>2</td>
-      <td>50.00</td>
-    </tr>
-    <tr>
-      <td>omnath, locus of all</td>
-      <td>BGRUW</td>
-      <td>5.0</td>
-      <td>4</td>
-      <td>1</td>
-      <td>25.00</td>
-    </tr>
-    <tr>
-      <td>galadriel, light of valinor</td>
-      <td>GUW</td>
-      <td>5.0</td>
-      <td>4</td>
-      <td>1</td>
-      <td>25.00</td>
     </tr>
     <tr>
       <td>calix, guided by fate</td>
@@ -2777,31 +2789,27 @@
       <td>3.0</td>
       <td>4</td>
       <td>1</td>
-      <td>25.00</td>
     </tr>
     <tr>
-      <td>vazi, keen negotiator</td>
-      <td>BGR</td>
+      <td>galadriel, light of valinor</td>
+      <td>GUW</td>
       <td>5.0</td>
-      <td>3</td>
+      <td>4</td>
       <td>1</td>
-      <td>33.33</td>
     </tr>
     <tr>
-      <td>millicent, restless revenant</td>
-      <td>WU</td>
-      <td>7.0</td>
-      <td>3</td>
+      <td>omnath, locus of all</td>
+      <td>BGRUW</td>
+      <td>5.0</td>
+      <td>4</td>
       <td>1</td>
-      <td>33.33</td>
     </tr>
     <tr>
-      <td>magda, brazen outlaw</td>
-      <td>R</td>
-      <td>2.0</td>
+      <td>Tatsunari, Toad Rider</td>
+      <td>None</td>
+      <td>NaN</td>
       <td>3</td>
-      <td>0</td>
-      <td>0.00</td>
+      <td>1</td>
     </tr>
     <tr>
       <td>anhelo, the painter</td>
@@ -2809,55 +2817,34 @@
       <td>3.0</td>
       <td>3</td>
       <td>1</td>
-      <td>33.33</td>
     </tr>
     <tr>
-      <td>yidris, maelstrom wielder</td>
-      <td>UBRG</td>
-      <td>4.0</td>
-      <td>2</td>
-      <td>1</td>
-      <td>50.00</td>
-    </tr>
-    <tr>
-      <td>sedris, the traitor king</td>
-      <td>BRU</td>
-      <td>6.0</td>
-      <td>2</td>
-      <td>1</td>
-      <td>50.00</td>
-    </tr>
-    <tr>
-      <td>morophon, the boundless</td>
-      <td>BGRUW</td>
+      <td>millicent, restless revenant</td>
+      <td>WU</td>
       <td>7.0</td>
-      <td>2</td>
+      <td>3</td>
       <td>1</td>
-      <td>50.00</td>
     </tr>
     <tr>
-      <td>korvold, fae-cursed king</td>
+      <td>vazi, keen negotiator</td>
       <td>BGR</td>
       <td>5.0</td>
-      <td>2</td>
+      <td>3</td>
       <td>1</td>
-      <td>50.00</td>
     </tr>
     <tr>
-      <td>ketramose, the new dawn</td>
-      <td>BW</td>
-      <td>3.0</td>
-      <td>2</td>
+      <td>Dihada, Binder of Wills</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>3</td>
       <td>0</td>
-      <td>0.00</td>
     </tr>
     <tr>
-      <td>imoen, mystic trickster</td>
-      <td>U</td>
-      <td>3.0</td>
-      <td>2</td>
-      <td>1</td>
-      <td>50.00</td>
+      <td>magda, brazen outlaw</td>
+      <td>R</td>
+      <td>2.0</td>
+      <td>3</td>
+      <td>0</td>
     </tr>
     <tr>
       <td>delney, streetwise lookout</td>
@@ -2865,15 +2852,48 @@
       <td>3.0</td>
       <td>2</td>
       <td>2</td>
-      <td>100.00</td>
     </tr>
     <tr>
-      <td>carmen, cruel skymarcher</td>
-      <td>BW</td>
+      <td>Firkraag, Cunning Instigator</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>2</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>imoen, mystic trickster</td>
+      <td>U</td>
+      <td>3.0</td>
+      <td>2</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>korvold, fae-cursed king</td>
+      <td>BGR</td>
       <td>5.0</td>
       <td>2</td>
-      <td>0</td>
-      <td>0.00</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>morophon, the boundless</td>
+      <td>BGRUW</td>
+      <td>7.0</td>
+      <td>2</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>sedris, the traitor king</td>
+      <td>BRU</td>
+      <td>6.0</td>
+      <td>2</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>yidris, maelstrom wielder</td>
+      <td>UBRG</td>
+      <td>4.0</td>
+      <td>2</td>
+      <td>1</td>
     </tr>
     <tr>
       <td>anrakyr the traveller</td>
@@ -2881,111 +2901,20 @@
       <td>5.0</td>
       <td>2</td>
       <td>0</td>
-      <td>0.00</td>
     </tr>
     <tr>
-      <td>éowyn, shieldmaiden</td>
-      <td>URW</td>
+      <td>carmen, cruel skymarcher</td>
+      <td>BW</td>
       <td>5.0</td>
-      <td>1</td>
+      <td>2</td>
       <td>0</td>
-      <td>0.00</td>
     </tr>
     <tr>
-      <td>witch-king, sky scourge</td>
-      <td>BR</td>
-      <td>7.0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td>winota, joiner of forces</td>
-      <td>RW</td>
-      <td>4.0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td>the wise mothman</td>
-      <td>BGU</td>
-      <td>4.0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td>szarekh, the silent king</td>
-      <td>B</td>
-      <td>4.0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td>sigarda, host of herons</td>
-      <td>GW</td>
-      <td>5.0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td>selvala, heart of the wilds</td>
-      <td>G</td>
+      <td>ketramose, the new dawn</td>
+      <td>BW</td>
       <td>3.0</td>
-      <td>1</td>
+      <td>2</td>
       <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td>reyhan, last of the abzan</td>
-      <td>BGW</td>
-      <td>5.0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td>niv-mizzet, parun</td>
-      <td>UR</td>
-      <td>6.0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td>miirym, sentinel wyrm</td>
-      <td>GUR</td>
-      <td>6.0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td>lagrella, the magpie</td>
-      <td>GWU</td>
-      <td>3.0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td>gluntch, the bestower</td>
-      <td>GW</td>
-      <td>3.0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td>breya, etherium shaper</td>
-      <td>BRUW</td>
-      <td>4.0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0.00</td>
     </tr>
     <tr>
       <td>aurelia, the warleader</td>
@@ -2993,7 +2922,13 @@
       <td>6.0</td>
       <td>1</td>
       <td>1</td>
-      <td>100.00</td>
+    </tr>
+    <tr>
+      <td>Illuna, Apex of Wishes</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>1</td>
+      <td>0</td>
     </tr>
     <tr>
       <td>Kenrith, the Returned King</td>
@@ -3001,13 +2936,117 @@
       <td>NaN</td>
       <td>1</td>
       <td>0</td>
-      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>Mendicant Core, Guidelight</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Sedris, the Traitor King</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>breya, etherium shaper</td>
+      <td>BRUW</td>
+      <td>4.0</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>gluntch, the bestower</td>
+      <td>GW</td>
+      <td>3.0</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>lagrella, the magpie</td>
+      <td>GWU</td>
+      <td>3.0</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>miirym, sentinel wyrm</td>
+      <td>GUR</td>
+      <td>6.0</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>niv-mizzet, parun</td>
+      <td>UR</td>
+      <td>6.0</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>reyhan, last of the abzan</td>
+      <td>BGW</td>
+      <td>5.0</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>selvala, heart of the wilds</td>
+      <td>G</td>
+      <td>3.0</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>sigarda, host of herons</td>
+      <td>GW</td>
+      <td>5.0</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>szarekh, the silent king</td>
+      <td>B</td>
+      <td>4.0</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>the wise mothman</td>
+      <td>BGU</td>
+      <td>4.0</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>winota, joiner of forces</td>
+      <td>RW</td>
+      <td>4.0</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>witch-king, sky scourge</td>
+      <td>BR</td>
+      <td>7.0</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>éowyn, shieldmaiden</td>
+      <td>URW</td>
+      <td>5.0</td>
+      <td>1</td>
+      <td>0</td>
     </tr>
   </tbody>
 </table>
         </div>
         
-        <div id="player-Mone" class="player-section" style="display: none;">
+        <div id="player-Mone" class="player-section">
             <h3>Comandanti di Mone</h3>
             <table class="dataframe display" id="commanderStats-Mone">
   <thead>
@@ -3017,31 +3056,28 @@
       <th>CMC</th>
       <th>Partite</th>
       <th>Vittorie</th>
-      <th>Winrate (%)</th>
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td>zurgo stormrender</td>
-      <td>BRW</td>
-      <td>3.0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0.0</td>
-    </tr>
     <tr>
       <td>ishai, ojutai dragonspeaker</td>
       <td>UW</td>
       <td>4.0</td>
       <td>1</td>
       <td>0</td>
-      <td>0.0</td>
+    </tr>
+    <tr>
+      <td>zurgo stormrender</td>
+      <td>BRW</td>
+      <td>3.0</td>
+      <td>1</td>
+      <td>0</td>
     </tr>
   </tbody>
 </table>
         </div>
         
-        <div id="player-Monta" class="player-section" style="display: none;">
+        <div id="player-Monta" class="player-section">
             <h3>Comandanti di Monta</h3>
             <table class="dataframe display" id="commanderStats-Monta">
   <thead>
@@ -3051,7 +3087,6 @@
       <th>CMC</th>
       <th>Partite</th>
       <th>Vittorie</th>
-      <th>Winrate (%)</th>
     </tr>
   </thead>
   <tbody>
@@ -3061,7 +3096,6 @@
       <td>5.0</td>
       <td>1</td>
       <td>1</td>
-      <td>100.0</td>
     </tr>
     <tr>
       <td>shilgengar, sire of famine</td>
@@ -3069,13 +3103,12 @@
       <td>5.0</td>
       <td>1</td>
       <td>0</td>
-      <td>0.0</td>
     </tr>
   </tbody>
 </table>
         </div>
         
-        <div id="player-Pain" class="player-section" style="display: none;">
+        <div id="player-Pain" class="player-section">
             <h3>Comandanti di Pain</h3>
             <table class="dataframe display" id="commanderStats-Pain">
   <thead>
@@ -3085,7 +3118,6 @@
       <th>CMC</th>
       <th>Partite</th>
       <th>Vittorie</th>
-      <th>Winrate (%)</th>
     </tr>
   </thead>
   <tbody>
@@ -3095,7 +3127,6 @@
       <td>5.0</td>
       <td>8</td>
       <td>2</td>
-      <td>25.0</td>
     </tr>
     <tr>
       <td>Meren of Clan Nel Toth</td>
@@ -3103,7 +3134,6 @@
       <td>NaN</td>
       <td>4</td>
       <td>0</td>
-      <td>0.0</td>
     </tr>
     <tr>
       <td>mendicant core, guidelight</td>
@@ -3111,13 +3141,12 @@
       <td>2.0</td>
       <td>1</td>
       <td>1</td>
-      <td>100.0</td>
     </tr>
   </tbody>
 </table>
         </div>
         
-        <div id="player-Paolo" class="player-section" style="display: none;">
+        <div id="player-Paolo" class="player-section">
             <h3>Comandanti di Paolo</h3>
             <table class="dataframe display" id="commanderStats-Paolo">
   <thead>
@@ -3127,7 +3156,6 @@
       <th>CMC</th>
       <th>Partite</th>
       <th>Vittorie</th>
-      <th>Winrate (%)</th>
     </tr>
   </thead>
   <tbody>
@@ -3137,23 +3165,6 @@
       <td>3.0</td>
       <td>2</td>
       <td>1</td>
-      <td>50.0</td>
-    </tr>
-    <tr>
-      <td>sythis, harvest's hand</td>
-      <td>GW</td>
-      <td>2.0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <td>galadriel, light of valinor</td>
-      <td>GUW</td>
-      <td>5.0</td>
-      <td>1</td>
-      <td>1</td>
-      <td>100.0</td>
     </tr>
     <tr>
       <td>animar, soul of elements</td>
@@ -3161,13 +3172,26 @@
       <td>3.0</td>
       <td>1</td>
       <td>1</td>
-      <td>100.0</td>
+    </tr>
+    <tr>
+      <td>galadriel, light of valinor</td>
+      <td>GUW</td>
+      <td>5.0</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>sythis, harvest's hand</td>
+      <td>GW</td>
+      <td>2.0</td>
+      <td>1</td>
+      <td>0</td>
     </tr>
   </tbody>
 </table>
         </div>
         
-        <div id="player-Phyga" class="player-section" style="display: none;">
+        <div id="player-Phyga" class="player-section">
             <h3>Comandanti di Phyga</h3>
             <table class="dataframe display" id="commanderStats-Phyga">
   <thead>
@@ -3177,7 +3201,6 @@
       <th>CMC</th>
       <th>Partite</th>
       <th>Vittorie</th>
-      <th>Winrate (%)</th>
     </tr>
   </thead>
   <tbody>
@@ -3187,7 +3210,6 @@
       <td>4.0</td>
       <td>14</td>
       <td>3</td>
-      <td>21.43</td>
     </tr>
     <tr>
       <td>slimefoot, the stowaway</td>
@@ -3195,7 +3217,6 @@
       <td>3.0</td>
       <td>9</td>
       <td>3</td>
-      <td>33.33</td>
     </tr>
     <tr>
       <td>dina, soul steeper</td>
@@ -3203,13 +3224,19 @@
       <td>2.0</td>
       <td>2</td>
       <td>0</td>
-      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>Baru, Wurmspeaker</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>1</td>
+      <td>0</td>
     </tr>
   </tbody>
 </table>
         </div>
         
-        <div id="player-Ru" class="player-section" style="display: none;">
+        <div id="player-Ru" class="player-section">
             <h3>Comandanti di Ru</h3>
             <table class="dataframe display" id="commanderStats-Ru">
   <thead>
@@ -3219,7 +3246,6 @@
       <th>CMC</th>
       <th>Partite</th>
       <th>Vittorie</th>
-      <th>Winrate (%)</th>
     </tr>
   </thead>
   <tbody>
@@ -3229,7 +3255,6 @@
       <td>3.0</td>
       <td>16</td>
       <td>7</td>
-      <td>43.75</td>
     </tr>
     <tr>
       <td>ratadrabik of urborg</td>
@@ -3237,7 +3262,6 @@
       <td>4.0</td>
       <td>14</td>
       <td>4</td>
-      <td>28.57</td>
     </tr>
     <tr>
       <td>kasla, the broken halo</td>
@@ -3245,7 +3269,6 @@
       <td>6.0</td>
       <td>11</td>
       <td>4</td>
-      <td>36.36</td>
     </tr>
     <tr>
       <td>tergrid, god of fright // tergrid's lantern</td>
@@ -3253,7 +3276,6 @@
       <td>5.0</td>
       <td>9</td>
       <td>4</td>
-      <td>44.44</td>
     </tr>
     <tr>
       <td>esika, god of the tree // the prismatic bridge</td>
@@ -3261,7 +3283,6 @@
       <td>7.0</td>
       <td>9</td>
       <td>3</td>
-      <td>33.33</td>
     </tr>
     <tr>
       <td>pearl-ear, imperial advisor</td>
@@ -3269,15 +3290,6 @@
       <td>3.0</td>
       <td>8</td>
       <td>6</td>
-      <td>75.00</td>
-    </tr>
-    <tr>
-      <td>morska, undersea sleuth</td>
-      <td>GUW</td>
-      <td>3.0</td>
-      <td>8</td>
-      <td>3</td>
-      <td>37.50</td>
     </tr>
     <tr>
       <td>abdel adrian, gorion's ward</td>
@@ -3285,15 +3297,13 @@
       <td>4.0</td>
       <td>8</td>
       <td>5</td>
-      <td>62.50</td>
     </tr>
     <tr>
-      <td>storm, force of nature</td>
-      <td>GUR</td>
-      <td>4.0</td>
-      <td>7</td>
-      <td>1</td>
-      <td>14.29</td>
+      <td>morska, undersea sleuth</td>
+      <td>GUW</td>
+      <td>3.0</td>
+      <td>8</td>
+      <td>3</td>
     </tr>
     <tr>
       <td>rona, herald of invasion // rona, tolarian obliterator</td>
@@ -3301,7 +3311,6 @@
       <td>2.0</td>
       <td>7</td>
       <td>4</td>
-      <td>57.14</td>
     </tr>
     <tr>
       <td>omo, queen of vesuva</td>
@@ -3309,7 +3318,6 @@
       <td>3.0</td>
       <td>7</td>
       <td>3</td>
-      <td>42.86</td>
     </tr>
     <tr>
       <td>hearthhull, the worldseed</td>
@@ -3317,7 +3325,13 @@
       <td>4.0</td>
       <td>7</td>
       <td>1</td>
-      <td>14.29</td>
+    </tr>
+    <tr>
+      <td>storm, force of nature</td>
+      <td>GUR</td>
+      <td>4.0</td>
+      <td>7</td>
+      <td>1</td>
     </tr>
     <tr>
       <td>xantcha, sleeper agent</td>
@@ -3325,15 +3339,6 @@
       <td>3.0</td>
       <td>6</td>
       <td>3</td>
-      <td>50.00</td>
-    </tr>
-    <tr>
-      <td>pantlaza, sun-favored</td>
-      <td>RGW</td>
-      <td>5.0</td>
-      <td>6</td>
-      <td>2</td>
-      <td>33.33</td>
     </tr>
     <tr>
       <td>nekusar, the mindrazer</td>
@@ -3341,15 +3346,13 @@
       <td>5.0</td>
       <td>6</td>
       <td>2</td>
-      <td>33.33</td>
     </tr>
     <tr>
-      <td>urza, lord high artificer</td>
-      <td>U</td>
-      <td>4.0</td>
-      <td>5</td>
+      <td>pantlaza, sun-favored</td>
+      <td>RGW</td>
+      <td>5.0</td>
+      <td>6</td>
       <td>2</td>
-      <td>40.00</td>
     </tr>
     <tr>
       <td>tivit, seller of secrets</td>
@@ -3357,7 +3360,6 @@
       <td>6.0</td>
       <td>5</td>
       <td>3</td>
-      <td>60.00</td>
     </tr>
     <tr>
       <td>chatterfang, squirrel general</td>
@@ -3365,15 +3367,13 @@
       <td>3.0</td>
       <td>5</td>
       <td>2</td>
-      <td>40.00</td>
     </tr>
     <tr>
-      <td>satoru umezawa</td>
-      <td>BU</td>
-      <td>3.0</td>
-      <td>4</td>
-      <td>0</td>
-      <td>0.00</td>
+      <td>urza, lord high artificer</td>
+      <td>U</td>
+      <td>4.0</td>
+      <td>5</td>
+      <td>2</td>
     </tr>
     <tr>
       <td>kenessos, priest of thassa</td>
@@ -3381,23 +3381,6 @@
       <td>2.0</td>
       <td>4</td>
       <td>2</td>
-      <td>50.00</td>
-    </tr>
-    <tr>
-      <td>kalamax, the stormsire</td>
-      <td>GRU</td>
-      <td>4.0</td>
-      <td>4</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td>hazel of the rootbloom</td>
-      <td>GB</td>
-      <td>4.0</td>
-      <td>4</td>
-      <td>1</td>
-      <td>25.00</td>
     </tr>
     <tr>
       <td>averna, the chaos bloom</td>
@@ -3405,31 +3388,27 @@
       <td>3.0</td>
       <td>4</td>
       <td>1</td>
-      <td>25.00</td>
     </tr>
     <tr>
-      <td>thalia and the gitrog monster</td>
-      <td>WBG</td>
-      <td>5.0</td>
-      <td>3</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td>queen marchesa</td>
-      <td>BRW</td>
+      <td>hazel of the rootbloom</td>
+      <td>GB</td>
       <td>4.0</td>
-      <td>3</td>
-      <td>0</td>
-      <td>0.00</td>
+      <td>4</td>
+      <td>1</td>
     </tr>
     <tr>
-      <td>muldrotha, the gravetide</td>
-      <td>BGU</td>
-      <td>6.0</td>
-      <td>3</td>
+      <td>kalamax, the stormsire</td>
+      <td>GRU</td>
+      <td>4.0</td>
+      <td>4</td>
       <td>0</td>
-      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>satoru umezawa</td>
+      <td>BU</td>
+      <td>3.0</td>
+      <td>4</td>
+      <td>0</td>
     </tr>
     <tr>
       <td>Winter, Misanthropic Guide</td>
@@ -3437,15 +3416,34 @@
       <td>4.0</td>
       <td>3</td>
       <td>1</td>
-      <td>33.33</td>
     </tr>
     <tr>
-      <td>yusri, fortune's flame</td>
-      <td>UR</td>
-      <td>3.0</td>
-      <td>2</td>
-      <td>1</td>
-      <td>50.00</td>
+      <td>Rona, Herald of Invasion // Rona, Tolarian Obliterator</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>3</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>muldrotha, the gravetide</td>
+      <td>BGU</td>
+      <td>6.0</td>
+      <td>3</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>queen marchesa</td>
+      <td>BRW</td>
+      <td>4.0</td>
+      <td>3</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>thalia and the gitrog monster</td>
+      <td>WBG</td>
+      <td>5.0</td>
+      <td>3</td>
+      <td>0</td>
     </tr>
     <tr>
       <td>winter, misanthropic guide</td>
@@ -3453,15 +3451,20 @@
       <td>4.0</td>
       <td>2</td>
       <td>1</td>
-      <td>50.00</td>
     </tr>
     <tr>
-      <td>the infamous cruelclaw</td>
-      <td>BR</td>
+      <td>yusri, fortune's flame</td>
+      <td>UR</td>
       <td>3.0</td>
       <td>2</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>Tergrid, God of Fright // Tergrid's Lantern</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>2</td>
       <td>0</td>
-      <td>0.00</td>
     </tr>
     <tr>
       <td>esika, god of the tree</td>
@@ -3469,47 +3472,62 @@
       <td>7.0</td>
       <td>2</td>
       <td>0</td>
-      <td>0.00</td>
     </tr>
     <tr>
-      <td>riku of many paths</td>
-      <td>GRU</td>
+      <td>the infamous cruelclaw</td>
+      <td>BR</td>
       <td>3.0</td>
-      <td>1</td>
+      <td>2</td>
       <td>0</td>
-      <td>0.00</td>
     </tr>
     <tr>
-      <td>ojer axonil, deepest might // temple of power</td>
-      <td>R</td>
-      <td>4.0</td>
+      <td>Bello, Bard of the Brambles</td>
+      <td>None</td>
+      <td>NaN</td>
       <td>1</td>
-      <td>0</td>
-      <td>0.00</td>
+      <td>1</td>
     </tr>
     <tr>
-      <td>dogmeat, ever loyal</td>
-      <td>GRW</td>
-      <td>3.0</td>
+      <td>Kasla, the Broken Halo</td>
+      <td>None</td>
+      <td>NaN</td>
       <td>1</td>
-      <td>0</td>
-      <td>0.00</td>
+      <td>1</td>
     </tr>
     <tr>
-      <td>daretti, scrap savant</td>
-      <td>R</td>
-      <td>4.0</td>
+      <td>Morska, Undersea Sleuth</td>
+      <td>None</td>
+      <td>NaN</td>
       <td>1</td>
-      <td>0</td>
-      <td>0.00</td>
+      <td>1</td>
     </tr>
     <tr>
-      <td>caesar, legion's emperor</td>
-      <td>RWB</td>
-      <td>4.0</td>
+      <td>Riku of Many Paths</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>Esika, God of the Tree // The Prismatic Bridge</td>
+      <td>None</td>
+      <td>NaN</td>
       <td>1</td>
       <td>0</td>
-      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>Kilo, Apogee Mind</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Pearl-Ear, Imperial Advisor</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>1</td>
+      <td>0</td>
     </tr>
     <tr>
       <td>Sythis, Harvest's Hand</td>
@@ -3517,13 +3535,54 @@
       <td>2.0</td>
       <td>1</td>
       <td>0</td>
-      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>Thalia and The Gitrog Monster</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>caesar, legion's emperor</td>
+      <td>RWB</td>
+      <td>4.0</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>daretti, scrap savant</td>
+      <td>R</td>
+      <td>4.0</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>dogmeat, ever loyal</td>
+      <td>GRW</td>
+      <td>3.0</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>ojer axonil, deepest might // temple of power</td>
+      <td>R</td>
+      <td>4.0</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>riku of many paths</td>
+      <td>GRU</td>
+      <td>3.0</td>
+      <td>1</td>
+      <td>0</td>
     </tr>
   </tbody>
 </table>
         </div>
         
-        <div id="player-Simo" class="player-section" style="display: none;">
+        <div id="player-Simo" class="player-section">
             <h3>Comandanti di Simo</h3>
             <table class="dataframe display" id="commanderStats-Simo">
   <thead>
@@ -3533,41 +3592,22 @@
       <th>CMC</th>
       <th>Partite</th>
       <th>Vittorie</th>
-      <th>Winrate (%)</th>
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td>helga, skittish seer</td>
-      <td>GUW</td>
-      <td>3.0</td>
-      <td>2</td>
-      <td>0</td>
-      <td>0.0</td>
-    </tr>
     <tr>
       <td>dihada, binder of wills</td>
       <td>RWB</td>
       <td>4.0</td>
       <td>2</td>
       <td>0</td>
-      <td>0.0</td>
     </tr>
     <tr>
-      <td>rivaz of the claw</td>
-      <td>BR</td>
+      <td>helga, skittish seer</td>
+      <td>GUW</td>
       <td>3.0</td>
-      <td>1</td>
+      <td>2</td>
       <td>0</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <td>chatterfang, squirrel general</td>
-      <td>G</td>
-      <td>3.0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0.0</td>
     </tr>
     <tr>
       <td>atraxa, grand unifier</td>
@@ -3575,13 +3615,26 @@
       <td>7.0</td>
       <td>1</td>
       <td>0</td>
-      <td>0.0</td>
+    </tr>
+    <tr>
+      <td>chatterfang, squirrel general</td>
+      <td>G</td>
+      <td>3.0</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>rivaz of the claw</td>
+      <td>BR</td>
+      <td>3.0</td>
+      <td>1</td>
+      <td>0</td>
     </tr>
   </tbody>
 </table>
         </div>
         
-        <div id="player-Sisco" class="player-section" style="display: none;">
+        <div id="player-Sisco" class="player-section">
             <h3>Comandanti di Sisco</h3>
             <table class="dataframe display" id="commanderStats-Sisco">
   <thead>
@@ -3591,7 +3644,6 @@
       <th>CMC</th>
       <th>Partite</th>
       <th>Vittorie</th>
-      <th>Winrate (%)</th>
     </tr>
   </thead>
   <tbody>
@@ -3601,7 +3653,6 @@
       <td>4.0</td>
       <td>28</td>
       <td>4</td>
-      <td>14.29</td>
     </tr>
     <tr>
       <td>rograkh, son of rohgahh</td>
@@ -3609,7 +3660,6 @@
       <td>0.0</td>
       <td>24</td>
       <td>3</td>
-      <td>12.50</td>
     </tr>
     <tr>
       <td>sliver hivelord</td>
@@ -3617,7 +3667,6 @@
       <td>5.0</td>
       <td>18</td>
       <td>2</td>
-      <td>11.11</td>
     </tr>
     <tr>
       <td>ghyrson starn, kelermorph</td>
@@ -3625,7 +3674,6 @@
       <td>3.0</td>
       <td>18</td>
       <td>1</td>
-      <td>5.56</td>
     </tr>
     <tr>
       <td>shalai and hallar</td>
@@ -3633,7 +3681,6 @@
       <td>4.0</td>
       <td>16</td>
       <td>4</td>
-      <td>25.00</td>
     </tr>
     <tr>
       <td>the wise mothman</td>
@@ -3641,7 +3688,6 @@
       <td>4.0</td>
       <td>12</td>
       <td>2</td>
-      <td>16.67</td>
     </tr>
     <tr>
       <td>eshki, temur's roar</td>
@@ -3649,7 +3695,6 @@
       <td>3.0</td>
       <td>10</td>
       <td>0</td>
-      <td>0.00</td>
     </tr>
     <tr>
       <td>chishiro, the shattered blade</td>
@@ -3657,7 +3702,6 @@
       <td>4.0</td>
       <td>7</td>
       <td>0</td>
-      <td>0.00</td>
     </tr>
     <tr>
       <td>sythis, harvest's hand</td>
@@ -3665,15 +3709,6 @@
       <td>2.0</td>
       <td>6</td>
       <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td>marrow-gnawer</td>
-      <td>B</td>
-      <td>5.0</td>
-      <td>5</td>
-      <td>0</td>
-      <td>0.00</td>
     </tr>
     <tr>
       <td>kaalia of the vast</td>
@@ -3681,7 +3716,20 @@
       <td>4.0</td>
       <td>5</td>
       <td>1</td>
-      <td>20.00</td>
+    </tr>
+    <tr>
+      <td>Kastral, the Windcrested</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>5</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>marrow-gnawer</td>
+      <td>B</td>
+      <td>5.0</td>
+      <td>5</td>
+      <td>0</td>
     </tr>
     <tr>
       <td>thrun, breaker of silence</td>
@@ -3689,7 +3737,6 @@
       <td>5.0</td>
       <td>4</td>
       <td>1</td>
-      <td>25.00</td>
     </tr>
     <tr>
       <td>magus lucea kane</td>
@@ -3697,7 +3744,13 @@
       <td>4.0</td>
       <td>4</td>
       <td>0</td>
-      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>Thrun, Breaker of Silence</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>3</td>
+      <td>1</td>
     </tr>
     <tr>
       <td>kardur, doomscourge</td>
@@ -3705,7 +3758,13 @@
       <td>4.0</td>
       <td>3</td>
       <td>0</td>
-      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>Y'shtola, Night's Blessed</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>2</td>
+      <td>1</td>
     </tr>
     <tr>
       <td>kastral, the windcrested</td>
@@ -3713,39 +3772,6 @@
       <td>5.0</td>
       <td>2</td>
       <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td>Thrun, Breaker of Silence</td>
-      <td>None</td>
-      <td>NaN</td>
-      <td>2</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td>Kastral, the Windcrested</td>
-      <td>None</td>
-      <td>NaN</td>
-      <td>2</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td>riku of two reflections</td>
-      <td>GUR</td>
-      <td>5.0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <td>cult of skaro</td>
-      <td>BRU</td>
-      <td>4.0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0.00</td>
     </tr>
     <tr>
       <td>atraxa, praetors' voice</td>
@@ -3753,21 +3779,26 @@
       <td>4.0</td>
       <td>1</td>
       <td>0</td>
-      <td>0.00</td>
     </tr>
     <tr>
-      <td>Y'shtola, Night's Blessed</td>
-      <td>None</td>
-      <td>NaN</td>
+      <td>cult of skaro</td>
+      <td>BRU</td>
+      <td>4.0</td>
       <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>riku of two reflections</td>
+      <td>GUR</td>
+      <td>5.0</td>
       <td>1</td>
-      <td>100.00</td>
+      <td>0</td>
     </tr>
   </tbody>
 </table>
         </div>
         
-        <div id="player-Ska" class="player-section" style="display: none;">
+        <div id="player-Ska" class="player-section">
             <h3>Comandanti di Ska</h3>
             <table class="dataframe display" id="commanderStats-Ska">
   <thead>
@@ -3777,7 +3808,6 @@
       <th>CMC</th>
       <th>Partite</th>
       <th>Vittorie</th>
-      <th>Winrate (%)</th>
     </tr>
   </thead>
   <tbody>
@@ -3787,13 +3817,12 @@
       <td>3.0</td>
       <td>3</td>
       <td>2</td>
-      <td>66.67</td>
     </tr>
   </tbody>
 </table>
         </div>
         
-        <div id="player-nico-gym" class="player-section" style="display: none;">
+        <div id="player-nico-gym" class="player-section">
             <h3>Comandanti di nico gym</h3>
             <table class="dataframe display" id="commanderStats-nico-gym">
   <thead>
@@ -3803,7 +3832,6 @@
       <th>CMC</th>
       <th>Partite</th>
       <th>Vittorie</th>
-      <th>Winrate (%)</th>
     </tr>
   </thead>
   <tbody>
@@ -3813,13 +3841,12 @@
       <td>6.0</td>
       <td>1</td>
       <td>0</td>
-      <td>0.0</td>
     </tr>
   </tbody>
 </table>
         </div>
         
-        <div id="player-nicolo" class="player-section" style="display: none;">
+        <div id="player-nicolo" class="player-section">
             <h3>Comandanti di nicolo</h3>
             <table class="dataframe display" id="commanderStats-nicolo">
   <thead>
@@ -3829,7 +3856,6 @@
       <th>CMC</th>
       <th>Partite</th>
       <th>Vittorie</th>
-      <th>Winrate (%)</th>
     </tr>
   </thead>
   <tbody>
@@ -3839,13 +3865,12 @@
       <td>5.0</td>
       <td>1</td>
       <td>1</td>
-      <td>100.0</td>
     </tr>
   </tbody>
 </table>
         </div>
         
-        <div id="player-ru" class="player-section" style="display: none;">
+        <div id="player-ru" class="player-section">
             <h3>Comandanti di ru</h3>
             <table class="dataframe display" id="commanderStats-ru">
   <thead>
@@ -3855,7 +3880,6 @@
       <th>CMC</th>
       <th>Partite</th>
       <th>Vittorie</th>
-      <th>Winrate (%)</th>
     </tr>
   </thead>
   <tbody>
@@ -3865,13 +3889,12 @@
       <td>6.0</td>
       <td>1</td>
       <td>0</td>
-      <td>0.0</td>
     </tr>
   </tbody>
 </table>
         </div>
         
-        <div id="player-simone" class="player-section" style="display: none;">
+        <div id="player-simone" class="player-section">
             <h3>Comandanti di simone</h3>
             <table class="dataframe display" id="commanderStats-simone">
   <thead>
@@ -3881,7 +3904,6 @@
       <th>CMC</th>
       <th>Partite</th>
       <th>Vittorie</th>
-      <th>Winrate (%)</th>
     </tr>
   </thead>
   <tbody>
@@ -3891,7 +3913,6 @@
       <td>4.0</td>
       <td>1</td>
       <td>0</td>
-      <td>0.0</td>
     </tr>
   </tbody>
 </table>
@@ -3933,76 +3954,65 @@
 </table>
                     </div>
                     <div>
-                        <h3>Top Comandanti per Winrate</h3>
+                        <h3>Top Comandanti per Vittorie</h3>
                         <table class="dataframe display" id="topCommandersWinrate">
   <thead>
     <tr style="text-align: right;">
       <th>Comandante</th>
       <th>Partite</th>
       <th>Vittorie</th>
-      <th>Winrate (%)</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>vivi ornitier</td>
-      <td>5</td>
-      <td>4</td>
-      <td>80.00</td>
+      <td>dihada, binder of wills</td>
+      <td>28</td>
+      <td>16</td>
     </tr>
     <tr>
-      <td>ghave, guru of spores</td>
-      <td>5</td>
-      <td>4</td>
-      <td>80.00</td>
-    </tr>
-    <tr>
-      <td>pearl-ear, imperial advisor</td>
-      <td>8</td>
-      <td>6</td>
-      <td>75.00</td>
-    </tr>
-    <tr>
-      <td>zimone and dina</td>
-      <td>7</td>
-      <td>5</td>
-      <td>71.43</td>
-    </tr>
-    <tr>
-      <td>tatyova, benthic druid</td>
-      <td>6</td>
-      <td>4</td>
-      <td>66.67</td>
-    </tr>
-    <tr>
-      <td>abdel adrian, gorion's ward</td>
-      <td>9</td>
-      <td>6</td>
-      <td>66.67</td>
-    </tr>
-    <tr>
-      <td>the scarab god</td>
+      <td>maelstrom wanderer</td>
+      <td>23</td>
       <td>13</td>
-      <td>8</td>
-      <td>61.54</td>
     </tr>
     <tr>
-      <td>tivit, seller of secrets</td>
-      <td>5</td>
-      <td>3</td>
-      <td>60.00</td>
+      <td>riku of two reflections</td>
+      <td>25</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>rakdos, the muscle</td>
+      <td>18</td>
+      <td>10</td>
     </tr>
     <tr>
       <td>jetmir, nexus of revels</td>
       <td>17</td>
       <td>10</td>
-      <td>58.82</td>
     </tr>
     <tr>
-      <td>roxanne, starfall savant</td>
-      <td>12</td>
-      <td>7</td>
-      <td>58.33</td>
+      <td>disa the restless</td>
+      <td>31</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <td>satya, aetherflux genius</td>
+      <td>28</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <td>mendicant core, guidelight</td>
+      <td>19</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <td>bonny pall, clearcutter</td>
+      <td>16</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <td>rograkh, son of rohgahh</td>
+      <td>32</td>
+      <td>8</td>
     </tr>
   </tbody>
 </table>
@@ -4017,13 +4027,6 @@
                 <h2><i class="fas fa-users"></i> Statistiche Giocatore vs Avversario</h2>
             </div>
             <div class="section-content">
-                <div class="player-selector">
-                    <label for="playerSelect">Seleziona Giocatore:</label>
-                    <select id="playerSelect">
-                        <option value="">Tutti</option>
-                        <option value="Andrea">Andrea</option><option value="Betto">Betto</option><option value="Claudio">Claudio</option><option value="Daniele">Daniele</option><option value="Davide">Davide</option><option value="Don">Don</option><option value="Edoardo">Edoardo</option><option value="Ema">Ema</option><option value="Emi">Emi</option><option value="Enrico">Enrico</option><option value="Ettore">Ettore</option><option value="Gabriele">Gabriele</option><option value="Giulia">Giulia</option><option value="Gymbro">Gymbro</option><option value="Jappy">Jappy</option><option value="Lore">Lore</option><option value="Luca">Luca</option><option value="Luca Proie">Luca Proie</option><option value="Lucio">Lucio</option><option value="Marco">Marco</option><option value="Matte">Matte</option><option value="Mone">Mone</option><option value="Monta">Monta</option><option value="Pain">Pain</option><option value="Paolo">Paolo</option><option value="Phyga">Phyga</option><option value="Ru">Ru</option><option value="Simo">Simo</option><option value="Sisco">Sisco</option><option value="Ska">Ska</option><option value="nico gym">nico gym</option><option value="nicolo">nicolo</option><option value="ru">ru</option><option value="simone">simone</option>
-                    </select>
-                </div>
                 <table class="dataframe display" id="playerVsOthers">
   <thead>
     <tr style="text-align: right;">
@@ -4199,9 +4202,9 @@
     <tr>
       <td>Claudio</td>
       <td>Ettore</td>
-      <td>59</td>
+      <td>60</td>
       <td>15</td>
-      <td>25.42</td>
+      <td>25.00</td>
     </tr>
     <tr>
       <td>Claudio</td>
@@ -4269,9 +4272,9 @@
     <tr>
       <td>Claudio</td>
       <td>Don</td>
-      <td>41</td>
+      <td>43</td>
       <td>4</td>
-      <td>9.76</td>
+      <td>9.30</td>
     </tr>
     <tr>
       <td>Claudio</td>
@@ -4291,6 +4294,13 @@
       <td>Claudio</td>
       <td>Gabriele</td>
       <td>2</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>Claudio</td>
+      <td>Fonsat</td>
+      <td>1</td>
       <td>0</td>
       <td>0.00</td>
     </tr>
@@ -4457,6 +4467,13 @@
     </tr>
     <tr>
       <td>Don</td>
+      <td>Fonsat</td>
+      <td>1</td>
+      <td>1</td>
+      <td>100.00</td>
+    </tr>
+    <tr>
+      <td>Don</td>
       <td>Edoardo</td>
       <td>3</td>
       <td>3</td>
@@ -4507,16 +4524,23 @@
     <tr>
       <td>Don</td>
       <td>Claudio</td>
-      <td>41</td>
-      <td>18</td>
-      <td>43.90</td>
+      <td>43</td>
+      <td>19</td>
+      <td>44.19</td>
     </tr>
     <tr>
       <td>Don</td>
-      <td>Ettore</td>
-      <td>43</td>
-      <td>16</td>
-      <td>37.21</td>
+      <td>Giulia</td>
+      <td>7</td>
+      <td>3</td>
+      <td>42.86</td>
+    </tr>
+    <tr>
+      <td>Don</td>
+      <td>Gymbro</td>
+      <td>41</td>
+      <td>15</td>
+      <td>36.59</td>
     </tr>
     <tr>
       <td>Don</td>
@@ -4527,24 +4551,38 @@
     </tr>
     <tr>
       <td>Don</td>
-      <td>Ru</td>
-      <td>67</td>
-      <td>23</td>
-      <td>34.33</td>
+      <td>Ettore</td>
+      <td>44</td>
+      <td>16</td>
+      <td>36.36</td>
     </tr>
     <tr>
       <td>Don</td>
-      <td>Gymbro</td>
-      <td>36</td>
-      <td>12</td>
+      <td>Ru</td>
+      <td>75</td>
+      <td>26</td>
+      <td>34.67</td>
+    </tr>
+    <tr>
+      <td>Don</td>
+      <td>Phyga</td>
+      <td>6</td>
+      <td>2</td>
       <td>33.33</td>
     </tr>
     <tr>
       <td>Don</td>
       <td>Emi</td>
-      <td>71</td>
-      <td>22</td>
-      <td>30.99</td>
+      <td>78</td>
+      <td>24</td>
+      <td>30.77</td>
+    </tr>
+    <tr>
+      <td>Don</td>
+      <td>Matte</td>
+      <td>54</td>
+      <td>16</td>
+      <td>29.63</td>
     </tr>
     <tr>
       <td>Don</td>
@@ -4555,31 +4593,10 @@
     </tr>
     <tr>
       <td>Don</td>
-      <td>Matte</td>
-      <td>48</td>
-      <td>13</td>
-      <td>27.08</td>
-    </tr>
-    <tr>
-      <td>Don</td>
-      <td>Giulia</td>
-      <td>4</td>
-      <td>1</td>
-      <td>25.00</td>
-    </tr>
-    <tr>
-      <td>Don</td>
       <td>Luca</td>
       <td>18</td>
       <td>4</td>
       <td>22.22</td>
-    </tr>
-    <tr>
-      <td>Don</td>
-      <td>Phyga</td>
-      <td>5</td>
-      <td>1</td>
-      <td>20.00</td>
     </tr>
     <tr>
       <td>Don</td>
@@ -4703,30 +4720,30 @@
     <tr>
       <td>Emi</td>
       <td>Ettore</td>
-      <td>25</td>
+      <td>26</td>
       <td>11</td>
-      <td>44.00</td>
+      <td>42.31</td>
     </tr>
     <tr>
       <td>Emi</td>
       <td>Sisco</td>
-      <td>34</td>
+      <td>36</td>
       <td>14</td>
-      <td>41.18</td>
+      <td>38.89</td>
     </tr>
     <tr>
       <td>Emi</td>
       <td>Ru</td>
-      <td>47</td>
-      <td>17</td>
-      <td>36.17</td>
+      <td>57</td>
+      <td>19</td>
+      <td>33.33</td>
     </tr>
     <tr>
       <td>Emi</td>
       <td>Don</td>
-      <td>71</td>
-      <td>24</td>
-      <td>33.80</td>
+      <td>78</td>
+      <td>26</td>
+      <td>33.33</td>
     </tr>
     <tr>
       <td>Emi</td>
@@ -4737,20 +4754,6 @@
     </tr>
     <tr>
       <td>Emi</td>
-      <td>Matte</td>
-      <td>26</td>
-      <td>7</td>
-      <td>26.92</td>
-    </tr>
-    <tr>
-      <td>Emi</td>
-      <td>Gymbro</td>
-      <td>8</td>
-      <td>2</td>
-      <td>25.00</td>
-    </tr>
-    <tr>
-      <td>Emi</td>
       <td>Betto</td>
       <td>4</td>
       <td>1</td>
@@ -4758,7 +4761,28 @@
     </tr>
     <tr>
       <td>Emi</td>
+      <td>Matte</td>
+      <td>33</td>
+      <td>8</td>
+      <td>24.24</td>
+    </tr>
+    <tr>
+      <td>Emi</td>
+      <td>Gymbro</td>
+      <td>13</td>
+      <td>3</td>
+      <td>23.08</td>
+    </tr>
+    <tr>
+      <td>Emi</td>
       <td>nico gym</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>Emi</td>
+      <td>Phyga</td>
       <td>1</td>
       <td>0</td>
       <td>0.00</td>
@@ -4774,6 +4798,13 @@
       <td>Emi</td>
       <td>Gabriele</td>
       <td>2</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>Emi</td>
+      <td>Fonsat</td>
+      <td>1</td>
       <td>0</td>
       <td>0.00</td>
     </tr>
@@ -4822,15 +4853,29 @@
     <tr>
       <td>Ettore</td>
       <td>Sisco</td>
-      <td>39</td>
+      <td>40</td>
       <td>11</td>
-      <td>28.21</td>
+      <td>27.50</td>
+    </tr>
+    <tr>
+      <td>Ettore</td>
+      <td>Don</td>
+      <td>44</td>
+      <td>11</td>
+      <td>25.00</td>
     </tr>
     <tr>
       <td>Ettore</td>
       <td>Daniele</td>
       <td>4</td>
       <td>1</td>
+      <td>25.00</td>
+    </tr>
+    <tr>
+      <td>Ettore</td>
+      <td>Claudio</td>
+      <td>60</td>
+      <td>15</td>
       <td>25.00</td>
     </tr>
     <tr>
@@ -4842,45 +4887,31 @@
     </tr>
     <tr>
       <td>Ettore</td>
-      <td>Claudio</td>
-      <td>59</td>
-      <td>14</td>
-      <td>23.73</td>
-    </tr>
-    <tr>
-      <td>Ettore</td>
-      <td>Don</td>
-      <td>43</td>
-      <td>10</td>
-      <td>23.26</td>
-    </tr>
-    <tr>
-      <td>Ettore</td>
       <td>Matte</td>
-      <td>44</td>
+      <td>46</td>
       <td>10</td>
-      <td>22.73</td>
+      <td>21.74</td>
     </tr>
     <tr>
       <td>Ettore</td>
       <td>Ru</td>
-      <td>33</td>
+      <td>34</td>
       <td>7</td>
-      <td>21.21</td>
+      <td>20.59</td>
     </tr>
     <tr>
       <td>Ettore</td>
       <td>Emi</td>
-      <td>25</td>
+      <td>26</td>
       <td>5</td>
-      <td>20.00</td>
+      <td>19.23</td>
     </tr>
     <tr>
       <td>Ettore</td>
       <td>Gymbro</td>
-      <td>32</td>
+      <td>33</td>
       <td>5</td>
-      <td>15.63</td>
+      <td>15.15</td>
     </tr>
     <tr>
       <td>Ettore</td>
@@ -4939,6 +4970,41 @@
       <td>0.00</td>
     </tr>
     <tr>
+      <td>Fonsat</td>
+      <td>Sisco</td>
+      <td>1</td>
+      <td>1</td>
+      <td>100.00</td>
+    </tr>
+    <tr>
+      <td>Fonsat</td>
+      <td>Matte</td>
+      <td>1</td>
+      <td>1</td>
+      <td>100.00</td>
+    </tr>
+    <tr>
+      <td>Fonsat</td>
+      <td>Emi</td>
+      <td>1</td>
+      <td>1</td>
+      <td>100.00</td>
+    </tr>
+    <tr>
+      <td>Fonsat</td>
+      <td>Don</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>Fonsat</td>
+      <td>Claudio</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
       <td>Gabriele</td>
       <td>Emi</td>
       <td>2</td>
@@ -4982,13 +5048,6 @@
     </tr>
     <tr>
       <td>Giulia</td>
-      <td>Don</td>
-      <td>4</td>
-      <td>1</td>
-      <td>25.00</td>
-    </tr>
-    <tr>
-      <td>Giulia</td>
       <td>Claudio</td>
       <td>5</td>
       <td>1</td>
@@ -5010,17 +5069,24 @@
     </tr>
     <tr>
       <td>Giulia</td>
-      <td>Gymbro</td>
-      <td>14</td>
-      <td>2</td>
+      <td>Don</td>
+      <td>7</td>
+      <td>1</td>
       <td>14.29</td>
     </tr>
     <tr>
       <td>Giulia</td>
+      <td>Gymbro</td>
+      <td>16</td>
+      <td>2</td>
+      <td>12.50</td>
+    </tr>
+    <tr>
+      <td>Giulia</td>
       <td>Matte</td>
-      <td>11</td>
+      <td>12</td>
       <td>1</td>
-      <td>9.09</td>
+      <td>8.33</td>
     </tr>
     <tr>
       <td>Giulia</td>
@@ -5137,23 +5203,23 @@
     <tr>
       <td>Gymbro</td>
       <td>Giulia</td>
-      <td>14</td>
+      <td>16</td>
       <td>8</td>
-      <td>57.14</td>
-    </tr>
-    <tr>
-      <td>Gymbro</td>
-      <td>Sisco</td>
-      <td>49</td>
-      <td>19</td>
-      <td>38.78</td>
+      <td>50.00</td>
     </tr>
     <tr>
       <td>Gymbro</td>
       <td>Emi</td>
-      <td>8</td>
-      <td>3</td>
-      <td>37.50</td>
+      <td>13</td>
+      <td>6</td>
+      <td>46.15</td>
+    </tr>
+    <tr>
+      <td>Gymbro</td>
+      <td>Sisco</td>
+      <td>52</td>
+      <td>21</td>
+      <td>40.38</td>
     </tr>
     <tr>
       <td>Gymbro</td>
@@ -5164,17 +5230,24 @@
     </tr>
     <tr>
       <td>Gymbro</td>
-      <td>Don</td>
-      <td>36</td>
-      <td>13</td>
-      <td>36.11</td>
+      <td>Ru</td>
+      <td>60</td>
+      <td>22</td>
+      <td>36.67</td>
     </tr>
     <tr>
       <td>Gymbro</td>
       <td>Ettore</td>
-      <td>32</td>
-      <td>11</td>
-      <td>34.38</td>
+      <td>33</td>
+      <td>12</td>
+      <td>36.36</td>
+    </tr>
+    <tr>
+      <td>Gymbro</td>
+      <td>Don</td>
+      <td>41</td>
+      <td>14</td>
+      <td>34.15</td>
     </tr>
     <tr>
       <td>Gymbro</td>
@@ -5185,16 +5258,16 @@
     </tr>
     <tr>
       <td>Gymbro</td>
-      <td>Ru</td>
-      <td>54</td>
-      <td>18</td>
+      <td>Phyga</td>
+      <td>9</td>
+      <td>3</td>
       <td>33.33</td>
     </tr>
     <tr>
       <td>Gymbro</td>
-      <td>Phyga</td>
-      <td>9</td>
-      <td>3</td>
+      <td>Luca</td>
+      <td>18</td>
+      <td>6</td>
       <td>33.33</td>
     </tr>
     <tr>
@@ -5228,16 +5301,9 @@
     <tr>
       <td>Gymbro</td>
       <td>Matte</td>
-      <td>43</td>
-      <td>13</td>
-      <td>30.23</td>
-    </tr>
-    <tr>
-      <td>Gymbro</td>
-      <td>Luca</td>
-      <td>15</td>
-      <td>4</td>
-      <td>26.67</td>
+      <td>44</td>
+      <td>14</td>
+      <td>31.82</td>
     </tr>
     <tr>
       <td>Gymbro</td>
@@ -5466,9 +5532,9 @@
     <tr>
       <td>Luca</td>
       <td>Sisco</td>
-      <td>38</td>
+      <td>41</td>
       <td>12</td>
-      <td>31.58</td>
+      <td>29.27</td>
     </tr>
     <tr>
       <td>Luca</td>
@@ -5479,17 +5545,17 @@
     </tr>
     <tr>
       <td>Luca</td>
-      <td>Gymbro</td>
-      <td>15</td>
-      <td>4</td>
-      <td>26.67</td>
-    </tr>
-    <tr>
-      <td>Luca</td>
       <td>Matte</td>
       <td>23</td>
       <td>6</td>
       <td>26.09</td>
+    </tr>
+    <tr>
+      <td>Luca</td>
+      <td>Gymbro</td>
+      <td>18</td>
+      <td>4</td>
+      <td>22.22</td>
     </tr>
     <tr>
       <td>Luca</td>
@@ -5774,16 +5840,9 @@
     <tr>
       <td>Matte</td>
       <td>Sisco</td>
-      <td>59</td>
-      <td>31</td>
-      <td>52.54</td>
-    </tr>
-    <tr>
-      <td>Matte</td>
-      <td>Phyga</td>
-      <td>2</td>
-      <td>1</td>
-      <td>50.00</td>
+      <td>61</td>
+      <td>32</td>
+      <td>52.46</td>
     </tr>
     <tr>
       <td>Matte</td>
@@ -5809,16 +5868,23 @@
     <tr>
       <td>Matte</td>
       <td>Gymbro</td>
-      <td>43</td>
+      <td>44</td>
       <td>19</td>
-      <td>44.19</td>
+      <td>43.18</td>
+    </tr>
+    <tr>
+      <td>Matte</td>
+      <td>Giulia</td>
+      <td>12</td>
+      <td>5</td>
+      <td>41.67</td>
     </tr>
     <tr>
       <td>Matte</td>
       <td>Ettore</td>
-      <td>44</td>
-      <td>18</td>
-      <td>40.91</td>
+      <td>46</td>
+      <td>19</td>
+      <td>41.30</td>
     </tr>
     <tr>
       <td>Matte</td>
@@ -5829,31 +5895,17 @@
     </tr>
     <tr>
       <td>Matte</td>
-      <td>Giulia</td>
-      <td>11</td>
-      <td>4</td>
-      <td>36.36</td>
-    </tr>
-    <tr>
-      <td>Matte</td>
-      <td>Ru</td>
-      <td>58</td>
-      <td>21</td>
-      <td>36.21</td>
+      <td>Phyga</td>
+      <td>3</td>
+      <td>1</td>
+      <td>33.33</td>
     </tr>
     <tr>
       <td>Matte</td>
       <td>Don</td>
-      <td>48</td>
-      <td>17</td>
-      <td>35.42</td>
-    </tr>
-    <tr>
-      <td>Matte</td>
-      <td>Emi</td>
-      <td>26</td>
-      <td>9</td>
-      <td>34.62</td>
+      <td>54</td>
+      <td>18</td>
+      <td>33.33</td>
     </tr>
     <tr>
       <td>Matte</td>
@@ -5861,6 +5913,20 @@
       <td>3</td>
       <td>1</td>
       <td>33.33</td>
+    </tr>
+    <tr>
+      <td>Matte</td>
+      <td>Ru</td>
+      <td>65</td>
+      <td>21</td>
+      <td>32.31</td>
+    </tr>
+    <tr>
+      <td>Matte</td>
+      <td>Emi</td>
+      <td>33</td>
+      <td>10</td>
+      <td>30.30</td>
     </tr>
     <tr>
       <td>Matte</td>
@@ -5879,6 +5945,13 @@
     <tr>
       <td>Matte</td>
       <td>Monta</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>Matte</td>
+      <td>Fonsat</td>
       <td>1</td>
       <td>0</td>
       <td>0.00</td>
@@ -6096,14 +6169,21 @@
     <tr>
       <td>Phyga</td>
       <td>Matte</td>
-      <td>2</td>
+      <td>3</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>Phyga</td>
+      <td>Emi</td>
+      <td>1</td>
       <td>0</td>
       <td>0.00</td>
     </tr>
     <tr>
       <td>Phyga</td>
       <td>Don</td>
-      <td>5</td>
+      <td>6</td>
       <td>0</td>
       <td>0.00</td>
     </tr>
@@ -6221,38 +6301,38 @@
     </tr>
     <tr>
       <td>Ru</td>
-      <td>Gymbro</td>
-      <td>54</td>
-      <td>18</td>
-      <td>33.33</td>
-    </tr>
-    <tr>
-      <td>Ru</td>
       <td>Ettore</td>
-      <td>33</td>
+      <td>34</td>
       <td>11</td>
-      <td>33.33</td>
+      <td>32.35</td>
     </tr>
     <tr>
       <td>Ru</td>
       <td>Matte</td>
-      <td>58</td>
-      <td>18</td>
-      <td>31.03</td>
+      <td>65</td>
+      <td>21</td>
+      <td>32.31</td>
     </tr>
     <tr>
       <td>Ru</td>
-      <td>Don</td>
-      <td>67</td>
-      <td>19</td>
-      <td>28.36</td>
+      <td>Gymbro</td>
+      <td>60</td>
+      <td>18</td>
+      <td>30.00</td>
     </tr>
     <tr>
       <td>Ru</td>
       <td>Emi</td>
-      <td>47</td>
-      <td>12</td>
-      <td>25.53</td>
+      <td>57</td>
+      <td>16</td>
+      <td>28.07</td>
+    </tr>
+    <tr>
+      <td>Ru</td>
+      <td>Don</td>
+      <td>75</td>
+      <td>21</td>
+      <td>28.00</td>
     </tr>
     <tr>
       <td>Ru</td>
@@ -6361,16 +6441,16 @@
     </tr>
     <tr>
       <td>Sisco</td>
-      <td>Emi</td>
-      <td>34</td>
-      <td>9</td>
-      <td>26.47</td>
-    </tr>
-    <tr>
-      <td>Sisco</td>
       <td>Marco</td>
       <td>4</td>
       <td>1</td>
+      <td>25.00</td>
+    </tr>
+    <tr>
+      <td>Sisco</td>
+      <td>Emi</td>
+      <td>36</td>
+      <td>9</td>
       <td>25.00</td>
     </tr>
     <tr>
@@ -6404,16 +6484,23 @@
     <tr>
       <td>Sisco</td>
       <td>Gymbro</td>
-      <td>49</td>
-      <td>4</td>
-      <td>8.16</td>
+      <td>52</td>
+      <td>5</td>
+      <td>9.62</td>
+    </tr>
+    <tr>
+      <td>Sisco</td>
+      <td>Luca</td>
+      <td>41</td>
+      <td>3</td>
+      <td>7.32</td>
     </tr>
     <tr>
       <td>Sisco</td>
       <td>Matte</td>
-      <td>59</td>
+      <td>61</td>
       <td>4</td>
-      <td>6.78</td>
+      <td>6.56</td>
     </tr>
     <tr>
       <td>Sisco</td>
@@ -6431,17 +6518,10 @@
     </tr>
     <tr>
       <td>Sisco</td>
-      <td>Luca</td>
-      <td>38</td>
-      <td>2</td>
-      <td>5.26</td>
-    </tr>
-    <tr>
-      <td>Sisco</td>
       <td>Ettore</td>
-      <td>39</td>
+      <td>40</td>
       <td>2</td>
-      <td>5.13</td>
+      <td>5.00</td>
     </tr>
     <tr>
       <td>Sisco</td>
@@ -6454,6 +6534,13 @@
       <td>Sisco</td>
       <td>Pain</td>
       <td>7</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>Sisco</td>
+      <td>Fonsat</td>
+      <td>1</td>
       <td>0</td>
       <td>0.00</td>
     </tr>
@@ -6573,184 +6660,6 @@
 </table>
             </div>
         </div>
-        
-        <!-- Winrate Trends -->
-        <div class="section">
-            <div class="section-header">
-                <h2><i class="fas fa-chart-line"></i> Trend Winrate</h2>
-            </div>
-            <div class="section-content">
-                <div class="player-selector">
-                    <label for="winratePlayerSelect">
-                        <i class="fas fa-user"></i> Seleziona Giocatore:
-                    </label>
-                    <select id="winratePlayerSelect">
-                        <option value="">Seleziona un giocatore</option>
-                        <option value="Andrea">Andrea</option><option value="Betto">Betto</option><option value="Claudio">Claudio</option><option value="Daniele">Daniele</option><option value="Davide">Davide</option><option value="Don">Don</option><option value="Edoardo">Edoardo</option><option value="Ema">Ema</option><option value="Emi">Emi</option><option value="Enrico">Enrico</option><option value="Ettore">Ettore</option><option value="Gabriele">Gabriele</option><option value="Giulia">Giulia</option><option value="Gymbro">Gymbro</option><option value="Jappy">Jappy</option><option value="Lore">Lore</option><option value="Luca">Luca</option><option value="Luca Proie">Luca Proie</option><option value="Lucio">Lucio</option><option value="Marco">Marco</option><option value="Matte">Matte</option><option value="Mone">Mone</option><option value="Monta">Monta</option><option value="Pain">Pain</option><option value="Paolo">Paolo</option><option value="Phyga">Phyga</option><option value="Ru">Ru</option><option value="Simo">Simo</option><option value="Sisco">Sisco</option><option value="Ska">Ska</option><option value="nico gym">nico gym</option><option value="nicolo">nicolo</option><option value="ru">ru</option><option value="simone">simone</option>
-                    </select>
-                </div>
-                <div class="chart-container">
-                    <canvas id="winrateChart"></canvas>
-                </div>
-            </div>
-        </div>
     </div>
-    
-    <!-- Scripts -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/responsive/2.5.0/js/dataTables.responsive.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    
-    <script>
-        // Dati embedded
-        const chartData = {"Andrea": [{"data": "2025-03", "winrate": 20.0}, {"data": "2025-07", "winrate": 0.0}, {"data": "2025-08", "winrate": 0.0}], "Betto": [{"data": "2025-01", "winrate": 50.0}], "Claudio": [{"data": "2024-10", "winrate": 100.0}, {"data": "2024-11", "winrate": 22.22}, {"data": "2024-12", "winrate": 16.67}, {"data": "2025-01", "winrate": 21.43}, {"data": "2025-02", "winrate": 0.0}, {"data": "2025-03", "winrate": 31.82}, {"data": "2025-04", "winrate": 23.08}, {"data": "2025-05", "winrate": 23.81}, {"data": "2025-06", "winrate": 17.65}, {"data": "2025-07", "winrate": 16.67}, {"data": "2025-08", "winrate": 21.43}, {"data": "2025-09", "winrate": 42.86}], "Daniele": [{"data": "2025-01", "winrate": 0.0}, {"data": "2025-04", "winrate": 0.0}, {"data": "2025-07", "winrate": 40.0}], "Davide": [{"data": "2024-12", "winrate": 0.0}, {"data": "2025-07", "winrate": 0.0}, {"data": "2025-08", "winrate": 0.0}], "Don": [{"data": "2024-11", "winrate": 38.1}, {"data": "2024-12", "winrate": 23.81}, {"data": "2025-01", "winrate": 30.0}, {"data": "2025-02", "winrate": 40.0}, {"data": "2025-03", "winrate": 22.73}, {"data": "2025-04", "winrate": 30.43}, {"data": "2025-05", "winrate": 41.67}, {"data": "2025-06", "winrate": 27.78}, {"data": "2025-07", "winrate": 55.0}, {"data": "2025-08", "winrate": 57.14}, {"data": "2025-09", "winrate": 0.0}], "Edoardo": [{"data": "2025-07", "winrate": 0.0}], "Ema": [{"data": "2024-12", "winrate": 0.0}], "Emi": [{"data": "2024-11", "winrate": 40.0}, {"data": "2024-12", "winrate": 31.82}, {"data": "2025-01", "winrate": 28.57}, {"data": "2025-02", "winrate": 57.14}, {"data": "2025-03", "winrate": 29.41}, {"data": "2025-04", "winrate": 64.29}, {"data": "2025-05", "winrate": 35.29}, {"data": "2025-06", "winrate": 57.14}, {"data": "2025-07", "winrate": 12.5}, {"data": "2025-08", "winrate": 0.0}, {"data": "2025-09", "winrate": 0.0}], "Enrico": [{"data": "2025-07", "winrate": 0.0}], "Ettore": [{"data": "2024-11", "winrate": 14.29}, {"data": "2024-12", "winrate": 17.39}, {"data": "2025-01", "winrate": 13.33}, {"data": "2025-02", "winrate": 12.5}, {"data": "2025-03", "winrate": 30.43}, {"data": "2025-04", "winrate": 27.27}, {"data": "2025-05", "winrate": 23.08}, {"data": "2025-06", "winrate": 7.14}, {"data": "2025-07", "winrate": 16.67}, {"data": "2025-08", "winrate": 50.0}, {"data": "2025-09", "winrate": 60.0}], "Gabriele": [{"data": "2024-12", "winrate": 33.33}], "Giulia": [{"data": "2024-11", "winrate": 20.0}, {"data": "2024-12", "winrate": 20.0}, {"data": "2025-01", "winrate": 16.67}, {"data": "2025-02", "winrate": 0.0}, {"data": "2025-03", "winrate": 0.0}, {"data": "2025-06", "winrate": 0.0}, {"data": "2025-07", "winrate": 0.0}, {"data": "2025-08", "winrate": 14.29}, {"data": "2025-09", "winrate": 0.0}], "Gymbro": [{"data": "2024-11", "winrate": 50.0}, {"data": "2024-12", "winrate": 22.73}, {"data": "2025-01", "winrate": 22.22}, {"data": "2025-02", "winrate": 50.0}, {"data": "2025-03", "winrate": 38.46}, {"data": "2025-04", "winrate": 0.0}, {"data": "2025-05", "winrate": 27.78}, {"data": "2025-06", "winrate": 48.0}, {"data": "2025-07", "winrate": 35.29}, {"data": "2025-08", "winrate": 45.83}, {"data": "2025-09", "winrate": 33.33}], "Jappy": [{"data": "2024-11", "winrate": 25.0}, {"data": "2024-12", "winrate": 28.57}, {"data": "2025-01", "winrate": 25.0}, {"data": "2025-02", "winrate": 0.0}, {"data": "2025-03", "winrate": 14.29}, {"data": "2025-04", "winrate": 55.56}, {"data": "2025-05", "winrate": 50.0}, {"data": "2025-06", "winrate": 9.09}, {"data": "2025-07", "winrate": 16.67}], "Lore": [{"data": "2024-12", "winrate": 100.0}], "Luca": [{"data": "2024-11", "winrate": 0.0}, {"data": "2024-12", "winrate": 46.15}, {"data": "2025-01", "winrate": 50.0}, {"data": "2025-02", "winrate": 0.0}, {"data": "2025-03", "winrate": 54.55}, {"data": "2025-04", "winrate": 80.0}, {"data": "2025-05", "winrate": 20.0}, {"data": "2025-06", "winrate": 50.0}, {"data": "2025-07", "winrate": 20.0}, {"data": "2025-09", "winrate": 0.0}], "Luca Proie": [{"data": "2024-12", "winrate": 40.0}, {"data": "2025-01", "winrate": 25.0}, {"data": "2025-02", "winrate": 0.0}, {"data": "2025-03", "winrate": 12.5}, {"data": "2025-04", "winrate": 20.0}, {"data": "2025-05", "winrate": 30.0}, {"data": "2025-07", "winrate": 20.0}, {"data": "2025-08", "winrate": 42.86}], "Lucio": [{"data": "2024-11", "winrate": 0.0}, {"data": "2024-12", "winrate": 0.0}, {"data": "2025-02", "winrate": 0.0}, {"data": "2025-03", "winrate": 0.0}, {"data": "2025-04", "winrate": 0.0}, {"data": "2025-08", "winrate": 25.0}], "Marco": [{"data": "2024-12", "winrate": 0.0}], "Matte": [{"data": "2024-10", "winrate": 60.0}, {"data": "2024-11", "winrate": 50.0}, {"data": "2024-12", "winrate": 50.0}, {"data": "2025-01", "winrate": 35.29}, {"data": "2025-02", "winrate": 50.0}, {"data": "2025-03", "winrate": 52.0}, {"data": "2025-04", "winrate": 21.43}, {"data": "2025-05", "winrate": 44.0}, {"data": "2025-06", "winrate": 40.0}, {"data": "2025-07", "winrate": 53.33}, {"data": "2025-08", "winrate": 0.0}, {"data": "2025-09", "winrate": 0.0}], "Mone": [{"data": "2025-06", "winrate": 0.0}], "Monta": [{"data": "2025-01", "winrate": 50.0}], "Pain": [{"data": "2025-01", "winrate": 100.0}, {"data": "2025-02", "winrate": 100.0}, {"data": "2025-03", "winrate": 0.0}, {"data": "2025-06", "winrate": 100.0}, {"data": "2025-09", "winrate": 0.0}], "Paolo": [{"data": "2025-03", "winrate": 60.0}], "Phyga": [{"data": "2024-11", "winrate": 33.33}, {"data": "2024-12", "winrate": 0.0}, {"data": "2025-01", "winrate": 0.0}, {"data": "2025-02", "winrate": 50.0}, {"data": "2025-04", "winrate": 25.0}, {"data": "2025-06", "winrate": 33.33}, {"data": "2025-08", "winrate": 0.0}], "Ru": [{"data": "2024-10", "winrate": 20.0}, {"data": "2024-11", "winrate": 33.33}, {"data": "2024-12", "winrate": 34.62}, {"data": "2025-01", "winrate": 27.78}, {"data": "2025-02", "winrate": 36.36}, {"data": "2025-03", "winrate": 37.5}, {"data": "2025-04", "winrate": 32.0}, {"data": "2025-05", "winrate": 38.1}, {"data": "2025-06", "winrate": 31.25}, {"data": "2025-07", "winrate": 33.33}, {"data": "2025-08", "winrate": 41.67}, {"data": "2025-09", "winrate": 100.0}], "Simo": [{"data": "2024-12", "winrate": 0.0}, {"data": "2025-06", "winrate": 0.0}], "Sisco": [{"data": "2024-10", "winrate": 0.0}, {"data": "2024-11", "winrate": 7.69}, {"data": "2024-12", "winrate": 22.22}, {"data": "2025-01", "winrate": 5.26}, {"data": "2025-02", "winrate": 10.0}, {"data": "2025-03", "winrate": 10.0}, {"data": "2025-04", "winrate": 6.67}, {"data": "2025-05", "winrate": 4.76}, {"data": "2025-06", "winrate": 8.33}, {"data": "2025-07", "winrate": 33.33}, {"data": "2025-08", "winrate": 12.5}, {"data": "2025-09", "winrate": 16.67}], "Ska": [{"data": "2025-05", "winrate": 66.67}], "nico gym": [{"data": "2025-03", "winrate": 0.0}], "nicolo": [{"data": "2025-02", "winrate": 100.0}], "ru": [{"data": "2025-04", "winrate": 0.0}], "simone": [{"data": "2025-02", "winrate": 0.0}]};
-        const cmcData = [{"cmc": null, "frequency": 19}, {"cmc": 0.0, "frequency": 32}, {"cmc": 2.0, "frequency": 104}, {"cmc": 3.0, "frequency": 377}, {"cmc": 4.0, "frequency": 600}, {"cmc": 5.0, "frequency": 344}, {"cmc": 6.0, "frequency": 89}, {"cmc": 7.0, "frequency": 29}, {"cmc": 8.0, "frequency": 28}, {"cmc": 9.0, "frequency": 19}, {"cmc": "4.O", "frequency": 28}];
-        
-        $(document).ready(function() {
-            // Inizializza DataTables
-            $('table.display').DataTable({
-                responsive: true,
-                pageLength: 10,
-                order: [],
-                language: {
-                    "decimal":        "",
-                    "emptyTable":     "Nessun dato disponibile",
-                    "info":           "Mostra da _START_ a _END_ di _TOTAL_ record",
-                    "infoEmpty":      "Mostra 0 di 0 record",
-                    "infoFiltered":   "(filtrato da _MAX_ record totali)",
-                    "infoPostFix":    "",
-                    "thousands":      ",",
-                    "lengthMenu":     "Mostra _MENU_ record",
-                    "loadingRecords": "Caricamento...",
-                    "processing":     "Elaborazione...",
-                    "search":         "Cerca:",
-                    "zeroRecords":    "Nessun record trovato",
-                    "paginate": {
-                        "first":      "Primo",
-                        "last":       "Ultimo",
-                        "next":       "Prossimo",
-                        "previous":   "Precedente"
-                    }
-                }
-            });
-            
-            // Player commander selection
-            $('#commanderPlayerSelect').on('change', function() {
-                const val = $(this).val();
-                $('.player-section').hide();
-                if (val) {
-                    const cleanVal = val.replace(/ /g, '-').replace(/'/g, '');
-                    $('#player-' + cleanVal).show();
-                }
-            });
-            
-            // Player vs Others filter
-            $('#playerSelect').on('change', function() {
-                const val = $(this).val();
-                const table = $('#playerVsOthers').DataTable();
-                if (val === '' || val === 'Tutti') {
-                    table.column(0).search('').draw();
-                } else {
-                    table.column(0).search('^' + val + '$', true, false).draw();
-                }
-            });
-            
-            // CMC Distribution Chart
-            const cmcCtx = document.getElementById('cmcChart').getContext('2d');
-            new Chart(cmcCtx, {
-                type: 'bar',
-                data: {
-                    labels: cmcData.map(d => 'CMC ' + d.cmc),
-                    datasets: [{
-                        label: 'Frequenza Comandanti',
-                        data: cmcData.map(d => d.frequency),
-                        backgroundColor: 'rgba(37, 99, 235, 0.7)',
-                        borderColor: 'rgba(37, 99, 235, 1)',
-                        borderWidth: 1
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: {
-                        title: {
-                            display: true,
-                            text: 'Distribuzione CMC Comandanti'
-                        }
-                    },
-                    scales: {
-                        y: {
-                            beginAtZero: true,
-                            title: {
-                                display: true,
-                                text: 'Numero di Comandanti'
-                            }
-                        }
-                    }
-                }
-            });
-            
-            // Winrate Chart
-            const winrateCtx = document.getElementById('winrateChart').getContext('2d');
-            const winrateChart = new Chart(winrateCtx, {
-                type: 'line',
-                data: {
-                    labels: [],
-                    datasets: [{
-                        label: 'Win Rate (%)',
-                        data: [],
-                        borderColor: 'rgba(37, 99, 235, 1)',
-                        backgroundColor: 'rgba(37, 99, 235, 0.1)',
-                        tension: 0.3,
-                        fill: true
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: {
-                        title: {
-                            display: true,
-                            text: 'Trend Winrate nel Tempo'
-                        }
-                    },
-                    scales: {
-                        y: {
-                            beginAtZero: true,
-                            max: 100,
-                            title: {
-                                display: true,
-                                text: 'Win Rate %'
-                            }
-                        }
-                    }
-                }
-            });
-            
-            document.getElementById("winratePlayerSelect").addEventListener("change", function() {
-                const player = this.value;
-                if (!player || !chartData[player]) {
-                    winrateChart.data.labels = [];
-                    winrateChart.data.datasets[0].data = [];
-                    winrateChart.update();
-                    return;
-                }
-                
-                const data = chartData[player];
-                winrateChart.data.labels = data.map(p => p.data);
-                winrateChart.data.datasets[0].data = data.map(p => p.winrate);
-                winrateChart.update();
-            });
-            
-            // Format meta badges
-            $('#metaDominance tbody tr').each(function() {
-                const statusCell = $(this).find('td:last');
-                const status = statusCell.text().trim();
-                const cleanStatus = status.toLowerCase().replace(' ', '-');
-                statusCell.html('<span class="meta-badge meta-' + cleanStatus + '">' + status + '</span>');
-            });
-        });
-    </script>
 </body>
 </html>
