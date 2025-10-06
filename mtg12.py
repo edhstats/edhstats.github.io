@@ -342,8 +342,13 @@ def bulk_upload_matches(filename):
     Luca: Kaalia of the Vast [T]
     W: Muldrotha, the Gravetide
     """
-    conn = sqlite3.connect('edh_stats.db')
+    # Usa una connessione dedicata con timeout e WAL per ridurre i lock
+    conn = sqlite3.connect(DB_PATH, timeout=30)
     cursor = conn.cursor()
+    try:
+        cursor.execute("PRAGMA journal_mode=WAL;")
+    except Exception:
+        pass
 
     try:
         with open(filename, 'r', encoding='utf-8') as f:
@@ -364,14 +369,21 @@ def bulk_upload_matches(filename):
             if not line:
                 continue
 
-            # Riconosce la data all'inizio di un blocco di partita
-            if '/' in line or '.' in line:
+            # Riconosce la data solo se la riga corrisponde ESATTAMENTE al formato dd.mm.yy o dd/mm/yy
+            if re.fullmatch(r"\d{2}[./]\d{2}[./]\d{2}", line):
                 try:
-                    # Assicurati di gestire il formato corretto della data
-                    date = datetime.strptime(line, '%d.%m.%y').strftime('%Y-%m-%d')
+                    # Gestisce sia separatore '.' che '/'
+                    if '.' in line:
+                        date = datetime.strptime(line, '%d.%m.%y').strftime('%Y-%m-%d')
+                    else:
+                        date = datetime.strptime(line, '%d/%m/%y').strftime('%Y-%m-%d')
                 except ValueError:
                     print(f"⚠️ Formato data non valido: {line}. Salto la riga.")
                     date = None
+                # Se arriva una nuova data ma abbiamo ancora giocatori pendenti senza 'W:', resettare in sicurezza
+                if players_data:
+                    print("⚠️ Nuova data trovata mentre una partita precedente non era stata chiusa con 'W:'. Salto quella partita parziale.")
+                    players_data = []
                 continue
             
             # Riconosce il vincitore della partita
@@ -380,6 +392,12 @@ def bulk_upload_matches(filename):
                 if not date or not players_data:
                     print(f"❌ Errore: 'W:' trovato senza una data o giocatori precedenti. Salto la partita.")
                     players_data = [] # Reset for next valid match
+                    continue
+
+                # Verifica che il numero di giocatori sia 3 o 4
+                if len(players_data) not in (3, 4):
+                    print(f"⚠️ Numero giocatori non valido ({len(players_data)}). Attese partite da 3 o 4 giocatori. Salto la partita del {date}.")
+                    players_data = []
                     continue
 
                 game_id = str(uuid.uuid4())
@@ -494,6 +512,7 @@ css_style = """
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 2px 4px rgba(0,0,0,0.06);
+    color: #2e2e2e; /* Ensure readable text on white background */
   }
 
   th, td {
@@ -526,6 +545,7 @@ css_style = """
     border-radius: 12px;
     background-color: #ffffff;
     box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+    color: #2e2e2e; /* Force text color on white cards */
   }
 
   .player-section h3 {
@@ -555,6 +575,7 @@ css_style = """
     table {
       background-color: #1e1e1e;
       box-shadow: 0 2px 4px rgba(0,0,0,0.4);
+      color: #f1f5f9; /* Ensure readable text in dark tables */
     }
 
     th {
@@ -657,15 +678,43 @@ def generate_enhanced_html_report(
         LIMIT 10
     """, conn)
     
-    recent_activity = pd.read_sql_query("""
-        SELECT strftime('%Y-%m', date) as Mese,
-               COUNT(DISTINCT game_id) as Partite,
-               COUNT(DISTINCT player_id) as Giocatori_Attivi
-        FROM matches
-        WHERE date >= date('now', '-3 months')
-        GROUP BY strftime('%Y-%m', date)
-        ORDER BY Mese DESC
-    """, conn)
+    # Season 1 standings (01/10 to 01/01) with special commander bonus
+    special_commanders = [
+        'Beluna Grandsquall // Seek Thrills',
+        'Gimbal, Gremlin Prodigy',
+        'Isu the Abominable',
+        'Licia, Sanguine Tribune',
+        'Lynde, Cheerful Tormentor',
+        'Mr. House, President and CEO',
+        'Obeka, Brute Chronologist',
+        'Pramikon, Sky Rampart',
+        'Rienne, Angel of Rebirth',
+        'Sigurd, Jarl of Ravensthorpe',
+        "Sin, Spira's Punishment",
+        'Sophia, Dogged Detective',
+        'Sydri, Galvanic Genius',
+        'Tatsunari, Toad Rider',
+        'The Celestial Toymaker',
+        'Xira, the Golden Sting',
+        'Yurlok of Scorch Thrash',
+        'Zedruu the Greathearted'
+    ]
+    placeholders = ",".join(["?"] * len(special_commanders))
+    season_start = '2025-10-01'
+    season_end = '2026-01-01'
+    season_query = f"""
+        SELECT p.name AS Giocatore,
+               SUM(CASE WHEN m.win = 1 THEN CASE WHEN c.name IN ({placeholders}) THEN 2 ELSE 1 END ELSE 0 END) AS Punti,
+               SUM(m.win) AS Vittorie,
+               COUNT(*) AS Partite
+        FROM matches m
+        JOIN players p ON m.player_id = p.id
+        JOIN commanders c ON m.commander_id = c.id
+        WHERE m.date >= ? AND m.date < ?
+        GROUP BY p.name
+        ORDER BY Punti DESC, Vittorie DESC, Partite DESC
+    """
+    season_standings = pd.read_sql_query(season_query, conn, params=(special_commanders + [season_start, season_end]))
     
     head_to_head = pd.read_sql_query("""
         WITH matchups AS (
@@ -714,7 +763,7 @@ def generate_enhanced_html_report(
     for player, df in player_commander_stats.items():
         pid = player.replace(" ", "-").replace("'", "")
         player_commander_sections += f'''
-        <div id="player-{pid}" class="player-section" style="display: none;">
+        <div id="player-{pid}" class="player-section">
             <h3>Comandanti di {player}</h3>
             {table_to_html(df, f"commanderStats-{pid}")}
         </div>
@@ -1042,21 +1091,18 @@ def generate_enhanced_html_report(
                 <div class="stat-value">{cmc_medio_totale}</div>
             </div>
         </div>
-        
-        <!-- Activity Status -->
+
+        <!-- Season 1 Standings (01 Ottobre - 01 Gennaio) -->
         <div class="section">
             <div class="section-header">
-                <h2><i class="fas fa-calendar-check"></i> Attivita Recente</h2>
+                <h2><i class="fas fa-trophy"></i> Classifica Season 1 (01 Ottobre - 01 Gennaio)</h2>
             </div>
             <div class="section-content">
-                <div class="activity-indicator">
-                    <i class="fas fa-circle"></i> Gruppo Attivo
-                </div>
-                {table_to_html(recent_activity, "recentActivity")}
+                {table_to_html(season_standings, "season1Standings")}
             </div>
         </div>
-        
-        <!-- Player Performance -->
+
+        <!-- Performance Giocatori -->
         <div class="section">
             <div class="section-header">
                 <h2><i class="fas fa-trophy"></i> Performance Giocatori</h2>
@@ -1112,9 +1158,7 @@ def generate_enhanced_html_report(
                     </div>
                 </div>
                 
-                <div class="chart-container">
-                    <canvas id="cmcChart"></canvas>
-                </div>
+                <!-- Chart rimosso per HTML statico senza JS -->
             </div>
         </div>
         
@@ -1149,16 +1193,6 @@ def generate_enhanced_html_report(
                 <h2><i class="fas fa-crown"></i> Analisi Comandanti</h2>
             </div>
             <div class="section-content">
-                <div class="player-selector">
-                    <label for="commanderPlayerSelect">
-                        <i class="fas fa-user"></i> Seleziona Giocatore:
-                    </label>
-                    <select id="commanderPlayerSelect">
-                        <option value="">Seleziona un giocatore</option>
-                        {"".join(f'<option value="{p}">{p}</option>' for p in player_list)}
-                    </select>
-                </div>
-                
                 {player_commander_sections}
                 
                 <div class="grid-2">
@@ -1167,7 +1201,7 @@ def generate_enhanced_html_report(
                         {table_to_html(top_commanders_played, "topCommandersPlayed")}
                     </div>
                     <div>
-                        <h3>Top Comandanti per Winrate</h3>
+                        <h3>Top Comandanti per Vittorie</h3>
                         {table_to_html(top_commanders_winrate, "topCommandersWinrate")}
                     </div>
                 </div>
@@ -1180,195 +1214,10 @@ def generate_enhanced_html_report(
                 <h2><i class="fas fa-users"></i> Statistiche Giocatore vs Avversario</h2>
             </div>
             <div class="section-content">
-                <div class="player-selector">
-                    <label for="playerSelect">Seleziona Giocatore:</label>
-                    <select id="playerSelect">
-                        <option value="">Tutti</option>
-                        {"".join(f'<option value="{p}">{p}</option>' for p in player_list)}
-                    </select>
-                </div>
                 {table_to_html(player_vs_others, "playerVsOthers")}
             </div>
         </div>
-        
-        <!-- Winrate Trends -->
-        <div class="section">
-            <div class="section-header">
-                <h2><i class="fas fa-chart-line"></i> Trend Winrate</h2>
-            </div>
-            <div class="section-content">
-                <div class="player-selector">
-                    <label for="winratePlayerSelect">
-                        <i class="fas fa-user"></i> Seleziona Giocatore:
-                    </label>
-                    <select id="winratePlayerSelect">
-                        <option value="">Seleziona un giocatore</option>
-                        {"".join(f'<option value="{p}">{p}</option>' for p in player_list)}
-                    </select>
-                </div>
-                <div class="chart-container">
-                    <canvas id="winrateChart"></canvas>
-                </div>
-            </div>
-        </div>
     </div>
-    
-    <!-- Scripts -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/responsive/2.5.0/js/dataTables.responsive.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    
-    <script>
-        // Dati embedded
-        const chartData = {json.dumps(chart_data_js, ensure_ascii=False)};
-        const cmcData = {json.dumps(cmc_data_js, ensure_ascii=False)};
-        
-        $(document).ready(function() {{
-            // Inizializza DataTables
-            $('table.display').DataTable({{
-                responsive: true,
-                pageLength: 10,
-                order: [],
-                language: {{
-                    "decimal":        "",
-                    "emptyTable":     "Nessun dato disponibile",
-                    "info":           "Mostra da _START_ a _END_ di _TOTAL_ record",
-                    "infoEmpty":      "Mostra 0 di 0 record",
-                    "infoFiltered":   "(filtrato da _MAX_ record totali)",
-                    "infoPostFix":    "",
-                    "thousands":      ",",
-                    "lengthMenu":     "Mostra _MENU_ record",
-                    "loadingRecords": "Caricamento...",
-                    "processing":     "Elaborazione...",
-                    "search":         "Cerca:",
-                    "zeroRecords":    "Nessun record trovato",
-                    "paginate": {{
-                        "first":      "Primo",
-                        "last":       "Ultimo",
-                        "next":       "Prossimo",
-                        "previous":   "Precedente"
-                    }}
-                }}
-            }});
-            
-            // Player commander selection
-            $('#commanderPlayerSelect').on('change', function() {{
-                const val = $(this).val();
-                $('.player-section').hide();
-                if (val) {{
-                    const cleanVal = val.replace(/ /g, '-').replace(/'/g, '');
-                    $('#player-' + cleanVal).show();
-                }}
-            }});
-            
-            // Player vs Others filter
-            $('#playerSelect').on('change', function() {{
-                const val = $(this).val();
-                const table = $('#playerVsOthers').DataTable();
-                if (val === '' || val === 'Tutti') {{
-                    table.column(0).search('').draw();
-                }} else {{
-                    table.column(0).search('^' + val + '$', true, false).draw();
-                }}
-            }});
-            
-            // CMC Distribution Chart
-            const cmcCtx = document.getElementById('cmcChart').getContext('2d');
-            new Chart(cmcCtx, {{
-                type: 'bar',
-                data: {{
-                    labels: cmcData.map(d => 'CMC ' + d.cmc),
-                    datasets: [{{
-                        label: 'Frequenza Comandanti',
-                        data: cmcData.map(d => d.frequency),
-                        backgroundColor: 'rgba(37, 99, 235, 0.7)',
-                        borderColor: 'rgba(37, 99, 235, 1)',
-                        borderWidth: 1
-                    }}]
-                }},
-                options: {{
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: {{
-                        title: {{
-                            display: true,
-                            text: 'Distribuzione CMC Comandanti'
-                        }}
-                    }},
-                    scales: {{
-                        y: {{
-                            beginAtZero: true,
-                            title: {{
-                                display: true,
-                                text: 'Numero di Comandanti'
-                            }}
-                        }}
-                    }}
-                }}
-            }});
-            
-            // Winrate Chart
-            const winrateCtx = document.getElementById('winrateChart').getContext('2d');
-            const winrateChart = new Chart(winrateCtx, {{
-                type: 'line',
-                data: {{
-                    labels: [],
-                    datasets: [{{
-                        label: 'Win Rate (%)',
-                        data: [],
-                        borderColor: 'rgba(37, 99, 235, 1)',
-                        backgroundColor: 'rgba(37, 99, 235, 0.1)',
-                        tension: 0.3,
-                        fill: true
-                    }}]
-                }},
-                options: {{
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: {{
-                        title: {{
-                            display: true,
-                            text: 'Trend Winrate nel Tempo'
-                        }}
-                    }},
-                    scales: {{
-                        y: {{
-                            beginAtZero: true,
-                            max: 100,
-                            title: {{
-                                display: true,
-                                text: 'Win Rate %'
-                            }}
-                        }}
-                    }}
-                }}
-            }});
-            
-            document.getElementById("winratePlayerSelect").addEventListener("change", function() {{
-                const player = this.value;
-                if (!player || !chartData[player]) {{
-                    winrateChart.data.labels = [];
-                    winrateChart.data.datasets[0].data = [];
-                    winrateChart.update();
-                    return;
-                }}
-                
-                const data = chartData[player];
-                winrateChart.data.labels = data.map(p => p.data);
-                winrateChart.data.datasets[0].data = data.map(p => p.winrate);
-                winrateChart.update();
-            }});
-            
-            // Format meta badges
-            $('#metaDominance tbody tr').each(function() {{
-                const statusCell = $(this).find('td:last');
-                const status = statusCell.text().trim();
-                const cleanStatus = status.toLowerCase().replace(' ', '-');
-                statusCell.html('<span class="meta-badge meta-' + cleanStatus + '">' + status + '</span>');
-            }});
-        }});
-    </script>
 </body>
 </html>'''
     
@@ -1410,14 +1259,13 @@ def generate_report():
                    c.color_identity AS Colori,
                    c.cmc AS CMC,
                    COUNT(m.id) AS Partite,
-                   SUM(m.win) AS Vittorie,
-                   ROUND(SUM(m.win)*100.0 / COUNT(m.id), 2) AS "Winrate (%)"
+                   SUM(m.win) AS Vittorie
             FROM matches m
             JOIN players p ON p.id = m.player_id
             JOIN commanders c ON c.id = m.commander_id
             WHERE p.name = ?
             GROUP BY c.name
-            ORDER BY Partite DESC
+            ORDER BY Partite DESC, Vittorie DESC
         """, conn, params=(player,))
         player_commander_stats[player] = df
 
@@ -1480,7 +1328,10 @@ def generate_report():
 
     # Add color columns
     for df in [color_stats_most_played, color_stats_best_winrate]:
-        df["color_identity"] = df["color_identity"].apply(lambda cid: ''.join([c for c in mana_order if c in cid]))
+        # Gestisci valori nulli in color_identity (es. comandanti non ancora arricchiti)
+        df["color_identity"] = df["color_identity"].fillna('').apply(
+            lambda cid: ''.join([c for c in mana_order if c in cid])
+        )
         df["color_visual"] = df["color_identity"].apply(convert_identity_to_icons)
         df["color_name"] = df["color_identity"].apply(convert_identity_to_name)
 
@@ -1549,13 +1400,12 @@ def generate_report():
     commander_stats = pd.read_sql_query("""
         SELECT c.name AS Comandante,
                COUNT(m.id) AS Partite,
-               SUM(m.win) AS Vittorie,
-               ROUND(SUM(m.win)*100.0 / COUNT(m.id), 2) AS "Winrate (%)"
+               SUM(m.win) AS Vittorie
         FROM commanders c
         JOIN matches m ON m.commander_id = c.id
         GROUP BY c.name
         HAVING COUNT(m.id) >= 5
-        ORDER BY "Winrate (%)" DESC, Partite DESC
+        ORDER BY Vittorie DESC, Partite DESC
     """, conn)
 
     player_vs_others = pd.read_sql_query("""
@@ -1605,13 +1455,12 @@ def generate_report():
     top_commanders_winrate = pd.read_sql_query("""
         SELECT c.name AS Comandante,
                COUNT(m.id) AS Partite,
-               SUM(m.win) AS Vittorie,
-               ROUND(SUM(m.win)*100.0 / COUNT(m.id), 2) AS "Winrate (%)"
+               SUM(m.win) AS Vittorie
         FROM commanders c
         JOIN matches m ON c.id = m.commander_id
         GROUP BY c.name
         HAVING COUNT(m.id) >= 5
-        ORDER BY "Winrate (%)" DESC
+        ORDER BY Vittorie DESC, Partite DESC
         LIMIT 10
     """, conn)
 
