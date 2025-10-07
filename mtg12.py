@@ -758,16 +758,76 @@ def generate_enhanced_html_report(
     def table_to_html(df, table_id):
         return df.to_html(classes="display", table_id=table_id, index=False, border=0, escape=False)
     
-    # Genera le sezioni per i comandanti dei giocatori
-    player_commander_sections = ""
+    # Helper: genera un semplice grafico SVG (statico) per l'andamento winrate (0-100)
+    def winrate_svg(data_points, width=640, height=220, margin=30):
+        # data_points: DataFrame pandas con colonne ['data','winrate'] oppure lista di dict
+        records = []
+        try:
+            import pandas as pd  # type: ignore
+        except Exception:
+            pd = None  # type: ignore
+        if data_points is None:
+            records = []
+        elif pd is not None and isinstance(data_points, pd.DataFrame):
+            records = data_points.to_dict(orient='records')
+        elif isinstance(data_points, (list, tuple)):
+            records = list(data_points)
+        else:
+            try:
+                records = list(data_points)
+            except Exception:
+                records = []
+        if not records:
+            return f'<svg width="{width}" height="{height}" xmlns="http://www.w3.org/2000/svg"><text x="{margin}" y="{height/2}" fill="#555">Nessun dato</text></svg>'
+        # Normalizza dati
+        xs = list(range(len(records)))
+        ys = [max(0.0, min(100.0, float(dp.get('winrate', 0) or 0))) for dp in records]
+        labels = [str(dp.get('data', '')) for dp in records]
+        # Area disegno
+        plot_w = width - 2*margin
+        plot_h = height - 2*margin
+        def scale_x(i):
+            return margin + (plot_w * (i / max(1, len(xs)-1)))
+        def scale_y(v):
+            # y 0 in basso, 100 in alto
+            return margin + plot_h * (1 - (v/100.0))
+        # Costruisci polyline
+        points = ' '.join([f"{scale_x(i):.1f},{scale_y(ys[i]):.1f}" for i in range(len(xs))])
+        # Assi semplici e griglia 0,25,50,75,100
+        grid = []
+        for val in [0,25,50,75,100]:
+            y = scale_y(val)
+            grid.append(f'<line x1="{margin}" y1="{y:.1f}" x2="{width-margin}" y2="{y:.1f}" stroke="#eee" stroke-width="1" />')
+            grid.append(f'<text x="{5}" y="{y+4:.1f}" fill="#777" font-size="10">{val}%</text>')
+        # Etichette X (solo primo, metà, ultimo per compattezza)
+        xlabels = []
+        if labels:
+            idxs = sorted(set([0, len(labels)//2, len(labels)-1]))
+            for i in idxs:
+                if 0 <= i < len(labels):
+                    x = scale_x(i)
+                    xlabels.append(f'<text x="{x:.1f}" y="{height-5}" fill="#777" font-size="10" text-anchor="middle">{labels[i]}</text>')
+        svg = f'''<svg width="{width}" height="{height}" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="{width}" height="{height}" fill="#ffffff" />
+  {''.join(grid)}
+  <polyline fill="none" stroke="#2563eb" stroke-width="2" points="{points}" />
+  {''.join(xlabels)}
+</svg>'''
+        return svg
+    
+    # Genera una sezione compatta a tendina per i comandanti dei giocatori
+    player_commander_sections = "<details><summary><strong>Analisi Comandanti per Giocatore</strong> (clicca per espandere)</summary>"
     for player, df in player_commander_stats.items():
         pid = player.replace(" ", "-").replace("'", "")
         player_commander_sections += f'''
-        <div id="player-{pid}" class="player-section">
-            <h3>Comandanti di {player}</h3>
-            {table_to_html(df, f"commanderStats-{pid}")}
-        </div>
+        <details>
+            <summary><strong>{player}</strong></summary>
+            <div id="player-{pid}" class="player-section">
+                {table_to_html(df, f"commanderStats-{pid}")}
+            </div>
+        </details>
         '''
+    player_commander_sections += "</details>"
     
     # Template HTML completo
     html_content = f'''<!DOCTYPE html>
@@ -1214,7 +1274,23 @@ def generate_enhanced_html_report(
                 <h2><i class="fas fa-users"></i> Statistiche Giocatore vs Avversario</h2>
             </div>
             <div class="section-content">
-                {table_to_html(player_vs_others, "playerVsOthers")}
+                <details>
+                    <summary><strong>Mostra/Nascondi Tabella Giocatore vs Avversario</strong></summary>
+                    {table_to_html(player_vs_others, "playerVsOthers")}
+                </details>
+            </div>
+        </div>
+
+        <!-- Andamento Winrate per Giocatore (statico, per-player) -->
+        <div class="section">
+            <div class="section-header">
+                <h2><i class="fas fa-chart-line"></i> Andamento Winrate per Giocatore</h2>
+            </div>
+            <div class="section-content">
+                <details>
+                    <summary><strong>Seleziona Giocatore</strong> (clicca per espandere)</summary>
+                    {''.join([f'<details><summary><strong>{player}</strong></summary>' + winrate_svg(player_winrate_over_time.get(player, [])) + '</details>' for player in player_list])}
+                </details>
             </div>
         </div>
     </div>
