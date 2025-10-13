@@ -132,10 +132,6 @@ cursor = conn.cursor()
 COMMANDER_CACHE = {}
 
 def normalize_name(name):
-
-    if not name:  # Controlla se name Ã¨ None o una stringa vuota
-        return None  
-        
     """
     Normalizes a name by:
     - Converting to lowercase
@@ -143,6 +139,9 @@ def normalize_name(name):
     - Removing special characters
     - Standardizing apostrophes and diacritics
     """
+    if not name:  # Controlla se name è None o una stringa vuota
+        return None  
+        
     # Convert to lowercase
     name = name.lower()
     
@@ -156,6 +155,50 @@ def normalize_name(name):
     name = name.replace("'", "'")
     
     return name
+
+def normalize_commander_name(name):
+    """
+    Normalizza specificamente i nomi dei comandanti per prevenire duplicati.
+    Questa funzione deve essere usata SEMPRE quando si inserisce un comandante nel database.
+    """
+    if not name or not name.strip():
+        return None
+    
+    # Rimuovi spazi iniziali e finali
+    name = name.strip()
+    
+    # Converti in lowercase per consistenza
+    name = name.lower()
+    
+    # Normalizza spazi multipli in spazi singoli
+    name = " ".join(name.split())
+    
+    # Standardizza apostrofi
+    name = name.replace("'", "'").replace("`", "'")
+    
+    # Rimuovi caratteri speciali problematici ma mantieni quelli necessari per i nomi MTG
+    # Manteniamo: lettere, numeri, spazi, apostrofi, virgole, trattini, slash per le carte doppie
+    name = re.sub(r'[^\w\s\',\-/]', '', name, flags=re.UNICODE)
+    
+    # Normalizza i separatori per le carte doppie
+    name = re.sub(r'\s*//\s*', ' // ', name)  # Standardizza " // " per le carte doppie
+    
+    # Normalizza le virgole: aggiungi spazio dopo virgola se mancante
+    name = re.sub(r',(?!\s)', ', ', name)  # Aggiungi spazio dopo virgola se non c'è
+    
+    return name
+
+def find_existing_commander_by_normalized_name(normalized_name):
+    """
+    Cerca un comandante esistente usando il nome normalizzato.
+    Restituisce l'ID del comandante se trovato, None altrimenti.
+    """
+    if not normalized_name:
+        return None
+        
+    cursor.execute("SELECT id FROM commanders WHERE LOWER(TRIM(name)) = LOWER(TRIM(?))", (normalized_name,))
+    result = cursor.fetchone()
+    return result[0] if result else None
 
 @lru_cache(maxsize=1000)
 def get_cached_commander_info(name):
@@ -288,31 +331,84 @@ def get_or_create_player(name):
     return cursor.lastrowid
 
 def get_or_create_commander(name):
-    commander_info = fetch_commander_info(name)
-    if not commander_info:
-        print(f"Errore: il comandante '{name}' non Ã¨ valido.")
+    """
+    Ottiene o crea un comandante nel database con normalizzazione automatica del nome.
+    Previene duplicati usando la normalizzazione consistente.
+    """
+    if not name or not name.strip():
+        print(f"Errore: nome comandante vuoto o non valido.")
         return None
     
-    normalized_name = commander_info["name"].lower()
-    color_identity = ''.join(commander_info["color_identity"])
-    mana_cost = commander_info["mana_cost"]
-    cmc = commander_info["cmc"]
+    # Normalizza il nome del comandante
+    normalized_name = normalize_commander_name(name)
+    if not normalized_name:
+        print(f"Errore: impossibile normalizzare il nome '{name}'.")
+        return None
     
-    # Verifica se il comandante esiste giÃ 
-    cursor.execute("SELECT id FROM commanders WHERE name = ?", (normalized_name,))
-    result = cursor.fetchone()
+    # Controlla se esiste già un comandante con questo nome normalizzato
+    existing_id = find_existing_commander_by_normalized_name(normalized_name)
+    if existing_id:
+        return existing_id
     
-    if result:
-        return result[0]  # Comandante giÃ  presente, ritorna l'id
+    # Prova a ottenere informazioni da Scryfall usando il nome originale
+    commander_info = fetch_commander_info(name)
+    if commander_info:
+        # Usa il nome normalizzato da Scryfall se disponibile, altrimenti quello normalizzato localmente
+        scryfall_normalized = normalize_commander_name(commander_info["name"])
+        final_name = scryfall_normalized if scryfall_normalized else normalized_name
+        
+        # Controlla di nuovo se esiste con il nome da Scryfall
+        existing_id = find_existing_commander_by_normalized_name(final_name)
+        if existing_id:
+            return existing_id
+        
+        color_identity = ''.join(commander_info["color_identity"])
+        mana_cost = commander_info["mana_cost"]
+        cmc = commander_info["cmc"]
+    else:
+        # Se Scryfall non trova il comandante, usa il nome normalizzato e valori di default
+        print(f"Attenzione: comandante '{name}' non trovato su Scryfall, inserimento con dati limitati.")
+        final_name = normalized_name
+        color_identity = ""
+        mana_cost = ""
+        cmc = 0
     
-    # Se il comandante non esiste, crealo nel database con tutti i dettagli
+    # Inserisci il nuovo comandante
     cursor.execute("""
         INSERT INTO commanders (name, color_identity, mana_cost, cmc)
         VALUES (?, ?, ?, ?)
-    """, (normalized_name, color_identity, mana_cost, cmc))
+    """, (final_name, color_identity, mana_cost, cmc))
     
     conn.commit()
-    return cursor.lastrowid  # Restituisce l'id del comandante appena creato
+    print(f"✅ Comandante creato: '{final_name}' (ID: {cursor.lastrowid})")
+    return cursor.lastrowid
+
+def get_or_create_commander_bulk(name, cursor):
+    """
+    Versione ottimizzata per bulk upload che usa la stessa normalizzazione
+    ma evita chiamate API multiple e usa la connessione passata.
+    """
+    if not name or not name.strip():
+        return None
+    
+    # Normalizza il nome del comandante
+    normalized_name = normalize_commander_name(name)
+    if not normalized_name:
+        return None
+    
+    # Controlla se esiste già un comandante con questo nome normalizzato
+    cursor.execute("SELECT id FROM commanders WHERE LOWER(TRIM(name)) = LOWER(TRIM(?))", (normalized_name,))
+    result = cursor.fetchone()
+    if result:
+        return result[0]
+    
+    # Per il bulk upload, inserisci con dati minimi (senza chiamate API)
+    cursor.execute("""
+        INSERT INTO commanders (name, color_identity, mana_cost, cmc)
+        VALUES (?, '', '', 0)
+    """, (normalized_name,))
+    
+    return cursor.lastrowid
 
 
 # Funzione per registrare una partita
@@ -388,7 +484,9 @@ def bulk_upload_matches(filename):
             
             # Riconosce il vincitore della partita
             if line.startswith('W:'):
-                winner_name = line.split(':', 1)[1].strip().replace('[T]', '').strip()
+                winner_name_raw = line.split(':', 1)[1].strip().replace('[T]', '').strip()
+                winner_name_normalized = normalize_commander_name(winner_name_raw)
+                
                 if not date or not players_data:
                     print(f"❌ Errore: 'W:' trovato senza una data o giocatori precedenti. Salto la partita.")
                     players_data = [] # Reset for next valid match
@@ -411,13 +509,14 @@ def bulk_upload_matches(filename):
                     cursor.execute("SELECT id FROM players WHERE name = ?", (player_name,))
                     player_id = cursor.fetchone()[0]
 
-                    # Cerca o crea il commander, **usando il nome pulito**
-                    cursor.execute("INSERT OR IGNORE INTO commanders (name) VALUES (?)", (commander_name,))
-                    cursor.execute("SELECT id FROM commanders WHERE name = ?", (commander_name,))
-                    commander_id = cursor.fetchone()[0]
+                    # Cerca o crea il commander usando la normalizzazione sicura
+                    commander_id = get_or_create_commander_bulk(commander_name, cursor)
+                    
+                    # Normalizza il nome del comandante per il confronto con il vincitore
+                    commander_name_normalized = normalize_commander_name(commander_name)
 
                     # Inserisce la partita nella tabella 'matches'
-                    is_win = 1 if commander_name == winner_name else 0
+                    is_win = 1 if commander_name_normalized == winner_name_normalized else 0
                     cursor.execute(
                         """
                         INSERT INTO matches (game_id, player_id, commander_id, win, date, used_themed_deck)
@@ -626,6 +725,7 @@ def generate_enhanced_html_report(
     top_commanders_played,
     top_commanders_winrate,
     total_games,
+    season_commanders_stats,
     conn
 ):
     """
@@ -715,6 +815,43 @@ def generate_enhanced_html_report(
         ORDER BY Punti DESC, Vittorie DESC, Partite DESC
     """
     season_standings = pd.read_sql_query(season_query, conn, params=(special_commanders + [season_start, season_end]))
+    
+    # Season commanders statistics - include ALL season commanders, even unplayed ones
+    # First, create a temporary table with all season commanders
+    cursor.execute("DROP TABLE IF EXISTS temp_season_commanders")
+    cursor.execute("""
+        CREATE TEMPORARY TABLE temp_season_commanders (
+            name TEXT PRIMARY KEY,
+            original_name TEXT
+        )
+    """)
+    
+    # Insert all season commanders (both existing and non-existing)
+    for commander in special_commanders:
+        # Usa sempre la normalizzazione per consistenza
+        normalized_name = normalize_commander_name(commander)
+        cursor.execute("INSERT OR IGNORE INTO temp_season_commanders (name, original_name) VALUES (?, ?)", 
+                      (normalized_name, commander))
+    
+    season_commanders_query = f"""
+        SELECT tsc.original_name AS Comandante,
+               COALESCE(stats.Partite, 0) AS Partite,
+               COALESCE(stats.Vittorie, 0) AS Vittorie,
+               COALESCE(stats.Winrate, 0.0) AS "Winrate (%)"
+        FROM temp_season_commanders tsc
+        LEFT JOIN (
+            SELECT LOWER(TRIM(REPLACE(REPLACE(c.name, '.', ''), '  ', ' '))) as normalized_name,
+                   COUNT(*) AS Partite,
+                   SUM(m.win) AS Vittorie,
+                   ROUND(SUM(m.win) * 100.0 / COUNT(*), 2) AS Winrate
+            FROM matches m
+            JOIN commanders c ON m.commander_id = c.id
+            WHERE m.date >= ? AND m.date < ?
+            GROUP BY normalized_name
+        ) stats ON LOWER(TRIM(tsc.name)) = stats.normalized_name
+        ORDER BY Partite DESC, Vittorie DESC, Comandante ASC
+    """
+    season_commanders_stats = pd.read_sql_query(season_commanders_query, conn, params=[season_start, season_end])
     
     head_to_head = pd.read_sql_query("""
         WITH matchups AS (
@@ -1162,6 +1299,21 @@ def generate_enhanced_html_report(
             </div>
         </div>
 
+        <!-- Season Commanders Statistics -->
+        <div class="section">
+            <div class="section-header">
+                <h2><i class="fas fa-star"></i> Statistiche Comandanti Season (+2 Punti)</h2>
+            </div>
+            <div class="section-content">
+                <div class="insight-box">
+                    <h4><i class="fas fa-info-circle"></i> Comandanti Season</h4>
+                    <p>Questi comandanti danno <strong>+2 punti</strong> invece di +1 quando vincono durante la Season 1 (01 Ottobre - 01 Gennaio). 
+                    Sono comandanti meno giocati o con tematiche specifiche per incentivare la diversità nel meta.</p>
+                </div>
+                {table_to_html(season_commanders_stats, "seasonCommandersStats")}
+            </div>
+        </div>
+
         <!-- Performance Giocatori -->
         <div class="section">
             <div class="section-header">
@@ -1540,6 +1692,67 @@ def generate_report():
         LIMIT 10
     """, conn)
 
+    # Season commanders statistics
+    special_commanders = [
+        'Beluna Grandsquall // Seek Thrills',
+        'Gimbal, Gremlin Prodigy',
+        'Isu the Abominable',
+        'Licia, Sanguine Tribune',
+        'Lynde, Cheerful Tormentor',
+        'Mr. House, President and CEO',
+        'Obeka, Brute Chronologist',
+        'Pramikon, Sky Rampart',
+        'Rienne, Angel of Rebirth',
+        'Sigurd, Jarl of Ravensthorpe',
+        "Sin, Spira's Punishment",
+        'Sophia, Dogged Detective',
+        'Sydri, Galvanic Genius',
+        'Tatsunari, Toad Rider',
+        'The Celestial Toymaker',
+        'Xira, the Golden Sting',
+        'Yurlok of Scorch Thrash',
+        'Zedruu the Greathearted'
+    ]
+    season_start = '2025-10-01'
+    season_end = '2026-01-01'
+    
+    # Season commanders statistics - include ALL season commanders, even unplayed ones
+    cursor = conn.cursor()
+    cursor.execute("DROP TABLE IF EXISTS temp_season_commanders")
+    cursor.execute("""
+        CREATE TEMPORARY TABLE temp_season_commanders (
+            name TEXT PRIMARY KEY,
+            original_name TEXT
+        )
+    """)
+    
+    # Insert all season commanders (both existing and non-existing)
+    for commander in special_commanders:
+        # Usa sempre la normalizzazione per consistenza
+        normalized_name = normalize_commander_name(commander)
+        cursor.execute("INSERT OR IGNORE INTO temp_season_commanders (name, original_name) VALUES (?, ?)", 
+                      (normalized_name, commander))
+    
+    season_commanders_query = f"""
+        SELECT tsc.original_name AS Comandante,
+               COALESCE(stats.Partite, 0) AS Partite,
+               COALESCE(stats.Vittorie, 0) AS Vittorie,
+               COALESCE(stats.Winrate, 0.0) AS "Winrate (%)"
+        FROM temp_season_commanders tsc
+        LEFT JOIN (
+            SELECT LOWER(TRIM(REPLACE(REPLACE(c.name, '.', ''), '  ', ' '))) as normalized_name,
+                   COUNT(*) AS Partite,
+                   SUM(m.win) AS Vittorie,
+                   ROUND(SUM(m.win) * 100.0 / COUNT(*), 2) AS Winrate
+            FROM matches m
+            JOIN commanders c ON m.commander_id = c.id
+            WHERE m.date >= ? AND m.date < ?
+            GROUP BY normalized_name
+        ) stats ON LOWER(TRIM(tsc.name)) = stats.normalized_name
+        ORDER BY Partite DESC, Vittorie DESC, Comandante ASC
+    """
+    season_commanders_stats = pd.read_sql_query(season_commanders_query, conn, params=[season_start, season_end])
+
     # Usa la nuova funzione con connessione passata
     generate_enhanced_html_report(
         player_winrate_over_time,
@@ -1557,6 +1770,7 @@ def generate_report():
         top_commanders_played,
         top_commanders_winrate,
         total_games,
+        season_commanders_stats,
         conn  # Aggiunto parametro connessione
     )
 
