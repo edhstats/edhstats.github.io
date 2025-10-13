@@ -726,6 +726,7 @@ def generate_enhanced_html_report(
     top_commanders_winrate,
     total_games,
     season_commanders_stats,
+    player_commanders_data,
     conn
 ):
     """
@@ -853,6 +854,26 @@ def generate_enhanced_html_report(
     """
     season_commanders_stats = pd.read_sql_query(season_commanders_query, conn, params=[season_start, season_end])
     
+    # Player commanders data for interactive search
+    player_commanders_data = pd.read_sql_query("""
+        SELECT 
+            p.name AS player_name,
+            c.name AS commander_name,
+            c.color_identity AS colors,
+            c.cmc AS cmc,
+            COUNT(m.id) AS games_played,
+            SUM(m.win) AS victories,
+            ROUND(SUM(m.win) * 100.0 / COUNT(m.id), 2) AS winrate,
+            MIN(m.date) AS first_game,
+            MAX(m.date) AS last_game,
+            SUM(CASE WHEN m.used_themed_deck = 1 THEN 1 ELSE 0 END) AS themed_games
+        FROM matches m
+        JOIN players p ON m.player_id = p.id
+        JOIN commanders c ON m.commander_id = c.id
+        GROUP BY p.id, p.name, c.id, c.name
+        ORDER BY p.name, games_played DESC
+    """, conn)
+    
     head_to_head = pd.read_sql_query("""
         WITH matchups AS (
             SELECT 
@@ -894,6 +915,216 @@ def generate_enhanced_html_report(
     # Funzione helper per generare le tabelle
     def table_to_html(df, table_id):
         return df.to_html(classes="display", table_id=table_id, index=False, border=0, escape=False)
+    
+    # Funzione helper per tabelle collassabili
+    def collapsible_table_to_html(df, table_id, title, description="", threshold=15, preview_rows=5):
+        """
+        Genera una tabella collassabile se ha più di 'threshold' righe
+        """
+        if len(df) <= threshold:
+            # Tabella piccola, mostra normalmente
+            return f'''
+                <div class="insight-box" style="margin-bottom: 1rem;">
+                    <h4><i class="fas fa-info-circle"></i> {title}</h4>
+                    {f"<p>{description}</p>" if description else ""}
+                </div>
+                {table_to_html(df, table_id)}
+            '''
+        else:
+            # Tabella grande, rendi collassabile con anteprima
+            preview_df = df.head(preview_rows)
+            return f'''
+                <div class="insight-box" style="margin-bottom: 1rem;">
+                    <h4><i class="fas fa-info-circle"></i> {title}</h4>
+                    {f"<p>{description}</p>" if description else ""}
+                </div>
+                
+                <!-- Anteprima tabella -->
+                <div style="margin-bottom: 1rem;">
+                    <h5><i class="fas fa-eye"></i> Anteprima (Top {preview_rows})</h5>
+                    {table_to_html(preview_df, f"{table_id}_preview")}
+                </div>
+                
+                <!-- Tabella completa collassabile -->
+                <details class="large-table-dropdown" style="border: 1px solid var(--border-color); border-radius: 8px; margin: 1rem 0;">
+                    <summary style="padding: 1rem; background: var(--bg-secondary); cursor: pointer; border-radius: 8px; font-weight: bold;">
+                        <i class="fas fa-table"></i> Mostra Tabella Completa ({len(df)} elementi)
+                        <span style="float: right; color: var(--text-secondary);">▼</span>
+                    </summary>
+                    <div style="padding: 1rem;">
+                        {table_to_html(df, table_id)}
+                    </div>
+                </details>
+            '''
+    
+    # Genera sezioni statiche per ogni giocatore
+    def generate_player_commanders_sections():
+        """Genera sezioni HTML statiche per ogni giocatore con i loro comandanti"""
+        
+        # Lista comandanti season per evidenziazione
+        season_commanders = [
+            'Beluna Grandsquall // Seek Thrills', 'Gimbal, Gremlin Prodigy', 'Isu the Abominable',
+            'Licia, Sanguine Tribune', 'Lynde, Cheerful Tormentor', 'Mr. House, President and CEO',
+            'Obeka, Brute Chronologist', 'Pramikon, Sky Rampart', 'Rienne, Angel of Rebirth',
+            'Sigurd, Jarl of Ravensthorpe', "Sin, Spira's Punishment", 'Sophia, Dogged Detective',
+            'Sydri, Galvanic Genius', 'Tatsunari, Toad Rider', 'The Celestial Toymaker',
+            'Xira, the Golden Sting', 'Yurlok of Scorch Thrash', 'Zedruu the Greathearted'
+        ]
+        
+        def normalize_commander_name_local(name):
+            return name.lower().strip()
+        
+        def is_season_commander(commander_name):
+            return any(normalize_commander_name_local(season) == normalize_commander_name_local(commander_name) 
+                      for season in season_commanders)
+        
+        def get_color_symbols(colors):
+            color_map = {'W': '⚪', 'U': '🔵', 'B': '⚫', 'R': '🔴', 'G': '🟢'}
+            if not colors or pd.isna(colors):
+                return '⚫'
+            return ''.join([color_map.get(c, c) for c in str(colors)])
+        
+        sections_html = ""
+        unique_players = sorted(player_commanders_data['player_name'].unique())
+        
+        for player in unique_players:
+            player_data = player_commanders_data[player_commanders_data['player_name'] == player].copy()
+            
+            if len(player_data) == 0:
+                continue
+            
+            # Calcola statistiche generali del giocatore
+            total_games = player_data['games_played'].sum()
+            total_victories = player_data['victories'].sum()
+            overall_winrate = round(total_victories * 100 / total_games, 2) if total_games > 0 else 0
+            unique_commanders = len(player_data)
+            
+            # Identifica comandanti season giocati
+            season_commanders_played = player_data[player_data['commander_name'].apply(is_season_commander)]
+            
+            # Ordina per partite giocate
+            player_data = player_data.sort_values('games_played', ascending=False)
+            
+            # Inizio sezione giocatore
+            sections_html += f'''
+            <details class="player-section" style="margin: 1rem 0; border: 1px solid var(--border-color); border-radius: 8px;">
+                <summary style="padding: 1rem; background: var(--bg-secondary); cursor: pointer; border-radius: 8px;">
+                    <strong><i class="fas fa-user"></i> {player}</strong> 
+                    <span style="color: var(--text-secondary); margin-left: 1rem;">
+                        {unique_commanders} comandanti • {total_games} partite • {overall_winrate}% winrate
+                    </span>
+                </summary>
+                
+                <div style="padding: 1rem;">
+                    <!-- Statistiche generali -->
+                    <div class="insight-box" style="margin-bottom: 1rem;">
+                        <h4><i class="fas fa-chart-bar"></i> Statistiche di {player}</h4>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+                            <div><strong>Comandanti diversi:</strong> {unique_commanders}</div>
+                            <div><strong>Partite totali:</strong> {total_games}</div>
+                            <div><strong>Vittorie totali:</strong> {total_victories}</div>
+                            <div><strong>Winrate generale:</strong> {overall_winrate}%</div>
+                        </div>
+            '''
+            
+            # Aggiungi comandanti season se presenti
+            if len(season_commanders_played) > 0:
+                season_list = '<br>'.join([f"• {row['commander_name']}" for _, row in season_commanders_played.iterrows()])
+                sections_html += f'''
+                        <div style="margin-top: 1rem;">
+                            <strong>⭐ Comandanti Season giocati ({len(season_commanders_played)}):</strong><br>
+                            {season_list}
+                        </div>
+                '''
+            
+            sections_html += '''
+                    </div>
+                    
+                    <!-- Tabella comandanti -->
+                    <div style="overflow-x: auto;">
+                        <table class="display" style="width: 100%;">
+                            <thead>
+                                <tr>
+                                    <th>Comandante</th>
+                                    <th>Partite</th>
+                                    <th>Vittorie</th>
+                                    <th>Winrate</th>
+                                    <th>Colori</th>
+                                    <th>CMC</th>
+                                    <th>Periodo</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+            '''
+            
+            # Aggiungi righe per ogni comandante
+            for _, row in player_data.iterrows():
+                is_season_cmd = is_season_commander(row['commander_name'])
+                season_indicator = ' ⭐' if is_season_cmd else ''
+                themed_indicator = ' [T]' if row['themed_games'] > 0 else ''
+                color_symbols = get_color_symbols(row['colors'])
+                
+                try:
+                    cmc = str(int(float(row['cmc']))) if pd.notna(row['cmc']) and row['cmc'] != '' else '?'
+                except (ValueError, TypeError):
+                    cmc = '?'
+                
+                period = row['first_game'] if row['first_game'] == row['last_game'] else f"{row['first_game']} - {row['last_game']}"
+                row_style = 'style="background-color: #fff3cd;"' if is_season_cmd else ''
+                
+                sections_html += f'''
+                                <tr {row_style}>
+                                    <td>{row['commander_name']}{season_indicator}{themed_indicator}</td>
+                                    <td>{row['games_played']}</td>
+                                    <td>{row['victories']}</td>
+                                    <td>{row['winrate']}%</td>
+                                    <td>{color_symbols}</td>
+                                    <td>{cmc}</td>
+                                    <td>{period}</td>
+                                </tr>
+                '''
+            
+            sections_html += '''
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <!-- Top comandanti e miglior winrate -->
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 1rem;">
+                        <div>
+                            <h5>🏆 Top 5 Comandanti Più Giocati:</h5>
+                            <ol>
+            '''
+            
+            # Top 5 comandanti più giocati
+            for i, (_, row) in enumerate(player_data.head(5).iterrows(), 1):
+                sections_html += f'<li>{row["commander_name"]}: {row["games_played"]} partite ({row["winrate"]}% winrate)</li>'
+            
+            sections_html += '''
+                            </ol>
+                        </div>
+                        <div>
+            '''
+            
+            # Miglior winrate (min 3 partite)
+            best_winrate = player_data[player_data['games_played'] >= 3].sort_values('winrate', ascending=False)
+            if len(best_winrate) > 0:
+                sections_html += '''
+                            <h5>🎯 Miglior Winrate (min 3 partite):</h5>
+                            <ol>
+                '''
+                for i, (_, row) in enumerate(best_winrate.head(5).iterrows(), 1):
+                    sections_html += f'<li>{row["commander_name"]}: {row["winrate"]}% ({row["victories"]}/{row["games_played"]})</li>'
+                sections_html += '</ol>'
+            
+            sections_html += '''
+                        </div>
+                    </div>
+                </div>
+            </details>
+            '''
+        
+        return sections_html
     
     # Helper: genera un semplice grafico SVG (statico) per l'andamento winrate (0-100)
     def winrate_svg(data_points, width=640, height=220, margin=30):
@@ -1228,6 +1459,99 @@ def generate_enhanced_html_report(
             min-width: 200px;
         }}
         
+        /* DataTables customization */
+        .dataTables_wrapper {{
+            margin: 1rem 0;
+        }}
+        
+        .dataTables_filter {{
+            margin-bottom: 1rem;
+        }}
+        
+        .dataTables_filter input {{
+            padding: 0.5rem;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+        }}
+        
+        .dataTables_length select {{
+            padding: 0.25rem;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+        }}
+        
+        .dataTables_info {{
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }}
+        
+        .dataTables_paginate .paginate_button {{
+            padding: 0.5rem 0.75rem;
+            margin: 0 0.25rem;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            background: var(--bg-primary);
+            color: var(--text-primary) !important;
+            text-decoration: none;
+        }}
+        
+        .dataTables_paginate .paginate_button:hover {{
+            background: var(--primary-color);
+            color: white !important;
+        }}
+        
+        .dataTables_paginate .paginate_button.current {{
+            background: var(--primary-color);
+            color: white !important;
+        }}
+        
+        table.dataTable thead th {{
+            cursor: pointer;
+            position: relative;
+        }}
+        
+        table.dataTable thead th:hover {{
+            background-color: var(--bg-secondary);
+        }}
+        
+        table.dataTable.no-footer {{
+            border-bottom: 1px solid var(--border-color);
+        }}
+        
+        .dataTables_empty {{
+            text-align: center;
+            color: var(--text-secondary);
+            font-style: italic;
+        }}
+        
+        /* Stili per tabelle collassabili */
+        .large-table-dropdown {{
+            transition: all 0.3s ease;
+        }}
+        
+        .large-table-dropdown summary {{
+            transition: background-color 0.2s ease;
+        }}
+        
+        .large-table-dropdown summary:hover {{
+            background: var(--primary-color) !important;
+            color: white;
+        }}
+        
+        .large-table-dropdown[open] summary {{
+            border-bottom: 1px solid var(--border-color);
+            border-radius: 8px 8px 0 0;
+        }}
+        
+        .large-table-dropdown[open] summary span {{
+            transform: rotate(180deg);
+            transition: transform 0.3s ease;
+        }}
+        
         .activity-indicator {{
             display: inline-flex;
             align-items: center;
@@ -1338,18 +1662,29 @@ def generate_enhanced_html_report(
             </div>
         </div>
         
+        <!-- Player Commander Analysis -->
+        <div class="section">
+            <div class="section-header">
+                <h2><i class="fas fa-users"></i> Analisi Comandanti per Giocatore</h2>
+            </div>
+            <div class="section-content">
+                <div class="insight-box">
+                    <h4><i class="fas fa-chart-pie"></i> Panoramica Giocatori</h4>
+                    <p>Analisi dettagliata dei comandanti utilizzati da ogni giocatore, con statistiche complete 
+                    su winrate, versatilità e utilizzo di comandanti season.</p>
+                </div>
+                {generate_player_commanders_sections()}
+            </div>
+        </div>
+        
         <!-- Meta Analysis -->
         <div class="section">
             <div class="section-header">
                 <h2><i class="fas fa-chess"></i> Analisi Meta</h2>
             </div>
             <div class="section-content">
-                <div class="insight-box">
-                    <h4><i class="fas fa-chart-bar"></i> Meta Insight</h4>
-                    <p>Comandanti dominanti possono indicare strategie vincenti o power level elevato. 
-                    Un meta bilanciato favorisce la diversita e partite piu coinvolgenti.</p>
-                </div>
-                {table_to_html(meta_dominance, "metaDominance")}
+                {collapsible_table_to_html(meta_dominance, "metaDominance", "Meta Dominance", 
+                    "Comandanti dominanti possono indicare strategie vincenti o power level elevato. Un meta bilanciato favorisce la diversità e partite più coinvolgenti.", 10)}
             </div>
         </div>
         
@@ -1380,12 +1715,8 @@ def generate_enhanced_html_report(
                 <h2><i class="fas fa-swords"></i> Scontri Diretti</h2>
             </div>
             <div class="section-content">
-                <div class="insight-box">
-                    <h4><i class="fas fa-balance-scale"></i> Rivalry Tracker</h4>
-                    <p>Analizza le rivalita piu interessanti del gruppo. 
-                    Un alto squilibrio puo indicare matchup favorevoli o skill gap.</p>
-                </div>
-                {table_to_html(head_to_head, "headToHead")}
+                {collapsible_table_to_html(head_to_head, "headToHead", "Scontri Diretti", 
+                    "Analizza le rivalità più interessanti del gruppo. Un alto squilibrio può indicare matchup favorevoli o skill gap.", 25)}
             </div>
         </div>
         
@@ -1426,10 +1757,8 @@ def generate_enhanced_html_report(
                 <h2><i class="fas fa-users"></i> Statistiche Giocatore vs Avversario</h2>
             </div>
             <div class="section-content">
-                <details>
-                    <summary><strong>Mostra/Nascondi Tabella Giocatore vs Avversario</strong></summary>
-                    {table_to_html(player_vs_others, "playerVsOthers")}
-                </details>
+                {collapsible_table_to_html(player_vs_others, "playerVsOthers", "Giocatore vs Avversario", 
+                    "Tabella dettagliata delle performance di ogni giocatore contro tutti gli altri. Utile per identificare matchup favorevoli e rivalità.", 8)}
             </div>
         </div>
 
@@ -1446,6 +1775,94 @@ def generate_enhanced_html_report(
             </div>
         </div>
     </div>
+    
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.5.0/js/dataTables.responsive.min.js"></script>
+    
+    <script>
+        $(document).ready(function() {{
+            // Inizializza tutte le tabelle con classe 'display' come DataTables
+            $('table.display').DataTable({{
+                responsive: true,
+                pageLength: 25,
+                lengthMenu: [[10, 25, 50, 100, -1], [10, 25, 50, 100, "Tutti"]],
+                language: {{
+                    "decimal": "",
+                    "emptyTable": "Nessun dato disponibile nella tabella",
+                    "info": "Visualizzazione da _START_ a _END_ di _TOTAL_ elementi",
+                    "infoEmpty": "Visualizzazione da 0 a 0 di 0 elementi",
+                    "infoFiltered": "(filtrato da _MAX_ elementi totali)",
+                    "infoPostFix": "",
+                    "thousands": ".",
+                    "lengthMenu": "Visualizza _MENU_ elementi",
+                    "loadingRecords": "Caricamento...",
+                    "processing": "Elaborazione...",
+                    "search": "Cerca:",
+                    "zeroRecords": "Nessun elemento corrispondente trovato",
+                    "paginate": {{
+                        "first": "Primo",
+                        "last": "Ultimo",
+                        "next": "Successivo",
+                        "previous": "Precedente"
+                    }},
+                    "aria": {{
+                        "sortAscending": ": attiva per ordinare la colonna in modo crescente",
+                        "sortDescending": ": attiva per ordinare la colonna in modo decrescente"
+                    }}
+                }},
+                order: [], // Nessun ordinamento predefinito
+                columnDefs: [
+                    {{
+                        // Colonne numeriche - rileva automaticamente
+                        targets: '_all',
+                        render: function(data, type, row, meta) {{
+                            if (type === 'type' || type === 'sort') {{
+                                // Per l'ordinamento, prova a convertire in numero
+                                var numValue = parseFloat(String(data).replace(/[^0-9.-]/g, ''));
+                                return isNaN(numValue) ? data : numValue;
+                            }}
+                            return data;
+                        }}
+                    }},
+                    {{
+                        // Colonne con percentuali
+                        targets: 'winrate-column',
+                        type: 'num',
+                        render: function(data, type, row) {{
+                            if (type === 'sort') {{
+                                return parseFloat(String(data).replace('%', '')) || 0;
+                            }}
+                            return data;
+                        }}
+                    }}
+                ]
+            }});
+            
+            // Gestione speciale per tabelle con strutture diverse
+            $('table').each(function() {{
+                var table = $(this);
+                if (!table.hasClass('display')) {{
+                    table.addClass('display');
+                    if (!$.fn.DataTable.isDataTable(table)) {{
+                        table.DataTable({{
+                            responsive: true,
+                            pageLength: 15,
+                            language: {{
+                                "search": "Cerca:",
+                                "lengthMenu": "Visualizza _MENU_ elementi",
+                                "info": "Visualizzazione da _START_ a _END_ di _TOTAL_ elementi",
+                                "paginate": {{
+                                    "next": "Successivo",
+                                    "previous": "Precedente"
+                                }}
+                            }}
+                        }});
+                    }}
+                }}
+            }});
+        }});
+    </script>
 </body>
 </html>'''
     
@@ -1753,6 +2170,26 @@ def generate_report():
     """
     season_commanders_stats = pd.read_sql_query(season_commanders_query, conn, params=[season_start, season_end])
 
+    # Player commanders data for interactive search
+    player_commanders_data = pd.read_sql_query("""
+        SELECT 
+            p.name AS player_name,
+            c.name AS commander_name,
+            c.color_identity AS colors,
+            c.cmc AS cmc,
+            COUNT(m.id) AS games_played,
+            SUM(m.win) AS victories,
+            ROUND(SUM(m.win) * 100.0 / COUNT(m.id), 2) AS winrate,
+            MIN(m.date) AS first_game,
+            MAX(m.date) AS last_game,
+            SUM(CASE WHEN m.used_themed_deck = 1 THEN 1 ELSE 0 END) AS themed_games
+        FROM matches m
+        JOIN players p ON m.player_id = p.id
+        JOIN commanders c ON m.commander_id = c.id
+        GROUP BY p.id, p.name, c.id, c.name
+        ORDER BY p.name, games_played DESC
+    """, conn)
+
     # Usa la nuova funzione con connessione passata
     generate_enhanced_html_report(
         player_winrate_over_time,
@@ -1771,11 +2208,170 @@ def generate_report():
         top_commanders_winrate,
         total_games,
         season_commanders_stats,
+        player_commanders_data,
         conn  # Aggiunto parametro connessione
     )
 
     conn.close()
 
+
+def search_player_commanders(player_name):
+    """
+    Cerca tutti i comandanti giocati da un giocatore specifico con statistiche dettagliate
+    """
+    conn = sqlite3.connect(DB_PATH)
+    cursor = conn.cursor()
+    
+    print(f"🔍 RICERCA COMANDANTI PER: {player_name}")
+    print("=" * 60)
+    
+    # Cerca il giocatore (case-insensitive e fuzzy matching)
+    cursor.execute("SELECT id, name FROM players WHERE LOWER(name) LIKE LOWER(?)", (f"%{player_name}%",))
+    players_found = cursor.fetchall()
+    
+    if not players_found:
+        print(f"❌ Nessun giocatore trovato con nome simile a '{player_name}'")
+        print("\n📋 Giocatori disponibili:")
+        cursor.execute("SELECT name FROM players ORDER BY name")
+        all_players = cursor.fetchall()
+        for player in all_players[:10]:  # Mostra primi 10
+            print(f"  • {player[0]}")
+        if len(all_players) > 10:
+            print(f"  ... e altri {len(all_players) - 10} giocatori")
+        conn.close()
+        return
+    
+    # Se trovati più giocatori, mostra opzioni
+    if len(players_found) > 1:
+        print(f"🎯 Trovati {len(players_found)} giocatori simili:")
+        for i, (player_id, name) in enumerate(players_found, 1):
+            print(f"  {i}. {name}")
+        
+        try:
+            choice = int(input(f"\nScegli giocatore (1-{len(players_found)}): ")) - 1
+            if 0 <= choice < len(players_found):
+                selected_player_id, selected_player_name = players_found[choice]
+            else:
+                print("❌ Scelta non valida")
+                conn.close()
+                return
+        except (ValueError, KeyboardInterrupt):
+            print("❌ Operazione annullata")
+            conn.close()
+            return
+    else:
+        selected_player_id, selected_player_name = players_found[0]
+    
+    print(f"\n👤 COMANDANTI DI: {selected_player_name}")
+    print("=" * 60)
+    
+    # Query per statistiche complete dei comandanti del giocatore
+    cursor.execute("""
+        SELECT 
+            c.name AS comandante,
+            c.color_identity AS colori,
+            c.cmc AS cmc,
+            COUNT(m.id) AS partite_totali,
+            SUM(m.win) AS vittorie,
+            ROUND(SUM(m.win) * 100.0 / COUNT(m.id), 2) AS winrate,
+            MIN(m.date) AS prima_partita,
+            MAX(m.date) AS ultima_partita,
+            SUM(CASE WHEN m.used_themed_deck = 1 THEN 1 ELSE 0 END) AS partite_themed
+        FROM matches m
+        JOIN commanders c ON m.commander_id = c.id
+        WHERE m.player_id = ?
+        GROUP BY c.id, c.name
+        ORDER BY partite_totali DESC, vittorie DESC
+    """, (selected_player_id,))
+    
+    commanders_data = cursor.fetchall()
+    
+    if not commanders_data:
+        print(f"❌ Nessun comandante trovato per {selected_player_name}")
+        conn.close()
+        return
+    
+    # Statistiche generali del giocatore
+    cursor.execute("""
+        SELECT 
+            COUNT(DISTINCT c.id) as comandanti_diversi,
+            COUNT(m.id) as partite_totali,
+            SUM(m.win) as vittorie_totali,
+            ROUND(SUM(m.win) * 100.0 / COUNT(m.id), 2) as winrate_generale
+        FROM matches m
+        JOIN commanders c ON m.commander_id = c.id
+        WHERE m.player_id = ?
+    """, (selected_player_id,))
+    
+    general_stats = cursor.fetchone()
+    comandanti_diversi, partite_totali, vittorie_totali, winrate_generale = general_stats
+    
+    print(f"📊 STATISTICHE GENERALI:")
+    print(f"  Comandanti diversi giocati: {comandanti_diversi}")
+    print(f"  Partite totali: {partite_totali}")
+    print(f"  Vittorie totali: {vittorie_totali}")
+    print(f"  Winrate generale: {winrate_generale}%")
+    
+    # Verifica comandanti season
+    special_commanders = [
+        'Beluna Grandsquall // Seek Thrills', 'Gimbal, Gremlin Prodigy', 'Isu the Abominable',
+        'Licia, Sanguine Tribune', 'Lynde, Cheerful Tormentor', 'Mr. House, President and CEO',
+        'Obeka, Brute Chronologist', 'Pramikon, Sky Rampart', 'Rienne, Angel of Rebirth',
+        'Sigurd, Jarl of Ravensthorpe', "Sin, Spira's Punishment", 'Sophia, Dogged Detective',
+        'Sydri, Galvanic Genius', 'Tatsunari, Toad Rider', 'The Celestial Toymaker',
+        'Xira, the Golden Sting', 'Yurlok of Scorch Thrash', 'Zedruu the Greathearted'
+    ]
+    
+    season_commanders_played = []
+    for cmd_name, colori, cmc, partite, vittorie, winrate, prima, ultima, themed in commanders_data:
+        for season_cmd in special_commanders:
+            if normalize_commander_name(cmd_name) == normalize_commander_name(season_cmd):
+                season_commanders_played.append(cmd_name)
+                break
+    
+    if season_commanders_played:
+        print(f"\n⭐ COMANDANTI SEASON GIOCATI ({len(season_commanders_played)}):")
+        for cmd in season_commanders_played:
+            print(f"  • {cmd}")
+    
+    print(f"\n📋 DETTAGLIO COMANDANTI ({len(commanders_data)}):")
+    print("-" * 100)
+    print(f"{'Comandante':<35} {'Partite':<8} {'Vittorie':<9} {'Winrate':<8} {'Colori':<8} {'CMC':<5} {'Periodo'}")
+    print("-" * 100)
+    
+    for cmd_name, colori, cmc, partite, vittorie, winrate, prima, ultima, themed in commanders_data:
+        # Converti colori in simboli
+        color_symbols = {
+            'W': '⚪', 'U': '🔵', 'B': '⚫', 'R': '🔴', 'G': '🟢'
+        }
+        color_display = ''.join([color_symbols.get(c, c) for c in (colori or '')])
+        if not color_display:
+            color_display = '⚫'  # Colorless
+        
+        try:
+            cmc_display = f"{float(cmc):.0f}" if cmc and str(cmc) not in ['None', 'NULL', ''] else "?"
+        except (ValueError, TypeError):
+            cmc_display = "?"
+        periodo = f"{prima} - {ultima}" if prima != ultima else prima
+        themed_indicator = " [T]" if themed > 0 else ""
+        
+        print(f"{cmd_name:<35} {partite:<8} {vittorie:<9} {winrate:<7}% {color_display:<8} {cmc_display:<5} {periodo}{themed_indicator}")
+    
+    # Top comandanti del giocatore
+    print(f"\n🏆 TOP 5 COMANDANTI PIÙ GIOCATI:")
+    for i, (cmd_name, colori, cmc, partite, vittorie, winrate, prima, ultima, themed) in enumerate(commanders_data[:5], 1):
+        print(f"  {i}. {cmd_name}: {partite} partite ({winrate}% winrate)")
+    
+    # Comandanti con miglior winrate (min 3 partite)
+    best_winrate = [(cmd, partite, vittorie, winrate) for cmd, colori, cmc, partite, vittorie, winrate, prima, ultima, themed in commanders_data if partite >= 3]
+    best_winrate.sort(key=lambda x: x[3], reverse=True)
+    
+    if best_winrate:
+        print(f"\n🎯 MIGLIOR WINRATE (min 3 partite):")
+        for i, (cmd_name, partite, vittorie, winrate) in enumerate(best_winrate[:5], 1):
+            print(f"  {i}. {cmd_name}: {winrate}% ({vittorie}/{partite})")
+    
+    conn.close()
 
 def main():
 
@@ -1797,6 +2393,10 @@ def main():
     # Comando per generare il report delle statistiche in formato HTML
     report_parser = subparsers.add_parser("generate_report", help="Genera un report delle statistiche in formato HTML")
 
+    # Comando per cercare comandanti di un giocatore
+    search_parser = subparsers.add_parser("search_player", help="Cerca comandanti giocati da un giocatore")
+    search_parser.add_argument("player_name", type=str, help="Nome del giocatore da cercare")
+
     # Parsing degli argomenti
     args = parser.parse_args()
 
@@ -1809,6 +2409,8 @@ def main():
         bulk_upload_matches(args.filename)
     elif args.command == "generate_report":
         generate_report()
+    elif args.command == "search_player":
+        search_player_commanders(args.player_name)
     else:
         parser.print_help()
 
