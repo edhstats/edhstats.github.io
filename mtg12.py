@@ -298,6 +298,8 @@ def create_tables():
         cols = [row[1] for row in cursor.fetchall()]
         if 'used_themed_deck' not in cols:
             cursor.execute("ALTER TABLE matches ADD COLUMN used_themed_deck INTEGER DEFAULT 0")
+        if 'season_points' not in cols:
+            cursor.execute("ALTER TABLE matches ADD COLUMN season_points INTEGER DEFAULT 1")
     except Exception:
         pass
     conn.commit()
@@ -428,6 +430,217 @@ def record_match(date, players):
     print(f"Partita registrata con successo. ID partita: {game_id}")
 
 # Funzione per caricare partite in blocco da file
+def recalculate_season_points():
+    """
+    Ricalcola i punteggi season nel database SOLO per le partite della season (1 ott 2025 - 1 gen 2026) 
+    secondo la logica consolidata:
+    - Comandante NON-season + vittoria: 1 punto
+    - Comandante season + vittoria + NON tutti usano season: 2 punti  
+    - Comandante season + vittoria + tutti usano season: 1 punto
+    """
+    print("🔄 Inizio ricalcolo punteggi season (solo partite 1 ott 2025 - 1 gen 2026)...")
+    
+    # Periodo della season
+    season_start = '2025-10-01'
+    season_end = '2026-01-01'
+    
+    # Lista comandanti season
+    season_commanders_list = [
+        'Beluna Grandsquall // Seek Thrills', 'Gimbal, Gremlin Prodigy', 'Isu the Abominable',
+        'Licia, Sanguine Tribune', 'Lynde, Cheerful Tormentor', 'Mr. House, President and CEO',
+        'Obeka, Brute Chronologist', 'Pramikon, Sky Rampart', 'Rienne, Angel of Rebirth',
+        'Sigurd, Jarl of Ravensthorpe', "Sin, Spira's Punishment", 'Sophia, Dogged Detective',
+        'Sydri, Galvanic Genius', 'Tatsunari, Toad Rider', 'The Celestial Toymaker',
+        'Xira, the Golden Sting', 'Yurlok of Scorch Thrash', 'Zedruu the Greathearted'
+    ]
+    
+    # Crea tabella temporanea per comandanti season
+    cursor.execute("DROP TABLE IF EXISTS temp_season_commanders_recalc")
+    cursor.execute("""
+        CREATE TEMP TABLE temp_season_commanders_recalc (
+            name TEXT PRIMARY KEY,
+            original_name TEXT
+        )
+    """)
+    
+    # Inserisci comandanti season normalizzati
+    for commander in season_commanders_list:
+        normalized_name = normalize_commander_name(commander)
+        cursor.execute("INSERT OR IGNORE INTO temp_season_commanders_recalc (name, original_name) VALUES (?, ?)", 
+                      (normalized_name, commander))
+    
+    # Prima imposta tutti i punti season a 1 per le vittorie e 0 per le sconfitte (default)
+    cursor.execute("""
+        UPDATE matches 
+        SET season_points = CASE 
+            WHEN win = 1 THEN 1
+            ELSE 0
+        END
+    """)
+    
+    # Identifica partite della season dove TUTTI i giocatori usano comandanti season
+    cursor.execute("""
+        DROP TABLE IF EXISTS temp_all_season_games_recalc
+    """)
+    cursor.execute("""
+        CREATE TEMP TABLE temp_all_season_games_recalc AS
+        SELECT m.game_id
+        FROM matches m
+        JOIN commanders c ON m.commander_id = c.id
+        LEFT JOIN temp_season_commanders_recalc tsc ON 
+            LOWER(TRIM(REPLACE(REPLACE(c.name, '.', ''), '  ', ' '))) = LOWER(TRIM(tsc.name))
+        WHERE m.date >= ? AND m.date < ?
+        GROUP BY m.game_id
+        HAVING COUNT(*) = COUNT(tsc.name)  -- Tutti i giocatori usano comandanti season
+    """, (season_start, season_end))
+    
+    # Ricalcola i punti SOLO per le partite della season
+    cursor.execute("""
+        UPDATE matches 
+        SET season_points = CASE 
+            WHEN win = 1 AND EXISTS (
+                SELECT 1 FROM commanders c 
+                JOIN temp_season_commanders_recalc tsc ON 
+                    LOWER(TRIM(REPLACE(REPLACE(c.name, '.', ''), '  ', ' '))) = LOWER(TRIM(tsc.name))
+                WHERE c.id = matches.commander_id
+            ) AND matches.game_id NOT IN (SELECT game_id FROM temp_all_season_games_recalc) THEN 2
+            WHEN win = 1 THEN 1
+            ELSE 0
+        END
+        WHERE date >= ? AND date < ?
+    """, (season_start, season_end))
+    
+    conn.commit()
+    
+    # Statistiche del ricalcolo (solo partite season)
+    cursor.execute("SELECT COUNT(*) FROM matches WHERE season_points = 2 AND date >= ? AND date < ?", (season_start, season_end))
+    season_matches_2_points = cursor.fetchone()[0]
+    cursor.execute("SELECT COUNT(*) FROM matches WHERE season_points = 1 AND win = 1 AND date >= ? AND date < ?", (season_start, season_end))
+    season_matches_1_point = cursor.fetchone()[0]
+    cursor.execute("SELECT COUNT(*) FROM matches WHERE season_points = 0 AND date >= ? AND date < ?", (season_start, season_end))
+    season_matches_0_points = cursor.fetchone()[0]
+    
+    # Statistiche totali per confronto
+    cursor.execute("SELECT COUNT(*) FROM matches WHERE date >= ? AND date < ?", (season_start, season_end))
+    total_season_matches = cursor.fetchone()[0]
+    
+    print(f"✅ Ricalcolo completato per il periodo season ({season_start} - {season_end})!")
+    print(f"   📊 Partite season totali: {total_season_matches}")
+    print(f"   📊 Partite con 2 punti (season commander, non tutti season): {season_matches_2_points}")
+    print(f"   📊 Partite con 1 punto (vittorie normali): {season_matches_1_point}")
+    print(f"   📊 Partite con 0 punti (sconfitte): {season_matches_0_points}")
+    
+    return season_matches_2_points, season_matches_1_point, season_matches_0_points
+
+def test_player_season_points(player_name):
+    """
+    Testa e verifica il calcolo dei punti season per un giocatore specifico.
+    """
+    print(f"🔍 Test calcolo punti season per giocatore: {player_name}")
+    
+    season_start = '2025-10-01'
+    season_end = '2026-01-01'
+    
+    # Lista comandanti season
+    season_commanders_list = [
+        'Beluna Grandsquall // Seek Thrills', 'Gimbal, Gremlin Prodigy', 'Isu the Abominable',
+        'Licia, Sanguine Tribune', 'Lynde, Cheerful Tormentor', 'Mr. House, President and CEO',
+        'Obeka, Brute Chronologist', 'Pramikon, Sky Rampart', 'Rienne, Angel of Rebirth',
+        'Sigurd, Jarl of Ravensthorpe', "Sin, Spira's Punishment", 'Sophia, Dogged Detective',
+        'Sydri, Galvanic Genius', 'Tatsunari, Toad Rider', 'The Celestial Toymaker',
+        'Xira, the Golden Sting', 'Yurlok of Scorch Thrash', 'Zedruu the Greathearted'
+    ]
+    
+    # Crea tabella temporanea per comandanti season
+    cursor.execute("DROP TABLE IF EXISTS temp_season_commanders_test")
+    cursor.execute("""
+        CREATE TEMP TABLE temp_season_commanders_test (
+            name TEXT PRIMARY KEY,
+            original_name TEXT
+        )
+    """)
+    
+    for commander in season_commanders_list:
+        normalized_name = normalize_commander_name(commander)
+        cursor.execute("INSERT OR IGNORE INTO temp_season_commanders_test (name, original_name) VALUES (?, ?)", 
+                      (normalized_name, commander))
+    
+    # Query dettagliata per il giocatore
+    cursor.execute("""
+        SELECT 
+            m.date,
+            m.game_id,
+            c.name as commander_name,
+            m.win,
+            m.season_points,
+            CASE WHEN tsc.name IS NOT NULL THEN 'SEASON' ELSE 'NON-SEASON' END as commander_type,
+            -- Conta quanti giocatori nella stessa partita usano comandanti season
+            (SELECT COUNT(*) FROM matches m2 
+             JOIN commanders c2 ON m2.commander_id = c2.id
+             JOIN temp_season_commanders_test tsc2 ON 
+                 LOWER(TRIM(REPLACE(REPLACE(c2.name, '.', ''), '  ', ' '))) = LOWER(TRIM(tsc2.name))
+             WHERE m2.game_id = m.game_id) as season_players_in_game,
+            -- Conta totale giocatori nella partita
+            (SELECT COUNT(*) FROM matches m3 WHERE m3.game_id = m.game_id) as total_players_in_game
+        FROM matches m
+        JOIN players p ON m.player_id = p.id
+        JOIN commanders c ON m.commander_id = c.id
+        LEFT JOIN temp_season_commanders_test tsc ON 
+            LOWER(TRIM(REPLACE(REPLACE(c.name, '.', ''), '  ', ' '))) = LOWER(TRIM(tsc.name))
+        WHERE p.name = ? AND m.date >= ? AND m.date < ?
+        ORDER BY m.date, m.game_id
+    """, (player_name, season_start, season_end))
+    
+    results = cursor.fetchall()
+    
+    if not results:
+        print(f"❌ Nessuna partita trovata per {player_name} nel periodo season")
+        return
+    
+    print(f"\n📊 Partite season di {player_name}:")
+    print("=" * 120)
+    print(f"{'Data':<12} {'Game ID':<8} {'Commander':<25} {'Win':<4} {'Punti':<6} {'Tipo':<12} {'Season/Tot':<10} {'Calcolo Atteso'}")
+    print("=" * 120)
+    
+    total_points_db = 0
+    total_points_calculated = 0
+    
+    for row in results:
+        date, game_id, commander, win, points, cmd_type, season_in_game, total_in_game = row
+        
+        # Calcolo manuale dei punti attesi
+        if win == 1:
+            if cmd_type == 'SEASON' and season_in_game < total_in_game:
+                # Comandante season + non tutti usano season = 2 punti
+                expected_points = 2
+                calculation = "Season cmd + mixed = 2pt"
+            else:
+                # Tutti gli altri casi = 1 punto
+                expected_points = 1
+                if cmd_type == 'SEASON':
+                    calculation = "Season cmd + all season = 1pt"
+                else:
+                    calculation = "Non-season cmd = 1pt"
+        else:
+            expected_points = 0
+            calculation = "Sconfitta = 0pt"
+        
+        total_points_db += points
+        total_points_calculated += expected_points
+        
+        # Indicatore se il calcolo è corretto
+        status = "✅" if points == expected_points else "❌"
+        
+        print(f"{date:<12} {game_id[:8]:<8} {commander[:25]:<25} {win:<4} {points:<6} {cmd_type:<12} {season_in_game}/{total_in_game:<10} {calculation} {status}")
+    
+    print("=" * 120)
+    print(f"📈 TOTALI:")
+    print(f"   Punti nel database: {total_points_db}")
+    print(f"   Punti calcolati manualmente: {total_points_calculated}")
+    print(f"   Risultato: {'✅ CORRETTO' if total_points_db == total_points_calculated else '❌ ERRORE'}")
+    
+    return total_points_db == total_points_calculated
+
 def bulk_upload_matches(filename):
     """
     Carica partite da un file di testo nel database.
@@ -800,22 +1013,36 @@ def generate_enhanced_html_report(
         'Yurlok of Scorch Thrash',
         'Zedruu the Greathearted'
     ]
-    placeholders = ",".join(["?"] * len(special_commanders))
+    # Crea tabella temporanea per comandanti season (se non esiste già)
+    cursor = conn.cursor()
+    cursor.execute("DROP TABLE IF EXISTS temp_season_commanders_season")
+    cursor.execute("""
+        CREATE TEMP TABLE temp_season_commanders_season (
+            name TEXT PRIMARY KEY,
+            original_name TEXT
+        )
+    """)
+    
+    # Inserisci comandanti season normalizzati
+    for commander in special_commanders:
+        normalized_name = normalize_commander_name(commander)
+        cursor.execute("INSERT OR IGNORE INTO temp_season_commanders_season (name, original_name) VALUES (?, ?)", 
+                      (normalized_name, commander))
+    
     season_start = '2025-10-01'
     season_end = '2026-01-01'
-    season_query = f"""
+    season_query = """
         SELECT p.name AS Giocatore,
-               SUM(CASE WHEN m.win = 1 THEN CASE WHEN c.name IN ({placeholders}) THEN 2 ELSE 1 END ELSE 0 END) AS Punti,
+               SUM(m.season_points) AS Punti,
                SUM(m.win) AS Vittorie,
                COUNT(*) AS Partite
         FROM matches m
         JOIN players p ON m.player_id = p.id
-        JOIN commanders c ON m.commander_id = c.id
         WHERE m.date >= ? AND m.date < ?
         GROUP BY p.name
         ORDER BY Punti DESC, Vittorie DESC, Partite DESC
     """
-    season_standings = pd.read_sql_query(season_query, conn, params=(special_commanders + [season_start, season_end]))
+    season_standings = pd.read_sql_query(season_query, conn, params=[season_start, season_end])
     
     # Season commanders statistics - include ALL season commanders, even unplayed ones
     # First, create a temporary table with all season commanders
@@ -1914,16 +2141,44 @@ def generate_report():
         """, conn, params=(player,))
         player_commander_stats[player] = df
 
+    # Lista comandanti season per calcolo punti
+    season_commanders_list = [
+        'Beluna Grandsquall // Seek Thrills', 'Gimbal, Gremlin Prodigy', 'Isu the Abominable',
+        'Licia, Sanguine Tribune', 'Lynde, Cheerful Tormentor', 'Mr. House, President and CEO',
+        'Obeka, Brute Chronologist', 'Pramikon, Sky Rampart', 'Rienne, Angel of Rebirth',
+        'Sigurd, Jarl of Ravensthorpe', "Sin, Spira's Punishment", 'Sophia, Dogged Detective',
+        'Sydri, Galvanic Genius', 'Tatsunari, Toad Rider', 'The Celestial Toymaker',
+        'Xira, the Golden Sting', 'Yurlok of Scorch Thrash', 'Zedruu the Greathearted'
+    ]
+    
+    # Crea tabella temporanea per comandanti season
+    cursor = conn.cursor()
+    cursor.execute("DROP TABLE IF EXISTS temp_season_commanders_points")
+    cursor.execute("""
+        CREATE TEMP TABLE temp_season_commanders_points (
+            name TEXT PRIMARY KEY,
+            original_name TEXT
+        )
+    """)
+    
+    # Inserisci comandanti season normalizzati
+    for commander in season_commanders_list:
+        normalized_name = normalize_commander_name(commander)
+        cursor.execute("INSERT OR IGNORE INTO temp_season_commanders_points (name, original_name) VALUES (?, ?)", 
+                      (normalized_name, commander))
+    
     player_stats = pd.read_sql_query("""
             SELECT p.name AS Giocatore,
                    COUNT(m.id) AS Partite,
                    SUM(m.win) AS Vittorie,
+                   -- Punti season precalcolati nel database
+                   SUM(m.season_points) AS Punti,
                    ROUND(SUM(m.win) * 100.0 / COUNT(m.id), 2) AS "Winrate (%)"
             FROM players p
             LEFT JOIN matches m ON m.player_id = p.id
             GROUP BY p.name
             HAVING COUNT(m.id) >= 20
-            ORDER BY "Winrate (%)" DESC, Vittorie DESC
+            ORDER BY Punti DESC, "Winrate (%)" DESC, Vittorie DESC
         """, conn)
 
     # Color stats queries (same as before)
@@ -2397,6 +2652,13 @@ def main():
     search_parser = subparsers.add_parser("search_player", help="Cerca comandanti giocati da un giocatore")
     search_parser.add_argument("player_name", type=str, help="Nome del giocatore da cercare")
 
+    # Comando per ricalcolare i punteggi season
+    recalc_parser = subparsers.add_parser("recalculate_season", help="Ricalcola tutti i punteggi season nel database")
+
+    # Comando per testare i punti season di un giocatore
+    test_parser = subparsers.add_parser("test_season_points", help="Testa il calcolo dei punti season per un giocatore")
+    test_parser.add_argument("player_name", type=str, help="Nome del giocatore da testare")
+
     # Parsing degli argomenti
     args = parser.parse_args()
 
@@ -2411,6 +2673,10 @@ def main():
         generate_report()
     elif args.command == "search_player":
         search_player_commanders(args.player_name)
+    elif args.command == "recalculate_season":
+        recalculate_season_points()
+    elif args.command == "test_season_points":
+        test_player_season_points(args.player_name)
     else:
         parser.print_help()
 
