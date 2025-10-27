@@ -469,14 +469,15 @@ def recalculate_season_points():
         cursor.execute("INSERT OR IGNORE INTO temp_season_commanders_recalc (name, original_name) VALUES (?, ?)", 
                       (normalized_name, commander))
     
-    # Prima imposta tutti i punti season a 1 per le vittorie e 0 per le sconfitte (default)
+    # Prima imposta tutti i punti season a 1 per le vittorie e 0 per le sconfitte (default) SOLO per partite season
     cursor.execute("""
         UPDATE matches 
         SET season_points = CASE 
             WHEN win = 1 THEN 1
             ELSE 0
         END
-    """)
+        WHERE date >= ? AND date < ?
+    """, (season_start, season_end))
     
     # Identifica partite della season dove TUTTI i giocatori usano comandanti season
     cursor.execute("""
@@ -966,6 +967,72 @@ def generate_enhanced_html_report(
         LIMIT 5
     """, conn)
     
+    # Get top 5 players for winrate trend
+    top_5_players_query = """
+        SELECT p.name AS Giocatore
+        FROM players p
+        LEFT JOIN matches m ON m.player_id = p.id
+        GROUP BY p.name
+        HAVING COUNT(m.id) >= 20
+        ORDER BY SUM(m.season_points) DESC, 
+                 ROUND(SUM(m.win) * 100.0 / COUNT(m.id), 2) DESC, 
+                 SUM(m.win) DESC
+        LIMIT 5
+    """
+    top_5_players = pd.read_sql_query(top_5_players_query, conn)
+    
+    # Calculate winrate trend for top 5 players over last 30 days
+    def get_winrate_trend_last_30_days(player_names, conn):
+        """
+        Calcola l'andamento del winrate per i giocatori specificati negli ultimi 30 giorni
+        """
+        from datetime import datetime, timedelta
+        
+        # Data di 30 giorni fa
+        thirty_days_ago = (datetime.now() - timedelta(days=30)).strftime('%Y-%m-%d')
+        
+        winrate_data = {}
+        
+        for player_name in player_names:
+            # Query per ottenere le partite del giocatore negli ultimi 30 giorni, ordinate per data
+            query = """
+                SELECT m.date, m.win
+                FROM matches m
+                JOIN players p ON m.player_id = p.id
+                WHERE p.name = ? AND m.date >= ?
+                ORDER BY m.date
+            """
+            
+            player_matches = pd.read_sql_query(query, conn, params=[player_name, thirty_days_ago])
+            
+            if len(player_matches) == 0:
+                winrate_data[player_name] = []
+                continue
+            
+            # Calcola winrate cumulativo per ogni data
+            cumulative_wins = 0
+            cumulative_games = 0
+            daily_winrates = []
+            
+            for _, match in player_matches.iterrows():
+                cumulative_games += 1
+                cumulative_wins += match['win']
+                winrate = (cumulative_wins / cumulative_games) * 100
+                
+                daily_winrates.append({
+                    'data': match['date'],
+                    'winrate': round(winrate, 2),
+                    'games': cumulative_games,
+                    'wins': cumulative_wins
+                })
+            
+            winrate_data[player_name] = daily_winrates
+        
+        return winrate_data
+    
+    # Generate winrate trend data for top 5 players
+    top_5_winrate_trend = get_winrate_trend_last_30_days(top_5_players['Giocatore'].tolist(), conn)
+    
     meta_dominance = pd.read_sql_query("""
         WITH commander_stats AS (
             SELECT c.name,
@@ -1352,6 +1419,129 @@ def generate_enhanced_html_report(
             '''
         
         return sections_html
+    
+    # Generate Top 5 Winrate Chart
+    def generate_top5_winrate_chart(winrate_data):
+        """
+        Genera un grafico SVG per l'andamento winrate dei top 5 giocatori
+        """
+        if not winrate_data or all(len(data) == 0 for data in winrate_data.values()):
+            return '<div class="insight-box"><p>Nessun dato disponibile per gli ultimi 30 giorni.</p></div>'
+        
+        # Colori per i giocatori
+        colors = ['#3b82f6', '#ef4444', '#10b981', '#f59e0b', '#8b5cf6']
+        
+        # Dimensioni del grafico
+        width = 800
+        height = 400
+        margin = 60
+        plot_width = width - 2 * margin
+        plot_height = height - 2 * margin
+        
+        # Trova il range di date e il numero massimo di partite
+        all_dates = set()
+        max_games = 0
+        
+        for player_data in winrate_data.values():
+            for point in player_data:
+                all_dates.add(point['data'])
+                max_games = max(max_games, point['games'])
+        
+        if not all_dates:
+            return '<div class="insight-box"><p>Nessun dato disponibile per gli ultimi 30 giorni.</p></div>'
+        
+        sorted_dates = sorted(list(all_dates))
+        
+        # Funzioni di scala
+        def scale_x(date_index):
+            if len(sorted_dates) <= 1:
+                return margin + plot_width / 2
+            return margin + (plot_width * date_index / (len(sorted_dates) - 1))
+        
+        def scale_y(winrate):
+            return margin + plot_height * (1 - winrate / 100)
+        
+        # Inizio SVG
+        svg_content = f'<svg width="{width}" height="{height}" xmlns="http://www.w3.org/2000/svg">'
+        
+        # Griglia di sfondo
+        for i in range(0, 101, 25):
+            y = scale_y(i)
+            svg_content += f'<line x1="{margin}" y1="{y}" x2="{width-margin}" y2="{y}" stroke="#e5e7eb" stroke-width="1"/>'
+            svg_content += f'<text x="{margin-10}" y="{y+4}" fill="#6b7280" font-size="12" text-anchor="end">{i}%</text>'
+        
+        # Linee per ogni giocatore
+        player_index = 0
+        legend_items = []
+        
+        for player_name, player_data in winrate_data.items():
+            if not player_data:
+                continue
+                
+            color = colors[player_index % len(colors)]
+            player_index += 1
+            
+            # Crea i punti per questo giocatore
+            points = []
+            for point in player_data:
+                date_index = sorted_dates.index(point['data'])
+                x = scale_x(date_index)
+                y = scale_y(point['winrate'])
+                points.append(f"{x:.1f},{y:.1f}")
+            
+            if len(points) > 1:
+                # Linea
+                svg_content += f'<polyline points="{" ".join(points)}" fill="none" stroke="{color}" stroke-width="3"/>'
+                
+                # Punti
+                for point_str in points:
+                    x, y = point_str.split(',')
+                    svg_content += f'<circle cx="{x}" cy="{y}" r="4" fill="{color}"/>'
+            elif len(points) == 1:
+                # Solo un punto
+                x, y = points[0].split(',')
+                svg_content += f'<circle cx="{x}" cy="{y}" r="6" fill="{color}"/>'
+            
+            # Aggiungi alla legenda
+            final_winrate = player_data[-1]['winrate'] if player_data else 0
+            legend_items.append(f'<span style="color: {color}; font-weight: bold;">● {player_name}</span> ({final_winrate}%)')
+        
+        # Assi
+        svg_content += f'<line x1="{margin}" y1="{margin}" x2="{margin}" y2="{height-margin}" stroke="#374151" stroke-width="2"/>'
+        svg_content += f'<line x1="{margin}" y1="{height-margin}" x2="{width-margin}" y2="{height-margin}" stroke="#374151" stroke-width="2"/>'
+        
+        # Etichette degli assi
+        svg_content += f'<text x="{width/2}" y="{height-10}" fill="#374151" font-size="14" text-anchor="middle" font-weight="bold">Progressione Temporale</text>'
+        svg_content += f'<text x="20" y="{height/2}" fill="#374151" font-size="14" text-anchor="middle" font-weight="bold" transform="rotate(-90 20 {height/2})">Winrate (%)</text>'
+        
+        svg_content += '</svg>'
+        
+        # Legenda
+        legend_html = '<div style="margin-top: 1rem; text-align: center;">'
+        legend_html += '<strong>Legenda:</strong> ' + ' | '.join(legend_items)
+        legend_html += '</div>'
+        
+        # Statistiche riassuntive
+        stats_html = '<div style="margin-top: 1rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">'
+        
+        for player_name, player_data in winrate_data.items():
+            if not player_data:
+                continue
+            
+            final_data = player_data[-1]
+            stats_html += f'''
+                <div style="padding: 0.5rem; border: 1px solid #e5e7eb; border-radius: 6px; text-align: center;">
+                    <strong>{player_name}</strong><br>
+                    <span style="font-size: 0.9em; color: #6b7280;">
+                        {final_data['wins']}/{final_data['games']} partite<br>
+                        Winrate finale: {final_data['winrate']}%
+                    </span>
+                </div>
+            '''
+        
+        stats_html += '</div>'
+        
+        return f'<div style="text-align: center;">{svg_content}</div>{legend_html}{stats_html}'
     
     # Helper: genera un semplice grafico SVG (statico) per l'andamento winrate (0-100)
     def winrate_svg(data_points, width=640, height=220, margin=30):
@@ -1862,6 +2052,21 @@ def generate_enhanced_html_report(
                     Sono comandanti meno giocati o con tematiche specifiche per incentivare la diversità nel meta.</p>
                 </div>
                 {table_to_html(season_commanders_stats, "seasonCommandersStats")}
+            </div>
+        </div>
+
+        <!-- Andamento Winrate Top 5 Giocatori (Ultimi 30 giorni) -->
+        <div class="section">
+            <div class="section-header">
+                <h2><i class="fas fa-chart-line"></i> Andamento Winrate Top 5 Giocatori (Ultimi 30 giorni)</h2>
+            </div>
+            <div class="section-content">
+                <div class="insight-box">
+                    <h4><i class="fas fa-info-circle"></i> Andamento Winrate</h4>
+                    <p>Grafico che mostra l'evoluzione del winrate cumulativo dei top 5 giocatori negli ultimi 30 giorni. 
+                    Il winrate viene calcolato cumulativamente per ogni partita giocata nel periodo.</p>
+                </div>
+                {generate_top5_winrate_chart(top_5_winrate_trend)}
             </div>
         </div>
 
